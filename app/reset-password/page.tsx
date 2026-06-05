@@ -16,74 +16,119 @@ export default function ResetPasswordPage() {
     () =>
       createClient(
         process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? ''
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '',
+        {
+          auth: {
+            detectSessionInUrl: true,
+            persistSession: true,
+            autoRefreshToken: true,
+          },
+        }
       ),
     []
   );
 
   useEffect(() => {
+    let cancelled = false;
+
+    const markSessionReady = () => {
+      if (cancelled) return;
+      setSessionReady(true);
+      setInitializing(false);
+      setError('');
+      if (window.location.hash || window.location.search) {
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+    };
+
+    const markSessionFailed = (message: string) => {
+      if (cancelled) return;
+      setError(message);
+      setInitializing(false);
+    };
+
     const establishSession = async () => {
       setError('');
       setInitializing(true);
 
-      try {
-        const query = new URLSearchParams(window.location.search);
-        const code = query.get('code');
-
-        if (code) {
-          const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
-          if (exchangeError) {
-            setError(exchangeError.message);
-            return;
-          }
-          setSessionReady(true);
-          window.history.replaceState({}, '', window.location.pathname);
-          return;
-        }
-
-        const hash = window.location.hash.startsWith('#')
+      const hashParams = new URLSearchParams(
+        window.location.hash.startsWith('#')
           ? window.location.hash.slice(1)
-          : window.location.hash;
-        const hashParams = new URLSearchParams(hash);
-        const accessToken = hashParams.get('access_token');
-        const refreshToken = hashParams.get('refresh_token');
+          : window.location.hash
+      );
+      const queryParams = new URLSearchParams(window.location.search);
 
-        if (accessToken && refreshToken) {
-          const { error: sessionError } = await supabase.auth.setSession({
-            access_token: accessToken,
-            refresh_token: refreshToken,
-          });
-          if (sessionError) {
-            setError(sessionError.message);
-            return;
-          }
-          setSessionReady(true);
-          window.history.replaceState({}, '', window.location.pathname);
-          return;
-        }
+      const accessToken = hashParams.get('access_token');
+      const refreshToken = hashParams.get('refresh_token');
+      const tokenType = hashParams.get('type');
+      const code = queryParams.get('code');
 
-        const {
-          data: { session },
-          error: sessionError,
-        } = await supabase.auth.getSession();
+      const hasHashRecovery = Boolean(accessToken && tokenType === 'recovery');
+      const hasCode = Boolean(code);
 
+      // 1. Hash fragment: #access_token=xxx&type=recovery
+      if (hasHashRecovery) {
+        const { error: sessionError } = await supabase.auth.setSession({
+          access_token: accessToken!,
+          refresh_token: refreshToken ?? '',
+        });
         if (sessionError) {
-          setError(sessionError.message);
+          markSessionFailed(sessionError.message);
           return;
         }
+        markSessionReady();
+        return;
+      }
 
-        if (session) {
-          setSessionReady(true);
+      // 2. Query parameter: ?code=xxx
+      if (hasCode) {
+        const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code!);
+        if (exchangeError) {
+          markSessionFailed(exchangeError.message);
           return;
         }
+        markSessionReady();
+        return;
+      }
 
-        setError('Invalid or expired reset link. Please request a new password reset email.');
-      } finally {
-        setInitializing(false);
+      // 3. Already have an active session
+      const {
+        data: { session },
+        error: sessionError,
+      } = await supabase.auth.getSession();
+
+      if (sessionError) {
+        markSessionFailed(sessionError.message);
+        return;
+      }
+
+      if (session) {
+        markSessionReady();
+        return;
+      }
+
+      // Only invalid when no hash recovery token, no code, and no session
+      if (!hasHashRecovery && !hasCode) {
+        markSessionFailed(
+          'Invalid or expired reset link. Please request a new password reset email.'
+        );
       }
     };
 
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'PASSWORD_RECOVERY' || (session && event === 'SIGNED_IN')) {
+        markSessionReady();
+      }
+    });
+
     void establishSession();
+
+    return () => {
+      cancelled = true;
+      subscription.unsubscribe();
+    };
   }, [supabase]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
