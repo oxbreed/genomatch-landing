@@ -39,10 +39,11 @@ function WaitlistForm({ id }: { id?: string }) {
     return (
       <div
         role="status"
-        className="rounded-2xl border px-6 py-5 text-center shadow-md"
+        className="rounded-2xl border px-6 py-5 text-center shadow-lg"
         style={{
           borderColor: `${GOLD}55`,
-          backgroundColor: "rgba(255,255,255,0.95)",
+          backgroundColor: "rgba(255,255,255,0.97)",
+          boxShadow: `0 12px 40px ${FOREST}18`,
         }}
       >
         <p
@@ -84,7 +85,7 @@ function WaitlistForm({ id }: { id?: string }) {
             setEmail(e.target.value);
             if (error) setError("");
           }}
-          className="min-h-12 w-full flex-1 rounded-xl border-2 bg-white px-4 shadow-sm outline-none transition placeholder:text-[#0D2818]/40 focus:ring-2 sm:min-w-0"
+          className="min-h-12 w-full flex-1 rounded-xl border-2 bg-white px-4 shadow-sm outline-none transition placeholder:text-[#0D2818]/40 focus:ring-2 focus:ring-[#D4A843]/35 sm:min-w-0"
           style={{
             color: FOREST,
             borderColor: `${FOREST}22`,
@@ -98,8 +99,12 @@ function WaitlistForm({ id }: { id?: string }) {
         />
         <button
           type="submit"
-          className="min-h-12 w-full shrink-0 rounded-xl px-6 font-bold shadow-md transition hover:brightness-105 active:scale-[0.98] sm:w-auto"
-          style={{ backgroundColor: GOLD, color: FOREST }}
+          className="min-h-12 w-full shrink-0 rounded-xl px-6 font-bold shadow-lg transition hover:brightness-105 active:scale-[0.98] sm:w-auto"
+          style={{
+            background: `linear-gradient(135deg, ${GOLD} 0%, #E8C56A 50%, #C49A3A 100%)`,
+            color: FOREST,
+            boxShadow: `0 8px 24px ${GOLD}44`,
+          }}
         >
           Join the Waitlist
         </button>
@@ -109,51 +114,147 @@ function WaitlistForm({ id }: { id?: string }) {
   );
 }
 
-function BondMarkGraphic({ className }: { className?: string }) {
+function CeremonyRule({ className }: { className?: string }) {
+  return (
+    <div
+      className={className}
+      style={{
+        height: 1,
+        background: `linear-gradient(90deg, transparent 0%, ${GOLD}22 15%, ${GOLD} 50%, ${GOLD}22 85%, transparent 100%)`,
+      }}
+      aria-hidden
+    />
+  );
+}
+
+function GenoCrest({ size = 120, className }: { size?: number; className?: string }) {
   return (
     <svg
       className={className}
+      width={size}
+      height={size}
       viewBox="0 0 120 120"
       fill="none"
       aria-hidden
     >
-      <circle cx="42" cy="60" r="28" stroke={GOLD} strokeWidth="2" opacity="0.55" />
-      <circle cx="78" cy="60" r="28" stroke={SAGE} strokeWidth="2" opacity="0.45" />
+      <defs>
+        <linearGradient id="crestGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={GOLD} stopOpacity="0.9" />
+          <stop offset="100%" stopColor="#C49A3A" stopOpacity="0.7" />
+        </linearGradient>
+        <linearGradient id="crestSage" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={SAGE} stopOpacity="0.85" />
+          <stop offset="100%" stopColor={SAGE} stopOpacity="0.45" />
+        </linearGradient>
+      </defs>
+      <circle cx="60" cy="60" r="54" stroke={GOLD} strokeWidth="0.75" strokeDasharray="4 6" opacity="0.35" />
+      <circle cx="44" cy="60" r="26" stroke="url(#crestGold)" strokeWidth="2.25" />
+      <circle cx="76" cy="60" r="26" stroke="url(#crestSage)" strokeWidth="2.25" />
       <path
-        d="M42 32c12-8 24-8 36 0M42 88c12 8 24 8 36 0"
-        stroke={GOLD}
-        strokeWidth="1.5"
+        d="M44 36c10-7 22-7 32 0M44 84c10 7 22 7 32 0"
+        stroke="url(#crestGold)"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        opacity="0.75"
+      />
+      <path
+        d="M60 28v64M48 44c8 6 16 6 24 0M48 76c8-6 16-6 24 0"
+        stroke={SAGE}
+        strokeWidth="1"
         strokeLinecap="round"
         opacity="0.4"
       />
-      <circle cx="60" cy="60" r="5" fill={GOLD} opacity="0.65" />
+      <circle cx="60" cy="60" r="6" fill="url(#crestGold)" />
+      <circle cx="60" cy="60" r="2.5" fill={LINEN} opacity="0.9" />
     </svg>
   );
 }
 
-function HelixAccent({ className }: { className?: string }) {
+function HelixField({ className }: { className?: string }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 200 80"
-      fill="none"
-      aria-hidden
-    >
+    <svg className={className} viewBox="0 0 320 140" fill="none" aria-hidden>
       <path
-        d="M0 40c25-22 50 22 75 0s50 22 75 0 50 22 50 0"
+        d="M0 70c40-35 80 35 120 0s80 35 120 0 80 35 80 0"
         stroke={GOLD}
-        strokeWidth="1.25"
+        strokeWidth="1.5"
         strokeLinecap="round"
-        opacity="0.35"
+        opacity="0.32"
       />
       <path
-        d="M0 52c25-18 50 18 75 0s50 18 75 0 50 18 50 0"
+        d="M0 82c40-28 80 28 120 0s80 28 120 0 80 28 80 0"
         stroke={SAGE}
         strokeWidth="1"
         strokeLinecap="round"
-        opacity="0.28"
+        opacity="0.24"
       />
+      <path
+        d="M0 58c40-28 80 28 120 0s80 28 120 0 80 28 80 0"
+        stroke={GOLD}
+        strokeWidth="0.75"
+        strokeLinecap="round"
+        opacity="0.18"
+      />
+      {[
+        [40, 70],
+        [120, 70],
+        [200, 70],
+        [280, 70],
+      ].map(([cx, cy], i) => (
+        <circle
+          key={i}
+          cx={cx}
+          cy={cy}
+          r="3"
+          fill={i % 2 === 0 ? GOLD : SAGE}
+          opacity="0.45"
+        />
+      ))}
     </svg>
+  );
+}
+
+function MeshBackdrop({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 400 400" fill="none" aria-hidden>
+      <defs>
+        <pattern id="meshDots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="0.75" fill={GOLD} opacity="0.18" />
+        </pattern>
+      </defs>
+      <rect width="400" height="400" fill="url(#meshDots)" />
+      <circle cx="200" cy="200" r="160" stroke={GOLD} strokeWidth="0.5" opacity="0.12" />
+      <circle cx="200" cy="200" r="120" stroke={SAGE} strokeWidth="0.5" opacity="0.1" />
+    </svg>
+  );
+}
+
+function CornerBrackets({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" fill="none" aria-hidden>
+      <path d="M4 14V4h10M44 14V4H34M4 34v10h10M44 34v10H34" stroke={GOLD} strokeWidth="1.5" strokeLinecap="round" opacity="0.55" />
+    </svg>
+  );
+}
+
+function ForestSectionBackdrop() {
+  return (
+    <>
+      <MeshBackdrop className="pointer-events-none absolute inset-0 h-full w-full opacity-70" />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: `radial-gradient(ellipse 80% 60% at 50% 0%, ${GOLD}14 0%, transparent 65%)`,
+        }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: `radial-gradient(ellipse 70% 50% at 50% 100%, ${SAGE}10 0%, transparent 60%)`,
+        }}
+        aria-hidden
+      />
+    </>
   );
 }
 
@@ -224,26 +325,34 @@ export default function Home() {
     >
       {/* Navigation */}
       <header
-        className="relative sticky top-0 z-50 overflow-hidden border-b shadow-sm"
+        className="relative sticky top-0 z-50 overflow-hidden border-b"
         style={{
           backgroundColor: FOREST_BG,
           borderColor: `${GOLD}33`,
+          boxShadow: `0 4px 24px ${FOREST}40`,
         }}
       >
-        <BondMarkGraphic className="pointer-events-none absolute -left-6 top-1/2 h-16 w-16 -translate-y-1/2 opacity-60" />
-        <HelixAccent className="pointer-events-none absolute -right-4 top-2 h-8 w-32 opacity-70" />
+        <CeremonyRule className="absolute left-0 right-0 top-0" />
+        <ForestSectionBackdrop />
+        <HelixField className="pointer-events-none absolute -right-6 top-1 h-16 w-40 opacity-60" />
         <nav className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:h-[4.5rem] lg:px-8">
-          <a
-            href="#"
-            className="text-2xl font-bold tracking-tight lg:text-3xl"
-            style={{ ...headingStyle, color: GOLD }}
-          >
-            GenoMatch
+          <a href="#" className="flex items-center gap-3">
+            <GenoCrest size={36} className="shrink-0 opacity-90" />
+            <span
+              className="text-2xl font-bold tracking-tight lg:text-3xl"
+              style={{ ...headingStyle, color: GOLD }}
+            >
+              GenoMatch
+            </span>
           </a>
           <a
             href="#waitlist"
             className="rounded-full px-5 py-2.5 text-sm font-bold shadow-md transition hover:brightness-105"
-            style={{ backgroundColor: GOLD, color: FOREST }}
+            style={{
+              background: `linear-gradient(135deg, ${GOLD}, #C49A3A)`,
+              color: FOREST,
+              boxShadow: `0 4px 16px ${GOLD}40`,
+            }}
           >
             Join Waitlist
           </a>
@@ -253,24 +362,24 @@ export default function Home() {
       <main>
         {/* Hero */}
         <section
-          className="relative w-full overflow-hidden px-6 pb-16 pt-14 lg:px-8 lg:pb-20 lg:pt-20"
+          className="relative w-full overflow-hidden px-6 pb-16 pt-14 lg:px-8 lg:pb-24 lg:pt-24"
           style={{ backgroundColor: FOREST_BG }}
         >
-          <BondMarkGraphic className="pointer-events-none absolute left-6 top-16 h-28 w-28 opacity-50 lg:left-12 lg:h-36 lg:w-36" />
-          <BondMarkGraphic className="pointer-events-none absolute -right-8 bottom-20 h-32 w-32 rotate-12 opacity-40 lg:right-8" />
-          <HelixAccent className="pointer-events-none absolute left-1/2 top-8 w-48 -translate-x-1/2 opacity-60 lg:w-64" />
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full blur-3xl"
-            style={{ backgroundColor: `${GOLD}18` }}
-            aria-hidden
+          <ForestSectionBackdrop />
+          <GenoCrest
+            size={200}
+            className="pointer-events-none absolute -left-16 top-20 opacity-[0.18] lg:-left-8 lg:opacity-[0.22]"
           />
-          <div
-            className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full blur-3xl"
-            style={{ backgroundColor: `${SAGE}15` }}
-            aria-hidden
+          <GenoCrest
+            size={180}
+            className="pointer-events-none absolute -right-12 bottom-16 rotate-12 opacity-[0.14] lg:right-4"
           />
+          <HelixField className="pointer-events-none absolute left-1/2 top-10 w-72 -translate-x-1/2 opacity-50 lg:w-96" />
 
           <div className="relative mx-auto max-w-4xl text-center">
+            <div className="mb-6 flex justify-center">
+              <GenoCrest size={72} className="opacity-95 drop-shadow-lg" />
+            </div>
             <p
               className="mb-5 inline-block rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em]"
               style={{
@@ -282,8 +391,12 @@ export default function Home() {
               Genotype-aware dating
             </p>
             <h1
-              className="text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl"
-              style={{ ...headingStyle, color: "#FFFFFF" }}
+              className="text-4xl font-bold leading-[1.06] sm:text-5xl lg:text-6xl xl:text-7xl"
+              style={{
+                ...headingStyle,
+                color: "#FFFFFF",
+                textShadow: `0 2px 32px ${FOREST}88`,
+              }}
             >
               The World&apos;s First Genotype-Aware Dating App
             </h1>
@@ -295,7 +408,16 @@ export default function Home() {
               Built for anyone who values informed love.
             </p>
 
-            <div id="waitlist" className="mx-auto mt-10 scroll-mt-24">
+            <div
+              className="mx-auto mt-10 max-w-xl rounded-2xl border p-5 sm:p-6"
+              id="waitlist"
+              style={{
+                scrollMarginTop: "6rem",
+                borderColor: `${GOLD}33`,
+                backgroundColor: `${FOREST}33`,
+                boxShadow: `0 16px 48px ${FOREST}55`,
+              }}
+            >
               <WaitlistForm />
             </div>
             <p className="mt-4 text-sm leading-relaxed" style={{ color: `${SAGE}cc` }}>
@@ -303,21 +425,17 @@ export default function Home() {
             </p>
           </div>
 
-          <div
-            className="mx-auto mt-14 h-px max-w-4xl"
-            style={{
-              background: `linear-gradient(90deg, transparent, ${GOLD}88, transparent)`,
-            }}
-            aria-hidden
-          />
+          <CeremonyRule className="relative mx-auto mt-14 max-w-3xl" />
         </section>
 
         {/* Statistics */}
         <section
-          className="px-6 py-20 lg:px-8 lg:py-28"
+          className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-28"
           style={{ backgroundColor: LINEN }}
         >
-          <div className="mx-auto max-w-6xl">
+          <HelixField className="pointer-events-none absolute -right-8 top-12 w-48 opacity-30" />
+          <div className="relative mx-auto max-w-6xl">
+            <CeremonyRule className="mb-10 max-w-xs" />
             <h2
               className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
               style={{ ...headingStyle, color: FOREST }}
@@ -341,9 +459,13 @@ export default function Home() {
               ].map(({ stat, label }) => (
                 <article
                   key={stat}
-                  className="rounded-2xl border-l-4 bg-white p-8 shadow-lg transition hover:shadow-xl"
-                  style={{ borderLeftColor: GOLD }}
+                  className="relative overflow-hidden rounded-2xl border-l-4 bg-white p-8 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+                  style={{
+                    borderLeftColor: GOLD,
+                    boxShadow: `0 8px 32px ${FOREST}0d`,
+                  }}
                 >
+                  <CornerBrackets className="pointer-events-none absolute right-3 top-3 h-8 w-8 opacity-40" />
                   <p
                     className="text-3xl font-bold lg:text-4xl"
                     style={{ ...headingStyle, color: GOLD }}
@@ -363,9 +485,11 @@ export default function Home() {
         </section>
 
         {/* How it works */}
-        <section className="bg-white px-6 py-20 lg:px-8 lg:py-28">
-          <div className="mx-auto max-w-6xl">
+        <section className="relative overflow-hidden bg-white px-6 py-20 lg:px-8 lg:py-28">
+          <MeshBackdrop className="pointer-events-none absolute right-0 top-0 h-64 w-64 opacity-25" />
+          <div className="relative mx-auto max-w-6xl">
             <div className="text-center">
+              <CeremonyRule className="mx-auto mb-8 max-w-xs" />
               <h2
                 className="text-3xl font-bold sm:text-4xl"
                 style={{ ...headingStyle, color: FOREST }}
@@ -383,8 +507,10 @@ export default function Home() {
 
             <div className="relative mt-14 lg:mt-20">
               <div
-                className="pointer-events-none absolute left-[16.67%] right-[16.67%] top-7 hidden h-0.5 sm:block"
-                style={{ backgroundColor: `${GOLD}55` }}
+                className="pointer-events-none absolute left-[16.67%] right-[16.67%] top-7 hidden h-px sm:block"
+                style={{
+                  background: `linear-gradient(90deg, transparent, ${GOLD}66, ${GOLD}, ${GOLD}66, transparent)`,
+                }}
                 aria-hidden
               />
 
@@ -409,18 +535,32 @@ export default function Home() {
                     Icon: ShieldCheckIcon,
                   },
                 ].map(({ step, title, body, Icon }) => (
-                  <li key={step} className="relative flex flex-col items-center text-center">
+                  <li
+                    key={step}
+                    className="group relative flex flex-col items-center rounded-2xl border bg-white p-6 text-center shadow-md transition hover:shadow-lg"
+                    style={{
+                      borderColor: `${GOLD}22`,
+                      boxShadow: `0 6px 24px ${FOREST}08`,
+                    }}
+                  >
                     <div
                       className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-sm font-bold shadow-md"
-                      style={{ backgroundColor: GOLD, color: FOREST }}
+                      style={{
+                        background: `linear-gradient(145deg, ${GOLD}, #C49A3A)`,
+                        color: FOREST,
+                      }}
                     >
                       {step}
                     </div>
                     <div
-                      className="mt-6 flex h-12 w-12 items-center justify-center rounded-xl"
-                      style={{ backgroundColor: `${GOLD}18`, color: FOREST }}
+                      className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl border"
+                      style={{
+                        backgroundColor: `${GOLD}12`,
+                        borderColor: `${GOLD}28`,
+                        color: FOREST,
+                      }}
                     >
-                      <Icon className="h-6 w-6" />
+                      <Icon className="h-7 w-7" />
                     </div>
                     <h3
                       className="mt-5 text-xl font-bold"
@@ -446,12 +586,25 @@ export default function Home() {
           className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-28"
           style={{ backgroundColor: FOREST_BG }}
         >
-          <BondMarkGraphic className="pointer-events-none absolute -left-10 top-1/2 h-40 w-40 -translate-y-1/2 opacity-35" />
-          <BondMarkGraphic className="pointer-events-none absolute -right-10 top-1/2 h-40 w-40 -translate-y-1/2 opacity-35" />
-          <HelixAccent className="pointer-events-none absolute bottom-8 left-1/2 w-56 -translate-x-1/2 opacity-50" />
-          <blockquote className="relative mx-auto max-w-4xl text-center">
+          <ForestSectionBackdrop />
+          <GenoCrest
+            size={220}
+            className="pointer-events-none absolute -left-20 top-1/2 -translate-y-1/2 opacity-[0.12]"
+          />
+          <GenoCrest
+            size={220}
+            className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.12]"
+          />
+          <blockquote className="relative mx-auto max-w-4xl rounded-3xl border px-8 py-12 text-center sm:px-12"
+            style={{
+              borderColor: `${GOLD}28`,
+              backgroundColor: `${FOREST}44`,
+              boxShadow: `0 20px 60px ${FOREST}66`,
+            }}
+          >
+            <CeremonyRule className="mb-8" />
             <span
-              className="pointer-events-none absolute -left-2 -top-6 select-none text-7xl font-bold leading-none opacity-40 sm:-left-4 sm:-top-8 sm:text-8xl"
+              className="pointer-events-none absolute -left-1 -top-4 select-none text-7xl font-bold leading-none opacity-50 sm:-left-2 sm:-top-6 sm:text-8xl"
               style={{ ...headingStyle, color: GOLD }}
               aria-hidden
             >
@@ -466,8 +619,9 @@ export default function Home() {
                 GenoMatch optimises for outcomes.
               </span>
             </p>
+            <CeremonyRule className="mt-8" />
             <span
-              className="pointer-events-none absolute -bottom-10 -right-2 select-none text-7xl font-bold leading-none opacity-40 sm:-bottom-12 sm:-right-4 sm:text-8xl"
+              className="pointer-events-none absolute -bottom-8 -right-1 select-none text-7xl font-bold leading-none opacity-50 sm:-bottom-10 sm:-right-2 sm:text-8xl"
               style={{ ...headingStyle, color: GOLD }}
               aria-hidden
             >
@@ -478,10 +632,12 @@ export default function Home() {
 
         {/* Second CTA */}
         <section
-          className="px-6 py-16 lg:px-8 lg:py-20"
+          className="relative overflow-hidden px-6 py-16 lg:px-8 lg:py-20"
           style={{ backgroundColor: LINEN }}
         >
-          <div className="mx-auto max-w-xl text-center">
+          <HelixField className="pointer-events-none absolute bottom-4 left-1/2 w-56 -translate-x-1/2 opacity-25" />
+          <div className="relative mx-auto max-w-xl text-center">
+            <GenoCrest size={48} className="mx-auto mb-5 opacity-80" />
             <h2
               className="text-2xl font-bold sm:text-3xl"
               style={{ ...headingStyle, color: FOREST }}
@@ -494,7 +650,13 @@ export default function Home() {
             >
               Join the waitlist and be first in line for launch.
             </p>
-            <div className="mt-8 flex justify-center">
+            <div
+              className="mt-8 rounded-2xl border bg-white p-5 shadow-lg"
+              style={{
+                borderColor: `${GOLD}33`,
+                boxShadow: `0 12px 40px ${FOREST}10`,
+              }}
+            >
               <WaitlistForm />
             </div>
           </div>
@@ -509,16 +671,18 @@ export default function Home() {
           borderColor: `${GOLD}22`,
         }}
       >
-        <HelixAccent className="pointer-events-none absolute left-1/2 top-4 w-48 -translate-x-1/2 opacity-45" />
-        <BondMarkGraphic className="pointer-events-none absolute bottom-2 left-8 h-14 w-14 opacity-40" />
-        <BondMarkGraphic className="pointer-events-none absolute bottom-2 right-8 h-14 w-14 opacity-40" />
+        <ForestSectionBackdrop />
+        <CeremonyRule className="relative mx-auto mb-8 max-w-lg" />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 text-center sm:gap-4">
-          <p
-            className="text-lg font-bold tracking-tight"
-            style={{ ...headingStyle, color: GOLD }}
-          >
-            GenoMatch
-          </p>
+          <div className="flex items-center gap-3">
+            <GenoCrest size={32} className="opacity-85" />
+            <p
+              className="text-lg font-bold tracking-tight"
+              style={{ ...headingStyle, color: GOLD }}
+            >
+              GenoMatch
+            </p>
+          </div>
           <div
             className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm leading-relaxed"
             style={{ color: SAGE }}
