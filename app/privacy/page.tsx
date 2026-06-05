@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
 
       <h2 style={{ color: '#0D2818', marginTop: 32 }}>16. Contact Us</h2>
       <p>GenoMatch Ltd<br />Email: hello@genomatch.app<br />Website: genomatch.app<br />RC No. 9236521</p>
-      <p>For UK and EU users, you have the right to lodge a complaint with your local data protection authority.</p>
+      <p>Regardless of where you are in the world, you have the right to lodge a complaint with your local data protection authority if you believe we have not handled your data correctly. For UK and EU users this includes the ICO and relevant EU supervisory authorities.</p>
 
       <p style={{ marginTop: 48, color: '#666', fontSize: 14 }}>© 2026 GenoMatch Ltd. All rights reserved.</p>
     </main>
