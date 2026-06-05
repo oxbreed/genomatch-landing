@@ -5,6 +5,7 @@ import { FormEvent, useState } from "react";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const FOREST = "#0D2818";
+const FOREST_BG = "#1A3D28";
 const LINEN = "#F5EFE6";
 const GOLD = "#D4A843";
 const SAGE = "#8FAF95";
@@ -108,6 +109,54 @@ function WaitlistForm({ id }: { id?: string }) {
   );
 }
 
+function BondMarkGraphic({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 120 120"
+      fill="none"
+      aria-hidden
+    >
+      <circle cx="42" cy="60" r="28" stroke={GOLD} strokeWidth="2" opacity="0.55" />
+      <circle cx="78" cy="60" r="28" stroke={SAGE} strokeWidth="2" opacity="0.45" />
+      <path
+        d="M42 32c12-8 24-8 36 0M42 88c12 8 24 8 36 0"
+        stroke={GOLD}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        opacity="0.4"
+      />
+      <circle cx="60" cy="60" r="5" fill={GOLD} opacity="0.65" />
+    </svg>
+  );
+}
+
+function HelixAccent({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 200 80"
+      fill="none"
+      aria-hidden
+    >
+      <path
+        d="M0 40c25-22 50 22 75 0s50 22 75 0 50 22 50 0"
+        stroke={GOLD}
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        opacity="0.35"
+      />
+      <path
+        d="M0 52c25-18 50 18 75 0s50 18 75 0 50 18 50 0"
+        stroke={SAGE}
+        strokeWidth="1"
+        strokeLinecap="round"
+        opacity="0.28"
+      />
+    </svg>
+  );
+}
+
 function DnaIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -175,13 +224,15 @@ export default function Home() {
     >
       {/* Navigation */}
       <header
-        className="sticky top-0 z-50 border-b shadow-sm"
+        className="relative sticky top-0 z-50 overflow-hidden border-b shadow-sm"
         style={{
-          backgroundColor: FOREST,
+          backgroundColor: FOREST_BG,
           borderColor: `${GOLD}33`,
         }}
       >
-        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:h-[4.5rem] lg:px-8">
+        <BondMarkGraphic className="pointer-events-none absolute -left-6 top-1/2 h-16 w-16 -translate-y-1/2 opacity-60" />
+        <HelixAccent className="pointer-events-none absolute -right-4 top-2 h-8 w-32 opacity-70" />
+        <nav className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:h-[4.5rem] lg:px-8">
           <a
             href="#"
             className="text-2xl font-bold tracking-tight lg:text-3xl"
@@ -203,8 +254,11 @@ export default function Home() {
         {/* Hero */}
         <section
           className="relative w-full overflow-hidden px-6 pb-16 pt-14 lg:px-8 lg:pb-20 lg:pt-20"
-          style={{ backgroundColor: FOREST }}
+          style={{ backgroundColor: FOREST_BG }}
         >
+          <BondMarkGraphic className="pointer-events-none absolute left-6 top-16 h-28 w-28 opacity-50 lg:left-12 lg:h-36 lg:w-36" />
+          <BondMarkGraphic className="pointer-events-none absolute -right-8 bottom-20 h-32 w-32 rotate-12 opacity-40 lg:right-8" />
+          <HelixAccent className="pointer-events-none absolute left-1/2 top-8 w-48 -translate-x-1/2 opacity-60 lg:w-64" />
           <div
             className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full blur-3xl"
             style={{ backgroundColor: `${GOLD}18` }}
@@ -389,9 +443,12 @@ export default function Home() {
 
         {/* Quote */}
         <section
-          className="px-6 py-20 lg:px-8 lg:py-28"
-          style={{ backgroundColor: FOREST }}
+          className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-28"
+          style={{ backgroundColor: FOREST_BG }}
         >
+          <BondMarkGraphic className="pointer-events-none absolute -left-10 top-1/2 h-40 w-40 -translate-y-1/2 opacity-35" />
+          <BondMarkGraphic className="pointer-events-none absolute -right-10 top-1/2 h-40 w-40 -translate-y-1/2 opacity-35" />
+          <HelixAccent className="pointer-events-none absolute bottom-8 left-1/2 w-56 -translate-x-1/2 opacity-50" />
           <blockquote className="relative mx-auto max-w-4xl text-center">
             <span
               className="pointer-events-none absolute -left-2 -top-6 select-none text-7xl font-bold leading-none opacity-40 sm:-left-4 sm:-top-8 sm:text-8xl"
@@ -446,13 +503,16 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className="border-t px-6 py-12 lg:px-8"
+        className="relative overflow-hidden border-t px-6 py-12 lg:px-8"
         style={{
-          backgroundColor: FOREST,
+          backgroundColor: FOREST_BG,
           borderColor: `${GOLD}22`,
         }}
       >
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center sm:gap-4">
+        <HelixAccent className="pointer-events-none absolute left-1/2 top-4 w-48 -translate-x-1/2 opacity-45" />
+        <BondMarkGraphic className="pointer-events-none absolute bottom-2 left-8 h-14 w-14 opacity-40" />
+        <BondMarkGraphic className="pointer-events-none absolute bottom-2 right-8 h-14 w-14 opacity-40" />
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 text-center sm:gap-4">
           <p
             className="text-lg font-bold tracking-tight"
             style={{ ...headingStyle, color: GOLD }}
