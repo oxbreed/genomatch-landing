@@ -4,6 +4,16 @@ import { FormEvent, useState } from "react";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const FOREST = "#0D2818";
+const LINEN = "#F5EFE6";
+const GOLD = "#D4A843";
+const SAGE = "#8FAF95";
+
+const headingStyle = {
+  fontFamily: 'Georgia, "Times New Roman", serif',
+  letterSpacing: "-0.02em",
+} as const;
+
 function WaitlistForm({ id }: { id?: string }) {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -28,12 +38,22 @@ function WaitlistForm({ id }: { id?: string }) {
     return (
       <div
         role="status"
-        className="rounded-2xl border border-[#074D2E]/15 bg-[#A8D5BA]/25 px-6 py-5 text-center"
+        className="rounded-2xl border px-6 py-5 text-center shadow-md"
+        style={{
+          borderColor: `${GOLD}55`,
+          backgroundColor: "rgba(255,255,255,0.95)",
+        }}
       >
-        <p className="text-lg font-semibold text-[#074D2E]">
+        <p
+          className="text-lg font-bold"
+          style={{ ...headingStyle, color: FOREST }}
+        >
           You&apos;re on the list!
         </p>
-        <p className="mt-1 text-sm text-[#074D2E]/80">
+        <p
+          className="mt-1 text-sm leading-relaxed"
+          style={{ color: `${FOREST}cc` }}
+        >
           We&apos;ll reach out when GenoMatch launches. Thank you for believing
           in love with intention.
         </p>
@@ -63,11 +83,22 @@ function WaitlistForm({ id }: { id?: string }) {
             setEmail(e.target.value);
             if (error) setError("");
           }}
-          className="min-h-12 flex-1 rounded-xl border border-[#074D2E]/20 bg-white px-4 text-[#074D2E] shadow-sm outline-none transition placeholder:text-[#074D2E]/40 focus:border-[#074D2E]/40 focus:ring-2 focus:ring-[#A8D5BA]"
+          className="min-h-12 w-full flex-1 rounded-xl border-2 bg-white px-4 shadow-sm outline-none transition placeholder:text-[#0D2818]/40 focus:ring-2 sm:min-w-0"
+          style={{
+            color: FOREST,
+            borderColor: `${FOREST}22`,
+          }}
+          onFocus={(e) => {
+            e.currentTarget.style.borderColor = GOLD;
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.borderColor = `${FOREST}22`;
+          }}
         />
         <button
           type="submit"
-          className="min-h-12 shrink-0 rounded-xl bg-[#FFE082] px-6 font-semibold text-[#074D2E] shadow-md transition hover:bg-[#FFD54F] hover:shadow-lg active:scale-[0.98]"
+          className="min-h-12 w-full shrink-0 rounded-xl px-6 font-bold shadow-md transition hover:brightness-105 active:scale-[0.98] sm:w-auto"
+          style={{ backgroundColor: GOLD, color: FOREST }}
         >
           Join the Waitlist
         </button>
@@ -138,19 +169,30 @@ function ShieldCheckIcon({ className }: { className?: string }) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FAFAF7] text-[#074D2E]">
+    <div
+      className="min-h-screen"
+      style={{ backgroundColor: LINEN, color: FOREST }}
+    >
       {/* Navigation */}
-      <header className="sticky top-0 z-50 border-b border-[#074D2E]/10 bg-[#FAFAF7]/90 backdrop-blur-md">
-        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
+      <header
+        className="sticky top-0 z-50 border-b shadow-sm"
+        style={{
+          backgroundColor: FOREST,
+          borderColor: `${GOLD}33`,
+        }}
+      >
+        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:h-[4.5rem] lg:px-8">
           <a
             href="#"
-            className="text-xl font-bold tracking-tight text-[#074D2E] lg:text-2xl"
+            className="text-2xl font-bold tracking-tight lg:text-3xl"
+            style={{ ...headingStyle, color: GOLD }}
           >
-            Geno<span className="text-[#074D2E]/70">Match</span>
+            GenoMatch
           </a>
           <a
             href="#waitlist"
-            className="rounded-full bg-[#FFE082] px-5 py-2.5 text-sm font-semibold text-[#074D2E] shadow-sm transition hover:bg-[#FFD54F] hover:shadow-md"
+            className="rounded-full px-5 py-2.5 text-sm font-bold shadow-md transition hover:brightness-105"
+            style={{ backgroundColor: GOLD, color: FOREST }}
           >
             Join Waitlist
           </a>
@@ -159,64 +201,106 @@ export default function Home() {
 
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden px-6 pb-20 pt-16 lg:px-8 lg:pb-28 lg:pt-24">
+        <section
+          className="relative w-full overflow-hidden px-6 pb-16 pt-14 lg:px-8 lg:pb-20 lg:pt-20"
+          style={{ backgroundColor: FOREST }}
+        >
           <div
-            className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#A8D5BA]/30 blur-3xl"
+            className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full blur-3xl"
+            style={{ backgroundColor: `${GOLD}18` }}
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-[#FFE082]/25 blur-3xl"
+            className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full blur-3xl"
+            style={{ backgroundColor: `${SAGE}15` }}
             aria-hidden
           />
 
           <div className="relative mx-auto max-w-4xl text-center">
-            <p className="mb-4 inline-block rounded-full border border-[#074D2E]/15 bg-[#A8D5BA]/20 px-4 py-1 text-xs font-medium uppercase tracking-widest text-[#074D2E]/80">
+            <p
+              className="mb-5 inline-block rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em]"
+              style={{
+                borderColor: `${GOLD}44`,
+                color: GOLD,
+                backgroundColor: `${GOLD}12`,
+              }}
+            >
               Genotype-aware dating
             </p>
-            <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-[#074D2E] sm:text-5xl lg:text-6xl">
+            <h1
+              className="text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl"
+              style={{ ...headingStyle, color: "#FFFFFF" }}
+            >
               The World&apos;s First Genotype-Aware Dating App
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#074D2E]/75 sm:text-xl">
+            <p
+              className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl"
+              style={{ color: SAGE }}
+            >
               Find love without leaving your family&apos;s future to chance.
-              Built for West Africa. Built for forever.
+              Built for anyone who values informed love.
             </p>
 
             <div id="waitlist" className="mx-auto mt-10 scroll-mt-24">
               <WaitlistForm />
             </div>
-            <p className="mt-4 text-sm text-[#074D2E]/60">
+            <p className="mt-4 text-sm leading-relaxed" style={{ color: `${SAGE}cc` }}>
               Be among the first to experience GenoMatch when we launch.
             </p>
           </div>
+
+          <div
+            className="mx-auto mt-14 h-px max-w-4xl"
+            style={{
+              background: `linear-gradient(90deg, transparent, ${GOLD}88, transparent)`,
+            }}
+            aria-hidden
+          />
         </section>
 
-        {/* Problem */}
-        <section className="bg-[#074D2E] px-6 py-20 lg:px-8 lg:py-28">
+        {/* Statistics */}
+        <section
+          className="px-6 py-20 lg:px-8 lg:py-28"
+          style={{ backgroundColor: LINEN }}
+        >
           <div className="mx-auto max-w-6xl">
-            <h2 className="max-w-3xl text-3xl font-bold leading-tight text-[#FAFAF7] sm:text-4xl lg:text-5xl">
+            <h2
+              className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
+              style={{ ...headingStyle, color: FOREST }}
+            >
               One conversation could change everything.
             </h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16 lg:gap-8">
               {[
-                <>
-                  <span className="text-[#FFE082]">1 in 4</span> AS couples risk
-                  having an SS child
-                </>,
-                <>
-                  Sickle cell affects{" "}
-                  <span className="text-[#FFE082]">300,000</span> births annually
-                </>,
-                <>
-                  Most couples find out{" "}
-                  <span className="text-[#FFE082]">too late</span>
-                </>,
-              ].map((content, i) => (
+                {
+                  stat: "1 in 4",
+                  label: "AS couples risk having SS child",
+                },
+                {
+                  stat: "300,000",
+                  label: "Sickle cell affects births annually",
+                },
+                {
+                  stat: "too late",
+                  label: "Most couples find out",
+                },
+              ].map(({ stat, label }) => (
                 <article
-                  key={i}
-                  className="rounded-2xl border border-[#A8D5BA]/25 bg-[#074D2E] p-8 shadow-lg ring-1 ring-[#FAFAF7]/5 transition hover:border-[#A8D5BA]/50"
+                  key={stat}
+                  className="rounded-2xl border-l-4 bg-white p-8 shadow-lg transition hover:shadow-xl"
+                  style={{ borderLeftColor: GOLD }}
                 >
-                  <p className="text-xl font-semibold leading-snug text-[#FAFAF7] lg:text-2xl">
-                    {content}
+                  <p
+                    className="text-3xl font-bold lg:text-4xl"
+                    style={{ ...headingStyle, color: GOLD }}
+                  >
+                    {stat}
+                  </p>
+                  <p
+                    className="mt-3 text-base font-semibold leading-relaxed lg:text-lg"
+                    style={{ color: FOREST }}
+                  >
+                    {label}
                   </p>
                 </article>
               ))}
@@ -225,85 +309,132 @@ export default function Home() {
         </section>
 
         {/* How it works */}
-        <section className="px-6 py-20 lg:px-8 lg:py-28">
+        <section className="bg-white px-6 py-20 lg:px-8 lg:py-28">
           <div className="mx-auto max-w-6xl">
             <div className="text-center">
-              <h2 className="text-3xl font-bold text-[#074D2E] sm:text-4xl">
+              <h2
+                className="text-3xl font-bold sm:text-4xl"
+                style={{ ...headingStyle, color: FOREST }}
+              >
                 How it works
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-[#074D2E]/70">
+              <p
+                className="mx-auto mt-4 max-w-xl leading-relaxed"
+                style={{ color: `${FOREST}b3` }}
+              >
                 Three simple steps to match with clarity, compassion, and
                 confidence.
               </p>
             </div>
 
-            <ol className="mt-14 grid gap-10 sm:grid-cols-3 lg:mt-20 lg:gap-12">
-              {[
-                {
-                  step: "01",
-                  title: "Enter your genotype",
-                  body: "Share your sickle cell status securely. Your data stays private and in your control.",
-                  Icon: DnaIcon,
-                },
-                {
-                  step: "02",
-                  title: "Discover compatible matches",
-                  body: "Meet people aligned with your values and your genetic compatibility—before feelings run deep.",
-                  Icon: SearchHeartIcon,
-                },
-                {
-                  step: "03",
-                  title: "Connect with confidence",
-                  body: "Start conversations knowing you've already addressed what matters for your future family.",
-                  Icon: ShieldCheckIcon,
-                },
-              ].map(({ step, title, body, Icon }) => (
-                <li
-                  key={step}
-                  className="group relative rounded-2xl border border-[#074D2E]/10 bg-white p-8 shadow-sm transition hover:border-[#A8D5BA] hover:shadow-md"
-                >
-                  <span className="text-xs font-semibold uppercase tracking-widest text-[#074D2E]/40">
-                    Step {step}
-                  </span>
-                  <div className="mt-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#A8D5BA]/30 text-[#074D2E] transition group-hover:bg-[#FFE082]/50">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold text-[#074D2E]">
-                    {title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#074D2E]/70">
-                    {body}
-                  </p>
-                </li>
-              ))}
-            </ol>
+            <div className="relative mt-14 lg:mt-20">
+              <div
+                className="pointer-events-none absolute left-[16.67%] right-[16.67%] top-7 hidden h-0.5 sm:block"
+                style={{ backgroundColor: `${GOLD}55` }}
+                aria-hidden
+              />
+
+              <ol className="grid gap-10 sm:grid-cols-3 lg:gap-12">
+                {[
+                  {
+                    step: "01",
+                    title: "Enter your genotype",
+                    body: "Share your sickle cell status securely. Your data stays private and in your control.",
+                    Icon: DnaIcon,
+                  },
+                  {
+                    step: "02",
+                    title: "Discover compatible matches",
+                    body: "Meet people aligned with your values and your genetic compatibility—before feelings run deep.",
+                    Icon: SearchHeartIcon,
+                  },
+                  {
+                    step: "03",
+                    title: "Connect with confidence",
+                    body: "Start conversations knowing you've already addressed what matters for your future family.",
+                    Icon: ShieldCheckIcon,
+                  },
+                ].map(({ step, title, body, Icon }) => (
+                  <li key={step} className="relative flex flex-col items-center text-center">
+                    <div
+                      className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-sm font-bold shadow-md"
+                      style={{ backgroundColor: GOLD, color: FOREST }}
+                    >
+                      {step}
+                    </div>
+                    <div
+                      className="mt-6 flex h-12 w-12 items-center justify-center rounded-xl"
+                      style={{ backgroundColor: `${GOLD}18`, color: FOREST }}
+                    >
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3
+                      className="mt-5 text-xl font-bold"
+                      style={{ ...headingStyle, color: FOREST }}
+                    >
+                      {title}
+                    </h3>
+                    <p
+                      className="mt-2 max-w-xs text-sm leading-relaxed"
+                      style={{ color: `${FOREST}99` }}
+                    >
+                      {body}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         </section>
 
-        {/* Testimonial */}
-        <section className="border-y border-[#074D2E]/10 bg-[#FAFAF7] px-6 py-20 lg:px-8 lg:py-28">
-          <blockquote className="mx-auto max-w-4xl text-center">
-            <div
-              className="mx-auto mb-8 h-1 w-16 rounded-full bg-[#FFE082]"
+        {/* Quote */}
+        <section
+          className="px-6 py-20 lg:px-8 lg:py-28"
+          style={{ backgroundColor: FOREST }}
+        >
+          <blockquote className="relative mx-auto max-w-4xl text-center">
+            <span
+              className="pointer-events-none absolute -left-2 -top-6 select-none text-7xl font-bold leading-none opacity-40 sm:-left-4 sm:-top-8 sm:text-8xl"
+              style={{ ...headingStyle, color: GOLD }}
               aria-hidden
-            />
-            <p className="text-2xl font-medium leading-snug text-[#074D2E] sm:text-3xl lg:text-4xl lg:leading-tight">
-              &ldquo;Every major dating app optimises for attraction.{" "}
-              <span className="font-semibold text-[#074D2E] underline decoration-[#FFE082] decoration-4 underline-offset-4">
+            >
+              &ldquo;
+            </span>
+            <p
+              className="relative text-2xl font-medium italic leading-snug sm:text-3xl lg:text-4xl lg:leading-tight"
+              style={{ ...headingStyle, color: "#FFFFFF" }}
+            >
+              Every major dating app optimises for attraction.{" "}
+              <span style={{ color: GOLD, fontStyle: "normal", fontWeight: 700 }}>
                 GenoMatch optimises for outcomes.
               </span>
-              &rdquo;
             </p>
+            <span
+              className="pointer-events-none absolute -bottom-10 -right-2 select-none text-7xl font-bold leading-none opacity-40 sm:-bottom-12 sm:-right-4 sm:text-8xl"
+              style={{ ...headingStyle, color: GOLD }}
+              aria-hidden
+            >
+              &rdquo;
+            </span>
           </blockquote>
         </section>
 
-        {/* Footer CTA strip */}
-        <section className="bg-[#A8D5BA]/20 px-6 py-16 lg:px-8">
+        {/* Second CTA */}
+        <section
+          className="px-6 py-16 lg:px-8 lg:py-20"
+          style={{ backgroundColor: LINEN }}
+        >
           <div className="mx-auto max-w-xl text-center">
-            <h2 className="text-2xl font-bold text-[#074D2E]">
+            <h2
+              className="text-2xl font-bold sm:text-3xl"
+              style={{ ...headingStyle, color: FOREST }}
+            >
               Ready when you are.
             </h2>
-            <p className="mt-2 text-[#074D2E]/70">
+            <p
+              className="mt-2 leading-relaxed"
+              style={{ color: `${FOREST}b3` }}
+            >
               Join the waitlist and be first in line for launch.
             </p>
             <div className="mt-8 flex justify-center">
@@ -314,27 +445,46 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[#074D2E]/10 bg-[#074D2E] px-6 py-12 text-[#FAFAF7] lg:px-8">
+      <footer
+        className="border-t px-6 py-12 lg:px-8"
+        style={{
+          backgroundColor: FOREST,
+          borderColor: `${GOLD}22`,
+        }}
+      >
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center sm:gap-4">
-          <p className="text-lg font-semibold tracking-tight">GenoMatch</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-[#A8D5BA]">
+          <p
+            className="text-lg font-bold tracking-tight"
+            style={{ ...headingStyle, color: GOLD }}
+          >
+            GenoMatch
+          </p>
+          <div
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm leading-relaxed"
+            style={{ color: SAGE }}
+          >
             <a
               href="mailto:hello@genomatch.app"
-              className="transition hover:text-[#FFE082]"
+              className="font-semibold transition hover:brightness-110"
+              style={{ color: GOLD }}
             >
               hello@genomatch.app
             </a>
-            <span className="hidden text-[#A8D5BA]/50 sm:inline" aria-hidden>
+            <span className="hidden opacity-50 sm:inline" aria-hidden>
               ·
             </span>
             <a
               href="https://genomatch.app"
-              className="transition hover:text-[#FFE082]"
+              className="transition hover:brightness-110"
+              style={{ color: SAGE }}
             >
               genomatch.app
             </a>
           </div>
-          <p className="text-sm text-[#A8D5BA]/90">
+          <p
+            className="text-sm font-semibold tracking-wide"
+            style={{ color: GOLD }}
+          >
             Connecting Hearts. Aligning Genes.
           </p>
         </div>
