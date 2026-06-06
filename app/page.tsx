@@ -705,6 +705,26 @@ export default function Home() {
               genomatch.app
             </a>
           </div>
+          <a
+            href="https://www.instagram.com/genomatch1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 text-sm leading-relaxed text-[#8FAF95] transition-colors hover:text-[#D4A843]"
+          >
+            <svg
+              className="h-4 w-4 shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              aria-hidden
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+            Follow us on Instagram
+          </a>
           <p
             className="text-sm font-semibold tracking-wide"
             style={{ color: GOLD }}
