@@ -229,6 +229,11 @@ export const metadata: Metadata = {
   },
   category: "dating",
   applicationName: "GenoMatch",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   referrer: "origin-when-cross-origin",
   verification: {
     google: "add-your-google-verification-code-here",
