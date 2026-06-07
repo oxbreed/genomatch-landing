@@ -847,6 +847,153 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FAQ Section - AEO */}
+        <section style={{ background: "#F5EFE6", padding: "80px 24px" }}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "What is GenoMatch?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "GenoMatch is the world's first genotype-aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interest compatibility, helping couples make informed decisions about their future family health.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How does genotype matching work on GenoMatch?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Users declare their genotype (AA, AS, SS, or AC) during registration. GenoMatch calculates a compatibility score based on the genetic risk of sickle cell disease in potential children. For example, two AS carriers have a 1 in 4 chance of having an SS child, so GenoMatch factors this into match rankings to help couples have this important conversation early.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Is GenoMatch available in Nigeria?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. GenoMatch is primarily built for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada. The app is currently available on iOS and Android.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What genotypes does GenoMatch support?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "GenoMatch supports all major genotypes including AA (Double Healthy), AS (Carrier), SS (Sickle Cell), and AC (AC Carrier). The app calculates compatibility scores between all genotype combinations and shows the sickle cell risk level for each pairing.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Is my genotype data safe on GenoMatch?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. GenoMatch treats genotype information as sensitive health data. It is encrypted, never sold to third parties, and used solely for compatibility matching within the app. GenoMatch is compliant with Nigeria's NDPA 2023 data protection law.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What makes GenoMatch different from other dating apps?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "GenoMatch is the only dating app in the world that incorporates genotype compatibility into its matching algorithm. While other apps like Tinder, Bumble, and Hinge match on attraction and interests alone, GenoMatch adds a genetic compatibility layer that is especially important in West Africa where sickle cell disease affects millions of families.",
+                    },
+                  },
+                ],
+              }),
+            }}
+          />
+          <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+            <p
+              style={{
+                color: "#D4A843",
+                fontSize: "11px",
+                letterSpacing: "3px",
+                textAlign: "center",
+                marginBottom: "12px",
+                fontFamily: "Arial, sans-serif",
+              }}
+            >
+              FREQUENTLY ASKED QUESTIONS
+            </p>
+            <h2
+              style={{
+                fontFamily: "Georgia, serif",
+                fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+                fontWeight: 700,
+                color: "#163522",
+                textAlign: "center",
+                marginBottom: "48px",
+              }}
+            >
+              Everything you need to know
+            </h2>
+            {[
+              {
+                q: "What is GenoMatch?",
+                a: "GenoMatch is the world's first genotype-aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interests.",
+              },
+              {
+                q: "How does genotype matching work?",
+                a: "You declare your genotype during registration. GenoMatch calculates a compatibility score based on the genetic risk for each pairing. Two AS carriers have a 1 in 4 chance of an SS child — GenoMatch ensures you know this before feelings run deep.",
+              },
+              {
+                q: "Is GenoMatch available in Nigeria?",
+                a: "Yes. GenoMatch is built primarily for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada.",
+              },
+              {
+                q: "Is my genotype data safe?",
+                a: "Absolutely. Your genotype is treated as sensitive health data — encrypted, never sold, and used only for compatibility matching. GenoMatch is compliant with Nigeria's NDPA 2023 data protection law.",
+              },
+              {
+                q: "What makes GenoMatch different from Tinder or Bumble?",
+                a: "GenoMatch is the only dating app in the world that incorporates genetic compatibility into matching. Other apps optimise for attraction. GenoMatch optimises for outcomes — helping you build a love story that protects your future family.",
+              },
+            ].map((item, i) => (
+              <details
+                key={i}
+                style={{
+                  borderBottom: "1px solid rgba(22,53,34,0.1)",
+                  padding: "20px 0",
+                  cursor: "pointer",
+                }}
+              >
+                <summary
+                  style={{
+                    fontFamily: "Georgia, serif",
+                    fontSize: "18px",
+                    fontWeight: 700,
+                    color: "#163522",
+                    listStyle: "none",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  {item.q}
+                  <span style={{ color: "#D4A843", fontSize: "24px", fontWeight: 300 }}>+</span>
+                </summary>
+                <p
+                  style={{
+                    fontFamily: "Arial, sans-serif",
+                    fontSize: "16px",
+                    color: "#7A9488",
+                    lineHeight: 1.7,
+                    marginTop: "12px",
+                  }}
+                >
+                  {item.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
         <section
           className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-24"
           style={{ background: forestDepth }}
