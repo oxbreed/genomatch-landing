@@ -1,6 +1,7 @@
 "use client";
 
 import { CSSProperties, FormEvent, ReactNode, useId, useState } from "react";
+import { joinWaitlist } from "./actions";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -417,6 +418,7 @@ function AmbientBackdrop() {
 function WaitlistForm({ inputId }: { inputId: string }) {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -435,17 +437,13 @@ function WaitlistForm({ inputId }: { inputId: string }) {
     setError("");
     setLoading(true);
     try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: trimmed }),
-      });
-      const data = (await res.json().catch(() => ({}))) as { error?: string };
-      if (!res.ok) {
-        setError(data.error ?? "Something went wrong. Please try again.");
-        return;
+      const result = await joinWaitlist(trimmed);
+      if (result.success) {
+        setMessage(result.message);
+        setSubmitted(true);
+      } else {
+        setError(result.message);
       }
-      setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try again.");
     } finally {
@@ -469,7 +467,7 @@ function WaitlistForm({ inputId }: { inputId: string }) {
           </svg>
         </div>
         <p className="text-lg font-semibold" style={{ ...headingStyle, color: FOREST }}>
-          You&apos;re on the list!
+          {message}
         </p>
         <p className="mt-2 text-sm font-light leading-relaxed" style={{ color: TEXT_SOFT }}>
           We&apos;ll reach out when GenoMatch launches. Thank you for believing in love with intention.
