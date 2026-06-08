@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { submitPartnerEnquiry } from '../actions'
 
 const FOREST = '#163522'
@@ -19,7 +19,7 @@ export default function Partners() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const trimmedOrg = org.trim()
     const trimmedEmail = email.trim()
@@ -145,7 +145,7 @@ export default function Partners() {
               <p style={{ color: SAGE, fontSize: '16px', fontFamily: 'Arial, sans-serif' }}>We'll be in touch within 48 hours.</p>
             </div>
           ) : (
-            <div style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: `1px solid rgba(212,168,67,0.3)` }}>
+            <form onSubmit={handleSubmit} style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: `1px solid rgba(212,168,67,0.3)` }}>
               <div style={{ marginBottom: '20px', textAlign: 'left' }}>
                 <label style={{ color: FOREST, fontSize: '14px', fontWeight: 700, fontFamily: 'Arial, sans-serif', display: 'block', marginBottom: '8px' }}>Organisation Name</label>
                 <input
@@ -182,13 +182,13 @@ export default function Partners() {
                 </p>
               ) : null}
               <button
-                onClick={handleSubmit}
+                type="submit"
                 disabled={loading}
                 style={{ width: '100%', background: GOLD, color: FOREST_BG, padding: '16px', borderRadius: '8px', fontWeight: 700, fontSize: '16px', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, fontFamily: 'Arial, sans-serif' }}
               >
                 {loading ? 'Sending...' : 'Send Enquiry'}
               </button>
-            </div>
+            </form>
           )}
           <p style={{ color: SAGE, fontSize: '14px', marginTop: '24px', fontFamily: 'Arial, sans-serif' }}>
             Or email us directly at <a href="mailto:hello@genomatch.app" style={{ color: GOLD }}>hello@genomatch.app</a>
