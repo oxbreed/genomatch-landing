@@ -639,6 +639,9 @@ export default function Home() {
             <a href="/partners" className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
               For Partners
             </a>
+            <a href="/blog" className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
+              Blog
+            </a>
             <a href="#waitlist" className="btn-premium rounded-full px-5 py-2.5 text-sm font-semibold" style={{ color: FOREST }}>
               Join Waitlist
             </a>

@@ -1,0 +1,93 @@
+export const metadata = {
+  title: 'What Genotype Should I Check Before Marriage in Nigeria? — GenoMatch',
+  description: 'Before you say yes, there is one conversation that could change everything. Here is what every Nigerian needs to know about genotype compatibility before marriage.',
+}
+
+const FOREST = '#163522'
+const FOREST_BG = '#0D2818'
+const LINEN = '#F5EFE6'
+const GOLD = '#D4A843'
+const SAGE = '#8FAF95'
+const WHITE = '#FFFFFF'
+
+export default function Article1() {
+  return (
+    <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+      <header style={{ background: FOREST_BG, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
+        <a href="/" style={{ textDecoration: 'none' }}>
+          <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
+        </a>
+        <a href="/#waitlist" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: 'Arial, sans-serif' }}>Join Waitlist</a>
+      </header>
+
+      <article style={{ maxWidth: '720px', margin: '0 auto', padding: '80px 24px' }}>
+        <a href="/blog" style={{ color: GOLD, fontSize: '14px', fontFamily: 'Arial, sans-serif', textDecoration: 'none', display: 'block', marginBottom: '40px' }}>← Back to Blog</a>
+        <span style={{ background: LINEN, color: FOREST, fontSize: '11px', letterSpacing: '1px', padding: '4px 12px', borderRadius: '99px', fontFamily: 'Arial, sans-serif', fontWeight: 700, border: `1px solid rgba(22,53,34,0.15)` }}>Genotype Education</span>
+        <h1 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', fontWeight: 700, margin: '24px 0 16px', lineHeight: 1.2 }}>
+          What Genotype Should I Check Before Marriage in Nigeria?
+        </h1>
+        <p style={{ color: SAGE, fontSize: '14px', fontFamily: 'Arial, sans-serif', marginBottom: '48px' }}>June 2026 · 5 min read · GenoMatch</p>
+
+        <div style={{ color: '#2A4A35', fontSize: '18px', lineHeight: 1.9, fontFamily: 'Arial, sans-serif' }}>
+          <p style={{ marginBottom: '24px' }}>There is a conversation that millions of Nigerian couples are having too late. It happens after the introduction, after the proposal, sometimes after the wedding. And when it goes wrong, it changes everything.</p>
+          <p style={{ marginBottom: '24px' }}>The conversation is about genotype.</p>
+          <p style={{ marginBottom: '24px' }}>In Nigeria, genotype awareness is not just a medical topic — it is a family matter, a cultural responsibility, and increasingly, a dealbreaker. Yet most people still do not know exactly what to check, why it matters, or when to have the conversation.</p>
+          <p style={{ marginBottom: '24px' }}>Here is everything you need to know.</p>
+
+          <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What is a genotype?</h2>
+          <p style={{ marginBottom: '24px' }}>Your genotype is the genetic code that determines whether you carry the sickle cell trait. It is inherited from your parents — one letter from your mother, one from your father.</p>
+          <p style={{ marginBottom: '24px' }}>The four main genotypes in Nigeria are:</p>
+          <ul style={{ marginBottom: '24px', paddingLeft: '24px' }}>
+            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>AA</strong> — Double healthy. You do not carry the sickle cell trait.</li>
+            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>AS</strong> — Carrier. You carry one sickle cell gene but are generally healthy yourself.</li>
+            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>SS</strong> — Sickle cell disease. You have two sickle cell genes and will experience the condition.</li>
+            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>AC</strong> — AC carrier. You carry one haemoglobin C gene, a related but different variant.</li>
+          </ul>
+
+          <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>Why does it matter before marriage?</h2>
+          <p style={{ marginBottom: '24px' }}>When two AS carriers have children together, each pregnancy carries a 25% chance of producing a child with SS — sickle cell disease. That is 1 in 4. In a family of four children, statistically one will be affected.</p>
+          <p style={{ marginBottom: '24px' }}>Sickle cell disease is a lifelong, painful, and life-limiting condition. Children with SS face recurrent pain crises, organ damage, frequent hospitalisations, and a significantly reduced life expectancy without intensive medical care.</p>
+          <p style={{ marginBottom: '24px' }}>This is not about blame. AS carriers are healthy, successful, wonderful people. But when two AS carriers build a family together without knowing their compatibility, they are making a life-altering decision without all the information.</p>
+
+          <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>Which genotype combinations are compatible?</h2>
+          <div style={{ background: WHITE, borderRadius: '16px', padding: '32px', marginBottom: '32px', border: `1px solid rgba(212,168,67,0.2)` }}>
+            {[
+              { pairing: 'AA × AA', result: 'All children AA', risk: 'No risk', safe: true },
+              { pairing: 'AA × AS', result: 'Children AA or AS', risk: 'No sickle cell risk', safe: true },
+              { pairing: 'AA × SS', result: 'All children AS', risk: 'Low risk', safe: true },
+              { pairing: 'AS × AS', result: 'AA, AS, or SS', risk: '25% chance of SS child', safe: false },
+              { pairing: 'AS × SS', result: 'AS or SS', risk: '50% chance of SS child', safe: false },
+              { pairing: 'SS × SS', result: 'All children SS', risk: 'All children affected', safe: false },
+            ].map((row, i) => (
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: i < 5 ? '1px solid rgba(22,53,34,0.08)' : 'none', flexWrap: 'wrap', gap: '8px' }}>
+                <strong style={{ color: FOREST, fontFamily: 'Georgia, serif', minWidth: '100px' }}>{row.pairing}</strong>
+                <span style={{ color: '#4A6355', fontSize: '14px', flex: 1, textAlign: 'center' }}>{row.result}</span>
+                <span style={{ color: row.safe ? '#2A6A35' : '#C0392B', fontSize: '13px', fontWeight: 700, background: row.safe ? '#EDF3EE' : '#FDECEA', padding: '4px 12px', borderRadius: '99px' }}>{row.risk}</span>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>When should you check?</h2>
+          <p style={{ marginBottom: '24px' }}>The honest answer: before you fall in love. Not after the introduction. Not after the proposal. Before emotions make the conversation harder than it needs to be.</p>
+          <p style={{ marginBottom: '24px' }}>This is exactly why GenoMatch exists. We built a dating platform where genotype compatibility is part of the matching process from day one — so the conversation happens naturally, early, and without drama.</p>
+          <p style={{ marginBottom: '24px' }}>If you are already in a relationship and have not checked, do it now. A simple blood test at any hospital or laboratory in Nigeria will give you your result within days.</p>
+
+          <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>The bottom line</h2>
+          <p style={{ marginBottom: '24px' }}>Checking your genotype before marriage is not unromantic. It is one of the most loving things you can do for your future children. It is the conversation that changes everything — when you have it at the right time.</p>
+          <p style={{ marginBottom: '48px' }}>GenoMatch was built to make that conversation normal, natural, and early. Join our waitlist and be among the first to experience a new way to find love — one that protects your family from day one.</p>
+
+          <div style={{ background: FOREST, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
+            <h3 style={{ color: WHITE, fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>Ready to date with your future in mind?</h3>
+            <p style={{ color: SAGE, marginBottom: '24px', fontFamily: 'Arial, sans-serif' }}>Join thousands of intentional singles on the GenoMatch waitlist.</p>
+            <a href="/#waitlist" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: 'Arial, sans-serif' }}>Join the Waitlist</a>
+          </div>
+        </div>
+      </article>
+
+      <footer style={{ background: FOREST_BG, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(212,168,67,0.15)' }}>
+        <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
+        <p style={{ color: 'rgba(143,175,149,0.5)', fontSize: '12px', fontFamily: 'Arial, sans-serif' }}>© 2025 GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
+      </footer>
+    </div>
+  )
+}

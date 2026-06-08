@@ -21,6 +21,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://genomatch.app/blog",
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: "https://genomatch.app/blog/what-genotype-should-i-check-before-marriage",
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: "https://genomatch.app/blog/can-as-marry-as",
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: "https://genomatch.app/blog/sickle-cell-disease-nigeria-facts",
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
       url: "https://genomatch.app/privacy",
       lastModified: new Date(),
       changeFrequency: "monthly",
