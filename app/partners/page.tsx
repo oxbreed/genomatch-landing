@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { submitPartnerEnquiry } from '../actions'
 
 const FOREST = '#163522'
 const FOREST_BG = '#0D2818'
@@ -8,16 +9,53 @@ const LINEN = '#F5EFE6'
 const GOLD = '#D4A843'
 const SAGE = '#8FAF95'
 const WHITE = '#FFFFFF'
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default function Partners() {
   const [submitted, setSubmitted] = useState(false)
   const [email, setEmail] = useState('')
   const [org, setOrg] = useState('')
   const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    const trimmedOrg = org.trim()
+    const trimmedEmail = email.trim()
+    const trimmedMessage = message.trim()
+
+    if (!trimmedOrg) {
+      setError('Please enter your organisation name.')
+      return
+    }
+    if (!trimmedEmail) {
+      setError('Please enter your email address.')
+      return
+    }
+    if (!EMAIL_RE.test(trimmedEmail)) {
+      setError('Please enter a valid email address.')
+      return
+    }
+    if (!trimmedMessage) {
+      setError('Please tell us how you would like to partner.')
+      return
+    }
+
+    setError('')
+    setLoading(true)
+    try {
+      const result = await submitPartnerEnquiry(trimmedOrg, trimmedEmail, trimmedMessage)
+      if (result.success) {
+        setSubmitted(true)
+      } else {
+        setError(result.message)
+      }
+    } catch {
+      setError('Something went wrong. Please try again or email us directly at hello@genomatch.app')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -138,11 +176,17 @@ export default function Partners() {
                   style={{ width: '100%', padding: '14px', border: '1px solid #E8E0D5', borderRadius: '8px', fontSize: '16px', fontFamily: 'Arial, sans-serif', outline: 'none', resize: 'vertical', boxSizing: 'border-box' }}
                 />
               </div>
+              {error ? (
+                <p style={{ color: '#C0392B', fontSize: '14px', fontFamily: 'Arial, sans-serif', marginBottom: '16px', textAlign: 'left' }} role="alert">
+                  {error}
+                </p>
+              ) : null}
               <button
                 onClick={handleSubmit}
-                style={{ width: '100%', background: GOLD, color: FOREST_BG, padding: '16px', borderRadius: '8px', fontWeight: 700, fontSize: '16px', border: 'none', cursor: 'pointer', fontFamily: 'Arial, sans-serif' }}
+                disabled={loading}
+                style={{ width: '100%', background: GOLD, color: FOREST_BG, padding: '16px', borderRadius: '8px', fontWeight: 700, fontSize: '16px', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, fontFamily: 'Arial, sans-serif' }}
               >
-                Send Enquiry
+                {loading ? 'Sending...' : 'Send Enquiry'}
               </button>
             </div>
           )}
