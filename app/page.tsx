@@ -633,6 +633,12 @@ export default function Home() {
             <a href="#how-it-works" className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
               How it works
             </a>
+            <a href="/mission" className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
+              Our Mission
+            </a>
+            <a href="/partners" className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
+              For Partners
+            </a>
             <a href="#waitlist" className="btn-premium rounded-full px-5 py-2.5 text-sm font-semibold" style={{ color: FOREST }}>
               Join Waitlist
             </a>
