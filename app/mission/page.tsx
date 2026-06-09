@@ -123,10 +123,10 @@ export default function Mission() {
                 GenoMatch is personal. Olusegun grew up in a family touched by sickle cell, and he saw first-hand how much pain earlier knowledge might have spared the people he loves. That experience is the reason GenoMatch exists: to move the genotype conversation to the very beginning of a relationship, where it can protect families instead of arriving too late.
               </p>
               <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: 'Arial, sans-serif' }}>
-                Olusegun is a builder of humanity-focused ideas. Alongside GenoMatch he runs a brand and business consultancy that helps founders turn early-stage ideas into operating companies, and his background spans education, communication, and international relations. His commitment to community health goes back to his school years, when he led the Health and Life Planning Club, an Action Health Incorporated initiative running across local government areas in Lagos.
+                Founder of GenoMatch Ltd, Olusegun builds technology to solve deeply human problems across West Africa. He also runs a brand and business consultancy that helps founders turn early-stage ideas into operating companies, and his background spans education, communication, and international relations. His work in community health began in his school years, when he led the Health and Life Planning Club, an Action Health Incorporated initiative running across local government areas in Lagos.
               </p>
               <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, fontFamily: 'Arial, sans-serif' }}>
-                GenoMatch brings those threads together: care, technology, and a belief that better information leads to healthier families.
+                GenoMatch brings these threads together: care, technology, and a belief that better information leads to healthier families.
               </p>
             </div>
           </div>
