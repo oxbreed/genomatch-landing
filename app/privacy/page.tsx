@@ -55,6 +55,9 @@ export default function PrivacyPolicy() {
       <p>GenoMatch Ltd<br />Email: hello@genomatch.app<br />Website: genomatch.app<br />RC No. 9236521</p>
       <p>Regardless of where you are in the world, you have the right to lodge a complaint with your local data protection authority if you believe we have not handled your data correctly. For UK and EU users this includes the ICO and relevant EU supervisory authorities.</p>
 
+      <h2 style={{ color: '#0D2818', marginTop: 32 }}>Data Protection Contact</h2>
+      <p>GenoMatch Ltd is the data controller responsible for your personal data. For questions, requests, or concerns about how your data is handled, or to exercise your data protection rights, contact our Data Protection Officer at <a href="mailto:privacy@genomatch.app">privacy@genomatch.app</a>.</p>
+
       <p style={{ marginTop: 48, color: '#666', fontSize: 14 }}>© 2026 GenoMatch Ltd. All rights reserved.</p>
     </main>
   );
