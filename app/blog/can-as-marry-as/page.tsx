@@ -31,14 +31,14 @@ export default function Article2() {
         <div style={{ color: '#2A4A35', fontSize: '18px', lineHeight: 1.9, fontFamily: 'Arial, sans-serif' }}>
           <p style={{ marginBottom: '24px' }}>It is one of the most searched questions in Nigeria. Every day, thousands of people type it into Google, WhatsApp their friends about it, or ask their doctors quietly after a blood test result comes back AS.</p>
           <p style={{ marginBottom: '24px' }}>"Can AS marry AS?"</p>
-          <p style={{ marginBottom: '24px' }}>The answer is not simple. And anyone who gives you a one-word response — yes or no — is not giving you the full picture.</p>
+          <p style={{ marginBottom: '24px' }}>The answer is not simple. And anyone who gives you a one-word response, yes or no, is not giving you the full picture.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What does AS mean?</h2>
-          <p style={{ marginBottom: '24px' }}>AS means you are a sickle cell carrier. You have one normal haemoglobin gene (A) and one sickle cell gene (S). People with AS genotype are generally healthy — they do not have sickle cell disease. But they carry the gene and can pass it to their children.</p>
-          <p style={{ marginBottom: '24px' }}>In Nigeria, approximately 25% of the population carries the AS genotype. That means 1 in 4 Nigerians is a carrier — making this conversation extraordinarily common and extraordinarily important.</p>
+          <p style={{ marginBottom: '24px' }}>AS means you are a sickle cell carrier. You have one normal haemoglobin gene (A) and one sickle cell gene (S). People with AS genotype are generally healthy. They do not have sickle cell disease. But they carry the gene and can pass it to their children.</p>
+          <p style={{ marginBottom: '24px' }}>In Nigeria, approximately 25% of the population carries the AS genotype. That means 1 in 4 Nigerians is a carrier, making this conversation extraordinarily common and extraordinarily important.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What happens when AS meets AS?</h2>
-          <p style={{ marginBottom: '24px' }}>When two AS carriers have children, each pregnancy has four possible outcomes — each with equal probability:</p>
+          <p style={{ marginBottom: '24px' }}>When two AS carriers have children, each pregnancy has four possible outcomes, each with equal probability:</p>
           <div style={{ background: WHITE, borderRadius: '16px', padding: '32px', marginBottom: '32px', border: `1px solid rgba(212,168,67,0.2)` }}>
             {[
               { outcome: 'AA', prob: '25%', desc: 'Child is double healthy, does not carry the trait' },
@@ -69,7 +69,7 @@ export default function Article2() {
           <p style={{ marginBottom: '24px' }}>This is not a conversation to have after the wedding. It is a conversation to have before you fall in love.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>Why GenoMatch exists</h2>
-          <p style={{ marginBottom: '24px' }}>GenoMatch was built precisely for this moment — before the feelings run deep, before the families are introduced, before the conversation becomes painful. On GenoMatch, your genotype is part of your profile from day one. Compatibility is calculated before the first message is sent.</p>
+          <p style={{ marginBottom: '24px' }}>GenoMatch was built precisely for this moment, before the feelings run deep, before the families are introduced, before the conversation becomes painful. On GenoMatch, your genotype is part of your profile from day one. Compatibility is calculated before the first message is sent.</p>
           <p style={{ marginBottom: '48px' }}>This does not mean AS cannot match with AS on GenoMatch. It means both people know exactly where they stand before they invest their hearts. The choice remains theirs. The information is simply available when it matters most.</p>
 
           <div style={{ background: FOREST, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>

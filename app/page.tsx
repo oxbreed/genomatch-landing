@@ -607,7 +607,7 @@ export default function Home() {
 
   const steps = [
     { step: "01", title: "Enter your genotype", body: "Share your sickle cell status securely. Your data stays private and in your control." },
-    { step: "02", title: "Discover compatible matches", body: "Meet people aligned with your values and genetic compatibility—before feelings run deep." },
+    { step: "02", title: "Discover compatible matches", body: "Meet people aligned with your values and genetic compatibility, before feelings run deep." },
     { step: "03", title: "Connect with confidence", body: "Start conversations knowing you've addressed what matters for your future family." },
   ];
 
@@ -949,7 +949,7 @@ export default function Home() {
               },
               {
                 q: "How does genotype matching work?",
-                a: "You declare your genotype during registration. GenoMatch calculates a compatibility score based on the genetic risk for each pairing. Two AS carriers have a 1 in 4 chance of an SS child — GenoMatch ensures you know this before feelings run deep.",
+                a: "You declare your genotype during registration. GenoMatch calculates a compatibility score based on the genetic risk for each pairing. Two AS carriers have a 1 in 4 chance of an SS child. GenoMatch ensures you know this before feelings run deep.",
               },
               {
                 q: "Is GenoMatch available in Nigeria?",
@@ -957,11 +957,11 @@ export default function Home() {
               },
               {
                 q: "Is my genotype data safe?",
-                a: "Absolutely. Your genotype is treated as sensitive health data — encrypted, never sold, and used only for compatibility matching. GenoMatch is compliant with Nigeria's NDPA 2023 data protection law.",
+                a: "Absolutely. Your genotype is treated as sensitive health data, encrypted, never sold, and used only for compatibility matching. GenoMatch is compliant with Nigeria's NDPA 2023 data protection law.",
               },
               {
                 q: "What makes GenoMatch different from Tinder or Bumble?",
-                a: "GenoMatch is the only dating app in the world that incorporates genetic compatibility into matching. Other apps optimise for attraction. GenoMatch optimises for outcomes — helping you build a love story that protects your future family.",
+                a: "GenoMatch is the only dating app in the world that incorporates genetic compatibility into matching. Other apps optimise for attraction. GenoMatch optimises for outcomes, helping you build a love story that protects your future family.",
               },
             ].map((item, i) => (
               <details

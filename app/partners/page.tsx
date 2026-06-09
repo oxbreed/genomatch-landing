@@ -93,11 +93,11 @@ export default function Partners() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
             {[
               { title: 'Reach', body: 'GenoMatch targets 350M+ smartphone users across West Africa and the African diaspora in the UK, US, and Canada. Our users are educated, intentional singles actively seeking serious relationships.' },
-              { title: 'Impact', body: 'Every partnership directly contributes to reducing sickle cell disease incidence. This is measurable, reportable public health impact that aligns with SDG 3 — Good Health and Well-Being.' },
+              { title: 'Impact', body: 'Every partnership directly contributes to reducing sickle cell disease incidence. This is measurable, reportable public health impact that aligns with SDG 3, Good Health and Well-Being.' },
               { title: 'First Mover', body: 'GenoMatch is the first and only genotype-aware dating platform in the world. Partnering now positions your organisation at the forefront of a global health-tech movement.' },
-              { title: 'Data & Research', body: 'With user consent, GenoMatch can provide anonymised genotype distribution data across Nigeria and the diaspora — valuable for research, policy, and public health planning.' },
+              { title: 'Data & Research', body: 'With user consent, GenoMatch can provide anonymised genotype distribution data across Nigeria and the diaspora, valuable for research, policy, and public health planning.' },
               { title: 'Community Trust', body: 'Our platform is built on trust. A partnership with GenoMatch signals to millions of Nigerians that your organisation is invested in their health and their future.' },
-              { title: 'Media & Visibility', body: 'GenoMatch is a compelling story — science, love, and African health innovation. Partner organisations benefit from shared media coverage and brand association.' },
+              { title: 'Media & Visibility', body: 'GenoMatch is a compelling story of science, love, and African health innovation. Partner organisations benefit from shared media coverage and brand association.' },
             ].map((item, i) => (
               <div key={i} style={{ background: WHITE, borderRadius: '16px', padding: '32px 24px', borderTop: `3px solid ${GOLD}` }}>
                 <h3 style={{ color: FOREST, fontSize: '18px', fontWeight: 700, marginBottom: '12px' }}>{item.title}</h3>

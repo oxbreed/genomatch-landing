@@ -19,7 +19,7 @@ const posts = [
   {
     slug: 'can-as-marry-as',
     title: 'Can AS Marry AS? The Truth About Sickle Cell Risk',
-    excerpt: 'It is one of the most searched questions in Nigeria. The answer is more nuanced than a simple yes or no — and understanding it could protect your future family.',
+    excerpt: 'It is one of the most searched questions in Nigeria. The answer is more nuanced than a simple yes or no, and understanding it could protect your future family.',
     date: 'June 2026',
     readTime: '6 min read',
     category: 'Sickle Cell Awareness',
@@ -27,7 +27,7 @@ const posts = [
   {
     slug: 'sickle-cell-disease-nigeria-facts',
     title: 'Sickle Cell Disease in Nigeria: The Numbers That Should Shock You',
-    excerpt: 'Nigeria has the highest burden of sickle cell disease in the world. These are the facts every Nigerian needs to know — and what we can do about it.',
+    excerpt: 'Nigeria has the highest burden of sickle cell disease in the world. These are the facts every Nigerian needs to know, and what we can do about it.',
     date: 'June 2026',
     readTime: '4 min read',
     category: 'Public Health',

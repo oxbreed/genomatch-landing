@@ -31,21 +31,21 @@ export default function Article1() {
         <div style={{ color: '#2A4A35', fontSize: '18px', lineHeight: 1.9, fontFamily: 'Arial, sans-serif' }}>
           <p style={{ marginBottom: '24px' }}>There is a conversation that millions of Nigerian couples are having too late. It happens after the introduction, after the proposal, sometimes after the wedding. And when it goes wrong, it changes everything.</p>
           <p style={{ marginBottom: '24px' }}>The conversation is about genotype.</p>
-          <p style={{ marginBottom: '24px' }}>In Nigeria, genotype awareness is not just a medical topic — it is a family matter, a cultural responsibility, and increasingly, a dealbreaker. Yet most people still do not know exactly what to check, why it matters, or when to have the conversation.</p>
+          <p style={{ marginBottom: '24px' }}>In Nigeria, genotype awareness is not just a medical topic. It is a family matter, a cultural responsibility, and increasingly, a dealbreaker. Yet most people still do not know exactly what to check, why it matters, or when to have the conversation.</p>
           <p style={{ marginBottom: '24px' }}>Here is everything you need to know.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What is a genotype?</h2>
-          <p style={{ marginBottom: '24px' }}>Your genotype is the genetic code that determines whether you carry the sickle cell trait. It is inherited from your parents — one letter from your mother, one from your father.</p>
+          <p style={{ marginBottom: '24px' }}>Your genotype is the genetic code that determines whether you carry the sickle cell trait. It is inherited from your parents, one letter from your mother, one from your father.</p>
           <p style={{ marginBottom: '24px' }}>The four main genotypes in Nigeria are:</p>
           <ul style={{ marginBottom: '24px', paddingLeft: '24px' }}>
-            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>AA</strong> — Double healthy. You do not carry the sickle cell trait.</li>
-            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>AS</strong> — Carrier. You carry one sickle cell gene but are generally healthy yourself.</li>
-            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>SS</strong> — Sickle cell disease. You have two sickle cell genes and will experience the condition.</li>
-            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>AC</strong> — AC carrier. You carry one haemoglobin C gene, a related but different variant.</li>
+            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>AA</strong>, double healthy. You do not carry the sickle cell trait.</li>
+            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>AS</strong>, carrier. You carry one sickle cell gene but are generally healthy yourself.</li>
+            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>SS</strong>, sickle cell disease. You have two sickle cell genes and will experience the condition.</li>
+            <li style={{ marginBottom: '12px' }}><strong style={{ color: FOREST }}>AC</strong>, AC carrier. You carry one haemoglobin C gene, a related but different variant.</li>
           </ul>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>Why does it matter before marriage?</h2>
-          <p style={{ marginBottom: '24px' }}>When two AS carriers have children together, each pregnancy carries a 25% chance of producing a child with SS — sickle cell disease. That is 1 in 4. In a family of four children, statistically one will be affected.</p>
+          <p style={{ marginBottom: '24px' }}>When two AS carriers have children together, each pregnancy carries a 25% chance of producing a child with SS, sickle cell disease. That is 1 in 4. In a family of four children, statistically one will be affected.</p>
           <p style={{ marginBottom: '24px' }}>Sickle cell disease is a lifelong, painful, and life-limiting condition. Children with SS face recurrent pain crises, organ damage, frequent hospitalisations, and a significantly reduced life expectancy without intensive medical care.</p>
           <p style={{ marginBottom: '24px' }}>This is not about blame. AS carriers are healthy, successful, wonderful people. But when two AS carriers build a family together without knowing their compatibility, they are making a life-altering decision without all the information.</p>
 
@@ -69,12 +69,12 @@ export default function Article1() {
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>When should you check?</h2>
           <p style={{ marginBottom: '24px' }}>The honest answer: before you fall in love. Not after the introduction. Not after the proposal. Before emotions make the conversation harder than it needs to be.</p>
-          <p style={{ marginBottom: '24px' }}>This is exactly why GenoMatch exists. We built a dating platform where genotype compatibility is part of the matching process from day one — so the conversation happens naturally, early, and without drama.</p>
+          <p style={{ marginBottom: '24px' }}>This is exactly why GenoMatch exists. We built a dating platform where genotype compatibility is part of the matching process from day one, so the conversation happens naturally, early, and without drama.</p>
           <p style={{ marginBottom: '24px' }}>If you are already in a relationship and have not checked, do it now. A simple blood test at any hospital or laboratory in Nigeria will give you your result within days.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>The bottom line</h2>
-          <p style={{ marginBottom: '24px' }}>Checking your genotype before marriage is not unromantic. It is one of the most loving things you can do for your future children. It is the conversation that changes everything — when you have it at the right time.</p>
-          <p style={{ marginBottom: '48px' }}>GenoMatch was built to make that conversation normal, natural, and early. Join our waitlist and be among the first to experience a new way to find love — one that protects your family from day one.</p>
+          <p style={{ marginBottom: '24px' }}>Checking your genotype before marriage is not unromantic. It is one of the most loving things you can do for your future children. It is the conversation that changes everything, when you have it at the right time.</p>
+          <p style={{ marginBottom: '48px' }}>GenoMatch was built to make that conversation normal, natural, and early. Join our waitlist and be among the first to experience a new way to find love, one that protects your family from day one.</p>
 
           <div style={{ background: FOREST, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
             <h3 style={{ color: WHITE, fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>Ready to date with your future in mind?</h3>

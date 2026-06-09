@@ -29,7 +29,7 @@ export default function Article3() {
         <p style={{ color: SAGE, fontSize: '14px', fontFamily: 'Arial, sans-serif', marginBottom: '48px' }}>June 2026 · 4 min read · GenoMatch</p>
 
         <div style={{ color: '#2A4A35', fontSize: '18px', lineHeight: 1.9, fontFamily: 'Arial, sans-serif' }}>
-          <p style={{ marginBottom: '24px' }}>Nigeria is one of the most vibrant, resilient, and culturally rich nations on earth. It is also home to the world's highest burden of sickle cell disease. These two facts coexist — and the second one does not get nearly enough attention.</p>
+          <p style={{ marginBottom: '24px' }}>Nigeria is one of the most vibrant, resilient, and culturally rich nations on earth. It is also home to the world's highest burden of sickle cell disease. These two facts coexist, and the second one does not get nearly enough attention.</p>
           <p style={{ marginBottom: '24px' }}>Here are the numbers. All of them are real. All of them matter.</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', margin: '48px 0' }}>
@@ -39,7 +39,7 @@ export default function Article3() {
               { stat: '1 in 4', label: 'Risk when two AS carriers have children' },
               { stat: '50%', label: 'Of global SCD burden is in Africa' },
               { stat: '80%', label: 'Of SCD deaths occur in Sub-Saharan Africa' },
-              { stat: '50-60', label: 'Years — average life expectancy with SCD in Nigeria' },
+              { stat: '50-60', label: 'Years, average life expectancy with SCD in Nigeria' },
             ].map((item, i) => (
               <div key={i} style={{ background: WHITE, borderRadius: '16px', padding: '24px', borderLeft: `4px solid ${GOLD}` }}>
                 <div style={{ color: GOLD, fontSize: '2rem', fontWeight: 700, marginBottom: '8px' }}>{item.stat}</div>
@@ -50,15 +50,15 @@ export default function Article3() {
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What these numbers mean</h2>
           <p style={{ marginBottom: '24px' }}>Every single day in Nigeria, more than 400 children are born with sickle cell disease. That is more than one every two minutes. Each of these children will face a lifetime of pain crises, hospital admissions, organ damage, and social limitations that their peers will never experience.</p>
-          <p style={{ marginBottom: '24px' }}>Their parents, in the vast majority of cases, did not know. Not because they did not care — but because nobody told them to check before they fell in love.</p>
+          <p style={{ marginBottom: '24px' }}>Their parents, in the vast majority of cases, did not know. Not because they did not care, but because nobody told them to check before they fell in love.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>The cost of not knowing</h2>
-          <p style={{ marginBottom: '24px' }}>The economic burden of sickle cell disease in Nigeria is staggering. A single pain crisis requiring hospitalisation can cost a family between ₦50,000 and ₦500,000 — in a country where the minimum wage is ₦30,000 per month. For families with SS children, this is not an occasional expense. It is a constant financial emergency.</p>
-          <p style={{ marginBottom: '24px' }}>Beyond money, the emotional weight of watching a child suffer from a preventable condition — and knowing that a single conversation before marriage could have changed everything — is a burden no family should have to carry.</p>
+          <p style={{ marginBottom: '24px' }}>The economic burden of sickle cell disease in Nigeria is staggering. A single pain crisis requiring hospitalisation can cost a family between ₦50,000 and ₦500,000, in a country where the minimum wage is ₦30,000 per month. For families with SS children, this is not an occasional expense. It is a constant financial emergency.</p>
+          <p style={{ marginBottom: '24px' }}>Beyond money, the emotional weight of watching a child suffer from a preventable condition, and knowing that a single conversation before marriage could have changed everything, is a burden no family should have to carry.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What can be done</h2>
-          <p style={{ marginBottom: '24px' }}>The medical community has known for decades that sickle cell disease is preventable through genotype-aware family planning. The challenge has never been the science. It has been the culture — the reluctance to have the conversation early, the stigma around SS, the lack of accessible tools to make genotype awareness part of everyday life.</p>
-          <p style={{ marginBottom: '24px' }}>This is what GenoMatch is changing. By integrating genotype compatibility into the dating process itself — the earliest possible moment of a potential relationship — we are making the conversation normal, natural, and timely.</p>
+          <p style={{ marginBottom: '24px' }}>The medical community has known for decades that sickle cell disease is preventable through genotype-aware family planning. The challenge has never been the science. It has been the culture, the reluctance to have the conversation early, the stigma around SS, the lack of accessible tools to make genotype awareness part of everyday life.</p>
+          <p style={{ marginBottom: '24px' }}>This is what GenoMatch is changing. By integrating genotype compatibility into the dating process itself, the earliest possible moment of a potential relationship, we are making the conversation normal, natural, and timely.</p>
           <p style={{ marginBottom: '48px' }}>The numbers above do not have to define the next generation. But only if we start the conversation sooner.</p>
 
           <div style={{ background: FOREST, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
