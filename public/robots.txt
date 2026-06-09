@@ -14,3 +14,4 @@ User-agent: anthropic-ai
 Allow: /
 
 Sitemap: https://genomatch.app/sitemap.xml
+Sitemap: https://genomatch.app/image-sitemap.xml
