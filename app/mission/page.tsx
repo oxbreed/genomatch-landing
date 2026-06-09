@@ -106,17 +106,31 @@ export default function Mission() {
       </section>
 
       {/* Founder */}
-      <section style={{ background: FOREST_BG, padding: '100px 24px', textAlign: 'center' }}>
-        <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: 'Arial, sans-serif', marginBottom: '16px' }}>THE FOUNDER</p>
-          <h2 style={{ color: WHITE, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '24px' }}>Olusegun Adedoyin</h2>
-          <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: 'Arial, sans-serif' }}>
-            Founder & CEO of GenoMatch Ltd (RC No. 9236521). Brand strategist and entrepreneur with a mission to use technology to solve deeply human problems across West Africa.
-          </p>
-          <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, fontFamily: 'Arial, sans-serif' }}>
-            GenoMatch was built from a simple belief: that the most important conversation a couple can have deserves to happen at the beginning, not the end.
-          </p>
-          <div style={{ marginTop: '40px' }}>
+      <section style={{ background: FOREST_BG, padding: '100px 24px' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: 'Arial, sans-serif', marginBottom: '16px', textAlign: 'center' }}>THE FOUNDER</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'flex-start', justifyContent: 'center' }}>
+            <div style={{ textAlign: 'center', flexShrink: 0 }}>
+              <img
+                src="/olusegun-adedoyin-founder.jpg"
+                alt="Olusegun Adedoyin, Founder of GenoMatch"
+                style={{ width: '100%', maxWidth: '200px', borderRadius: '50%', display: 'block', margin: '0 auto 16px' }}
+              />
+              <h2 style={{ color: WHITE, fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', fontWeight: 700, margin: 0 }}>Olusegun Adedoyin, Founder</h2>
+            </div>
+            <div style={{ flex: '1 1 300px', maxWidth: '520px' }}>
+              <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: 'Arial, sans-serif' }}>
+                GenoMatch is personal. Olusegun grew up in a family touched by sickle cell, and he saw first-hand how much pain earlier knowledge might have spared the people he loves. That experience is the reason GenoMatch exists: to move the genotype conversation to the very beginning of a relationship, where it can protect families instead of arriving too late.
+              </p>
+              <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: 'Arial, sans-serif' }}>
+                Olusegun is a builder of humanity-focused ideas. Alongside GenoMatch he runs a brand and business consultancy that helps founders turn early-stage ideas into operating companies, and his background spans education, communication, and international relations. His commitment to community health goes back to his school years, when he led the Health and Life Planning Club, an Action Health Incorporated initiative running across local government areas in Lagos.
+              </p>
+              <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, fontFamily: 'Arial, sans-serif' }}>
+                GenoMatch brings those threads together: care, technology, and a belief that better information leads to healthier families.
+              </p>
+            </div>
+          </div>
+          <div style={{ marginTop: '40px', textAlign: 'center' }}>
             <a href="mailto:hello@genomatch.app" style={{ color: GOLD, fontSize: '16px', fontFamily: 'Arial, sans-serif', textDecoration: 'none', borderBottom: `1px solid ${GOLD}`, paddingBottom: '4px' }}>hello@genomatch.app</a>
           </div>
         </div>
