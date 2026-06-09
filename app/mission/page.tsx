@@ -107,30 +107,39 @@ export default function Mission() {
 
       {/* Founder */}
       <section style={{ background: FOREST_BG, padding: '100px 24px' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: 'Arial, sans-serif', marginBottom: '16px', textAlign: 'center' }}>THE FOUNDER</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'flex-start', justifyContent: 'center' }}>
-            <div style={{ textAlign: 'center', flexShrink: 0 }}>
-              <img
-                src="/olusegun-adedoyin-founder.jpg"
-                alt="Olusegun Adedoyin, Founder of GenoMatch"
-                style={{ width: '100%', maxWidth: '200px', borderRadius: '50%', display: 'block', margin: '0 auto 16px' }}
-              />
-              <h2 style={{ color: WHITE, fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', fontWeight: 700, margin: 0 }}>Olusegun Adedoyin, Founder</h2>
-            </div>
-            <div style={{ flex: '1 1 300px', maxWidth: '520px' }}>
-              <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: 'Arial, sans-serif' }}>
-                GenoMatch is personal. Olusegun grew up in a family touched by sickle cell, and he saw first-hand how much pain earlier knowledge might have spared the people he loves. That experience is the reason GenoMatch exists: to move the genotype conversation to the very beginning of a relationship, where it can protect families instead of arriving too late.
-              </p>
-              <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: 'Arial, sans-serif' }}>
-                Founder of GenoMatch Ltd, Olusegun builds technology to solve deeply human problems across West Africa. He also runs a brand and business consultancy that helps founders turn early-stage ideas into operating companies, and his background spans education, communication, and international relations. His work in community health began in his school years, when he led the Health and Life Planning Club, an Action Health Incorporated initiative running across local government areas in Lagos.
-              </p>
-              <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, fontFamily: 'Arial, sans-serif' }}>
-                GenoMatch brings these threads together: care, technology, and a belief that better information leads to healthier families.
-              </p>
-            </div>
+        <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: 'Arial, sans-serif', marginBottom: '32px' }}>THE FOUNDER</p>
+          <img
+            src="/olusegun-adedoyin-founder.jpg"
+            alt="Olusegun Adedoyin, Founder of GenoMatch"
+            style={{
+              width: '100%',
+              maxWidth: '240px',
+              height: '300px',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+              borderRadius: '20px',
+              border: `1px solid ${GOLD}`,
+              boxShadow: '0 10px 30px rgba(0,0,0,0.25)',
+              display: 'block',
+              margin: '0 auto 24px',
+            }}
+          />
+          <h2 style={{ color: WHITE, fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, margin: '0 0 8px' }}>Olusegun Adedoyin</h2>
+          <p style={{ color: SAGE, fontSize: '15px', fontFamily: 'Arial, sans-serif', margin: '0 0 40px' }}>Founder, GenoMatch Ltd</p>
+          <p style={{ color: GOLD, fontSize: '22px', fontWeight: 300, lineHeight: 1.5, margin: '0 0 24px', fontFamily: 'Georgia, serif' }}>GenoMatch is personal.</p>
+          <div style={{ textAlign: 'left' }}>
+            <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: 'Arial, sans-serif' }}>
+              Olusegun grew up in a family touched by sickle cell, and he saw first-hand how much pain earlier knowledge might have spared the people he loves. That experience is the reason GenoMatch exists: to move the genotype conversation to the very beginning of a relationship, where it can protect families instead of arriving too late.
+            </p>
+            <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: 'Arial, sans-serif' }}>
+              Founder of GenoMatch Ltd, Olusegun builds technology to solve deeply human problems across West Africa. He also runs a brand and business consultancy that helps founders turn early-stage ideas into operating companies, and his background spans education, communication, and international relations. His work in community health began in his school years, when he led the Health and Life Planning Club, an Action Health Incorporated initiative running across local government areas in Lagos.
+            </p>
+            <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, fontFamily: 'Arial, sans-serif' }}>
+              GenoMatch brings these threads together: care, technology, and a belief that better information leads to healthier families.
+            </p>
           </div>
-          <div style={{ marginTop: '40px', textAlign: 'center' }}>
+          <div style={{ marginTop: '40px' }}>
             <a href="mailto:hello@genomatch.app" style={{ color: GOLD, fontSize: '16px', fontFamily: 'Arial, sans-serif', textDecoration: 'none', borderBottom: `1px solid ${GOLD}`, paddingBottom: '4px' }}>hello@genomatch.app</a>
           </div>
         </div>
