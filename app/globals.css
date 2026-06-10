@@ -21,3 +21,51 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+/* Shared interaction polish for subpages */
+.gm-link {
+  transition: opacity 0.3s ease;
+}
+.gm-link:hover {
+  opacity: 0.75;
+}
+.gm-btn {
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(150, 117, 46, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+.gm-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(150, 117, 46, 0.26);
+}
+.gm-btn:active {
+  transform: translateY(0) scale(0.99);
+}
+.gm-card {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+.gm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(22, 53, 34, 0.09);
+}
+.gm-input:focus {
+  border-color: #bf9b4a !important;
+  box-shadow: 0 0 0 3px rgba(191, 155, 74, 0.14);
+}
+.gm-btn:focus-visible,
+.gm-link:focus-visible {
+  outline: 2px solid #bf9b4a;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gm-btn,
+  .gm-card,
+  .gm-link {
+    transition: none;
+  }
+  .gm-btn:hover,
+  .gm-btn:active,
+  .gm-card:hover {
+    transform: none;
+  }
+}

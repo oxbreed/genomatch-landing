@@ -2,10 +2,12 @@ import Link from 'next/link'
 
 const FOREST = '#163522'
 const FOREST_BG = '#0D2818'
-const LINEN = '#F5EFE6'
-const GOLD = '#D4A843'
+const LINEN = '#F3EDE3'
+const GOLD = '#BF9B4A'
 const SAGE = '#8FAF95'
 const WHITE = '#FFFFFF'
+const TEXT_SOFT = '#5A7268'
+const BODY = 'var(--font-geist-sans), system-ui, sans-serif'
 
 const posts = [
   {
@@ -42,19 +44,19 @@ export const metadata = {
 export default function Blog() {
   return (
     <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
-      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
+      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
         <a href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </a>
-        <a href="/#waitlist" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: 'Arial, sans-serif' }}>Join Waitlist</a>
+        <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</a>
       </header>
 
       <section style={{ background: FOREST, padding: '80px 24px', textAlign: 'center' }}>
-        <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: 'Arial, sans-serif', marginBottom: '16px' }}>THE GENOMATCH BLOG</p>
+        <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>THE GENOMATCH BLOG</p>
         <h1 style={{ color: WHITE, fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 700, maxWidth: '700px', margin: '0 auto 16px', lineHeight: 1.2 }}>
           Genotype education for intentional singles
         </h1>
-        <p style={{ color: SAGE, fontSize: '17px', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7, fontFamily: 'Arial, sans-serif' }}>
+        <p style={{ color: SAGE, fontSize: '17px', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7, fontFamily: BODY }}>
           Science, love, and the conversations that protect your future family.
         </p>
       </section>
@@ -63,23 +65,23 @@ export default function Blog() {
         <div style={{ display: 'grid', gap: '32px' }}>
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
-              <div style={{ background: WHITE, borderRadius: '16px', padding: '40px', borderLeft: `4px solid ${GOLD}`, cursor: 'pointer', transition: 'transform 0.2s' }}>
+              <div className="gm-card" style={{ background: WHITE, borderRadius: '16px', padding: '40px', borderLeft: `4px solid ${GOLD}`, cursor: 'pointer' }}>
                 <div style={{ display: 'flex', gap: '12px', marginBottom: '16px', alignItems: 'center' }}>
-                  <span style={{ background: LINEN, color: FOREST, fontSize: '11px', letterSpacing: '1px', padding: '4px 12px', borderRadius: '99px', fontFamily: 'Arial, sans-serif', fontWeight: 700 }}>{post.category}</span>
-                  <span style={{ color: SAGE, fontSize: '13px', fontFamily: 'Arial, sans-serif' }}>{post.date} · {post.readTime}</span>
+                  <span style={{ background: LINEN, color: FOREST, fontSize: '11px', letterSpacing: '1px', padding: '4px 12px', borderRadius: '99px', fontFamily: BODY, fontWeight: 700 }}>{post.category}</span>
+                  <span style={{ color: TEXT_SOFT, fontSize: '13px', fontFamily: BODY }}>{post.date} · {post.readTime}</span>
                 </div>
                 <h2 style={{ color: FOREST, fontSize: 'clamp(1.2rem, 3vw, 1.6rem)', fontWeight: 700, marginBottom: '12px', lineHeight: 1.3 }}>{post.title}</h2>
-                <p style={{ color: '#4A6355', fontSize: '16px', lineHeight: 1.7, fontFamily: 'Arial, sans-serif', marginBottom: '20px' }}>{post.excerpt}</p>
-                <span style={{ color: GOLD, fontSize: '14px', fontFamily: 'Arial, sans-serif', fontWeight: 700 }}>Read article →</span>
+                <p style={{ color: TEXT_SOFT, fontSize: '16px', lineHeight: 1.7, fontFamily: BODY, marginBottom: '20px' }}>{post.excerpt}</p>
+                <span style={{ color: GOLD, fontSize: '14px', fontFamily: BODY, fontWeight: 700 }}>Read article →</span>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(212,168,67,0.15)' }}>
+      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(191,155,74,0.15)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
-        <p style={{ color: 'rgba(143,175,149,0.5)', fontSize: '12px', fontFamily: 'Arial, sans-serif' }}>© 2025 GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
+        <p style={{ color: 'rgba(143,175,149,0.5)', fontSize: '12px', fontFamily: BODY }}>© 2025 GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>
     </div>
   )
