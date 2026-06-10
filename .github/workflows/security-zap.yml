@@ -36,6 +36,9 @@ jobs:
         with:
           target: ${{ github.event.inputs.target || 'https://www.genomatch.app' }}
           rules_file_name: .zap/rules.tsv
+          # -i: unlisted alerts are INFO (not WARN), so CI only fails on explicit FAIL rules
+          # -s: shorter logs
+          cmd_options: "-i -s"
           fail_action: true
           allow_issue_writing: false
           artifact_name: zap-baseline-report

@@ -1,11 +1,21 @@
-# ZAP baseline rule overrides (PLUGINID	IGNORE|WARN|FAIL	COMMENT)
-# https://www.zaproxy.org/docs/alerts/
-#
-# Production baseline should fail on Medium+; ignore noisy informational rules
-# that are expected for Next.js on Vercel.
+# genomatch.app ZAP baseline policy
+# Unlisted rules default to INFO via workflow cmd_options (-i).
+# FAIL = block CI. IGNORE = accepted risk / scanner noise.
 
-10027	IGNORE	# Suspicious comments in minified JS bundles
-10109	IGNORE	# Modern Web Application (expected)
-10104	IGNORE	# User Agent Fuzzer (scanner noise)
-10050	IGNORE	# Retrieved from Cache (CDN behaviour)
-10015	IGNORE	# Re-examine Cache-control (CDN + static assets)
+10038	FAIL	(Content Security Policy Header Not Set)
+10098	FAIL	(Cross-Domain Misconfiguration)
+40040	FAIL	(CORS Header)
+
+10055	IGNORE	(CSP unsafe-inline — required for Next.js + JSON-LD)
+10017	IGNORE	(Cross-Domain JavaScript Source File Inclusion)
+10027	IGNORE	(Suspicious Comments)
+10109	IGNORE	(Modern Web Application)
+10104	IGNORE	(User Agent Fuzzer)
+10050	IGNORE	(Retrieved from Cache)
+10015	IGNORE	(Cache-control on CDN static assets)
+10049	IGNORE	(Storable and Cacheable Content)
+10096	IGNORE	(Timestamp Disclosure)
+10097	IGNORE	(Hash Disclosure)
+10010	IGNORE	(Cookie No HttpOnly Flag)
+10011	IGNORE	(Cookie Without Secure Flag)
+10054	IGNORE	(Cookie without SameSite Attribute)

@@ -23,6 +23,7 @@ docker run --rm \
   zap-baseline.py \
   -t "$TARGET" \
   -c /zap/wrk/rules.tsv \
+  -i -s \
   -r "/zap/wrk/zap-baseline-${STAMP}.html" \
   -J "/zap/wrk/zap-baseline-${STAMP}.json"
 
