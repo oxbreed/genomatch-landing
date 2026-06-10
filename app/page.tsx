@@ -1070,7 +1070,7 @@ export default function Home() {
             </a>
           </div>
           <p className="text-xs font-light tracking-wide" style={{ color: FOOTER_MUTED }}>
-            © 2026 GenoMatch Ltd · RC No. 9236521 · Nigeria
+            © {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria
           </p>
         </div>
       </footer>
