@@ -96,7 +96,7 @@ export default function Mission() {
               { title: 'Cultural Respect', body: 'We are built for West Africa and the African diaspora. We understand the cultural weight of relationships and marriage in our communities, and we honour it.' },
               { title: 'Scientific Integrity', body: 'Our compatibility scoring is grounded in haematology and genetic science. We do not oversimplify or sensationalise. We present the facts clearly and let people make their own choices.' },
               { title: 'Intentionality', body: 'GenoMatch is not a casual dating app. It is a platform for people who are serious about building a future. Every feature we build serves that purpose.' },
-              { title: 'Community Impact', body: 'Reducing the incidence of sickle cell disease in Nigeria is not just a feature. It is our mission. Every match made on GenoMatch is a step toward a healthier generation.' },
+              { title: 'Community Impact', body: 'Reducing the incidence of sickle cell disease, starting in Nigeria and reaching communities across West Africa and the diaspora, is not just a feature. It is our mission. Every match made on GenoMatch is a step toward a healthier generation.' },
             ].map((item, i) => (
               <div key={i} className="gm-card" style={{ background: WHITE, borderRadius: '16px', padding: '32px 24px', borderTop: `3px solid ${GOLD}` }}>
                 <h3 style={{ color: FOREST, fontSize: '18px', fontWeight: 700, marginBottom: '12px' }}>{item.title}</h3>

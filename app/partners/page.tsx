@@ -81,7 +81,7 @@ export default function Partners() {
           Partner with us to end preventable sickle cell suffering in Africa
         </h1>
         <p style={{ color: SAGE, fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, fontFamily: BODY }}>
-          GenoMatch is looking for health organisations, NGOs, research institutions, and corporate partners who share our commitment to genetic awareness and family health across West Africa.
+          GenoMatch is looking for health organisations, NGOs, research institutions, and corporate partners who share our commitment to genetic awareness and family health across West Africa, the diaspora, and communities everywhere.
         </p>
       </section>
 
