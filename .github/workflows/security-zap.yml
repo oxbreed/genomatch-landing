@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # Weekly Monday 06:00 UTC
-    - cron: "0 6 * * 1"
+    # Daily 06:00 UTC (production health check even with no deploys)
+    - cron: "0 6 * * *"
   workflow_dispatch:
     inputs:
       target:
