@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'What Genotype Should I Check Before Marriage in Nigeria? — GenoMatch',
+  title: 'What Genotype Should I Check Before Marriage in Nigeria?',
   description: 'Before you say yes, there is one conversation that could change everything. Here is what every Nigerian needs to know about genotype compatibility before marriage.',
 }
 
@@ -88,7 +88,7 @@ export default function Article1() {
 
       <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(191,155,74,0.15)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
-        <p style={{ color: 'rgba(143,175,149,0.5)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
+        <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>
     </div>
   )

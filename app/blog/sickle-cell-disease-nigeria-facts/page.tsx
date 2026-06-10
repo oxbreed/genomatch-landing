@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Sickle Cell Disease in Nigeria: The Numbers That Should Shock You — GenoMatch',
+  title: 'Sickle Cell Disease in Nigeria: The Numbers That Should Shock You',
   description: 'Nigeria has the highest burden of sickle cell disease in the world. These are the facts every Nigerian needs to know — and what we can do about it.',
 }
 
@@ -73,7 +73,7 @@ export default function Article3() {
 
       <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(191,155,74,0.15)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
-        <p style={{ color: 'rgba(143,175,149,0.5)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
+        <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>
     </div>
   )

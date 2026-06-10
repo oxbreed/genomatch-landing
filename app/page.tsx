@@ -797,7 +797,7 @@ export default function Home() {
             </h1>
             <p
               className="rise rise-3 mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed sm:text-xl"
-              style={{ color: SAGE }}
+              style={{ color: TEXT_SOFT }}
             >
               Find love without leaving your family&apos;s future to chance.
               Built for anyone who values informed love.

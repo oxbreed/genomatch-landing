@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Can AS Marry AS? The Truth About Sickle Cell Risk — GenoMatch',
+  title: 'Can AS Marry AS? The Truth About Sickle Cell Risk',
   description: 'It is one of the most searched questions in Nigeria. The answer is more nuanced than a simple yes or no — and understanding it could protect your future family.',
 }
 
@@ -84,7 +84,7 @@ export default function Article2() {
 
       <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(191,155,74,0.15)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
-        <p style={{ color: 'rgba(143,175,149,0.5)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
+        <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>
     </div>
   )
