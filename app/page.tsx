@@ -113,6 +113,7 @@ function PageStyles() {
         .card-lift:hover { transform: none; }
         .faq-answer { animation: none; }
         .faq-icon { transition: none; }
+        .mobile-menu { animation: none; }
       }
       .gold-accent {
         background: ${goldFoil};
@@ -320,6 +321,25 @@ function PageStyles() {
         to { opacity: 1; transform: translateY(0); }
       }
       .faq-answer { animation: faqReveal 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
+      .menu-toggle {
+        border: 1px solid ${BORDER_SOFT};
+        background: rgba(255,255,255,0.5);
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      .menu-toggle:active { background: rgba(255,255,255,0.85); }
+      .menu-toggle:focus-visible {
+        outline: 2px solid ${GOLD_MID};
+        outline-offset: 2px;
+      }
+      @keyframes menuReveal {
+        from { opacity: 0; transform: translateY(-6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .mobile-menu {
+        animation: menuReveal 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+        box-shadow: 0 24px 48px rgba(15,36,25,0.08);
+      }
     `}</style>
   );
 }
@@ -624,6 +644,15 @@ function QuoteBlock() {
 }
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#how-it-works", label: "How it works" },
+    { href: "/mission", label: "Our Mission" },
+    { href: "/partners", label: "For Partners" },
+    { href: "/blog", label: "Blog" },
+  ];
+
   const trustBadges = ["Science-backed matching", "Private & secure", "Built for Africa & diaspora"];
 
   const stats = [
@@ -652,28 +681,68 @@ export default function Home() {
         <nav className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:h-[4.5rem] lg:px-8">
           <a href="/" className="link-refined flex items-center gap-3">
             <GenoCrest size={36} idPrefix="nav" className="shrink-0 opacity-90" />
-            <span className="text-2xl font-bold tracking-tight lg:text-[1.75rem]" style={{ ...displayStyle, fontWeight: 700 }}>
+            <span className="text-xl font-bold tracking-tight sm:text-2xl lg:text-[1.75rem]" style={{ ...displayStyle, fontWeight: 700 }}>
               <span className="gold-accent">GenoMatch</span>
             </span>
           </a>
-          <div className="flex items-center gap-7">
-            <a href="#how-it-works" className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
-              How it works
-            </a>
-            <a href="/mission" className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
-              Our Mission
-            </a>
-            <a href="/partners" className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
-              For Partners
-            </a>
-            <a href="/blog" className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
-              Blog
-            </a>
+          <div className="hidden items-center gap-7 lg:flex">
+            {navLinks.map(({ href, label }) => (
+              <a key={href} href={href} className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
+                {label}
+              </a>
+            ))}
             <a href="#waitlist" className="btn-premium rounded-full px-5 py-2.5 text-sm font-semibold" style={{ color: FOREST }}>
               Join Waitlist
             </a>
           </div>
+          <div className="flex shrink-0 items-center gap-2 lg:hidden">
+            <a href="#waitlist" className="btn-premium whitespace-nowrap rounded-full px-3.5 py-2 text-xs font-semibold" style={{ color: FOREST }}>
+              Join Waitlist
+            </a>
+            <button
+              type="button"
+              onClick={() => setMenuOpen((open) => !open)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+              className="menu-toggle flex h-10 w-10 items-center justify-center rounded-full"
+            >
+              {menuOpen ? (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <path d="M3 3l10 10M13 3L3 13" stroke={FOREST} strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <path d="M2 5h12M2 11h12" stroke={FOREST} strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              )}
+            </button>
+          </div>
         </nav>
+        {menuOpen ? (
+          <div
+            id="mobile-menu"
+            className="mobile-menu nav-glass absolute inset-x-0 top-full border-b backdrop-blur-xl backdrop-saturate-150 lg:hidden"
+            style={{ borderColor: `${GOLD_MID}18` }}
+          >
+            <div className="mx-auto flex max-w-6xl flex-col px-6 py-2">
+              {navLinks.map(({ href, label }, index) => (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className="py-3.5 text-sm"
+                  style={{
+                    color: TEXT_SOFT,
+                    borderBottom: index < navLinks.length - 1 ? "1px solid rgba(191,155,74,0.14)" : "none",
+                  }}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </header>
 
       <main>

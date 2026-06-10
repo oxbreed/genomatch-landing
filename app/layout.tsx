@@ -209,7 +209,7 @@ export const metadata: Metadata = {
       "Find love without leaving your family's future to chance. GenoMatch matches you with genetically compatible partners across Nigeria and the African diaspora.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/genomatch-og.png",
         width: 1200,
         height: 630,
         alt: "GenoMatch — Connecting Hearts. Aligning Genes.",
@@ -221,7 +221,7 @@ export const metadata: Metadata = {
     title: "GenoMatch — The World's First Genotype-Aware Dating App",
     description:
       "Find love without leaving your family's future to chance. Built for Nigeria and the African diaspora.",
-    images: ["/og-image.png"],
+    images: ["/genomatch-og.png"],
     creator: "@genomatch",
   },
   alternates: {
@@ -236,7 +236,6 @@ export const metadata: Metadata = {
   },
   referrer: "origin-when-cross-origin",
   verification: {
-    google: "add-your-google-verification-code-here",
     other: {
       "msvalidate.01": "7A0E9B04FDCB32C33C1268B7A9C5E875",
     },
