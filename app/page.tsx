@@ -1,6 +1,8 @@
 "use client";
 
-import { CSSProperties, FormEvent, ReactNode, useId, useState } from "react";
+import { CSSProperties, FormEvent, ReactNode, useEffect, useId, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { joinWaitlist } from "./actions";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -9,7 +11,6 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const FOREST = "#0F2419";
 const FOREST_MID = "#1A3528";
 const FOREST_SOFT = "#2A4A3A";
-const GOLD = "#BF9B4A";
 const SAGE = "#7A9488";
 const SAGE_LIGHT = "#A8BDB2";
 const WHITE = "#FFFFFF";
@@ -19,14 +20,8 @@ const PEARL = "#F7F5F0";
 const LINEN = "#F3EDE3";
 const CREAM = "#EDE6DA";
 
-const MINT_FRESH = PEARL;
-const MINT = LINEN;
-const MINT_PEARL = IVORY;
-const MINT_SOFT = "#DDE6DF";
-const MINT_DEEP = "#C8D5CC";
-const MINT_RICH = "#A8BDB2";
-const MINT_FOREST = FOREST_MID;
-const MINT_FOREST_DEEP = FOREST;
+const MINT_SOFT = "#E2E4D6";
+const MINT_DEEP = "#CDD3C0";
 const MINT_WHISPER = "#F5F2EC";
 const BORDER = "#C8D4CC";
 const BORDER_SOFT = "#D8E2DC";
@@ -106,8 +101,15 @@ function PageStyles() {
       .rise-2 { animation-delay: 0.22s; }
       .rise-3 { animation-delay: 0.34s; }
       .drift { animation: drift 8s ease-in-out infinite; }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.reveal-in { opacity: 1; transform: none; }
       @media (prefers-reduced-motion: reduce) {
         .rise, .rise-1, .rise-2, .rise-3 { animation: none; opacity: 1; transform: none; }
+        .reveal { opacity: 1; transform: none; transition: none; }
         .drift { animation: none; }
         .btn-premium:hover { transform: none; }
         .card-lift:hover { transform: none; }
@@ -607,6 +609,48 @@ function HelixField({ className }: { className?: string }) {
   );
 }
 
+function Reveal({
+  children,
+  className,
+  delay,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setInView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`reveal ${inView ? "reveal-in" : ""} ${className ?? ""}`}
+      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+    >
+      {children}
+    </div>
+  );
+}
+
 function QuoteDivider() {
   return (
     <div className="my-5 flex items-center justify-center gap-3" aria-hidden>
@@ -670,6 +714,9 @@ export default function Home() {
   return (
     <div className="min-h-screen antialiased" style={{ ...bodyStyle, backgroundColor: SURFACE, color: TEXT }}>
       <PageStyles />
+      <noscript>
+        <style>{`.reveal { opacity: 1 !important; transform: none !important; }`}</style>
+      </noscript>
       <Grain />
 
       <header
@@ -679,12 +726,12 @@ export default function Home() {
         <CeremonyRule className="absolute left-0 right-0 top-0 opacity-60" />
         <CeremonyRule className="absolute bottom-0 left-0 right-0 opacity-50" />
         <nav className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:h-[4.5rem] lg:px-8">
-          <a href="/" className="link-refined flex items-center gap-3">
+          <Link href="/" className="link-refined flex items-center gap-3">
             <GenoCrest size={36} idPrefix="nav" className="shrink-0 opacity-90" />
             <span className="text-xl font-bold tracking-tight sm:text-2xl lg:text-[1.75rem]" style={{ ...displayStyle, fontWeight: 700 }}>
               <span className="gold-accent">GenoMatch</span>
             </span>
-          </a>
+          </Link>
           <div className="hidden items-center gap-7 lg:flex">
             {navLinks.map(({ href, label }) => (
               <a key={href} href={href} className="nav-link text-sm" style={{ color: TEXT_SOFT }}>
@@ -841,18 +888,20 @@ export default function Home() {
           />
           <HelixField className="pointer-events-none absolute -right-8 top-12 w-48 opacity-25" />
           <div className="relative mx-auto max-w-6xl">
-            <DiamondRule className="mb-10 max-w-xs" />
-            <SectionLabel>The facts</SectionLabel>
-            <h2
-              className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
-              style={{ ...headingStyle, color: FOREST }}
-            >
-              The conversation that changes everything.
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed sm:text-lg" style={{ color: TEXT_SOFT }}>
-              The facts that inspired us to build GenoMatch.
-            </p>
-            <div className="mt-14 grid gap-6 sm:grid-cols-3 lg:mt-20 lg:gap-8">
+            <Reveal>
+              <DiamondRule className="mb-10 max-w-xs" />
+              <SectionLabel>The facts</SectionLabel>
+              <h2
+                className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
+                style={{ ...headingStyle, color: FOREST }}
+              >
+                The conversation that changes everything.
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed sm:text-lg" style={{ color: TEXT_SOFT }}>
+                The facts that inspired us to build GenoMatch.
+              </p>
+            </Reveal>
+            <Reveal delay={120} className="mt-14 grid gap-6 sm:grid-cols-3 lg:mt-20 lg:gap-8">
               {stats.map(({ stat, label }, index) => (
                 <article
                   key={stat}
@@ -881,10 +930,53 @@ export default function Home() {
                   </p>
                 </article>
               ))}
-            </div>
+            </Reveal>
             <p className="mt-10 text-xs font-light leading-relaxed" style={{ color: TEXT_SOFT }}>
               Sources: WHO African Region sickle cell data; NIH sickle cell disease statistics.
             </p>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-28" style={{ backgroundColor: LINEN }}>
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{ background: `radial-gradient(ellipse 50% 60% at 72% 50%, rgba(191,155,74,0.07) 0%, transparent 65%)` }}
+            aria-hidden
+          />
+          <div className="relative mx-auto max-w-6xl">
+            <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+              <Reveal className="text-center lg:text-left">
+                <DiamondRule className="mx-auto mb-8 max-w-xs lg:mx-0" />
+                <SectionLabel>The product</SectionLabel>
+                <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: FOREST }}>
+                  Compatibility, at first glance.
+                </h2>
+                <p className="mx-auto mt-5 max-w-md leading-relaxed lg:mx-0" style={{ color: TEXT_SOFT }}>
+                  Every profile carries a genotype badge, and every match a compatibility
+                  score. The most important conversation starts before the first message,
+                  quietly and without awkwardness.
+                </p>
+                <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed lg:mx-0" style={{ color: SAGE }}>
+                  Launching soon on iOS and Android.
+                </p>
+              </Reveal>
+              <Reveal delay={140} className="relative mx-auto w-full max-w-[260px] sm:max-w-[280px]">
+                <div
+                  className="pointer-events-none absolute -inset-10"
+                  style={{ background: `radial-gradient(circle, rgba(191,155,74,0.14) 0%, transparent 68%)` }}
+                  aria-hidden
+                />
+                <Image
+                  src="/genomatch-app-onboarding-matches.png"
+                  alt="GenoMatch app screen showing genotype-aware match profiles"
+                  width={472}
+                  height={1024}
+                  sizes="280px"
+                  className="relative w-full rounded-[1.75rem] border"
+                  style={{ borderColor: "rgba(191,155,74,0.35)", boxShadow: shadowDeep }}
+                />
+              </Reveal>
+            </div>
           </div>
         </section>
 
@@ -895,7 +987,7 @@ export default function Home() {
         >
           <MeshBackdrop idPrefix="how" className="pointer-events-none absolute right-0 top-0 h-72 w-72 opacity-20" />
           <div className="relative mx-auto max-w-6xl">
-            <div className="text-center">
+            <Reveal className="text-center">
               <DiamondRule className="mx-auto mb-8 max-w-xs" />
               <SectionLabel>The process</SectionLabel>
               <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: FOREST }}>
@@ -904,9 +996,9 @@ export default function Home() {
               <p className="mx-auto mt-4 max-w-xl leading-relaxed" style={{ color: TEXT_SOFT }}>
                 Three simple steps to match with clarity, compassion, and confidence.
               </p>
-            </div>
+            </Reveal>
 
-            <div className="relative mt-14 lg:mt-20">
+            <Reveal delay={120} className="relative mt-14 lg:mt-20">
               <div
                 className="pointer-events-none absolute left-[16.67%] right-[16.67%] top-7 hidden h-px sm:block"
                 style={{ background: `linear-gradient(90deg, transparent, ${GOLD_MID}55, ${GOLD_MID}, ${GOLD_MID}55, transparent)` }}
@@ -948,7 +1040,7 @@ export default function Home() {
                   </li>
                 ))}
               </ol>
-            </div>
+            </Reveal>
           </div>
         </section>
 
@@ -1016,7 +1108,7 @@ export default function Home() {
               }),
             }}
           />
-          <div className="relative mx-auto max-w-2xl">
+          <Reveal className="relative mx-auto max-w-2xl">
             <div className="mb-12 text-center lg:mb-14">
               <DiamondRule className="mx-auto mb-8 max-w-xs" />
               <SectionLabel>Frequently asked questions</SectionLabel>
@@ -1061,7 +1153,7 @@ export default function Home() {
                 </p>
               </details>
             ))}
-          </div>
+          </Reveal>
         </section>
 
         <section
@@ -1071,7 +1163,12 @@ export default function Home() {
           <MeshBackdrop idPrefix="quote" className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.14]" />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: `radial-gradient(ellipse 60% 48% at 50% 38%, rgba(212,188,130,0.06) 0%, transparent 58%)` }}
+            style={{ background: `radial-gradient(ellipse 60% 48% at 50% 38%, rgba(212,188,130,0.1) 0%, transparent 58%)` }}
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{ background: `radial-gradient(ellipse 130% 70% at 50% 115%, rgba(0,0,0,0.22) 0%, transparent 60%)` }}
             aria-hidden
           />
           <GenoCrest
@@ -1084,7 +1181,9 @@ export default function Home() {
             idPrefix="quote-r"
             className="pointer-events-none absolute -right-16 top-1/2 hidden -translate-y-1/2 opacity-[0.12] sm:block"
           />
-          <QuoteBlock />
+          <Reveal>
+            <QuoteBlock />
+          </Reveal>
         </section>
 
         <section className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-28" style={{ backgroundColor: LINEN }}>
@@ -1094,7 +1193,7 @@ export default function Home() {
             aria-hidden
           />
           <HelixField className="pointer-events-none absolute bottom-4 left-1/2 w-56 -translate-x-1/2 opacity-25" />
-          <div className="relative mx-auto max-w-xl text-center">
+          <Reveal className="relative mx-auto max-w-xl text-center">
             <GenoCrest size={48} idPrefix="cta" className="mx-auto mb-5 opacity-85" />
             <SectionLabel>Join us</SectionLabel>
             <h2 className="text-2xl font-bold sm:text-3xl" style={{ ...headingStyle, color: FOREST }}>
@@ -1107,12 +1206,17 @@ export default function Home() {
               <CornerAccents />
               <WaitlistForm inputId="waitlist-email-cta" />
             </PremiumPanel>
-          </div>
+          </Reveal>
         </section>
       </main>
 
       <footer className="relative overflow-hidden border-t px-6 py-12 lg:px-8 lg:py-16" style={{ background: forestFooter, borderColor: `${GOLD_MID}22` }}>
         <MeshBackdrop idPrefix="footer" className="pointer-events-none absolute inset-0 h-full w-full opacity-15" />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{ background: `radial-gradient(ellipse 70% 60% at 50% 0%, rgba(212,188,130,0.08) 0%, transparent 62%)` }}
+          aria-hidden
+        />
         <CeremonyRule className="relative mx-auto mb-8 max-w-lg opacity-60" />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 text-center sm:gap-4">
           <div className="flex items-center gap-3">

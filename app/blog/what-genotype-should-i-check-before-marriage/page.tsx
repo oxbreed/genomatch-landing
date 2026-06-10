@@ -1,25 +1,20 @@
+import Link from 'next/link'
+
 export const metadata = {
   title: 'What Genotype Should I Check Before Marriage in Nigeria?',
   description: 'Before you say yes, there is one conversation that could change everything. Here is what every Nigerian needs to know about genotype compatibility before marriage.',
 }
 
-const FOREST = '#163522'
-const FOREST_BG = '#0D2818'
-const LINEN = '#F3EDE3'
-const GOLD = '#BF9B4A'
-const SAGE = '#8FAF95'
-const WHITE = '#FFFFFF'
-const TEXT_SOFT = '#5A7268'
-const BODY = 'var(--font-geist-sans), system-ui, sans-serif'
+import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../../theme'
 
 export default function Article1() {
   return (
     <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
       <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
-        <a href="/" style={{ textDecoration: 'none' }}>
+        <Link href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
-        </a>
-        <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</a>
+        </Link>
+        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
       </header>
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '80px 24px' }}>
@@ -78,10 +73,10 @@ export default function Article1() {
           <p style={{ marginBottom: '24px' }}>Checking your genotype before marriage is not unromantic. It is one of the most loving things you can do for your future children. It is the conversation that changes everything, when you have it at the right time.</p>
           <p style={{ marginBottom: '48px' }}>GenoMatch was built to make that conversation normal, natural, and early. Join our waitlist and be among the first to experience a new way to find love, one that protects your family from day one.</p>
 
-          <div style={{ background: FOREST, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
+          <div style={{ background: HERO_SURFACE, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
             <h3 style={{ color: WHITE, fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>Ready to date with your future in mind?</h3>
             <p style={{ color: SAGE, marginBottom: '24px', fontFamily: BODY }}>Join thousands of intentional singles on the GenoMatch waitlist.</p>
-            <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</a>
+            <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</Link>
           </div>
         </div>
       </article>

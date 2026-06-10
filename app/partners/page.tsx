@@ -1,16 +1,11 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
+import Link from 'next/link'
 import { submitPartnerEnquiry } from '../actions'
+import GenoCrest from '../components/GenoCrest'
+import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
-const FOREST = '#163522'
-const FOREST_BG = '#0D2818'
-const LINEN = '#F3EDE3'
-const GOLD = '#BF9B4A'
-const SAGE = '#8FAF95'
-const WHITE = '#FFFFFF'
-const TEXT_SOFT = '#5A7268'
-const BODY = 'var(--font-geist-sans), system-ui, sans-serif'
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default function Partners() {
@@ -65,17 +60,19 @@ export default function Partners() {
 
       {/* Nav */}
       <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
-        <a href="/" style={{ textDecoration: 'none' }}>
+        <Link href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
-        </a>
+        </Link>
         <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-          <a href="/mission" className="gm-link" style={{ color: SAGE, fontSize: '14px', textDecoration: 'none', fontFamily: BODY }}>Our Mission</a>
-          <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</a>
+          <Link href="/mission" className="gm-link" style={{ color: SAGE, fontSize: '14px', textDecoration: 'none', fontFamily: BODY }}>Our Mission</Link>
+          <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
         </div>
       </header>
 
       {/* Hero */}
-      <section style={{ background: FOREST, padding: '100px 24px', textAlign: 'center' }}>
+      <section style={{ background: HERO_SURFACE, padding: '100px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <GenoCrest size={220} idPrefix="partners-hero-l" className="hidden sm:block" style={{ position: 'absolute', left: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
+        <GenoCrest size={220} idPrefix="partners-hero-r" className="hidden sm:block" style={{ position: 'absolute', right: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
         <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>FOR PARTNERS</p>
         <h1 style={{ color: WHITE, fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, maxWidth: '800px', margin: '0 auto 24px', lineHeight: 1.2 }}>
           Partner with us to end preventable sickle cell suffering in Africa

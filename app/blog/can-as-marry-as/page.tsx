@@ -1,25 +1,20 @@
+import Link from 'next/link'
+
 export const metadata = {
   title: 'Can AS Marry AS? The Truth About Sickle Cell Risk',
   description: 'It is one of the most searched questions in Nigeria. The answer is more nuanced than a simple yes or no — and understanding it could protect your future family.',
 }
 
-const FOREST = '#163522'
-const FOREST_BG = '#0D2818'
-const LINEN = '#F3EDE3'
-const GOLD = '#BF9B4A'
-const SAGE = '#8FAF95'
-const WHITE = '#FFFFFF'
-const TEXT_SOFT = '#5A7268'
-const BODY = 'var(--font-geist-sans), system-ui, sans-serif'
+import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../../theme'
 
 export default function Article2() {
   return (
     <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
       <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
-        <a href="/" style={{ textDecoration: 'none' }}>
+        <Link href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
-        </a>
-        <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</a>
+        </Link>
+        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
       </header>
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '80px 24px' }}>
@@ -74,10 +69,10 @@ export default function Article2() {
           <p style={{ marginBottom: '24px' }}>GenoMatch was built precisely for this moment, before the feelings run deep, before the families are introduced, before the conversation becomes painful. On GenoMatch, your genotype is part of your profile from day one. Compatibility is calculated before the first message is sent.</p>
           <p style={{ marginBottom: '48px' }}>This does not mean AS cannot match with AS on GenoMatch. It means both people know exactly where they stand before they invest their hearts. The choice remains theirs. The information is simply available when it matters most.</p>
 
-          <div style={{ background: FOREST, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
+          <div style={{ background: HERO_SURFACE, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
             <h3 style={{ color: WHITE, fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>Know your compatibility from day one</h3>
             <p style={{ color: SAGE, marginBottom: '24px', fontFamily: BODY }}>Join the GenoMatch waitlist and be first to experience intentional, informed dating.</p>
-            <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</a>
+            <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</Link>
           </div>
         </div>
       </article>

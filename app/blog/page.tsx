@@ -1,13 +1,6 @@
 import Link from 'next/link'
-
-const FOREST = '#163522'
-const FOREST_BG = '#0D2818'
-const LINEN = '#F3EDE3'
-const GOLD = '#BF9B4A'
-const SAGE = '#8FAF95'
-const WHITE = '#FFFFFF'
-const TEXT_SOFT = '#5A7268'
-const BODY = 'var(--font-geist-sans), system-ui, sans-serif'
+import GenoCrest from '../components/GenoCrest'
+import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
 const posts = [
   {
@@ -45,13 +38,15 @@ export default function Blog() {
   return (
     <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
       <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
-        <a href="/" style={{ textDecoration: 'none' }}>
+        <Link href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
-        </a>
-        <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</a>
+        </Link>
+        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
       </header>
 
-      <section style={{ background: FOREST, padding: '80px 24px', textAlign: 'center' }}>
+      <section style={{ background: HERO_SURFACE, padding: '80px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <GenoCrest size={200} idPrefix="blog-hero-l" className="hidden sm:block" style={{ position: 'absolute', left: '-64px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
+        <GenoCrest size={200} idPrefix="blog-hero-r" className="hidden sm:block" style={{ position: 'absolute', right: '-64px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
         <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>THE GENOMATCH BLOG</p>
         <h1 style={{ color: WHITE, fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 700, maxWidth: '700px', margin: '0 auto 16px', lineHeight: 1.2 }}>
           Genotype education for intentional singles

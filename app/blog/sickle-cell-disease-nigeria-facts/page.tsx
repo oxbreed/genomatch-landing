@@ -1,25 +1,20 @@
+import Link from 'next/link'
+
 export const metadata = {
   title: 'Sickle Cell Disease in Nigeria: The Numbers That Should Shock You',
   description: 'Nigeria has the highest burden of sickle cell disease in the world. These are the facts every Nigerian needs to know — and what we can do about it.',
 }
 
-const FOREST = '#163522'
-const FOREST_BG = '#0D2818'
-const LINEN = '#F3EDE3'
-const GOLD = '#BF9B4A'
-const SAGE = '#8FAF95'
-const WHITE = '#FFFFFF'
-const TEXT_SOFT = '#5A7268'
-const BODY = 'var(--font-geist-sans), system-ui, sans-serif'
+import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../../theme'
 
 export default function Article3() {
   return (
     <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
       <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
-        <a href="/" style={{ textDecoration: 'none' }}>
+        <Link href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
-        </a>
-        <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</a>
+        </Link>
+        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
       </header>
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '80px 24px' }}>
@@ -63,10 +58,10 @@ export default function Article3() {
           <p style={{ marginBottom: '24px' }}>This is what GenoMatch is changing. By integrating genotype compatibility into the dating process itself, the earliest possible moment of a potential relationship, we are making the conversation normal, natural, and timely.</p>
           <p style={{ marginBottom: '48px' }}>The numbers above do not have to define the next generation. But only if we start the conversation sooner.</p>
 
-          <div style={{ background: FOREST, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
+          <div style={{ background: HERO_SURFACE, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
             <h3 style={{ color: WHITE, fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>Be part of the change</h3>
             <p style={{ color: SAGE, marginBottom: '24px', fontFamily: BODY }}>Join GenoMatch and help normalise genotype awareness in Nigeria and across the diaspora.</p>
-            <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</a>
+            <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</Link>
           </div>
         </div>
       </article>

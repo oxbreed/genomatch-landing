@@ -1,13 +1,9 @@
 'use client'
 
-const FOREST = '#163522'
-const FOREST_BG = '#0D2818'
-const LINEN = '#F3EDE3'
-const GOLD = '#BF9B4A'
-const SAGE = '#8FAF95'
-const WHITE = '#FFFFFF'
-const TEXT_SOFT = '#5A7268'
-const BODY = 'var(--font-geist-sans), system-ui, sans-serif'
+import Image from 'next/image'
+import Link from 'next/link'
+import GenoCrest from '../components/GenoCrest'
+import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
 export default function Mission() {
   return (
@@ -15,14 +11,16 @@ export default function Mission() {
 
       {/* Nav */}
       <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
-        </a>
-        <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</a>
+        </Link>
+        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
       </header>
 
       {/* Hero */}
-      <section style={{ background: FOREST, padding: '100px 24px', textAlign: 'center' }}>
+      <section style={{ background: HERO_SURFACE, padding: '100px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <GenoCrest size={220} idPrefix="mission-hero-l" className="hidden sm:block" style={{ position: 'absolute', left: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
+        <GenoCrest size={220} idPrefix="mission-hero-r" className="hidden sm:block" style={{ position: 'absolute', right: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
         <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>OUR MISSION</p>
         <h1 style={{ color: WHITE, fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, maxWidth: '800px', margin: '0 auto 24px', lineHeight: 1.2 }}>
           Love should be intentional. So should genetic health.
@@ -108,12 +106,15 @@ export default function Mission() {
       </section>
 
       {/* Founder */}
-      <section style={{ background: FOREST, padding: '100px 24px' }}>
+      <section style={{ background: HERO_SURFACE, padding: '100px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '32px' }}>THE FOUNDER</p>
-          <img
+          <Image
             src="/olusegun-adedoyin-founder.jpg"
             alt="Olusegun Adedoyin, Founder of GenoMatch"
+            width={480}
+            height={600}
+            sizes="240px"
             style={{
               width: '100%',
               maxWidth: '240px',
@@ -151,7 +152,7 @@ export default function Mission() {
       <section style={{ background: LINEN, padding: '100px 24px', textAlign: 'center' }}>
         <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '16px' }}>Join the movement</h2>
         <p style={{ color: TEXT_SOFT, fontSize: '17px', marginBottom: '40px', fontFamily: BODY }}>Be among the first to experience GenoMatch when we launch.</p>
-        <a href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '16px 40px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</a>
+        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '16px 40px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</Link>
       </section>
 
       {/* Footer */}
