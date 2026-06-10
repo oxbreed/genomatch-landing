@@ -111,6 +111,8 @@ function PageStyles() {
         .drift { animation: none; }
         .btn-premium:hover { transform: none; }
         .card-lift:hover { transform: none; }
+        .faq-answer { animation: none; }
+        .faq-icon { transition: none; }
       }
       .gold-accent {
         background: ${goldFoil};
@@ -293,6 +295,31 @@ function PageStyles() {
         outline-offset: 3px;
         border-radius: 2px;
       }
+      .faq-item {
+        border-bottom: 1px solid rgba(191,155,74,0.22);
+      }
+      .faq-summary {
+        cursor: pointer;
+        list-style: none;
+        color: ${FOREST};
+        transition: color 0.3s ease;
+      }
+      .faq-summary::-webkit-details-marker { display: none; }
+      .faq-summary:hover { color: ${FOREST_SOFT}; }
+      .faq-summary:focus-visible {
+        outline: 2px solid ${GOLD_MID};
+        outline-offset: 4px;
+        border-radius: 4px;
+      }
+      .faq-icon {
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      details[open] .faq-icon { transform: rotate(45deg); }
+      @keyframes faqReveal {
+        from { opacity: 0; transform: translateY(-4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .faq-answer { animation: faqReveal 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
     `}</style>
   );
 }
@@ -857,7 +884,10 @@ export default function Home() {
         </section>
 
         {/* FAQ Section - AEO */}
-        <section style={{ background: "#F5EFE6", padding: "80px 24px" }}>
+        <section
+          className="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-28"
+          style={{ background: `linear-gradient(180deg, ${LINEN} 0%, ${CREAM} 100%)` }}
+        >
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -917,31 +947,14 @@ export default function Home() {
               }),
             }}
           />
-          <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-            <p
-              style={{
-                color: "#D4A843",
-                fontSize: "11px",
-                letterSpacing: "3px",
-                textAlign: "center",
-                marginBottom: "12px",
-                fontFamily: "Arial, sans-serif",
-              }}
-            >
-              FREQUENTLY ASKED QUESTIONS
-            </p>
-            <h2
-              style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-                fontWeight: 700,
-                color: "#163522",
-                textAlign: "center",
-                marginBottom: "48px",
-              }}
-            >
-              Everything you need to know
-            </h2>
+          <div className="relative mx-auto max-w-2xl">
+            <div className="mb-12 text-center lg:mb-14">
+              <DiamondRule className="mx-auto mb-8 max-w-xs" />
+              <SectionLabel>Frequently asked questions</SectionLabel>
+              <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: FOREST }}>
+                Everything you need to know
+              </h2>
+            </div>
             {[
               {
                 q: "What is GenoMatch?",
@@ -964,38 +977,17 @@ export default function Home() {
                 a: "GenoMatch is the only dating app in the world that incorporates genetic compatibility into matching. Other apps optimise for attraction. GenoMatch optimises for outcomes, helping you build a love story that protects your future family.",
               },
             ].map((item, i) => (
-              <details
-                key={i}
-                style={{
-                  borderBottom: "1px solid rgba(22,53,34,0.1)",
-                  padding: "20px 0",
-                  cursor: "pointer",
-                }}
-              >
+              <details key={i} className="faq-item">
                 <summary
-                  style={{
-                    fontFamily: "Georgia, serif",
-                    fontSize: "18px",
-                    fontWeight: 700,
-                    color: "#163522",
-                    listStyle: "none",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
+                  className="faq-summary flex items-center justify-between gap-6 py-5 text-lg"
+                  style={headingStyle}
                 >
                   {item.q}
-                  <span style={{ color: "#D4A843", fontSize: "24px", fontWeight: 300 }}>+</span>
+                  <svg className="faq-icon shrink-0" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden>
+                    <path d="M7 1v12M1 7h12" stroke={GOLD_MID} strokeWidth="1.25" strokeLinecap="round" />
+                  </svg>
                 </summary>
-                <p
-                  style={{
-                    fontFamily: "Arial, sans-serif",
-                    fontSize: "16px",
-                    color: "#7A9488",
-                    lineHeight: 1.7,
-                    marginTop: "12px",
-                  }}
-                >
+                <p className="faq-answer max-w-[58ch] pb-6 pr-8 text-[0.9375rem] leading-relaxed" style={{ color: TEXT_SOFT }}>
                   {item.a}
                 </p>
               </details>
