@@ -42,7 +42,7 @@ export const metadata = {
 export default function Blog() {
   return (
     <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
-      <header style={{ background: FOREST_BG, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
+      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(212,168,67,0.15)' }}>
         <a href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </a>
@@ -77,7 +77,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <footer style={{ background: FOREST_BG, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(212,168,67,0.15)' }}>
+      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(212,168,67,0.15)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
         <p style={{ color: 'rgba(143,175,149,0.5)', fontSize: '12px', fontFamily: 'Arial, sans-serif' }}>© 2025 GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>

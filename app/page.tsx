@@ -47,8 +47,8 @@ const goldFoil = `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD_CHAMPAGNE} 28
 const goldHairline = `linear-gradient(90deg, transparent, ${GOLD_MID}18 22%, ${GOLD_CHAMPAGNE}55 50%, ${GOLD_MID}18 78%, transparent)`;
 const heroAmbient = `linear-gradient(168deg, ${IVORY} 0%, ${PEARL} 38%, ${LINEN} 72%, ${CREAM} 100%)`;
 const statsAmbient = `linear-gradient(180deg, ${LINEN} 0%, ${MINT_SOFT} 52%, ${MINT_DEEP} 100%)`;
-const forestDepth = `linear-gradient(168deg, ${FOREST_MID} 0%, ${FOREST} 100%)`;
-const forestFooter = `linear-gradient(180deg, ${FOREST_MID} 0%, ${FOREST} 62%, #0A1A12 100%)`;
+const forestDepth = "#163522";
+const forestFooter = "#163522";
 
 const FOOTER_LINK = "#C5D5CB";
 const FOOTER_MUTED = "#8FA396";
