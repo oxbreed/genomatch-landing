@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# security scans (local ZAP reports)
+/security-reports/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

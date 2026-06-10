@@ -1,0 +1,52 @@
+name: Security — OWASP ZAP baseline
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Weekly Monday 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "URL to scan"
+        required: false
+        default: "https://www.genomatch.app"
+
+concurrency:
+  group: zap-baseline-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  zap-baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Wait for Vercel deploy (push only)
+        if: github.event_name == 'push'
+        run: sleep 180
+
+      - name: OWASP ZAP baseline scan
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          target: ${{ github.event.inputs.target || 'https://www.genomatch.app' }}
+          rules_file_name: .zap/rules.tsv
+          fail_action: true
+          allow_issue_writing: false
+          artifact_name: zap-baseline-report
+
+      - name: Upload ZAP report artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: zap-baseline-${{ github.run_id }}
+          path: |
+            report_html.html
+            report_json.json
+          if-no-files-found: ignore
+          retention-days: 30

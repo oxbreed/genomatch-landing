@@ -1,0 +1,11 @@
+# ZAP baseline rule overrides (PLUGINID	IGNORE|WARN|FAIL	COMMENT)
+# https://www.zaproxy.org/docs/alerts/
+#
+# Production baseline should fail on Medium+; ignore noisy informational rules
+# that are expected for Next.js on Vercel.
+
+10027	IGNORE	# Suspicious comments in minified JS bundles
+10109	IGNORE	# Modern Web Application (expected)
+10104	IGNORE	# User Agent Fuzzer (scanner noise)
+10050	IGNORE	# Retrieved from Cache (CDN behaviour)
+10015	IGNORE	# Re-examine Cache-control (CDN + static assets)
