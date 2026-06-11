@@ -30,6 +30,23 @@ export default function Mission() {
         </p>
       </section>
 
+      {/* Why We Exist */}
+      <section style={{ background: LINEN, padding: '100px 24px', maxWidth: '800px', margin: '0 auto' }}>
+        <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>WHY WE EXIST</p>
+        <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '32px', lineHeight: 1.3 }}>
+          A challenge we can change, together
+        </h2>
+        <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
+          Sub-Saharan Africa carries the world&apos;s heaviest burden of sickle cell disease, and Nigeria sits at its very centre, home to the largest affected population anywhere on earth. Behind those numbers are real families: the financial strain, the heartbreak of finding out too late, the children who could have been spared.
+        </p>
+        <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
+          But this is one of the few major health challenges that knowledge alone can change. When people understand their genotype early, before love makes the choice harder, they can build families with confidence and care. That is the future GenoMatch is working toward, one informed connection at a time.
+        </p>
+        <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, fontFamily: BODY }}>
+          We are starting where the need is greatest and building toward every community that shares this reality, across West Africa, the diaspora, and beyond. GenoMatch is for everyone who believes that knowing more should mean fearing less.
+        </p>
+      </section>
+
       {/* The Problem */}
       <section style={{ background: LINEN, padding: '100px 24px', maxWidth: '800px', margin: '0 auto' }}>
         <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>THE PROBLEM</p>
