@@ -37,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://genomatch.app/blog/news",
+      lastModified: LAST_MODIFIED.blog,
+      changeFrequency: "daily" as const,
+      priority: 0.85,
+    },
+    {
       url: "https://genomatch.app/blog/what-genotype-should-i-check-before-marriage",
       lastModified: LAST_MODIFIED.posts,
       changeFrequency: "monthly" as const,

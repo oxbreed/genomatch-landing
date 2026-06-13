@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import GenoCrest from '../components/GenoCrest'
+import ScdNewsFeed from '../components/ScdNewsFeed'
 import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
+
+/** Refresh blog news feed every 6 hours. */
+export const revalidate = 21600
 
 const posts = [
   {
@@ -72,6 +76,8 @@ export default function Blog() {
             </Link>
           ))}
         </div>
+
+        <ScdNewsFeed limit={6} showViewAll />
       </section>
 
       <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(191,155,74,0.15)' }}>
