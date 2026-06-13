@@ -20,6 +20,165 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  padding-bottom: 3rem;
+}
+
+/* Site-wide sliding sickle cell news ticker */
+.scd-news-ticker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 45;
+  pointer-events: none;
+}
+
+.scd-news-ticker-bar {
+  display: flex;
+  align-items: stretch;
+  min-height: 2.75rem;
+  background: linear-gradient(180deg, #163522 0%, #0f2419 100%);
+  border-top: 1px solid rgba(191, 155, 74, 0.28);
+  box-shadow: 0 -4px 24px rgba(15, 36, 25, 0.12);
+  pointer-events: auto;
+}
+
+.scd-news-ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding: 0 0.875rem;
+  border-right: 1px solid rgba(191, 155, 74, 0.22);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.scd-news-ticker-live {
+  color: #e85d5d;
+  font-size: 0.5rem;
+  line-height: 1;
+  animation: scd-ticker-pulse 2s ease-in-out infinite;
+}
+
+.scd-news-ticker-label-text {
+  color: #d4bc82;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.scd-news-ticker-more {
+  color: rgba(168, 189, 178, 0.95);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-left: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.scd-news-ticker-more:hover {
+  color: #f0e6d0;
+}
+
+.scd-news-ticker-viewport {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 2%,
+    #000 98%,
+    transparent 100%
+  );
+}
+
+.scd-news-ticker-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: 100%;
+  min-height: 2.75rem;
+  animation: scd-ticker-scroll var(--scd-ticker-duration, 60s) linear infinite;
+}
+
+.scd-news-ticker:hover .scd-news-ticker-track {
+  animation-play-state: paused;
+}
+
+.scd-news-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.scd-news-ticker-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  color: rgba(240, 245, 242, 0.92);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.scd-news-ticker-link:hover {
+  color: #fff;
+}
+
+.scd-news-ticker-source {
+  color: #bf9b4a;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.scd-news-ticker-sep {
+  color: rgba(191, 155, 74, 0.35);
+  font-size: 0.375rem;
+  margin-right: 0.25rem;
+  user-select: none;
+}
+
+@keyframes scd-ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scd-ticker-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 640px) {
+  .scd-news-ticker-more {
+    display: none;
+  }
+
+  .scd-news-ticker-label {
+    padding: 0 0.625rem;
+  }
+
+  .scd-news-ticker-link {
+    font-size: 0.75rem;
+    padding: 0.625rem 1rem;
+  }
 }
 
 /* Shared interaction polish for subpages */
@@ -67,5 +226,18 @@ body {
   .gm-btn:active,
   .gm-card:hover {
     transform: none;
+  }
+
+  .scd-news-ticker-track {
+    animation: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    scrollbar-width: thin;
+  }
+
+  .scd-news-ticker-live {
+    animation: none;
   }
 }

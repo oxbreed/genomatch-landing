@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
+import ScdNewsTicker from "./components/ScdNewsTicker";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -323,6 +325,9 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Suspense fallback={null}>
+          <ScdNewsTicker />
+        </Suspense>
       </body>
     </html>
   );
