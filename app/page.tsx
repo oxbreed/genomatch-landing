@@ -943,41 +943,22 @@ export default function Home() {
             style={{ background: `radial-gradient(ellipse 50% 60% at 72% 50%, rgba(191,155,74,0.07) 0%, transparent 65%)` }}
             aria-hidden
           />
-          <div className="relative mx-auto max-w-6xl">
-            <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
-              <Reveal className="text-center lg:text-left">
-                <DiamondRule className="mx-auto mb-8 max-w-xs lg:mx-0" />
-                <SectionLabel>The product</SectionLabel>
-                <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: FOREST }}>
-                  Compatibility, at first glance.
-                </h2>
-                <p className="mx-auto mt-5 max-w-md leading-relaxed lg:mx-0" style={{ color: TEXT_SOFT }}>
-                  Every profile carries a genotype badge, and every match a compatibility
-                  score. The most important conversation starts before the first message,
-                  quietly and without awkwardness.
-                </p>
-                <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed lg:mx-0" style={{ color: SAGE }}>
-                  Launching soon on iOS and Android.
-                </p>
-              </Reveal>
-              <Reveal delay={140} className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]">
-                <div
-                  className="pointer-events-none absolute -inset-10"
-                  style={{ background: `radial-gradient(circle, rgba(191,155,74,0.14) 0%, transparent 68%)` }}
-                  aria-hidden
-                />
-                <Image
-                  src="/genomatch-promo-hero.jpg"
-                  alt="GenoMatch promotional graphic: the first genotype-aware dating app, with features, waitlist call to action, and Africa city coverage"
-                  width={682}
-                  height={1024}
-                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 400px"
-                  className="relative w-full rounded-2xl"
-                  style={{ boxShadow: shadowDeep }}
-                  priority
-                />
-              </Reveal>
-            </div>
+          <div className="relative mx-auto max-w-2xl">
+            <Reveal className="text-center">
+              <DiamondRule className="mx-auto mb-8 max-w-xs" />
+              <SectionLabel>The product</SectionLabel>
+              <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: FOREST }}>
+                Compatibility, at first glance.
+              </h2>
+              <p className="mx-auto mt-5 max-w-md leading-relaxed" style={{ color: TEXT_SOFT }}>
+                Every profile carries a genotype badge, and every match a compatibility
+                score. The most important conversation starts before the first message,
+                quietly and without awkwardness.
+              </p>
+              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed" style={{ color: SAGE }}>
+                Launching soon on iOS and Android.
+              </p>
+            </Reveal>
           </div>
         </section>
 
