@@ -960,20 +960,21 @@ export default function Home() {
                   Launching soon on iOS and Android.
                 </p>
               </Reveal>
-              <Reveal delay={140} className="relative mx-auto w-full max-w-[260px] sm:max-w-[280px]">
+              <Reveal delay={140} className="relative mx-auto w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px]">
                 <div
                   className="pointer-events-none absolute -inset-10"
                   style={{ background: `radial-gradient(circle, rgba(191,155,74,0.14) 0%, transparent 68%)` }}
                   aria-hidden
                 />
                 <Image
-                  src="/genomatch-app-onboarding-matches.png"
-                  alt="GenoMatch app screen showing genotype-aware match profiles"
-                  width={472}
+                  src="/genomatch-promo-hero.jpg"
+                  alt="GenoMatch promotional graphic: the first genotype-aware dating app, with features, waitlist call to action, and Africa city coverage"
+                  width={682}
                   height={1024}
-                  sizes="280px"
-                  className="relative w-full rounded-[1.75rem] border"
-                  style={{ borderColor: "rgba(191,155,74,0.35)", boxShadow: shadowDeep }}
+                  sizes="(max-width: 640px) 300px, (max-width: 1024px) 360px, 400px"
+                  className="relative w-full rounded-2xl"
+                  style={{ boxShadow: shadowDeep }}
+                  priority
                 />
               </Reveal>
             </div>
@@ -1040,6 +1041,24 @@ export default function Home() {
                   </li>
                 ))}
               </ol>
+            </Reveal>
+            <Reveal delay={200} className="mt-16 flex justify-center lg:mt-20">
+              <div className="relative w-full max-w-[260px] sm:max-w-[280px]">
+                <div
+                  className="pointer-events-none absolute -inset-10"
+                  style={{ background: `radial-gradient(circle, rgba(191,155,74,0.12) 0%, transparent 68%)` }}
+                  aria-hidden
+                />
+                <Image
+                  src="/genomatch-app-onboarding-matches.png"
+                  alt="GenoMatch app screen showing genotype-aware match profiles"
+                  width={472}
+                  height={1024}
+                  sizes="280px"
+                  className="relative w-full rounded-[1.75rem] border"
+                  style={{ borderColor: "rgba(191,155,74,0.35)", boxShadow: shadowDeep }}
+                />
+              </div>
             </Reveal>
           </div>
         </section>
@@ -1193,19 +1212,39 @@ export default function Home() {
             aria-hidden
           />
           <HelixField className="pointer-events-none absolute bottom-4 left-1/2 w-56 -translate-x-1/2 opacity-25" />
-          <Reveal className="relative mx-auto max-w-xl text-center">
-            <GenoCrest size={48} idPrefix="cta" className="mx-auto mb-5 opacity-85" />
-            <SectionLabel>Join us</SectionLabel>
-            <h2 className="text-2xl font-bold sm:text-3xl" style={{ ...headingStyle, color: FOREST }}>
-              Ready when you are.
-            </h2>
-            <p className="mt-2 leading-relaxed" style={{ color: TEXT_SOFT }}>
-              Join the waitlist and be first in line for launch.
-            </p>
-            <PremiumPanel luxe className="mt-10 p-6 sm:p-7">
-              <CornerAccents />
-              <WaitlistForm inputId="waitlist-email-cta" />
-            </PremiumPanel>
+          <Reveal className="relative mx-auto max-w-6xl">
+            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+              <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px] lg:mx-0">
+                <div
+                  className="pointer-events-none absolute -inset-10"
+                  style={{ background: `radial-gradient(circle, rgba(191,155,74,0.14) 0%, transparent 68%)` }}
+                  aria-hidden
+                />
+                <Image
+                  src="/genomatch-coming-soon.jpg"
+                  alt="GenoMatch coming soon: a new way to connect, a better way to care, launching on iOS and Android"
+                  width={1024}
+                  height={1024}
+                  sizes="(max-width: 1024px) 300px, 340px"
+                  className="relative w-full rounded-2xl"
+                  style={{ boxShadow: shadowDeep }}
+                />
+              </div>
+              <div className="text-center lg:text-left">
+                <GenoCrest size={48} idPrefix="cta" className="mx-auto mb-5 opacity-85 lg:mx-0" />
+                <SectionLabel>Join us</SectionLabel>
+                <h2 className="text-2xl font-bold sm:text-3xl" style={{ ...headingStyle, color: FOREST }}>
+                  Ready when you are.
+                </h2>
+                <p className="mt-2 leading-relaxed" style={{ color: TEXT_SOFT }}>
+                  Join the waitlist and be first in line for launch.
+                </p>
+                <PremiumPanel luxe className="mt-10 p-6 sm:p-7">
+                  <CornerAccents />
+                  <WaitlistForm inputId="waitlist-email-cta" />
+                </PremiumPanel>
+              </div>
+            </div>
           </Reveal>
         </section>
       </main>
