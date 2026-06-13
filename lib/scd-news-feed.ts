@@ -24,7 +24,7 @@ const RSS_FEEDS = [
   },
   {
     id: 'research',
-    label: 'Research & treatment',
+    label: 'Research and treatment',
     url: 'https://news.google.com/rss/search?q=sickle+cell+research+OR+treatment+OR+genotype&hl=en-US&gl=US&ceid=US:en',
   },
 ] as const

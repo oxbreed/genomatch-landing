@@ -67,7 +67,7 @@ export default async function ScdNewsFeed({
             lineHeight: 1.25,
           }}
         >
-          Latest sickle cell news &amp; research
+          Latest sickle cell news and research
         </h2>
         <p
           style={{
@@ -214,7 +214,7 @@ export default async function ScdNewsFeed({
         }}
       >
         Headlines are aggregated from public RSS feeds (Google News). GenoMatch does not
-        write, edit, or endorse third-party articles. Always consult a qualified healthcare
+        write, edit, or endorse third party articles. Always consult a qualified healthcare
         provider for medical advice.
       </p>
 

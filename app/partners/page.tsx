@@ -93,9 +93,9 @@ export default function Partners() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
             {[
-              { title: 'Reach', body: `GenoMatch targets ${SCD_STATS.africaMobileInternetUsers}+ mobile internet users across Africa (GSMA, 2024), centred on Nigeria — the world's largest sickle cell burden — and extending to the African diaspora in the UK, US, and Canada. Our users are educated, intentional singles actively seeking serious relationships.` },
-              { title: 'Impact', body: 'Every partnership directly contributes to reducing sickle cell disease incidence. This is measurable, reportable public health impact that aligns with SDG 3, Good Health and Well-Being.' },
-              { title: 'First Mover', body: 'GenoMatch is the first and only genotype-aware dating platform in the world. Partnering now positions your organisation at the forefront of a global health-tech movement.' },
+              { title: 'Reach', body: `GenoMatch targets ${SCD_STATS.africaMobileInternetUsers}+ mobile internet users across Africa (GSMA, 2024), centred on Nigeria, the world's largest sickle cell burden, and extending to the African diaspora in the UK, US, and Canada. Our users are educated, intentional singles actively seeking serious relationships.` },
+              { title: 'Impact', body: 'Every partnership directly contributes to reducing sickle cell disease incidence. This is measurable, reportable public health impact that aligns with SDG 3, Good Health and Well Being.' },
+              { title: 'First Mover', body: 'GenoMatch is the first and only genotype aware dating platform in the world. Partnering now positions your organisation at the forefront of a global health technology movement.' },
               { title: 'Data & Research', body: 'With user consent, GenoMatch can provide anonymised genotype distribution data across Nigeria and the diaspora, valuable for research, policy, and public health planning.' },
               { title: 'Community Trust', body: 'Our platform is built on trust. A partnership with GenoMatch signals to millions of Nigerians that your organisation is invested in their health and their future.' },
               { title: 'Media & Visibility', body: 'GenoMatch is a compelling story of science, love, and African health innovation. Partner organisations benefit from shared media coverage and brand association.' },
@@ -121,10 +121,10 @@ export default function Partners() {
             How we can work together
           </h2>
           {[
-            { type: 'Health Organisation', desc: 'WHO, UNICEF, Sickle Cell Society, hospitals, and health ministries. We offer co-branded awareness campaigns, data sharing agreements, and joint research opportunities.' },
-            { type: 'NGO & Charity', desc: 'Sickle cell charities, family health organisations, and diaspora community groups. We offer platform integration, referral partnerships, and co-created educational content.' },
+            { type: 'Health Organisation', desc: 'WHO, UNICEF, Sickle Cell Society, hospitals, and health ministries. We offer joint awareness campaigns, data sharing agreements, and research opportunities.' },
+            { type: 'NGO & Charity', desc: 'Sickle cell charities, family health organisations, and diaspora community groups. We offer platform integration, referral partnerships, and educational content created together.' },
             { type: 'Research Institution', desc: 'Universities, medical schools, and research bodies. Access to anonymised genotype data, joint publications, and platform integration for research studies.' },
-            { type: 'Corporate & CSR', desc: 'Companies with CSR commitments to African health and family wellbeing. Sponsorship opportunities, employee benefit packages, and brand association with a purpose-driven platform.' },
+            { type: 'Corporate & CSR', desc: 'Companies with CSR commitments to African health and family wellbeing. Sponsorship opportunities, employee benefit packages, and brand association with a purpose driven platform.' },
             { type: 'Government & Policy', desc: 'Health ministries and public health agencies in Nigeria and the diaspora. Policy advisory partnerships, national awareness campaign integration, and data for health planning.' },
           ].map((item, i) => (
             <div key={i} style={{ borderBottom: `1px solid rgba(22,53,34,0.1)`, padding: '32px 0' }}>

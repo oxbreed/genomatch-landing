@@ -8,7 +8,7 @@ export const revalidate = 21600
 export const metadata = {
   title: 'Sickle Cell News & Research Feed',
   description:
-    'Live sickle cell disease headlines from Nigeria, Africa, and global health publishers — updated automatically on GenoMatch.',
+    'Live sickle cell disease headlines from Nigeria, Africa, and global health publishers, updated automatically on GenoMatch.',
 }
 
 export default function ScdNewsPage() {
@@ -94,7 +94,7 @@ export default function ScdNewsPage() {
           }}
         >
           Stay informed with the latest headlines on sickle cell disease, genotype awareness,
-          and treatment — refreshed every six hours.
+          and treatment, refreshed every six hours.
         </p>
       </section>
 

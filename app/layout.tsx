@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://genomatch.app"),
   title: {
-    default: "GenoMatch — The World's First Genotype-Aware Dating App",
+    default: "GenoMatch | The World's First Genotype Aware Dating App",
     template: "%s | GenoMatch",
   },
   description:
-    "GenoMatch is the world's first genotype-aware dating app for West Africa and the African diaspora. Match with compatible partners based on genotype (AA, AS, SS, AC) to build intentional, informed love stories. Available in Nigeria and across the African diaspora.",
+    "GenoMatch is the world's first genotype aware dating app for West Africa and the African diaspora. Match with compatible partners based on genotype (AA, AS, SS, AC) to build intentional, informed love stories. Available in Nigeria and across the African diaspora.",
   keywords: [
     // Core product
     "GenoMatch",
@@ -151,7 +151,7 @@ export const metadata: Metadata = {
     "informed marriage Nigeria",
     "health aware relationship app",
     "medical compatibility dating",
-    "pre-marital health check app",
+    "premarital health check app",
     "genetic health matchmaking",
     "healthy family planning app",
     "sickle cell family planning Nigeria",
@@ -206,7 +206,7 @@ export const metadata: Metadata = {
     alternateLocale: ["en_GB", "en_US"],
     url: "https://genomatch.app",
     siteName: "GenoMatch",
-    title: "GenoMatch — The World's First Genotype-Aware Dating App",
+    title: "GenoMatch | The World's First Genotype Aware Dating App",
     description:
       "Find love without leaving your family's future to chance. GenoMatch matches you with genetically compatible partners across Nigeria and the African diaspora.",
     images: [
@@ -214,13 +214,13 @@ export const metadata: Metadata = {
         url: "/genomatch-og.png",
         width: 1200,
         height: 630,
-        alt: "GenoMatch — Connecting Hearts. Aligning Genes.",
+        alt: "GenoMatch: Connecting Hearts. Aligning Genes.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GenoMatch — The World's First Genotype-Aware Dating App",
+    title: "GenoMatch | The World's First Genotype Aware Dating App",
     description:
       "Find love without leaving your family's future to chance. Built for Nigeria and the African diaspora.",
     images: ["/genomatch-og.png"],
@@ -263,7 +263,7 @@ export default function RootLayout({
               "@type": "MobileApplication",
               name: "GenoMatch",
               description:
-                "The world's first genotype-aware dating app for West Africa and the African diaspora. Match with compatible partners based on genotype compatibility.",
+                "The world's first genotype aware dating app for West Africa and the African diaspora. Match with compatible partners based on genotype compatibility.",
               url: "https://genomatch.app",
               applicationCategory: "LifestyleApplication",
               operatingSystem: "iOS, Android",
@@ -285,14 +285,14 @@ export default function RootLayout({
               audience: {
                 "@type": "Audience",
                 audienceType:
-                  "Singles in Nigeria and the African diaspora who want genotype-aware matching",
+                  "Singles in Nigeria and the African diaspora who want genotype aware matching",
               },
               featureList: [
-                "Genotype-aware matching (AA, AS, SS, AC, SC, CC)",
+                "Genotype aware matching (AA, AS, SS, AC, SC, CC)",
                 "Sickle cell disease compatibility scoring",
                 "DNA and genetic compatibility algorithm",
                 "Haemoglobin genotype verification",
-                "Real-time chat between compatible matches",
+                "Live chat between compatible matches",
                 "Profile genotype verification badge",
                 "Sickle cell risk level display per match",
                 "West Africa and diaspora focused",
@@ -303,7 +303,7 @@ export default function RootLayout({
               ],
               about: {
                 "@type": "Thing",
-                name: "Genotype-aware dating and sickle cell disease prevention through informed matchmaking",
+                name: "Genotype aware dating and sickle cell disease prevention through informed matchmaking",
               },
               mentions: [
                 { "@type": "MedicalCondition", name: "Sickle Cell Disease" },

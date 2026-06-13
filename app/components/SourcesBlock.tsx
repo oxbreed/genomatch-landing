@@ -67,7 +67,7 @@ export default function SourcesBlock({
             >
               {source.label}
             </a>
-            {' — '}
+            {'. '}
             {source.publisher}
             {source.year ? ` (${source.year})` : ''}
           </li>

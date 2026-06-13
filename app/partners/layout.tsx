@@ -8,9 +8,9 @@ export const metadata: Metadata = {
     canonical: "https://genomatch.app/partners",
   },
   openGraph: {
-    title: "For Partners — GenoMatch",
+    title: "For Partners | GenoMatch",
     description:
-      "Health organisations, NGOs, researchers, and corporate partners: join GenoMatch in reducing sickle cell disease incidence through genotype-aware matching.",
+      "Health organisations, NGOs, researchers, and corporate partners: join GenoMatch in reducing sickle cell disease incidence through genotype aware matching.",
     url: "https://genomatch.app/partners",
   },
 };

@@ -8,9 +8,9 @@ export const metadata: Metadata = {
     canonical: "https://genomatch.app/mission",
   },
   openGraph: {
-    title: "Our Mission — GenoMatch",
+    title: "Our Mission | GenoMatch",
     description:
-      "Love should be intentional. So should genetic health. Learn why GenoMatch is building genotype-aware dating for West Africa and the diaspora.",
+      "Love should be intentional. So should genetic health. Learn why GenoMatch is building genotype aware dating for West Africa and the diaspora.",
     url: "https://genomatch.app/mission",
   },
 };

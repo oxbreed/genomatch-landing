@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
       <h2 style={{ color: '#163522', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>3. What Data We Collect</h2>
       <p><strong>Information you provide directly:</strong> full name and display name, email address, date of birth, gender, city and country, genotype (AA, AS, SS, AC), profile photos, bio and personal description, relationship goals, and interests.</p>
       <p><strong>Information we collect automatically:</strong> app usage data, device type and operating system, push notification tokens, and error and crash reports.</p>
-      <p><strong>Sensitive data:</strong> we collect genotype information which is considered health-related sensitive data. We collect this solely for genotype compatibility matching. You provide this voluntarily and can update or delete it at any time.</p>
+      <p><strong>Sensitive data:</strong> we collect genotype information, which is sensitive health data. We collect this solely for genotype compatibility matching. You provide this voluntarily and can update or delete it at any time.</p>
 
       <h2 style={{ color: '#163522', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>4. Why We Collect Your Data</h2>
       <p>We use your data to provide the service, verify identity, improve the app, keep you safe, communicate with you, and comply with the law.</p>
@@ -32,7 +32,7 @@ export default function PrivacyPolicy() {
       <p>We process your data on the basis of contract, consent, legitimate interests, and legal obligation.</p>
 
       <h2 style={{ color: '#163522', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>6. How We Store Your Data</h2>
-      <p>Your data is stored securely using Supabase (database with row-level security), Cloudinary (photo storage), and encrypted storage on your device. We implement industry-standard security measures.</p>
+      <p>Your data is stored securely using Supabase (database with row level security), Cloudinary (photo storage), and encrypted storage on your device. We implement industry standard security measures.</p>
 
       <h2 style={{ color: '#163522', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>7. Who We Share Your Data With</h2>
       <p>We do not sell your personal data. Your display name, photos, genotype, bio, interests, city, and relationship goal are visible to other verified users. Your email address is never visible to other users. We share data only with service providers (Supabase, Cloudinary, Expo/Apple) and legal authorities when required by law.</p>

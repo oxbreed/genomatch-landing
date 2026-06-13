@@ -56,7 +56,7 @@ export default function Mission() {
           A preventable crisis affecting millions of African families
         </h2>
         <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
-          Nigeria has the highest burden of sickle cell disease in the world. Over {SCD_STATS.nigeriaBirthsPerYear} children are born with the condition every year — about 2% of all Nigerian births — making it the most common severe genetic disorder on the African continent.
+          Nigeria has the highest burden of sickle cell disease in the world. Over {SCD_STATS.nigeriaBirthsPerYear} children are born with the condition every year, about 2% of all Nigerian births, making it the most common severe genetic disorder on the African continent.
         </p>
         <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
           Sickle cell disease (SCD) occurs when two carriers of the sickle cell trait, both with the AS genotype, have children together. Each pregnancy carries a 1 in 4 chance of producing a child with SS, the most severe form of the disease.

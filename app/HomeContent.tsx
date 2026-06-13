@@ -698,7 +698,7 @@ export default function Home() {
     { href: "/blog", label: "Blog" },
   ];
 
-  const trustBadges = ["Science-backed matching", "Private & secure", "Built for Africa & diaspora"];
+  const trustBadges = ["Matching grounded in science", "Private and secure", "Built for Africa and the diaspora"];
 
   const homepageSources = getSources(SOURCE_SETS.homepageStats);
 
@@ -831,7 +831,7 @@ export default function Home() {
               </div>
             </div>
             <p className="rise rise-1 eyebrow-pill mb-6 inline-block rounded-full px-5 py-2 text-[0.6875rem] font-medium uppercase">
-              Genotype-aware dating
+              Genotype aware dating
             </p>
             <h1
               className="rise rise-2 font-bold leading-[1.04]"
@@ -843,7 +843,7 @@ export default function Home() {
               }}
             >
               The World&apos;s First{" "}
-              <span className="gold-accent">Genotype-Aware</span> Dating App
+              <span className="gold-accent">Genotype Aware</span> Dating App
             </h1>
             <p
               className="rise rise-3 mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed sm:text-xl"
@@ -872,7 +872,7 @@ export default function Home() {
               <SectionLabel>Early access</SectionLabel>
               <WaitlistForm inputId="waitlist-email-hero" />
               <p className="mt-4 text-xs font-light tracking-wide" style={{ color: TEXT_SOFT }}>
-                No spam · Private by design
+                No spam. Private by design
               </p>
             </PremiumPanel>
             <p className="rise rise-3 mt-4 text-sm leading-relaxed" style={{ color: TEXT_SOFT }}>
@@ -985,7 +985,7 @@ export default function Home() {
                 />
                 <Image
                   src="/genomatch-app-onboarding-matches.png"
-                  alt="GenoMatch app screen showing genotype-aware match profiles"
+                  alt="GenoMatch app screen showing genotype aware match profiles"
                   width={472}
                   height={1024}
                   sizes="280px"
@@ -1078,7 +1078,7 @@ export default function Home() {
                     name: "What is GenoMatch?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "GenoMatch is the world's first genotype-aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interest compatibility, helping couples make informed decisions about their future family health.",
+                      text: "GenoMatch is the world's first genotype aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interest compatibility, helping couples make informed decisions about their future family health.",
                     },
                   },
                   {
@@ -1094,7 +1094,7 @@ export default function Home() {
                     name: "Is GenoMatch available in Nigeria?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Yes. GenoMatch is primarily built for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada. The app is launching soon on iOS and Android — join the waitlist for early access.",
+                      text: "Yes. GenoMatch is primarily built for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada. The app is launching soon on iOS and Android. Join the waitlist for early access.",
                     },
                   },
                   {
@@ -1136,7 +1136,7 @@ export default function Home() {
             {[
               {
                 q: "What is GenoMatch?",
-                a: "GenoMatch is the world's first genotype-aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interests.",
+                a: "GenoMatch is the world's first genotype aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interests.",
               },
               {
                 q: "How does genotype matching work?",

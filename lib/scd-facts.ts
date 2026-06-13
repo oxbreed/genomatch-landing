@@ -9,13 +9,13 @@ export type HealthSource = {
 
 export const HEALTH_SOURCES = {
   whoFactSheet: {
-    label: 'Sickle-cell disease — Key facts',
+    label: 'Sickle cell disease: key facts',
     publisher: 'World Health Organization',
     url: 'https://www.who.int/news-room/fact-sheets/detail/sickle-cell-disease',
     year: '2024',
   },
   whoWha59: {
-    label: 'Sickle-cell anaemia (WHA59/9)',
+    label: 'Sickle cell anaemia (WHA59/9)',
     publisher: 'World Health Organization',
     url: 'https://apps.who.int/gb/archive/pdf_files/wha59/a59_9-en.pdf',
     year: '2006',
@@ -37,7 +37,7 @@ export const HEALTH_SOURCES = {
     url: 'https://www.cdc.gov/sickle-cell/about/index.html',
   },
   nigeriaMoh: {
-    label: 'Nigeria has highest burden of sickle cell disease — Health Minister briefing',
+    label: 'Nigeria has highest burden of sickle cell disease (Health Minister briefing)',
     publisher: 'Independent Nigeria / Federal Ministry of Health',
     url: 'https://independent.ng/25-of-nigerias-adult-population-carriers-of-sickle-cell-gene-says-health-minister/',
     year: '2022',
@@ -49,7 +49,7 @@ export const HEALTH_SOURCES = {
     year: '2023',
   },
   scfnLifeExpectancy: {
-    label: 'World Sickle Cell Day — life expectancy in Nigeria',
+    label: 'World Sickle Cell Day: life expectancy in Nigeria',
     publisher: 'Sickle Cell Foundation Nigeria',
     url: 'https://sicklecellfoundation.com/news/full-read/8',
     year: '2024',
@@ -110,9 +110,9 @@ export const SCD_STATS = {
   traitCarriersNigeria: '50 million',
   africaShareOfGlobalCases: 'nearly 80%',
   africaShareOfGlobalPatients: 'about 75%',
-  underFiveMortalityAfrica: '50–80%',
+  underFiveMortalityAfrica: '50 to 80%',
   lifeExpectancyNigeriaYears: 'under 20',
-  lifeExpectancyHighIncomeYears: '50–60+',
+  lifeExpectancyHighIncomeYears: '50 to 60+',
   monthlyMinWageNaira: 70_000,
   crisisCostLowNaira: 50_000,
   crisisCostHighNaira: 500_000,

@@ -45,18 +45,18 @@ export default function Article1() {
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>Why does it matter before marriage?</h2>
           <p style={{ marginBottom: '24px' }}>When two AS carriers have children together, each pregnancy carries a 25% chance of producing a child with SS, sickle cell disease. That is {SCD_STATS.asCoupleSsRisk}. In a family of four children, statistically one will be affected on average.</p>
-          <p style={{ marginBottom: '24px' }}>Sickle cell disease is a lifelong, painful, and life-limiting condition. Children with SS face recurrent pain crises, organ damage, frequent hospitalisations, and significantly reduced life expectancy without intensive medical care — under 20 years in Nigeria, compared with {SCD_STATS.lifeExpectancyHighIncomeYears} years in high-income countries with comprehensive specialist care.</p>
+          <p style={{ marginBottom: '24px' }}>Sickle cell disease is a lifelong, painful condition that limits life expectancy. Children with SS face recurrent pain crises, organ damage, frequent hospitalisations, and significantly reduced life expectancy without intensive medical care. In Nigeria, that often means under 20 years, compared with {SCD_STATS.lifeExpectancyHighIncomeYears} years in high income countries with comprehensive specialist care.</p>
           <p style={{ marginBottom: '24px' }}>This is not about blame. AS carriers are healthy, successful, wonderful people. But when two AS carriers build a family together without knowing their compatibility, they are making a life-altering decision without all the information.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>Which genotype combinations are compatible?</h2>
           <div style={{ background: WHITE, borderRadius: '16px', padding: '32px', marginBottom: '32px', border: `1px solid rgba(191,155,74,0.2)` }}>
             {[
-              { pairing: 'AA × AA', result: 'All children AA', risk: 'No risk', safe: true },
-              { pairing: 'AA × AS', result: 'Children AA or AS', risk: 'No sickle cell risk', safe: true },
-              { pairing: 'AA × SS', result: 'All children AS', risk: 'Low risk', safe: true },
-              { pairing: 'AS × AS', result: 'AA, AS, or SS', risk: '25% chance of SS child', safe: false },
-              { pairing: 'AS × SS', result: 'AS or SS', risk: '50% chance of SS child', safe: false },
-              { pairing: 'SS × SS', result: 'All children SS', risk: 'All children affected', safe: false },
+              { pairing: 'AA and AA', result: 'All children AA', risk: 'No risk', safe: true },
+              { pairing: 'AA and AS', result: 'Children AA or AS', risk: 'No sickle cell risk', safe: true },
+              { pairing: 'AA and SS', result: 'All children AS', risk: 'Low risk', safe: true },
+              { pairing: 'AS and AS', result: 'AA, AS, or SS', risk: '25% chance of SS child', safe: false },
+              { pairing: 'AS and SS', result: 'AS or SS', risk: '50% chance of SS child', safe: false },
+              { pairing: 'SS and SS', result: 'All children SS', risk: 'All children affected', safe: false },
             ].map((row, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: i < 5 ? '1px solid rgba(22,53,34,0.08)' : 'none', flexWrap: 'wrap', gap: '8px' }}>
                 <strong style={{ color: FOREST, fontFamily: 'Georgia, serif', minWidth: '100px' }}>{row.pairing}</strong>

@@ -18,7 +18,7 @@ export default function TermsOfService() {
       <p>
         Welcome to GenoMatch. These Terms of Service ("Terms") govern your access to and use of the GenoMatch mobile
         application and website (collectively, the "Service") operated by GenoMatch Ltd (RC No. 9236521) ("GenoMatch",
-        "we", "our", or "us"). GenoMatch is a genotype-aware dating platform designed to help adults make informed
+        "we", "our", or "us"). GenoMatch is a genotype aware dating platform designed to help adults make informed
         decisions about compatibility, relationships, and family planning. Please read these Terms carefully before
         using the Service.
       </p>
@@ -49,7 +49,7 @@ export default function TermsOfService() {
       <h2 style={{ color: '#163522', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>5. Genotype Information</h2>
       <p>
         GenoMatch allows you to declare your genotype (AA, AS, SS, AC) for compatibility matching. Genotype
-        information you provide is self-declared by you and is not verified by GenoMatch as a medical or laboratory
+        information you provide is declared by you and is not verified by GenoMatch as a medical or laboratory
         result unless we expressly state otherwise in the app. GenoMatch does not provide medical advice, genetic
         counselling, or clinical diagnosis. Compatibility scores and match suggestions are informational tools only
         and should not replace professional healthcare or genetic advice. You are responsible for the accuracy of
@@ -86,7 +86,7 @@ export default function TermsOfService() {
         The GenoMatch name, logo, app design, software, and all related content and materials are owned by GenoMatch
         Ltd or its licensors and are protected by intellectual property laws. You may not copy, modify, distribute,
         sell, or create derivative works from any part of the Service without our prior written consent. You retain
-        ownership of content you submit, but you grant us a non-exclusive, worldwide, royalty-free licence to use,
+        ownership of content you submit, but you grant us a nonexclusive, worldwide, royalty free licence to use,
         display, and store that content solely to operate and improve the Service.
       </p>
 
@@ -94,7 +94,7 @@ export default function TermsOfService() {
       <p>
         The Service is provided on an "as is" and "as available" basis. To the fullest extent permitted by law,
         GenoMatch disclaims all warranties, express or implied, including fitness for a particular purpose and
-        non-infringement. We do not warrant that the Service will be uninterrupted, error-free, or secure, or that
+        noninfringement. We do not warrant that the Service will be uninterrupted, free of errors, or secure, or that
         matches or compatibility information will meet your expectations. Any reliance on genotype or compatibility
         information is at your own risk.
       </p>

@@ -4,7 +4,7 @@ import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
 
 export const metadata = {
   title: 'Can AS Marry AS? The Truth About Sickle Cell Risk',
-  description: 'It is one of the most searched questions in Nigeria. The answer is more nuanced than a simple yes or no — and understanding it could protect your future family.',
+  description: 'It is one of the most searched questions in Nigeria. The answer is more nuanced than a simple yes or no, and understanding it could protect your future family.',
 }
 
 import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../../theme'
@@ -34,7 +34,7 @@ export default function Article2() {
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What does AS mean?</h2>
           <p style={{ marginBottom: '24px' }}>AS means you are a sickle cell carrier. You have one normal haemoglobin gene (A) and one sickle cell gene (S). People with AS genotype are generally healthy. They do not have sickle cell disease. But they carry the gene and can pass it to their children.</p>
-          <p style={{ marginBottom: '24px' }}>In Nigeria, approximately {SCD_STATS.traitPrevalencePercent} of the population carries the AS genotype — roughly {SCD_STATS.traitCarriersNigeria} people, according to WHO and Nigeria&apos;s Federal Ministry of Health. That means about 1 in 4 Nigerians is a carrier, making this conversation extraordinarily common and extraordinarily important.</p>
+          <p style={{ marginBottom: '24px' }}>In Nigeria, approximately {SCD_STATS.traitPrevalencePercent} of the population carries the AS genotype, roughly {SCD_STATS.traitCarriersNigeria} people, according to WHO and Nigeria&apos;s Federal Ministry of Health. That means about 1 in 4 Nigerians is a carrier, making this conversation extraordinarily common and extraordinarily important.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What happens when AS meets AS?</h2>
           <p style={{ marginBottom: '24px' }}>When two AS carriers have children, each pregnancy has four possible outcomes, each with equal probability:</p>
