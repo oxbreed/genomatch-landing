@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import SourcesBlock from '../../components/SourcesBlock'
+import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
 
 export const metadata = {
   title: 'What Genotype Should I Check Before Marriage in Nigeria?',
@@ -42,8 +44,8 @@ export default function Article1() {
           </ul>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>Why does it matter before marriage?</h2>
-          <p style={{ marginBottom: '24px' }}>When two AS carriers have children together, each pregnancy carries a 25% chance of producing a child with SS, sickle cell disease. That is 1 in 4. In a family of four children, statistically one will be affected.</p>
-          <p style={{ marginBottom: '24px' }}>Sickle cell disease is a lifelong, painful, and life-limiting condition. Children with SS face recurrent pain crises, organ damage, frequent hospitalisations, and a significantly reduced life expectancy without intensive medical care.</p>
+          <p style={{ marginBottom: '24px' }}>When two AS carriers have children together, each pregnancy carries a 25% chance of producing a child with SS, sickle cell disease. That is {SCD_STATS.asCoupleSsRisk}. In a family of four children, statistically one will be affected on average.</p>
+          <p style={{ marginBottom: '24px' }}>Sickle cell disease is a lifelong, painful, and life-limiting condition. Children with SS face recurrent pain crises, organ damage, frequent hospitalisations, and significantly reduced life expectancy without intensive medical care — under 20 years in Nigeria, compared with {SCD_STATS.lifeExpectancyHighIncomeYears} years in high-income countries with comprehensive specialist care.</p>
           <p style={{ marginBottom: '24px' }}>This is not about blame. AS carriers are healthy, successful, wonderful people. But when two AS carriers build a family together without knowing their compatibility, they are making a life-altering decision without all the information.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>Which genotype combinations are compatible?</h2>
@@ -73,9 +75,11 @@ export default function Article1() {
           <p style={{ marginBottom: '24px' }}>Checking your genotype before marriage is not unromantic. It is one of the most loving things you can do for your future children. It is the conversation that changes everything, when you have it at the right time.</p>
           <p style={{ marginBottom: '48px' }}>GenoMatch was built to make that conversation normal, natural, and early. Join our waitlist and be among the first to experience a new way to find love, one that protects your family from day one.</p>
 
-          <div style={{ background: HERO_SURFACE, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
+          <SourcesBlock sourceIds={SOURCE_SETS.genotypeArticle} />
+
+          <div style={{ background: HERO_SURFACE, borderRadius: '16px', padding: '40px', textAlign: 'center', marginTop: '48px' }}>
             <h3 style={{ color: WHITE, fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>Ready to date with your future in mind?</h3>
-            <p style={{ color: SAGE, marginBottom: '24px', fontFamily: BODY }}>Join thousands of intentional singles on the GenoMatch waitlist.</p>
+            <p style={{ color: SAGE, marginBottom: '24px', fontFamily: BODY }}>Join intentional singles on the GenoMatch waitlist.</p>
             <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</Link>
           </div>
         </div>

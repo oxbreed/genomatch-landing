@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import SourcesBlock from '../../components/SourcesBlock'
+import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
 
 export const metadata = {
   title: 'Can AS Marry AS? The Truth About Sickle Cell Risk',
@@ -32,7 +34,7 @@ export default function Article2() {
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What does AS mean?</h2>
           <p style={{ marginBottom: '24px' }}>AS means you are a sickle cell carrier. You have one normal haemoglobin gene (A) and one sickle cell gene (S). People with AS genotype are generally healthy. They do not have sickle cell disease. But they carry the gene and can pass it to their children.</p>
-          <p style={{ marginBottom: '24px' }}>In Nigeria, approximately 25% of the population carries the AS genotype. That means 1 in 4 Nigerians is a carrier, making this conversation extraordinarily common and extraordinarily important.</p>
+          <p style={{ marginBottom: '24px' }}>In Nigeria, approximately {SCD_STATS.traitPrevalencePercent} of the population carries the AS genotype — roughly {SCD_STATS.traitCarriersNigeria} people, according to WHO and Nigeria&apos;s Federal Ministry of Health. That means about 1 in 4 Nigerians is a carrier, making this conversation extraordinarily common and extraordinarily important.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What happens when AS meets AS?</h2>
           <p style={{ marginBottom: '24px' }}>When two AS carriers have children, each pregnancy has four possible outcomes, each with equal probability:</p>
@@ -69,7 +71,12 @@ export default function Article2() {
           <p style={{ marginBottom: '24px' }}>GenoMatch was built precisely for this moment, before the feelings run deep, before the families are introduced, before the conversation becomes painful. On GenoMatch, your genotype is part of your profile from day one. Compatibility is calculated before the first message is sent.</p>
           <p style={{ marginBottom: '48px' }}>This does not mean AS cannot match with AS on GenoMatch. It means both people know exactly where they stand before they invest their hearts. The choice remains theirs. The information is simply available when it matters most.</p>
 
-          <div style={{ background: HERO_SURFACE, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
+          <SourcesBlock
+            sourceIds={SOURCE_SETS.asMarriageArticle}
+            note="Genetic probabilities follow standard Mendelian inheritance for autosomal recessive conditions. See NIH and CDC references below."
+          />
+
+          <div style={{ background: HERO_SURFACE, borderRadius: '16px', padding: '40px', textAlign: 'center', marginTop: '48px' }}>
             <h3 style={{ color: WHITE, fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>Know your compatibility from day one</h3>
             <p style={{ color: SAGE, marginBottom: '24px', fontFamily: BODY }}>Join the GenoMatch waitlist and be first to experience intentional, informed dating.</p>
             <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</Link>

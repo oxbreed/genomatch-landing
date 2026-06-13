@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import GenoCrest from '../components/GenoCrest'
+import SourcesBlock from '../components/SourcesBlock'
+import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
 import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
 export default function Mission() {
@@ -54,7 +56,7 @@ export default function Mission() {
           A preventable crisis affecting millions of African families
         </h2>
         <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
-          Nigeria has the highest burden of sickle cell disease in the world. Over 150,000 children are born with the condition every year, making it the most common severe genetic disorder on the African continent.
+          Nigeria has the highest burden of sickle cell disease in the world. Over {SCD_STATS.nigeriaBirthsPerYear} children are born with the condition every year — about 2% of all Nigerian births — making it the most common severe genetic disorder on the African continent.
         </p>
         <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
           Sickle cell disease (SCD) occurs when two carriers of the sickle cell trait, both with the AS genotype, have children together. Each pregnancy carries a 1 in 4 chance of producing a child with SS, the most severe form of the disease.
@@ -66,9 +68,9 @@ export default function Mission() {
         {/* Stats */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px', marginTop: '60px' }}>
           {[
-            { stat: '150,000+', label: 'Children born with sickle cell disease in Nigeria annually' },
-            { stat: '1 in 4', label: 'Chance of an SS child when both parents carry the AS trait' },
-            { stat: '25M+', label: 'People in Nigeria carry the sickle cell trait (AS genotype)' },
+            { stat: `${SCD_STATS.nigeriaBirthsPerYear}+`, label: 'Children born with sickle cell disease in Nigeria annually' },
+            { stat: SCD_STATS.asCoupleSsRisk, label: 'Chance of an SS child when both parents carry the AS trait' },
+            { stat: `~${SCD_STATS.traitCarriersNigeria}`, label: 'Nigerians estimated to carry the sickle cell trait (~25% of the population)' },
           ].map((item, i) => (
             <div key={i} className="gm-card" style={{ background: WHITE, borderRadius: '16px', padding: '32px 24px', borderLeft: `4px solid ${GOLD}` }}>
               <div style={{ color: GOLD, fontSize: '2.5rem', fontWeight: 700, marginBottom: '12px' }}>{item.stat}</div>
@@ -76,6 +78,10 @@ export default function Mission() {
             </div>
           ))}
         </div>
+        <SourcesBlock
+          sourceIds={SOURCE_SETS.missionStats}
+          note="Statistics drawn from WHO and Nigeria Federal Ministry of Health publications."
+        />
       </section>
 
       {/* Our Solution */}

@@ -4,6 +4,7 @@ import { CSSProperties, FormEvent, ReactNode, useEffect, useId, useRef, useState
 import Image from "next/image";
 import Link from "next/link";
 import { joinWaitlist } from "./actions";
+import { SCD_STATS, SOURCE_SETS, getSources } from "@/lib/scd-facts";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -699,10 +700,12 @@ export default function Home() {
 
   const trustBadges = ["Science-backed matching", "Private & secure", "Built for Africa & diaspora"];
 
+  const homepageSources = getSources(SOURCE_SETS.homepageStats);
+
   const stats = [
-    { stat: "1 in 4", label: "AS couples risk having an SS child" },
-    { stat: "300,000", label: "Sickle cell births annually" },
-    { stat: "Too late", label: "When most couples find out" },
+    { stat: SCD_STATS.asCoupleSsRisk, label: "Chance of an SS child when both parents are AS carriers" },
+    { stat: `${SCD_STATS.globalBirthsPerYear}+`, label: "Babies born with sickle cell disease worldwide each year" },
+    { stat: `${SCD_STATS.nigeriaBirthsPerYear}+`, label: "Of those births occur in Nigeria each year" },
   ];
 
   const steps = [
@@ -932,7 +935,23 @@ export default function Home() {
               ))}
             </Reveal>
             <p className="mt-10 text-xs font-light leading-relaxed" style={{ color: TEXT_SOFT }}>
-              Sources: WHO African Region sickle cell data; NIH sickle cell disease statistics.
+              Sources:{" "}
+              {homepageSources.map((source, index) => (
+                <span key={source.url}>
+                  {index > 0 ? "; " : null}
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-refined underline decoration-[rgba(191,155,74,0.45)] underline-offset-2"
+                    style={{ color: GOLD_MID }}
+                  >
+                    {source.publisher}
+                    {source.year ? ` (${source.year})` : ""}
+                  </a>
+                </span>
+              ))}
+              . Global birth estimate from {SCD_STATS.globalBirthsYear} data.
             </p>
           </div>
         </section>
@@ -1077,7 +1096,7 @@ export default function Home() {
                     name: "Is GenoMatch available in Nigeria?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Yes. GenoMatch is primarily built for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada. The app is currently available on iOS and Android.",
+                      text: "Yes. GenoMatch is primarily built for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada. The app is launching soon on iOS and Android — join the waitlist for early access.",
                     },
                   },
                   {

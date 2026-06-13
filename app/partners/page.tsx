@@ -4,6 +4,8 @@ import { FormEvent, useState } from 'react'
 import Link from 'next/link'
 import { submitPartnerEnquiry } from '../actions'
 import GenoCrest from '../components/GenoCrest'
+import SourcesBlock from '../components/SourcesBlock'
+import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
 import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -91,7 +93,7 @@ export default function Partners() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
             {[
-              { title: 'Reach', body: 'GenoMatch targets 350M+ smartphone users across West Africa and the African diaspora in the UK, US, and Canada. Our users are educated, intentional singles actively seeking serious relationships.' },
+              { title: 'Reach', body: `GenoMatch targets ${SCD_STATS.africaMobileInternetUsers}+ mobile internet users across Africa (GSMA, 2024), centred on Nigeria — the world's largest sickle cell burden — and extending to the African diaspora in the UK, US, and Canada. Our users are educated, intentional singles actively seeking serious relationships.` },
               { title: 'Impact', body: 'Every partnership directly contributes to reducing sickle cell disease incidence. This is measurable, reportable public health impact that aligns with SDG 3, Good Health and Well-Being.' },
               { title: 'First Mover', body: 'GenoMatch is the first and only genotype-aware dating platform in the world. Partnering now positions your organisation at the forefront of a global health-tech movement.' },
               { title: 'Data & Research', body: 'With user consent, GenoMatch can provide anonymised genotype distribution data across Nigeria and the diaspora, valuable for research, policy, and public health planning.' },
@@ -104,6 +106,10 @@ export default function Partners() {
               </div>
             ))}
           </div>
+          <SourcesBlock
+            sourceIds={SOURCE_SETS.partnersReach}
+            note="Mobile reach figure refers to mobile internet subscribers across Africa per GSMA (2024 baseline, 2025 report)."
+          />
         </div>
       </section>
 
