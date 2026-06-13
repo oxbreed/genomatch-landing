@@ -977,6 +977,22 @@ export default function Home() {
               <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed" style={{ color: SAGE }}>
                 Launching soon on iOS and Android.
               </p>
+              <div className="relative mx-auto mt-8 w-full max-w-[260px] sm:max-w-[280px]">
+                <div
+                  className="pointer-events-none absolute -inset-10"
+                  style={{ background: `radial-gradient(circle, rgba(191,155,74,0.12) 0%, transparent 68%)` }}
+                  aria-hidden
+                />
+                <Image
+                  src="/genomatch-app-onboarding-matches.png"
+                  alt="GenoMatch app screen showing genotype-aware match profiles"
+                  width={472}
+                  height={1024}
+                  sizes="280px"
+                  className="relative w-full rounded-[1.75rem] border"
+                  style={{ borderColor: "rgba(191,155,74,0.35)", boxShadow: shadowDeep }}
+                />
+              </div>
             </Reveal>
           </div>
         </section>
@@ -1041,24 +1057,6 @@ export default function Home() {
                   </li>
                 ))}
               </ol>
-            </Reveal>
-            <Reveal delay={200} className="mt-16 flex justify-center lg:mt-20">
-              <div className="relative w-full max-w-[260px] sm:max-w-[280px]">
-                <div
-                  className="pointer-events-none absolute -inset-10"
-                  style={{ background: `radial-gradient(circle, rgba(191,155,74,0.12) 0%, transparent 68%)` }}
-                  aria-hidden
-                />
-                <Image
-                  src="/genomatch-app-onboarding-matches.png"
-                  alt="GenoMatch app screen showing genotype-aware match profiles"
-                  width={472}
-                  height={1024}
-                  sizes="280px"
-                  className="relative w-full rounded-[1.75rem] border"
-                  style={{ borderColor: "rgba(191,155,74,0.35)", boxShadow: shadowDeep }}
-                />
-              </div>
             </Reveal>
           </div>
         </section>
