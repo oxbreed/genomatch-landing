@@ -50,7 +50,7 @@ export default function Article3() {
           <p style={{ marginBottom: '24px' }}>Their parents, in the vast majority of cases, did not know. Not because they did not care, but because nobody told them to check before they fell in love.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>The cost of not knowing</h2>
-          <p style={{ marginBottom: '24px' }}>The economic burden of sickle cell disease in Nigeria is staggering. A single pain crisis requiring hospitalisation can cost a family between ₦50,000 and ₦500,000, in a country where the minimum wage is ₦30,000 per month. For families with SS children, this is not an occasional expense. It is a constant financial emergency.</p>
+          <p style={{ marginBottom: '24px' }}>The economic burden of sickle cell disease in Nigeria is staggering. A single pain crisis requiring hospitalisation can cost a family between ₦50,000 and ₦500,000 (roughly US$37 to US$367 at June 2026 exchange rates), in a country where the minimum wage is ₦70,000 per month (about US$51). For families with SS children, this is not an occasional expense. It is a constant financial emergency.</p>
           <p style={{ marginBottom: '24px' }}>Beyond money, the emotional weight of watching a child suffer from a preventable condition, and knowing that a single conversation before marriage could have changed everything, is a burden no family should have to carry.</p>
 
           <h2 style={{ color: FOREST, fontSize: '1.6rem', fontWeight: 700, margin: '48px 0 16px', fontFamily: 'Georgia, serif' }}>What can be done</h2>
