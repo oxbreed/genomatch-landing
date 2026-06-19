@@ -853,7 +853,7 @@ export default function Home() {
               Built for anyone who values informed love.
             </p>
 
-            <div className="rise rise-3 mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="rise rise-3 mt-8 flex flex-wrap items-center justify-center gap-4">
               {trustBadges.map((badge) => (
                 <span key={badge} className="trust-pill rounded-full px-4 py-1.5 text-xs font-medium tracking-wide">
                   {badge}
