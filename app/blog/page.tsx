@@ -34,8 +34,17 @@ const posts = [
 ]
 
 export const metadata = {
-  title: 'Blog',
+  title: 'Blog | GenoMatch',
   description: 'Genotype education, sickle cell awareness, and intentional dating advice for Nigeria and the African diaspora.',
+  openGraph: {
+    title: 'Blog | GenoMatch',
+    description: 'Genotype education, sickle cell awareness, and intentional dating advice for Nigeria and the African diaspora.',
+    url: 'https://genomatch.app/blog',
+  },
+  twitter: {
+    title: 'Blog | GenoMatch',
+    description: 'Genotype education, sickle cell awareness, and intentional dating advice for Nigeria and the African diaspora.',
+  },
 }
 
 export default function Blog() {
