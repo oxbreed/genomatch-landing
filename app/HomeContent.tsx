@@ -1118,7 +1118,7 @@ export default function Home() {
                     name: "What makes GenoMatch different from other dating apps?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "GenoMatch is the only dating app in the world that incorporates genotype compatibility into its matching algorithm. While other apps like Tinder, Bumble, and Hinge match on attraction and interests alone, GenoMatch adds a genetic compatibility layer that is especially important in West Africa where sickle cell disease affects millions of families.",
+                      text: "GenoMatch is the only dating app in the world that incorporates genotype compatibility into its matching algorithm. While mainstream dating apps match on attraction and interests alone, GenoMatch adds a genetic compatibility layer that is especially important in West Africa where sickle cell disease affects millions of families.",
                     },
                   },
                 ],
@@ -1151,8 +1151,8 @@ export default function Home() {
                 a: "Absolutely. Your genotype is treated as sensitive health data, encrypted, never sold, and used only for compatibility matching. GenoMatch is compliant with Nigeria's NDPA 2023 data protection law.",
               },
               {
-                q: "What makes GenoMatch different from Tinder or Bumble?",
-                a: "GenoMatch is the only dating app in the world that incorporates genetic compatibility into matching. Other apps optimise for attraction. GenoMatch optimises for outcomes, helping you build a love story that protects your future family.",
+                q: "What makes GenoMatch different from other dating apps?",
+                a: "GenoMatch is the only dating app in the world that incorporates genetic compatibility into matching. Mainstream dating apps optimise for attraction. GenoMatch optimises for outcomes, helping you build a love story that protects your future family.",
               },
             ].map((item, i) => (
               <details key={i} className="faq-item">
