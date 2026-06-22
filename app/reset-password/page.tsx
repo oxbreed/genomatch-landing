@@ -173,6 +173,7 @@ export default function ResetPasswordPage() {
         </Link>
       </header>
       <main
+        id="main-content"
         style={{
           maxWidth: 440,
           margin: '0 auto',

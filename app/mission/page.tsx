@@ -9,7 +9,7 @@ import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURF
 
 export default function Mission() {
   return (
-    <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+    <div id="main-content" style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
 
       {/* Nav */}
       <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>

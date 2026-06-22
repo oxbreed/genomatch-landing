@@ -795,7 +795,7 @@ export default function Home() {
         ) : null}
       </header>
 
-      <main>
+      <main id="main-content">
         <section
           className="relative flex min-h-[88vh] w-full flex-col justify-center overflow-hidden px-6 pb-16 pt-12 lg:px-8 lg:pb-24 lg:pt-20"
           style={{ backgroundColor: IVORY }}

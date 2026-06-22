@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
           <span style={{ color: '#BF9B4A', fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </Link>
       </header>
-      <main style={{ maxWidth: 800, margin: '0 auto', padding: '56px 24px', fontFamily: BODY, lineHeight: 1.7, color: '#243830' }}>
+      <main id="main-content" style={{ maxWidth: 800, margin: '0 auto', padding: '56px 24px', fontFamily: BODY, lineHeight: 1.7, color: '#243830' }}>
       <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8, color: '#163522', fontFamily: 'Georgia, serif' }}>Privacy Policy</h1>
       <p style={{ color: '#5A7268', marginBottom: 40 }}>Last updated: June 2026</p>
 

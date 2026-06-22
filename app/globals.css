@@ -16,6 +16,27 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Skip to main content link — visually hidden until focused via keyboard */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  padding: 0.75rem 1.25rem;
+  background: #163522;
+  color: #f0e6d0;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 0.5rem 0;
+  box-shadow: 0 4px 16px rgba(15, 36, 25, 0.18);
+}
+.skip-link:focus {
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  outline: 2px solid #bf9b4a;
+  outline-offset: 2px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
