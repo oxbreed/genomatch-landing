@@ -6,6 +6,21 @@ import {
 } from "./lib/security-headers";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "genomatch\\.app",
+          },
+        ],
+        destination: "https://www.genomatch.app/:path*",
+        statusCode: 301,
+      },
+    ];
+  },
   async headers() {
     return [
       {

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://genomatch.app"),
+  metadataBase: new URL("https://www.genomatch.app"),
   title: {
     default: "GenoMatch | The World's First Genotype Aware Dating App",
     template: "%s | GenoMatch",
@@ -227,7 +227,7 @@ export const metadata: Metadata = {
     creator: "@genomatch",
   },
   alternates: {
-    canonical: "https://genomatch.app",
+    canonical: "https://www.genomatch.app",
   },
   category: "dating",
   applicationName: "GenoMatch",
