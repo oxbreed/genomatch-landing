@@ -100,16 +100,22 @@ export async function getScdNewsFeed(limit = 12): Promise<{
 }> {
   const results = await Promise.allSettled(RSS_FEEDS.map((feed) => fetchFeed(feed)))
 
-  const seen = new Set<string>()
+  // Google News RSS frequently surfaces the same story from multiple aggregator
+  // angles: sometimes with an identical URL, sometimes with the same headline
+  // under a different URL. Deduplicate on both, keeping the first occurrence.
+  const seenUrls = new Set<string>()
+  const seenTitles = new Set<string>()
   const merged: ScdNewsItem[] = []
 
   for (const result of results) {
     if (result.status !== 'fulfilled') continue
 
     for (const item of result.value) {
-      const key = item.url.toLowerCase()
-      if (seen.has(key)) continue
-      seen.add(key)
+      const urlKey = item.url.trim().toLowerCase()
+      const titleKey = item.title.trim().toLowerCase()
+      if (seenUrls.has(urlKey) || (titleKey && seenTitles.has(titleKey))) continue
+      seenUrls.add(urlKey)
+      if (titleKey) seenTitles.add(titleKey)
       merged.push(item)
     }
   }
