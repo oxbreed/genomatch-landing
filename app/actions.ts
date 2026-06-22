@@ -5,6 +5,7 @@ import { headers } from 'next/headers'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const MAX_ORG_LENGTH = 200
+const MAX_NAME_LENGTH = 200
 const MAX_MESSAGE_LENGTH = 5000
 
 const RATE_LIMIT_WINDOW_MS = 60_000
@@ -111,4 +112,51 @@ export async function submitPartnerEnquiry(
   }
 
   return { success: true, message: 'Thank you for reaching out. We will be in touch within 48 hours.' }
+}
+
+export async function submitContactEnquiry(
+  name: string,
+  email: string,
+  message: string
+) {
+  const trimmedName = name?.trim() ?? ''
+  const trimmedEmail = email?.trim().toLowerCase() ?? ''
+  const trimmedMessage = message?.trim() ?? ''
+
+  if (!trimmedName || trimmedName.length > MAX_NAME_LENGTH) {
+    return { success: false, message: 'Please enter your name.' }
+  }
+  if (!trimmedEmail || trimmedEmail.length > 254 || !EMAIL_RE.test(trimmedEmail)) {
+    return { success: false, message: 'Please enter a valid email address.' }
+  }
+  if (!trimmedMessage || trimmedMessage.length > MAX_MESSAGE_LENGTH) {
+    return { success: false, message: 'Please enter a message.' }
+  }
+
+  if (await isRateLimited('contact')) {
+    return { success: false, message: 'Too many attempts. Please try again in a minute.' }
+  }
+
+  const supabase = getSupabase()
+  if (!supabase) {
+    return {
+      success: false,
+      message: 'Service temporarily unavailable. Please email us directly at hello@genomatch.app',
+    }
+  }
+
+  const { error } = await supabase.from('contact_enquiries').insert({
+    name: trimmedName,
+    email: trimmedEmail,
+    message: trimmedMessage,
+  })
+
+  if (error) {
+    return {
+      success: false,
+      message: 'Something went wrong. Please try again or email us directly at hello@genomatch.app',
+    }
+  }
+
+  return { success: true, message: 'Thank you for getting in touch. We will reply within 48 hours.' }
 }

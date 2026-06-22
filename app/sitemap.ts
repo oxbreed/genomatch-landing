@@ -8,6 +8,7 @@ const LAST_MODIFIED = {
   blog: new Date("2026-06-10"),
   posts: new Date("2026-06-01"),
   legal: new Date("2026-06-01"),
+  pages: new Date("2026-06-22"),
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -59,6 +60,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: LAST_MODIFIED.posts,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    },
+    {
+      url: "https://www.genomatch.app/faq",
+      lastModified: LAST_MODIFIED.pages,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: "https://www.genomatch.app/contact",
+      lastModified: LAST_MODIFIED.pages,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     },
     {
       url: "https://www.genomatch.app/privacy",

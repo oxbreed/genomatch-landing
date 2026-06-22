@@ -696,6 +696,8 @@ export default function Home() {
     { href: "/mission", label: "Our Mission" },
     { href: "/partners", label: "For Partners" },
     { href: "/blog", label: "Blog" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/contact", label: "Contact" },
   ];
 
   const trustBadges = ["Matching grounded in science", "Private and secure", "Built for Africa and the diaspora"];

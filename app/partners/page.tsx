@@ -65,11 +65,13 @@ export default function Partners() {
         <Link href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </Link>
-        <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
           <Link href="https://www.genomatch.app/#how-it-works" className="gm-link" style={{ color: SAGE, fontSize: '14px', textDecoration: 'none', fontFamily: BODY }}>How it works</Link>
           <Link href="/mission" className="gm-link" style={{ color: SAGE, fontSize: '14px', textDecoration: 'none', fontFamily: BODY }}>Our Mission</Link>
           <Link href="/partners" className="gm-link" style={{ color: GOLD, fontSize: '14px', textDecoration: 'none', fontFamily: BODY, fontWeight: 700 }}>For Partners</Link>
           <Link href="/blog" className="gm-link" style={{ color: SAGE, fontSize: '14px', textDecoration: 'none', fontFamily: BODY }}>Blog</Link>
+          <Link href="/faq" className="gm-link" style={{ color: SAGE, fontSize: '14px', textDecoration: 'none', fontFamily: BODY }}>FAQ</Link>
+          <Link href="/contact" className="gm-link" style={{ color: SAGE, fontSize: '14px', textDecoration: 'none', fontFamily: BODY }}>Contact</Link>
           <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
         </div>
       </header>
