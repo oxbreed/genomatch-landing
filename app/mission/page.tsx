@@ -160,16 +160,15 @@ export default function Mission() {
           />
           <h2 style={{ color: WHITE, fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, margin: '0 0 8px' }}>Olusegun Adedoyin</h2>
           <p style={{ color: SAGE, fontSize: '15px', fontFamily: BODY, margin: '0 0 40px' }}>Founder, GenoMatch Ltd</p>
-          <p style={{ color: GOLD, fontSize: '22px', fontWeight: 300, lineHeight: 1.5, margin: '0 0 24px', fontFamily: 'Georgia, serif' }}>GenoMatch is personal.</p>
           <div style={{ textAlign: 'left' }}>
             <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: BODY }}>
-              GenoMatch grew out of something personal. Olusegun saw within his own family how much difference earlier genetic awareness can make, and how often that knowledge comes too late. That insight is the reason GenoMatch exists: to bring the genotype conversation to the very start of a relationship, where it can quietly inform the choices couples make.
+              GenoMatch is personal. Olusegun has spent years close to community health work across Lagos, watching how often the right information arrives too late to change anything — a diagnosis after a decision&apos;s already been made, a conversation that should have happened months earlier. That pattern is what GenoMatch exists to interrupt: bringing the genotype conversation to the very start of a relationship, where it can quietly inform the choices couples make, while there&apos;s still time for it to matter.
             </p>
             <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: BODY }}>
-              Founder of GenoMatch Ltd, Olusegun builds technology to solve deeply human problems across West Africa. He also runs a brand and business consultancy that helps founders turn early-stage ideas into operating companies, and his background spans education, communication, and international relations. His work in community health began in his school years, when he led the Health and Life Planning Club, an Action Health Incorporated initiative running across local government areas in Lagos.
+              Olusegun builds technology to solve deeply human problems across sub-Saharan Africa and beyond. He also runs a Brand &amp; Business Strategy Studio, helping founders and businesses through sharp positioning, strategic clarity, and communication that converts. His background spans education, communication, and international relations, and his interest in community health goes back to his school years, when he led the Health and Life Planning Club, an Action Health Incorporated initiative running across local government areas in Lagos.
             </p>
             <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, fontFamily: BODY }}>
-              GenoMatch brings these threads together: care, technology, and a belief that better information leads to healthier families.
+              GenoMatch brings these threads together — care, technology, and a belief that better information leads to healthier families.
             </p>
           </div>
           <div style={{ marginTop: '40px' }}>
