@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import SickleCellRibbon from '../../components/SickleCellRibbon'
 import SourcesBlock from '../../components/SourcesBlock'
 import { formatUsd, SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
 
@@ -25,7 +26,10 @@ export default function Article3() {
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '80px 24px' }}>
         <a href="/blog" className="gm-link" style={{ color: GOLD, fontSize: '14px', fontFamily: BODY, textDecoration: 'none', display: 'block', marginBottom: '40px' }}>← Back to Blog</a>
-        <span style={{ background: LINEN, color: FOREST, fontSize: '11px', letterSpacing: '1px', padding: '4px 12px', borderRadius: '99px', fontFamily: BODY, fontWeight: 700, border: `1px solid rgba(22,53,34,0.15)` }}>Public Health</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+          <SickleCellRibbon size={32} />
+          <span style={{ background: LINEN, color: FOREST, fontSize: '11px', letterSpacing: '1px', padding: '4px 12px', borderRadius: '99px', fontFamily: BODY, fontWeight: 700, border: `1px solid rgba(22,53,34,0.15)` }}>Public Health</span>
+        </div>
         <h1 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', fontWeight: 700, margin: '24px 0 16px', lineHeight: 1.2 }}>
           Sickle Cell Disease in Nigeria: The Numbers That Should Shock You
         </h1>

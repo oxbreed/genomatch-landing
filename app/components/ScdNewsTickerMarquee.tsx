@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import type { ScdNewsItem } from '@/lib/scd-news-feed'
-import SickleCellMark from './SickleCellMark'
+import SickleCellRibbon from './SickleCellRibbon'
 
 type ScdNewsTickerMarqueeProps = {
   items: ScdNewsItem[]
@@ -18,7 +18,7 @@ export default function ScdNewsTickerMarquee({ items }: ScdNewsTickerMarqueeProp
     >
       <div className="scd-news-ticker-bar">
         <div className="scd-news-ticker-label">
-          <SickleCellMark size={18} idPrefix="ticker" variant="light" className="scd-news-ticker-mark shrink-0" />
+          <SickleCellRibbon size={16} variant="light" className="scd-news-ticker-mark shrink-0" />
           <span className="scd-news-ticker-label-text">SCD News</span>
           <Link href="/blog/news" className="scd-news-ticker-more">
             View all

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { joinWaitlist } from "./actions";
 import SickleCellMark from "./components/SickleCellMark";
+import SickleCellRibbon from "./components/SickleCellRibbon";
 import { FAQ_ITEMS, getFaqJsonLd } from "@/lib/faq";
 import { SCD_STATS, SOURCE_SETS, getSources } from "@/lib/scd-facts";
 
@@ -915,7 +916,7 @@ export default function Home() {
                   boxShadow: "0 1px 8px rgba(165,42,58,0.06)",
                 }}
               >
-                <SickleCellMark size={22} idPrefix="facts-badge" />
+                <SickleCellRibbon size={20} />
                 <span style={{ ...labelStyle, color: "#8A3A45", marginBottom: 0 }}>Sickle cell awareness</span>
               </div>
               <SectionLabel>The facts</SectionLabel>

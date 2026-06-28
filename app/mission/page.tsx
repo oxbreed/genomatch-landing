@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import GenoCrest from '../components/GenoCrest'
 import SickleCellMark from '../components/SickleCellMark'
+import SickleCellRibbon from '../components/SickleCellRibbon'
 import SourcesBlock from '../components/SourcesBlock'
 import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
 import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
@@ -73,7 +74,10 @@ export default function Mission() {
         </p>
 
         {/* Stats */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px', marginTop: '60px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px', marginBottom: '8px' }}>
+          <SickleCellRibbon size={36} style={{ opacity: 0.92 }} />
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px', marginTop: '24px' }}>
           {[
             { stat: `${SCD_STATS.nigeriaBirthsPerYear}+`, label: 'Children born with sickle cell disease in Nigeria annually' },
             { stat: SCD_STATS.asCoupleSsRisk, label: 'Chance of an SS child when both parents carry the AS trait' },
