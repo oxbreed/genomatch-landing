@@ -4,6 +4,8 @@ import { CSSProperties, FormEvent, ReactNode, useEffect, useId, useRef, useState
 import Image from "next/image";
 import Link from "next/link";
 import { joinWaitlist } from "./actions";
+import SickleCellMark from "./components/SickleCellMark";
+import { FAQ_ITEMS, getFaqJsonLd } from "@/lib/faq";
 import { SCD_STATS, SOURCE_SETS, getSources } from "@/lib/scd-facts";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -892,9 +894,30 @@ export default function Home() {
             aria-hidden
           />
           <HelixField className="pointer-events-none absolute -right-8 top-12 w-48 opacity-25" />
+          <SickleCellMark
+            size={240}
+            idPrefix="stats-watermark"
+            className="pointer-events-none absolute -bottom-10 -right-8 rotate-12 opacity-[0.08] sm:-right-4 lg:opacity-[0.1]"
+          />
+          <SickleCellMark
+            size={120}
+            idPrefix="stats-watermark-l"
+            className="pointer-events-none absolute -left-6 top-1/3 -rotate-12 opacity-[0.05] hidden sm:block"
+          />
           <div className="relative mx-auto max-w-6xl">
             <Reveal>
               <DiamondRule className="mb-10 max-w-xs" />
+              <div
+                className="mb-5 inline-flex items-center gap-2.5 rounded-full border px-4 py-2"
+                style={{
+                  borderColor: "rgba(165,42,58,0.22)",
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(251,250,246,0.88) 100%)",
+                  boxShadow: "0 1px 8px rgba(165,42,58,0.06)",
+                }}
+              >
+                <SickleCellMark size={22} idPrefix="facts-badge" />
+                <span style={{ ...labelStyle, color: "#8A3A45", marginBottom: 0 }}>Sickle cell awareness</span>
+              </div>
               <SectionLabel>The facts</SectionLabel>
               <h2
                 className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
@@ -1071,60 +1094,7 @@ export default function Home() {
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: "What is GenoMatch?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "GenoMatch is the world's first genotype aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interest compatibility, helping couples make informed decisions about their future family health.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "How does genotype matching work on GenoMatch?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Users declare their genotype (AA, AS, SS, or AC) during registration. GenoMatch calculates a compatibility score based on the genetic risk of sickle cell disease in potential children. For example, two AS carriers have a 1 in 4 chance of having an SS child, so GenoMatch factors this into match rankings to help couples have this important conversation early.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Is GenoMatch available in Nigeria?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. GenoMatch is primarily built for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada. The app is launching soon on iOS and Android. Join the waitlist for early access.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "What genotypes does GenoMatch support?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "GenoMatch supports all major genotypes including AA (Double Healthy), AS (Carrier), SS (Sickle Cell), and AC (AC Carrier). The app calculates compatibility scores between all genotype combinations and shows the sickle cell risk level for each pairing.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Is my genotype data safe on GenoMatch?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. GenoMatch treats genotype information as sensitive health data. It is encrypted, never sold to third parties, and used solely for compatibility matching within the app. GenoMatch is compliant with Nigeria's NDPA 2023 data protection law.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "What makes GenoMatch different from other dating apps?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "GenoMatch is the only dating app in the world that incorporates genotype compatibility into its matching algorithm. While mainstream dating apps match on attraction and interests alone, GenoMatch adds a genetic compatibility layer that is especially important in West Africa where sickle cell disease affects millions of families.",
-                    },
-                  },
-                ],
-              }),
+              __html: JSON.stringify(getFaqJsonLd()),
             }}
           />
           <Reveal className="relative mx-auto max-w-2xl">
@@ -1135,40 +1105,19 @@ export default function Home() {
                 Everything you need to know
               </h2>
             </div>
-            {[
-              {
-                q: "What is GenoMatch?",
-                a: "GenoMatch is the world's first genotype aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interests.",
-              },
-              {
-                q: "How does genotype matching work?",
-                a: "You declare your genotype during registration. GenoMatch calculates a compatibility score based on the genetic risk for each pairing. Two AS carriers have a 1 in 4 chance of an SS child. GenoMatch ensures you know this before feelings run deep.",
-              },
-              {
-                q: "Is GenoMatch available in Nigeria?",
-                a: "Yes. GenoMatch is built primarily for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada.",
-              },
-              {
-                q: "Is my genotype data safe?",
-                a: "Absolutely. Your genotype is treated as sensitive health data, encrypted, never sold, and used only for compatibility matching. GenoMatch is compliant with Nigeria's NDPA 2023 data protection law.",
-              },
-              {
-                q: "What makes GenoMatch different from other dating apps?",
-                a: "GenoMatch is the only dating app in the world that incorporates genetic compatibility into matching. Mainstream dating apps optimise for attraction. GenoMatch optimises for outcomes, helping you build a love story that protects your future family.",
-              },
-            ].map((item, i) => (
+            {FAQ_ITEMS.map((item, i) => (
               <details key={i} className="faq-item">
                 <summary
                   className="faq-summary flex items-center justify-between gap-6 py-5 text-lg"
                   style={headingStyle}
                 >
-                  {item.q}
+                  {item.question}
                   <svg className="faq-icon shrink-0" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden>
                     <path d="M7 1v12M1 7h12" stroke={GOLD_MID} strokeWidth="1.25" strokeLinecap="round" />
                   </svg>
                 </summary>
                 <p className="faq-answer max-w-[58ch] pb-6 pr-8 text-[0.9375rem] leading-relaxed" style={{ color: TEXT_SOFT }}>
-                  {item.a}
+                  {item.answer}
                 </p>
               </details>
             ))}

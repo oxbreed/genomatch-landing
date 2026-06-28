@@ -74,6 +74,10 @@ body {
   background: rgba(0, 0, 0, 0.12);
 }
 
+.scd-news-ticker-mark {
+  opacity: 0.95;
+}
+
 .scd-news-ticker-live {
   color: #e85d5d;
   font-size: 0.5rem;

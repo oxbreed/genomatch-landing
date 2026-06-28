@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import GenoCrest from '../components/GenoCrest'
+import SickleCellMark from '../components/SickleCellMark'
 import SourcesBlock from '../components/SourcesBlock'
 import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
 import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
@@ -23,12 +24,18 @@ export default function Mission() {
       <section style={{ background: HERO_SURFACE, padding: '100px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <GenoCrest size={220} idPrefix="mission-hero-l" className="hidden sm:block" style={{ position: 'absolute', left: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
         <GenoCrest size={220} idPrefix="mission-hero-r" className="hidden sm:block" style={{ position: 'absolute', right: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
+        <SickleCellMark
+          size={240}
+          idPrefix="mission-hero-scd"
+          variant="light"
+          style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', opacity: 0.07, pointerEvents: 'none' }}
+        />
         <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>OUR MISSION</p>
         <h1 style={{ color: WHITE, fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, maxWidth: '800px', margin: '0 auto 24px', lineHeight: 1.2 }}>
           Love should be intentional. So should genetic health.
         </h1>
         <p style={{ color: SAGE, fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, fontFamily: BODY }}>
-          GenoMatch was built because too many families in West Africa are blindsided by sickle cell disease, a heartbreak that is entirely preventable with the right information at the right time.
+          GenoMatch was built because too many families in West Africa are blindsided by sickle cell disease — a heartbreak that can be significantly reduced when couples have the right information at the right time.
         </p>
       </section>
 
@@ -53,13 +60,13 @@ export default function Mission() {
       <section style={{ background: LINEN, padding: '100px 24px', maxWidth: '800px', margin: '0 auto' }}>
         <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>THE PROBLEM</p>
         <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '32px', lineHeight: 1.3 }}>
-          A preventable crisis affecting millions of African families
+          A crisis we can reduce together
         </h2>
         <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
           Nigeria has the highest burden of sickle cell disease in the world. Over {SCD_STATS.nigeriaBirthsPerYear} children are born with the condition every year, about 2% of all Nigerian births, making it the most common severe genetic disorder on the African continent.
         </p>
         <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
-          Sickle cell disease (SCD) occurs when two carriers of the sickle cell trait, both with the AS genotype, have children together. Each pregnancy carries a 1 in 4 chance of producing a child with SS, the most severe form of the disease.
+          Sickle cell disease (SCD) most commonly occurs when two sickle cell carriers — both with the AS genotype — have children together. Each pregnancy carries a 1 in 4 chance of producing a child with SS, the most severe form of the disease. Other genotype combinations can also produce affected children.
         </p>
         <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, fontFamily: BODY }}>
           The tragedy is not just medical. It is emotional. Most couples only discover their genotype incompatibility after they have fallen in love, planned a future, or already started a family. By then, the conversation is devastating rather than empowering.
@@ -92,7 +99,7 @@ export default function Mission() {
             Genetic awareness, built into the foundation of every match
           </h2>
           <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
-            GenoMatch is the world's first dating application that integrates genotype compatibility into its core matching algorithm. Users declare their genotype, AA, AS, SS, or AC, during registration, and every match is scored not just on personality and interests, but on genetic compatibility.
+            GenoMatch is a dating application that integrates sickle cell genotype compatibility into its core matching algorithm. Users declare their genotype, AA, AS, SS, or AC, during registration, and every match is scored not just on personality and interests, but on genetic compatibility.
           </p>
           <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
             This is not about restricting who people can love. It is about ensuring they have the information they need before emotions make the conversation harder. GenoMatch normalises genotype awareness as a natural, early part of any intentional relationship.
