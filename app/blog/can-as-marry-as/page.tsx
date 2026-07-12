@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import SiteHeader from '../../components/SiteHeader'
 import SourcesBlock from '../../components/SourcesBlock'
 import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
 
@@ -12,12 +13,7 @@ import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURF
 export default function Article2() {
   return (
     <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
-      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(190,153,90,0.15)' }}>
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <span className="crimson-gloss" style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
-        </Link>
-        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
-      </header>
+      <SiteHeader />
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '80px 24px' }}>
         <a href="/blog" className="gm-link" style={{ color: GOLD, fontSize: '14px', fontFamily: BODY, textDecoration: 'none', display: 'block', marginBottom: '40px' }}>← Back to Blog</a>
@@ -77,16 +73,16 @@ export default function Article2() {
           />
 
           <div style={{ background: HERO_SURFACE, borderRadius: '16px', padding: '40px', textAlign: 'center', marginTop: '48px' }}>
-            <h3 style={{ color: WHITE, fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>Know your compatibility from day one</h3>
+            <h3 style={{ color: FOREST, fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px' }}>Know your compatibility from day one</h3>
             <p style={{ color: SAGE, marginBottom: '24px', fontFamily: BODY }}>Join the GenoMatch waitlist and be first to experience intentional, informed dating.</p>
             <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '14px 32px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</Link>
           </div>
         </div>
       </article>
 
-      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(190,153,90,0.15)' }}>
+      <footer style={{ background: WHITE, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(184,44,46,0.1)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
-        <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
+        <p style={{ color: TEXT_SOFT, fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>
     </div>
   )

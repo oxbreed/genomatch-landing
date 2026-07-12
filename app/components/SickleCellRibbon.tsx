@@ -1,9 +1,12 @@
+import Image from 'next/image'
 import type { CSSProperties } from 'react'
 
-const SCD_RIBBON = '#E0162B'
-const SCD_RIBBON_LIGHT = '#FF2D42'
+const ASPECT = 552 / 829
 
-/** Standard awareness-ribbon shape — loop with crossed tails. */
+/**
+ * Sickle cell awareness ribbon — velvet crimson mark.
+ * `size` controls height; width follows the natural ribbon aspect.
+ */
 export default function SickleCellRibbon({
   size = 36,
   className,
@@ -13,27 +16,27 @@ export default function SickleCellRibbon({
   size?: number
   className?: string
   style?: CSSProperties
+  /** Kept for call-site compatibility; image mark is the same for both. */
   variant?: 'default' | 'light'
 }) {
-  const fill = variant === 'light' ? SCD_RIBBON_LIGHT : SCD_RIBBON
+  void variant
+  const height = size
+  const width = Math.max(12, Math.round(size * ASPECT))
 
   return (
-    <svg
-      className={className}
-      style={style}
-      width={size}
-      height={size}
-      viewBox="0 0 512 512"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      aria-label="Sickle cell awareness"
-    >
-      <title>Sickle cell awareness</title>
-      <path
-        fill={fill}
-        d="M412.274 0H342.83L256 147.726 169.17 0H99.726l120.774 192L99.726 384 169.17 512l86.83-147.726L342.83 512l69.444-128-120.774-192L412.274 0z"
-      />
-    </svg>
+    <Image
+      src="/sickle-cell-ribbon.png"
+      alt="Sickle cell awareness"
+      width={width}
+      height={height}
+      className={`select-none ${className ?? ''}`.trim()}
+      style={{
+        width,
+        height,
+        objectFit: 'contain',
+        filter: 'drop-shadow(0 2px 6px rgba(143,17,21,0.18))',
+        ...style,
+      }}
+    />
   )
 }

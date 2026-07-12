@@ -4,6 +4,7 @@ import { CSSProperties, FormEvent, ReactNode, useEffect, useId, useRef, useState
 import Image from "next/image";
 import Link from "next/link";
 import { joinWaitlist } from "./actions";
+import BrandMark from "./components/BrandMark";
 import SickleCellMark from "./components/SickleCellMark";
 import SickleCellRibbon from "./components/SickleCellRibbon";
 import { FAQ_ITEMS, getFaqJsonLd } from "@/lib/faq";
@@ -12,11 +13,11 @@ import { SCD_STATS, SOURCE_SETS, getSources } from "@/lib/scd-facts";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /* Crimson & Champagne — exact app-mark red #B82C2E + gold #BE995A */
-const FOREST = "#8F1115";
+const FOREST = "#B82C2E";
 const FOREST_MID = "#B82C2E";
 const FOREST_SOFT = "#C03030";
-const SAGE = "#E8C4C2";
-const SAGE_LIGHT = "#F0D4D2";
+const SAGE = "#8A7A72";
+const SAGE_LIGHT = "#A89890";
 const WHITE = "#FFFFFF";
 
 const IVORY = "#FFFFFF";
@@ -37,33 +38,33 @@ const SURFACE_MINT = "#FFFFFF";
 const TEXT = "#3A1E1E";
 const TEXT_SOFT = "#6B5856";
 
-const GOLD_LIGHT = "#F0E6D0";
+const GOLD_LIGHT = "#D4BC82";
 const GOLD_MID = "#BE995A";
-const GOLD_DEEP = "#A17538";
-const GOLD_CHAMPAGNE = "#E8CD88";
+const GOLD_DEEP = "#8B6914";
+const GOLD_CHAMPAGNE = "#C9A45A";
 const CRIMSON = "#B82C2E";
 const CRIMSON_LIGHT = "#E35F52";
 
-const goldFoil = `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD_CHAMPAGNE} 28%, ${GOLD_MID} 52%, ${GOLD_DEEP} 72%, ${GOLD_LIGHT} 100%)`;
-const goldHairline = `linear-gradient(90deg, transparent, ${GOLD_MID}18 22%, ${GOLD_CHAMPAGNE}55 50%, ${GOLD_MID}18 78%, transparent)`;
-const heroAmbient = `#FFFFFF`;
-const statsAmbient = `#FFFFFF`;
-const forestDepth = "#8F1115";
-const forestFooter = "#8F1115";
+const goldFoil = `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD_CHAMPAGNE} 28%, ${GOLD_MID} 52%, ${GOLD_DEEP} 78%, ${GOLD_MID} 100%)`;
+const goldHairline = `linear-gradient(90deg, transparent, ${GOLD_MID}28 22%, ${GOLD_CHAMPAGNE}66 50%, ${GOLD_MID}28 78%, transparent)`;
+const heroAmbient = `radial-gradient(ellipse 90% 70% at 50% -10%, rgba(190,153,90,0.16) 0%, transparent 52%), radial-gradient(ellipse 55% 45% at 100% 80%, rgba(184,44,46,0.07) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 0% 60%, rgba(227,95,82,0.06) 0%, transparent 50%), #FFFBF8`;
+const statsAmbient = `linear-gradient(180deg, #FFFFFF 0%, #FFF8F6 48%, #FFFFFF 100%)`;
+const forestDepth = "#FFF8F6";
+const forestFooter = "#FFFBF8";
 
-const FOOTER_LINK = "#F0D4D2";
-const FOOTER_MUTED = "#E8C4C2";
+const FOOTER_LINK = "#B82C2E";
+const FOOTER_MUTED = "#8A7A72";
 
 const shadowSoft =
-  "0 1px 2px rgba(143,17,21,0.04), 0 6px 20px rgba(143,17,21,0.05), 0 18px 40px rgba(143,17,21,0.04)";
+  "0 1px 2px rgba(143,17,21,0.03), 0 8px 24px rgba(143,17,21,0.05), 0 20px 48px rgba(190,153,90,0.04)";
 const shadowDeep =
-  "0 2px 6px rgba(143,17,21,0.05), 0 16px 40px rgba(143,17,21,0.08), 0 40px 80px rgba(143,17,21,0.06)";
+  "0 2px 8px rgba(143,17,21,0.04), 0 18px 44px rgba(143,17,21,0.07), 0 40px 80px rgba(190,153,90,0.05)";
 const shadowElevated =
-  "0 2px 10px rgba(143,17,21,0.06), 0 24px 52px rgba(143,17,21,0.08), 0 0 0 1px rgba(255,255,255,0.88) inset";
+  "0 2px 12px rgba(143,17,21,0.05), 0 24px 56px rgba(143,17,21,0.07), 0 0 0 1px rgba(255,255,255,0.9) inset, 0 1px 0 rgba(255,255,255,0.95) inset";
 const shadowLuxe =
-  "0 4px 20px rgba(143,17,21,0.07), 0 32px 72px rgba(143,17,21,0.1), 0 0 0 1px rgba(255,255,255,0.92) inset";
+  "0 4px 20px rgba(143,17,21,0.06), 0 28px 64px rgba(143,17,21,0.08), 0 0 0 1px rgba(255,255,255,0.94) inset, 0 1px 0 rgba(255,255,255,0.98) inset";
 const shadowQuote =
-  "0 28px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(143,17,21,0.08), inset 0 1px 0 rgba(255,255,255,0.95)";
+  "0 24px 64px rgba(143,17,21,0.08), 0 8px 24px rgba(190,153,90,0.08), inset 0 1px 0 rgba(255,255,255,0.98), inset 0 -1px 0 rgba(184,44,46,0.04)";
 
 const displayFont =
   'Georgia, "Times New Roman", "Palatino Linotype", "Book Antiqua", serif';
@@ -108,11 +109,18 @@ function PageStyles() {
       .rise-3 { animation-delay: 0.34s; }
       .drift { animation: drift 8s ease-in-out infinite; }
       .reveal {
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 1;
+        transform: none;
         transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       }
-      .reveal.reveal-in { opacity: 1; transform: none; }
+      .reveal.reveal-pending {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .reveal.reveal-in {
+        opacity: 1;
+        transform: none;
+      }
       @media (prefers-reduced-motion: reduce) {
         .rise, .rise-1, .rise-2, .rise-3 { animation: none; opacity: 1; transform: none; }
         .reveal { opacity: 1; transform: none; transition: none; }
@@ -120,42 +128,102 @@ function PageStyles() {
         .glass-orb { animation: none; }
         .btn-premium::before { animation: none; opacity: 0.35; }
         .btn-premium:hover { transform: none; }
+        .nav-glass::before { animation: none; opacity: 0.45; }
+        .nav-glass { animation: none; }
         .crimson-gloss { animation: none; }
+        .headline-gloss { animation: none; }
+        .gold-accent { animation: none; }
         .card-lift:hover { transform: none; }
         .faq-answer { animation: none; }
         .faq-icon { transition: none; }
         .mobile-menu { animation: none; }
       }
       .gold-accent {
-        background: ${goldFoil};
-        background-size: 200% auto;
+        color: ${GOLD_DEEP};
+        background: linear-gradient(
+          135deg,
+          ${GOLD_LIGHT} 0%,
+          ${GOLD_CHAMPAGNE} 28%,
+          ${GOLD_MID} 52%,
+          ${GOLD_DEEP} 78%,
+          ${GOLD_MID} 100%
+        );
+        background-size: 180% 180%;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 1px 0 rgba(255,255,255,0.35));
+        animation: goldSheen 10s ease-in-out infinite;
+      }
+      @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+        .gold-accent {
+          color: ${GOLD_DEEP};
+          -webkit-text-fill-color: ${GOLD_DEEP};
+          background: none;
+          filter: none;
+        }
+      }
+      .headline-gloss {
+        color: ${FOREST};
+        background: linear-gradient(
+          145deg,
+          #c84542 0%,
+          #b82c2e 28%,
+          #8f1115 55%,
+          #b82c2e 78%,
+          #c84542 100%
+        );
+        background-size: 180% 180%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 1px 0 rgba(255,255,255,0.28));
+        animation: headlineSheen 12s ease-in-out infinite;
+      }
+      @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+        .headline-gloss {
+          color: ${FOREST};
+          -webkit-text-fill-color: ${FOREST};
+          background: none;
+          filter: none;
+        }
       }
       .crimson-gloss {
+        color: ${FOREST};
         background: linear-gradient(
           125deg,
-          #ff8a7a 0%,
-          #e35f52 14%,
-          #b82c2e 36%,
+          #e35f52 0%,
+          #b82c2e 32%,
           #8f1115 52%,
-          #c03030 68%,
-          #ff6b5c 84%,
-          #b82c2e 100%
+          #b82c2e 72%,
+          #c03030 100%
         );
-        background-size: 220% 220%;
+        background-size: 200% 200%;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        filter:
-          drop-shadow(0 1px 0 rgba(255,255,255,0.45))
-          drop-shadow(0 2px 10px rgba(184,44,46,0.35));
-        animation: crimsonSheen 7s ease-in-out infinite;
+        filter: drop-shadow(0 1px 0 rgba(255,255,255,0.3));
+        animation: crimsonSheen 9s ease-in-out infinite;
+      }
+      @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+        .crimson-gloss {
+          color: ${FOREST};
+          -webkit-text-fill-color: ${FOREST};
+          background: none;
+          filter: none;
+        }
       }
       @keyframes crimsonSheen {
+        0%, 100% { background-position: 0% 45%; }
+        50% { background-position: 100% 55%; }
+      }
+      @keyframes headlineSheen {
         0%, 100% { background-position: 0% 40%; }
         50% { background-position: 100% 60%; }
+      }
+      @keyframes goldSheen {
+        0%, 100% { background-position: 0% 45%; }
+        50% { background-position: 100% 55%; }
       }
       @keyframes glassShimmer {
         0% { background-position: 0% 50%; }
@@ -166,28 +234,123 @@ function PageStyles() {
         50% { transform: translate(2%, -3%) scale(1.04); }
       }
       .nav-glass {
+        position: relative;
         background: linear-gradient(
-          180deg,
-          rgba(255,255,255,0.72) 0%,
-          rgba(255,255,255,0.55) 100%
+          155deg,
+          #ffd2cb 0%,
+          #ff9a8f 12%,
+          #f05a52 28%,
+          #c8302e 46%,
+          #8f1115 58%,
+          #d64540 72%,
+          #ff8a7a 86%,
+          #ffe0da 100%
         );
-        -webkit-backdrop-filter: blur(28px) saturate(180%);
-        backdrop-filter: blur(28px) saturate(180%);
-        border-bottom: 1px solid rgba(255,255,255,0.55);
+        background-size: 180% 180%;
+        -webkit-backdrop-filter: blur(24px) saturate(200%);
+        backdrop-filter: blur(24px) saturate(200%);
+        border-bottom: 1px solid rgba(255,255,255,0.45);
         box-shadow:
           0 1px 0 rgba(255,255,255,0.7) inset,
-          0 -1px 0 rgba(184,44,46,0.04) inset,
-          0 8px 32px rgba(143,17,21,0.06);
+          0 2px 0 rgba(255,255,255,0.22) inset,
+          0 -1px 0 rgba(80,10,12,0.35) inset,
+          0 12px 40px rgba(143,17,21,0.22);
+        overflow: hidden;
+        animation: mirrorRedShift 10s ease-in-out infinite;
+      }
+      .nav-glass::before {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          105deg,
+          transparent 0%,
+          transparent 28%,
+          rgba(255,255,255,0.55) 45%,
+          rgba(255,255,255,0.15) 52%,
+          transparent 62%,
+          transparent 100%
+        );
+        background-size: 240% 100%;
+        opacity: 0.75;
+        animation: glassShimmer 5.5s ease-in-out infinite;
+      }
+      .nav-glass::after {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 48%;
+        background: linear-gradient(
+          180deg,
+          rgba(255,255,255,0.42) 0%,
+          rgba(255,255,255,0.08) 55%,
+          transparent 100%
+        );
+      }
+      .nav-glass > * { position: relative; z-index: 1; }
+      @keyframes mirrorRedShift {
+        0%, 100% { background-position: 0% 40%; }
+        50% { background-position: 100% 60%; }
+      }
+      .nav-glass .nav-link {
+        color: rgba(255,248,246,0.95) !important;
+        text-shadow: 0 1px 1px rgba(80,10,12,0.25);
+      }
+      .nav-glass .nav-link:hover {
+        color: #fff !important;
+      }
+      .nav-glass .crimson-gloss {
+        color: #fff6f4;
+        background: linear-gradient(
+          125deg,
+          #ffffff 0%,
+          #ffe8e4 18%,
+          #ffd4cc 40%,
+          #ffffff 58%,
+          #ffc8be 78%,
+          #ffffff 100%
+        );
+        background-size: 220% 220%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter:
+          drop-shadow(0 1px 0 rgba(255,255,255,0.35))
+          drop-shadow(0 1px 2px rgba(80,10,12,0.3));
+        animation: headlineSheen 8s ease-in-out infinite;
+      }
+      .nav-glass .menu-toggle {
+        border-color: rgba(255,255,255,0.5);
+        background: linear-gradient(145deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08));
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.45) inset,
+          0 2px 8px rgba(80,10,12,0.15);
+      }
+      .nav-glass .menu-toggle svg path {
+        stroke: #fff6f4;
       }
       .panel-luxe {
         border-radius: 1.35rem;
-        border-color: rgba(255,255,255,0.55) !important;
+        border-color: rgba(255,255,255,0.72) !important;
       }
       @media (min-width: 640px) {
         .panel-luxe { border-radius: 1.65rem; }
       }
       .quote-luxe {
         box-shadow: ${shadowQuote.replace(/"/g, "")};
+        background: linear-gradient(
+          165deg,
+          rgba(255,255,255,0.88) 0%,
+          rgba(255,248,246,0.72) 50%,
+          rgba(255,255,255,0.78) 100%
+        ) !important;
+        -webkit-backdrop-filter: blur(24px) saturate(160%);
+        backdrop-filter: blur(24px) saturate(160%);
+        border-color: rgba(255,255,255,0.75) !important;
       }
       .stat-featured {
         box-shadow: ${shadowLuxe.replace(/"/g, "")};
@@ -199,27 +362,28 @@ function PageStyles() {
         top: 0;
         height: 2px;
         background: ${goldFoil};
-        opacity: 0.85;
+        opacity: 0.9;
       }
       .btn-premium {
         position: relative;
         overflow: hidden;
         background: linear-gradient(
-          145deg,
-          rgba(255,255,255,0.38) 0%,
-          rgba(232,205,136,0.55) 18%,
-          ${GOLD_MID} 48%,
+          155deg,
+          rgba(255,255,255,0.55) 0%,
+          rgba(240,230,208,0.65) 16%,
+          ${GOLD_CHAMPAGNE} 34%,
+          ${GOLD_MID} 55%,
           ${GOLD_DEEP} 82%,
-          rgba(255,255,255,0.22) 100%
+          rgba(255,255,255,0.28) 100%
         );
         background-size: 160% 160%;
-        border: 1px solid rgba(255,255,255,0.45);
+        border: 1px solid rgba(255,255,255,0.55);
         box-shadow:
-          0 1px 0 rgba(255,255,255,0.55) inset,
-          0 -1px 0 rgba(143,17,21,0.12) inset,
-          0 4px 16px rgba(161,117,56,0.28),
-          0 12px 36px rgba(184,44,46,0.08);
-        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, background-position 0.6s ease;
+          0 1px 0 rgba(255,255,255,0.7) inset,
+          0 -1px 0 rgba(143,17,21,0.1) inset,
+          0 4px 18px rgba(161,117,56,0.26),
+          0 14px 36px rgba(184,44,46,0.07);
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, background-position 0.7s ease;
       }
       .btn-premium::before {
         content: "";
@@ -228,22 +392,22 @@ function PageStyles() {
         inset: 0;
         background: linear-gradient(
           115deg,
-          transparent 30%,
-          rgba(255,255,255,0.45) 48%,
-          transparent 62%
+          transparent 28%,
+          rgba(255,255,255,0.55) 48%,
+          transparent 64%
         );
-        background-size: 220% 100%;
-        opacity: 0.55;
-        animation: glassShimmer 5.5s ease-in-out infinite;
+        background-size: 240% 100%;
+        opacity: 0.5;
+        animation: glassShimmer 7s ease-in-out infinite;
       }
       .btn-premium:hover {
         transform: translateY(-1px);
         background-position: 100% 40%;
         box-shadow:
-          0 1px 0 rgba(255,255,255,0.65) inset,
-          0 -1px 0 rgba(143,17,21,0.1) inset,
-          0 8px 24px rgba(161,117,56,0.32),
-          0 16px 40px rgba(184,44,46,0.1);
+          0 1px 0 rgba(255,255,255,0.8) inset,
+          0 -1px 0 rgba(143,17,21,0.08) inset,
+          0 8px 26px rgba(161,117,56,0.3),
+          0 18px 44px rgba(184,44,46,0.09);
       }
       .btn-premium:disabled {
         opacity: 0.72;
@@ -261,46 +425,61 @@ function PageStyles() {
       .glass-card {
         background: linear-gradient(
           165deg,
-          rgba(255,255,255,0.72) 0%,
-          rgba(255,255,255,0.38) 55%,
-          rgba(255,255,255,0.45) 100%
+          rgba(255,255,255,0.82) 0%,
+          rgba(255,255,255,0.48) 48%,
+          rgba(255,248,246,0.55) 100%
         );
-        -webkit-backdrop-filter: blur(22px) saturate(160%);
-        backdrop-filter: blur(22px) saturate(160%);
-        border: 1px solid rgba(255,255,255,0.6);
+        -webkit-backdrop-filter: blur(26px) saturate(170%);
+        backdrop-filter: blur(26px) saturate(170%);
+        border: 1px solid rgba(255,255,255,0.72);
         box-shadow:
-          0 1px 0 rgba(255,255,255,0.75) inset,
+          0 1px 0 rgba(255,255,255,0.9) inset,
           0 -1px 0 rgba(184,44,46,0.04) inset,
-          0 12px 40px rgba(143,17,21,0.06);
+          0 14px 44px rgba(143,17,21,0.06),
+          0 0 0 1px rgba(190,153,90,0.08);
       }
       .glass-card:hover {
-        border-color: rgba(190,153,90,0.35);
+        border-color: rgba(190,153,90,0.32);
         box-shadow:
-          0 1px 0 rgba(255,255,255,0.85) inset,
-          0 18px 48px rgba(143,17,21,0.09);
+          0 1px 0 rgba(255,255,255,0.95) inset,
+          0 20px 52px rgba(143,17,21,0.08),
+          0 0 0 1px rgba(190,153,90,0.14);
       }
       .stat-number {
+        color: ${GOLD_DEEP};
         background: ${goldFoil};
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+      @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+        .stat-number {
+          color: ${GOLD_DEEP};
+          -webkit-text-fill-color: ${GOLD_DEEP};
+          background: none;
+        }
+      }
       .eyebrow-pill {
-        border: 1px solid rgba(255,255,255,0.55);
+        border: 1px solid rgba(190,153,90,0.26);
         color: ${FOREST_MID};
-        background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.22));
-        -webkit-backdrop-filter: blur(16px) saturate(160%);
-        backdrop-filter: blur(16px) saturate(160%);
-        box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 4px 16px rgba(143,17,21,0.04);
+        background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,248,246,0.7));
+        -webkit-backdrop-filter: blur(18px) saturate(170%);
+        backdrop-filter: blur(18px) saturate(170%);
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.95) inset,
+          0 4px 18px rgba(143,17,21,0.05),
+          0 0 0 1px rgba(190,153,90,0.06);
         letter-spacing: 0.26em;
       }
       .trust-pill {
-        border: 1px solid rgba(255,255,255,0.5);
-        color: ${FOREST_SOFT};
-        background: rgba(255,255,255,0.28);
-        -webkit-backdrop-filter: blur(12px) saturate(150%);
-        backdrop-filter: blur(12px) saturate(150%);
-        box-shadow: 0 1px 0 rgba(255,255,255,0.55) inset;
+        border: 1px solid rgba(190,153,90,0.18);
+        color: ${TEXT_SOFT};
+        background: linear-gradient(160deg, rgba(255,255,255,0.88), rgba(255,255,255,0.55));
+        -webkit-backdrop-filter: blur(14px) saturate(160%);
+        backdrop-filter: blur(14px) saturate(160%);
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.9) inset,
+          0 3px 12px rgba(143,17,21,0.04);
       }
       .link-refined { transition: opacity 0.3s ease, color 0.3s ease; }
       .link-refined:hover { opacity: 0.72; }
@@ -321,16 +500,17 @@ function PageStyles() {
       }
       .nav-link:hover::after { transform: scaleX(1); }
       .email-input {
-        border: 1px solid rgba(255,255,255,0.55);
-        background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.5));
-        -webkit-backdrop-filter: blur(12px);
-        backdrop-filter: blur(12px);
+        border: 1px solid rgba(190,153,90,0.26);
+        background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,248,246,0.82));
+        -webkit-backdrop-filter: blur(14px) saturate(150%);
+        backdrop-filter: blur(14px) saturate(150%);
         color: ${FOREST};
         font-size: 0.875rem;
         font-weight: 500;
         box-shadow:
-          0 1px 0 rgba(255,255,255,0.8) inset,
-          0 2px 8px rgba(143,17,21,0.04);
+          0 1px 0 rgba(255,255,255,0.95) inset,
+          0 2px 10px rgba(143,17,21,0.04),
+          0 0 0 1px rgba(190,153,90,0.04);
       }
       .email-input::placeholder {
         color: ${TEXT_SOFT};
@@ -349,27 +529,29 @@ function PageStyles() {
         overflow: hidden;
         background: linear-gradient(
           168deg,
-          rgba(255,255,255,0.78) 0%,
-          rgba(255,255,255,0.42) 48%,
-          rgba(255,255,255,0.5) 100%
+          rgba(255,255,255,0.88) 0%,
+          rgba(255,255,255,0.52) 45%,
+          rgba(255,248,246,0.62) 100%
         );
-        -webkit-backdrop-filter: blur(28px) saturate(170%);
-        backdrop-filter: blur(28px) saturate(170%);
-        border: 1px solid rgba(255,255,255,0.62);
+        -webkit-backdrop-filter: blur(32px) saturate(180%);
+        backdrop-filter: blur(32px) saturate(180%);
+        border: 1px solid rgba(255,255,255,0.78);
         box-shadow:
-          0 1px 0 rgba(255,255,255,0.85) inset,
-          0 -1px 0 rgba(184,44,46,0.05) inset,
-          0 20px 56px rgba(143,17,21,0.08),
-          0 2px 8px rgba(190,153,90,0.08);
+          0 1px 0 rgba(255,255,255,0.95) inset,
+          0 -1px 0 rgba(184,44,46,0.04) inset,
+          0 22px 60px rgba(143,17,21,0.07),
+          0 2px 10px rgba(190,153,90,0.08),
+          0 0 0 1px rgba(190,153,90,0.08);
       }
       .panel-premium::before {
         content: "";
         position: absolute;
-        left: 8%;
-        right: 8%;
+        left: 6%;
+        right: 6%;
         top: 0;
         height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent);
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.98), rgba(232,205,136,0.55), rgba(255,255,255,0.98), transparent);
+        z-index: 2;
       }
       .panel-premium::after {
         content: "";
@@ -377,28 +559,31 @@ function PageStyles() {
         position: absolute;
         inset: 0;
         background:
-          radial-gradient(ellipse 90% 55% at 50% -10%, rgba(255,255,255,0.7) 0%, transparent 55%),
-          radial-gradient(ellipse 40% 30% at 90% 10%, rgba(190,153,90,0.12) 0%, transparent 60%);
-        opacity: 0.9;
+          radial-gradient(ellipse 95% 50% at 50% -8%, rgba(255,255,255,0.85) 0%, transparent 55%),
+          radial-gradient(ellipse 45% 35% at 92% 8%, rgba(190,153,90,0.14) 0%, transparent 60%),
+          linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.22) 50%, transparent 65%);
+        background-size: auto, auto, 220% 100%;
+        opacity: 0.95;
+        animation: glassShimmer 9s ease-in-out infinite;
       }
       .glass-orb {
         position: absolute;
         border-radius: 50%;
-        filter: blur(48px);
+        filter: blur(52px);
         pointer-events: none;
-        animation: orbFloat 14s ease-in-out infinite;
+        animation: orbFloat 16s ease-in-out infinite;
       }
       .phone-glass {
         border-radius: 1.85rem;
-        border: 1px solid rgba(255,255,255,0.55);
+        border: 1px solid rgba(255,255,255,0.7);
         box-shadow:
-          0 1px 0 rgba(255,255,255,0.65) inset,
-          0 24px 64px rgba(143,17,21,0.14),
-          0 0 0 1px rgba(190,153,90,0.22);
-        background: linear-gradient(160deg, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
-        -webkit-backdrop-filter: blur(8px);
-        backdrop-filter: blur(8px);
-        padding: 6px;
+          0 1px 0 rgba(255,255,255,0.8) inset,
+          0 28px 68px rgba(143,17,21,0.12),
+          0 0 0 1px rgba(190,153,90,0.2);
+        background: linear-gradient(160deg, rgba(255,255,255,0.5), rgba(255,255,255,0.12));
+        -webkit-backdrop-filter: blur(12px) saturate(150%);
+        backdrop-filter: blur(12px) saturate(150%);
+        padding: 7px;
       }
       .phone-glass img {
         border-radius: 1.5rem;
@@ -445,7 +630,7 @@ function PageStyles() {
         text-transform: uppercase;
         font-size: 0.5625rem;
         font-weight: 500;
-        color: ${SAGE};
+        color: ${FOOTER_MUTED};
       }
       .footer-link { color: ${FOOTER_LINK}; transition: opacity 0.3s ease; }
       .footer-link:hover { opacity: 0.82; }
@@ -763,41 +948,6 @@ function WaitlistForm({ inputId }: { inputId: string }) {
   );
 }
 
-function GenoCrest({
-  size = 120,
-  className,
-  idPrefix = "crest",
-}: {
-  size?: number;
-  className?: string;
-  idPrefix?: string;
-}) {
-  const goldId = `${idPrefix}-g`;
-  const crimsonId = `${idPrefix}-c`;
-
-  return (
-    <svg className={className} width={size} height={size} viewBox="0 0 120 120" fill="none" aria-hidden>
-      <defs>
-        <linearGradient id={goldId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={GOLD_LIGHT} />
-          <stop offset="50%" stopColor={GOLD_MID} />
-          <stop offset="100%" stopColor={GOLD_DEEP} />
-        </linearGradient>
-        <linearGradient id={crimsonId} x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor={CRIMSON_LIGHT} />
-          <stop offset="100%" stopColor={CRIMSON} />
-        </linearGradient>
-      </defs>
-      <circle cx="60" cy="60" r="55" stroke={GOLD_MID} strokeWidth="0.375" strokeDasharray="2 8" opacity="0.22" />
-      <circle cx="44" cy="60" r="26" stroke={`url(#${goldId})`} strokeWidth="1.25" />
-      <circle cx="76" cy="60" r="26" stroke={`url(#${crimsonId})`} strokeWidth="1.25" />
-      <path d="M44 36c10-7 22-7 32 0M44 84c10 7 22 7 32 0" stroke={`url(#${goldId})`} strokeWidth="1" strokeLinecap="round" opacity="0.65" />
-      <path d="M60 28v64M48 44c8 6 16 6 24 0M48 76c8-6 16-6 24 0" stroke={CRIMSON} strokeWidth="0.5" strokeLinecap="round" opacity="0.42" />
-      <circle cx="60" cy="60" r="4" fill={`url(#${goldId})`} />
-    </svg>
-  );
-}
-
 function HelixField({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 320 140" fill="none" aria-hidden>
@@ -818,31 +968,45 @@ function Reveal({
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
+  const [phase, setPhase] = useState<"in" | "pending">("in");
 
   useEffect(() => {
     const el = ref.current;
     if (!el || typeof IntersectionObserver === "undefined") {
-      setInView(true);
+      setPhase("in");
       return;
     }
+
+    // Only hide for animation if the block is below the viewport.
+    const rect = el.getBoundingClientRect();
+    const belowFold = rect.top > window.innerHeight * 0.92;
+    if (!belowFold) {
+      setPhase("in");
+      return;
+    }
+
+    setPhase("pending");
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setInView(true);
+          setPhase("in");
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -24px 0px" }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    const fallback = window.setTimeout(() => setPhase("in"), 1200);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, []);
 
   return (
     <div
       ref={ref}
-      className={`reveal ${inView ? "reveal-in" : ""} ${className ?? ""}`}
+      className={`reveal ${phase === "pending" ? "reveal-pending" : "reveal-in"} ${className ?? ""}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}
@@ -929,7 +1093,7 @@ export default function Home() {
         <CeremonyRule className="absolute bottom-0 left-0 right-0 opacity-50" />
         <nav className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:h-[4.5rem] lg:px-8">
           <Link href="/" className="link-refined flex items-center gap-3">
-            <GenoCrest size={36} idPrefix="nav" className="shrink-0 opacity-90" />
+            <BrandMark size={34} className="shrink-0" />
             <span className="text-xl font-bold tracking-tight sm:text-2xl lg:text-[1.75rem]" style={{ ...displayStyle, fontWeight: 700 }}>
               <span className="crimson-gloss">GenoMatch</span>
             </span>
@@ -981,8 +1145,8 @@ export default function Home() {
                   onClick={() => setMenuOpen(false)}
                   className="py-3.5 text-sm"
                   style={{
-                    color: TEXT_SOFT,
-                    borderBottom: index < navLinks.length - 1 ? "1px solid rgba(190,153,90,0.14)" : "none",
+                    color: "rgba(255,248,246,0.94)",
+                    borderBottom: index < navLinks.length - 1 ? "1px solid rgba(255,255,255,0.22)" : "none",
                   }}
                 >
                   {label}
@@ -999,16 +1163,16 @@ export default function Home() {
           style={{ backgroundColor: IVORY }}
         >
           <AmbientBackdrop />
-          <GenoCrest
-            size={200}
-            idPrefix="hero-bg-l"
-            className="drift pointer-events-none absolute -left-16 top-20 opacity-[0.12] lg:-left-8 lg:opacity-[0.16]"
+          <BrandMark
+            size={220}
+            watermark
+            className="gm-brand-drift pointer-events-none absolute -left-20 top-16 opacity-[0.14] lg:-left-10 lg:opacity-[0.18]"
           />
           <div
-            className="pointer-events-none absolute -right-12 bottom-16 rotate-12 opacity-[0.1] lg:right-4"
-            style={{ animation: "drift 10s ease-in-out infinite reverse" }}
+            className="pointer-events-none absolute -right-14 bottom-20 opacity-[0.12] lg:right-2 lg:opacity-[0.16]"
+            style={{ animation: "drift 11s ease-in-out infinite reverse" }}
           >
-            <GenoCrest size={180} idPrefix="hero-bg-r" />
+            <BrandMark size={200} watermark className="rotate-[18deg]" />
           </div>
           <HelixField className="pointer-events-none absolute left-1/2 top-10 w-72 -translate-x-1/2 opacity-35 lg:w-96" />
           <div
@@ -1021,11 +1185,13 @@ export default function Home() {
             <div className="rise mb-7 flex justify-center">
               <div className="relative">
                 <div
-                  className="absolute inset-0 -m-6 rounded-full"
-                  style={{ background: `radial-gradient(circle, rgba(190,153,90,0.16) 0%, transparent 68%)` }}
+                  className="absolute inset-0 -m-8 rounded-full"
+                  style={{
+                    background: `radial-gradient(circle, rgba(190,153,90,0.22) 0%, rgba(184,44,46,0.08) 42%, transparent 70%)`,
+                  }}
                   aria-hidden
                 />
-                <GenoCrest size={80} idPrefix="hero" className="relative opacity-95" />
+                <BrandMark size={92} priority className="relative gm-brand-glow" />
               </div>
             </div>
             <p className="rise rise-1 eyebrow-pill mb-6 inline-block rounded-full px-5 py-2 text-[0.6875rem] font-medium uppercase">
@@ -1036,12 +1202,12 @@ export default function Home() {
               style={{
                 ...displayStyle,
                 fontWeight: 700,
-                color: FOREST,
                 fontSize: "clamp(2.75rem, 5.8vw, 4.35rem)",
               }}
             >
-              The World&apos;s First{" "}
-              <span className="gold-accent">Genotype Aware</span> Dating App
+              <span className="headline-gloss">The World&apos;s First </span>
+              <span className="gold-accent">Genotype Aware</span>
+              <span className="headline-gloss"> Dating App</span>
             </h1>
             <p
               className="rise rise-3 mx-auto mt-6 max-w-2xl text-lg font-light leading-relaxed sm:text-xl"
@@ -1201,12 +1367,13 @@ export default function Home() {
                 />
                 <div className="phone-glass relative">
                   <Image
-                    src="/genomatch-app-onboarding-matches.png"
-                    alt="GenoMatch app screen showing genotype aware match profiles"
+                    src="/genomatch-app-onboarding-v2.png"
+                    alt="GenoMatch onboarding: science-led matching and genotype-aware compatibility"
                     width={472}
                     height={1024}
                     sizes="280px"
                     className="relative w-full"
+                    priority
                   />
                 </div>
               </div>
@@ -1220,6 +1387,11 @@ export default function Home() {
           style={{ backgroundColor: PEARL }}
         >
           <MeshBackdrop idPrefix="how" className="pointer-events-none absolute right-0 top-0 h-72 w-72 opacity-20" />
+          <BrandMark
+            size={160}
+            watermark
+            className="pointer-events-none absolute -right-8 bottom-10 hidden opacity-[0.1] sm:block lg:right-6 lg:opacity-[0.13]"
+          />
           <div className="relative mx-auto max-w-6xl">
             <Reveal className="text-center">
               <DiamondRule className="mx-auto mb-8 max-w-xs" />
@@ -1273,6 +1445,11 @@ export default function Home() {
           className="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-28"
           style={{ background: `linear-gradient(180deg, ${LINEN} 0%, ${CREAM} 100%)` }}
         >
+          <BrandMark
+            size={140}
+            watermark
+            className="pointer-events-none absolute -left-10 top-16 hidden opacity-[0.09] sm:block"
+          />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -1318,18 +1495,19 @@ export default function Home() {
           />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: `radial-gradient(ellipse 130% 70% at 50% 115%, rgba(0,0,0,0.22) 0%, transparent 60%)` }}
+            style={{ background: `radial-gradient(ellipse 70% 50% at 50% 100%, rgba(184,44,46,0.04) 0%, transparent 60%)` }}
             aria-hidden
           />
-          <GenoCrest
-            size={180}
-            idPrefix="quote-l"
-            className="pointer-events-none absolute -left-16 top-1/2 hidden -translate-y-1/2 opacity-[0.12] sm:block"
+          <BrandMark
+            size={190}
+            watermark
+            className="gm-brand-drift pointer-events-none absolute -left-16 top-1/2 hidden -translate-y-1/2 opacity-[0.14] sm:block"
           />
-          <GenoCrest
-            size={180}
-            idPrefix="quote-r"
-            className="pointer-events-none absolute -right-16 top-1/2 hidden -translate-y-1/2 opacity-[0.12] sm:block"
+          <BrandMark
+            size={190}
+            watermark
+            className="pointer-events-none absolute -right-16 top-1/2 hidden -translate-y-1/2 rotate-180 opacity-[0.14] sm:block"
+            style={{ animation: "drift 12s ease-in-out infinite reverse" }}
           />
           <Reveal>
             <QuoteBlock />
@@ -1352,8 +1530,8 @@ export default function Home() {
                   aria-hidden
                 />
                 <Image
-                  src="/genomatch-coming-soon.jpg"
-                  alt="GenoMatch coming soon: a new way to connect, a better way to care, launching on iOS and Android"
+                  src="/genomatch-coming-soon-v2.jpg"
+                  alt="GenoMatch coming soon on iOS and Android — where hearts align and futures bloom"
                   width={1024}
                   height={1024}
                   sizes="(max-width: 1024px) 300px, 340px"
@@ -1362,7 +1540,7 @@ export default function Home() {
                 />
               </div>
               <div className="text-center lg:text-left">
-                <GenoCrest size={48} idPrefix="cta" className="mx-auto mb-5 opacity-85 lg:mx-0" />
+                <BrandMark size={52} className="mx-auto mb-5 gm-brand-glow lg:mx-0" />
                 <SectionLabel>Join us</SectionLabel>
                 <h2 className="text-2xl font-bold sm:text-3xl" style={{ ...headingStyle, color: FOREST }}>
                   Ready when you are.
@@ -1390,7 +1568,7 @@ export default function Home() {
         <CeremonyRule className="relative mx-auto mb-8 max-w-lg opacity-60" />
         <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 text-center sm:gap-4">
           <div className="flex items-center gap-3">
-            <GenoCrest size={32} idPrefix="footer" className="opacity-85" />
+            <BrandMark size={36} className="gm-brand-glow" />
             <p className="text-lg font-bold tracking-tight" style={{ ...displayStyle, fontWeight: 700 }}>
               <span className="crimson-gloss">GenoMatch</span>
             </p>

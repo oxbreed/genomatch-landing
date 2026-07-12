@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import GenoCrest from '../components/GenoCrest'
+import SiteHeader from '../components/SiteHeader'
 import ScdNewsFeed from '../components/ScdNewsFeed'
-import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
+import { FOREST, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
 /** Refresh blog news feed every 6 hours. */
 export const revalidate = 21600
@@ -50,18 +51,13 @@ export const metadata = {
 export default function Blog() {
   return (
     <div id="main-content" style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
-      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(190,153,90,0.15)' }}>
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <span className="crimson-gloss" style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
-        </Link>
-        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
-      </header>
+      <SiteHeader />
 
       <section style={{ background: HERO_SURFACE, padding: '80px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <GenoCrest size={200} idPrefix="blog-hero-l" className="hidden sm:block" style={{ position: 'absolute', left: '-64px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
         <GenoCrest size={200} idPrefix="blog-hero-r" className="hidden sm:block" style={{ position: 'absolute', right: '-64px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
         <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>THE GENOMATCH BLOG</p>
-        <h1 style={{ color: WHITE, fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 700, maxWidth: '700px', margin: '0 auto 16px', lineHeight: 1.2 }}>
+        <h1 style={{ color: FOREST, fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 700, maxWidth: '700px', margin: '0 auto 16px', lineHeight: 1.2 }}>
           Genotype education for intentional singles
         </h1>
         <p style={{ color: SAGE, fontSize: '17px', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7, fontFamily: BODY }}>
@@ -89,9 +85,9 @@ export default function Blog() {
         <ScdNewsFeed limit={6} showViewAll />
       </section>
 
-      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(190,153,90,0.15)' }}>
+      <footer style={{ background: WHITE, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(184,44,46,0.1)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
-        <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
+        <p style={{ color: TEXT_SOFT, fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>
     </div>
   )

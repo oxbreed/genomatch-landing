@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import ScdNewsFeed from '../../components/ScdNewsFeed'
-import { FOREST, FOREST_BG, LINEN, GOLD, BODY, HERO_SURFACE, SAGE } from '../../theme'
+import SiteHeader from '../../components/SiteHeader'
+import { FOREST, LINEN, GOLD, BODY, HERO_SURFACE, SAGE, WHITE, TEXT_SOFT } from '../../theme'
 
 /** Refresh full news page every 6 hours. */
 export const revalidate = 21600
@@ -14,41 +15,7 @@ export const metadata = {
 export default function ScdNewsPage() {
   return (
     <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
-      <header
-        style={{
-          background: FOREST,
-          padding: '20px 40px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-          borderBottom: '1px solid rgba(190,153,90,0.15)',
-        }}
-      >
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>
-            GenoMatch
-          </span>
-        </Link>
-        <Link
-          href="/#waitlist"
-          className="gm-btn"
-          style={{
-            background: GOLD,
-            color: FOREST_BG,
-            padding: '10px 24px',
-            borderRadius: '99px',
-            fontWeight: 700,
-            textDecoration: 'none',
-            fontSize: '14px',
-            fontFamily: BODY,
-          }}
-        >
-          Join Waitlist
-        </Link>
-      </header>
+      <SiteHeader />
 
       <section
         style={{
@@ -73,7 +40,7 @@ export default function ScdNewsPage() {
         </Link>
         <h1
           style={{
-            color: '#FFFFFF',
+            color: FOREST,
             fontSize: 'clamp(2rem, 5vw, 3rem)',
             fontWeight: 700,
             maxWidth: '720px',
@@ -102,7 +69,7 @@ export default function ScdNewsPage() {
 
       <footer
         style={{
-          background: FOREST,
+          background: WHITE,
           padding: '40px 24px',
           textAlign: 'center',
           borderTop: '1px solid rgba(190,153,90,0.15)',
@@ -119,7 +86,7 @@ export default function ScdNewsPage() {
         >
           Connecting Hearts. Aligning Genes.
         </p>
-        <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>
+        <p style={{ color: TEXT_SOFT, fontSize: '12px', fontFamily: BODY }}>
           © {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria
         </p>
       </footer>

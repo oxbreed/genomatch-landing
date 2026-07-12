@@ -2,13 +2,15 @@
 
 import { useId, type CSSProperties, type ReactNode } from 'react'
 import Link from 'next/link'
+import BrandMark from './BrandMark'
 import GenoCrest from './GenoCrest'
 import { GOLD, GOLD_HAIRLINE, BODY, DISPLAY } from '../theme'
 
-export function NavBrand({ idPrefix = 'nav' }: { idPrefix?: string }) {
+export function NavBrand({ idPrefix: _idPrefix = 'nav' }: { idPrefix?: string }) {
+  void _idPrefix
   return (
     <Link href="/" className="gm-wordmark" style={{ textDecoration: 'none' }}>
-      <GenoCrest size={28} idPrefix={idPrefix} className="gm-nav-crest shrink-0" />
+      <BrandMark size={28} className="gm-nav-crest shrink-0" />
       <span className="gm-wordmark-text">GenoMatch</span>
     </Link>
   )

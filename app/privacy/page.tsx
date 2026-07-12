@@ -5,7 +5,7 @@ const BODY = 'var(--font-geist-sans), system-ui, sans-serif';
 export default function PrivacyPolicy() {
   return (
     <div style={{ background: '#FFFFFF', minHeight: '100vh' }}>
-      <header style={{ background: '#B82C2E', padding: '20px 40px', borderBottom: '1px solid rgba(190,153,90,0.15)' }}>
+      <header style={{ background: '#FFFFFF', padding: '20px 40px', borderBottom: '1px solid rgba(184,44,46,0.1)' }}>
         <Link href="/" style={{ textDecoration: 'none' }}>
           <span className="crimson-gloss" style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </Link>

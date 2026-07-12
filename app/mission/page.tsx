@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import GenoCrest from '../components/GenoCrest'
+import SiteHeader from '../components/SiteHeader'
 import SickleCellMark from '../components/SickleCellMark'
 import SickleCellRibbon from '../components/SickleCellRibbon'
 import SourcesBlock from '../components/SourcesBlock'
@@ -13,13 +14,7 @@ export default function Mission() {
   return (
     <div id="main-content" style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
 
-      {/* Nav */}
-      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(190,153,90,0.15)' }}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-          <span className="crimson-gloss" style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
-        </Link>
-        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '10px 24px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '14px', fontFamily: BODY }}>Join Waitlist</Link>
-      </header>
+      <SiteHeader />
 
       {/* Hero */}
       <section style={{ background: HERO_SURFACE, padding: '100px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
@@ -32,7 +27,7 @@ export default function Mission() {
           style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', opacity: 0.07, pointerEvents: 'none' }}
         />
         <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>OUR MISSION</p>
-        <h1 style={{ color: WHITE, fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, maxWidth: '800px', margin: '0 auto 24px', lineHeight: 1.2 }}>
+        <h1 style={{ color: FOREST, fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, maxWidth: '800px', margin: '0 auto 24px', lineHeight: 1.2 }}>
           Love should be intentional. So should genetic health.
         </h1>
         <p style={{ color: SAGE, fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, fontFamily: BODY }}>
@@ -157,12 +152,12 @@ export default function Mission() {
               objectPosition: 'center top',
               borderRadius: '20px',
               border: `1px solid ${GOLD}`,
-              boxShadow: '0 10px 30px rgba(0,0,0,0.25)',
+              boxShadow: '0 12px 32px rgba(184,44,46,0.12)',
               display: 'block',
               margin: '0 auto 24px',
             }}
           />
-          <h2 style={{ color: WHITE, fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, margin: '0 0 8px' }}>Olusegun Adedoyin</h2>
+          <h2 style={{ color: FOREST, fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, margin: '0 0 8px' }}>Olusegun Adedoyin</h2>
           <p style={{ color: SAGE, fontSize: '15px', fontFamily: BODY, margin: '0 0 40px' }}>Founder, GenoMatch Ltd</p>
           <div style={{ textAlign: 'left' }}>
             <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: BODY }}>
@@ -189,9 +184,9 @@ export default function Mission() {
       </section>
 
       {/* Footer */}
-      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(190,153,90,0.15)' }}>
+      <footer style={{ background: WHITE, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(184,44,46,0.1)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
-        <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
+        <p style={{ color: TEXT_SOFT, fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>
 
     </div>
