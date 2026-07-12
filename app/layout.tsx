@@ -232,9 +232,12 @@ export const metadata: Metadata = {
   category: "dating",
   applicationName: "GenoMatch",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+      { url: "/genomatch-icon.png", type: "image/png", sizes: "512x512" },
+    ],
     shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   referrer: "origin-when-cross-origin",
   verification: {
