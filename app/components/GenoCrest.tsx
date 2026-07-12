@@ -1,10 +1,10 @@
 import type { CSSProperties } from 'react'
 
 const GOLD_LIGHT = '#F0E6D0'
-const GOLD_MID = '#BF9B4A'
-const GOLD_DEEP = '#8A6824'
-const SAGE = '#7A9488'
-const SAGE_LIGHT = '#A8BDB2'
+const GOLD_MID = '#BE995A'
+const GOLD_DEEP = '#A17538'
+const CRIMSON = '#B82C2E'
+const CRIMSON_LIGHT = '#E35F52'
 
 export default function GenoCrest({
   size = 120,
@@ -18,7 +18,7 @@ export default function GenoCrest({
   idPrefix?: string
 }) {
   const goldId = `${idPrefix}-g`
-  const sageId = `${idPrefix}-s`
+  const crimsonId = `${idPrefix}-c`
 
   return (
     <svg
@@ -36,16 +36,16 @@ export default function GenoCrest({
           <stop offset="50%" stopColor={GOLD_MID} />
           <stop offset="100%" stopColor={GOLD_DEEP} />
         </linearGradient>
-        <linearGradient id={sageId} x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor={SAGE_LIGHT} />
-          <stop offset="100%" stopColor={SAGE} />
+        <linearGradient id={crimsonId} x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={CRIMSON_LIGHT} />
+          <stop offset="100%" stopColor={CRIMSON} />
         </linearGradient>
       </defs>
       <circle cx="60" cy="60" r="55" stroke={GOLD_MID} strokeWidth="0.375" strokeDasharray="2 8" opacity="0.22" />
       <circle cx="44" cy="60" r="26" stroke={`url(#${goldId})`} strokeWidth="1.25" />
-      <circle cx="76" cy="60" r="26" stroke={`url(#${sageId})`} strokeWidth="1.25" />
+      <circle cx="76" cy="60" r="26" stroke={`url(#${crimsonId})`} strokeWidth="1.25" />
       <path d="M44 36c10-7 22-7 32 0M44 84c10 7 22 7 32 0" stroke={`url(#${goldId})`} strokeWidth="1" strokeLinecap="round" opacity="0.65" />
-      <path d="M60 28v64M48 44c8 6 16 6 24 0M48 76c8-6 16-6 24 0" stroke={SAGE} strokeWidth="0.5" strokeLinecap="round" opacity="0.42" />
+      <path d="M60 28v64M48 44c8 6 16 6 24 0M48 76c8-6 16-6 24 0" stroke={CRIMSON} strokeWidth="0.5" strokeLinecap="round" opacity="0.42" />
       <circle cx="60" cy="60" r="4" fill={`url(#${goldId})`} />
     </svg>
   )

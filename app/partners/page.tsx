@@ -61,7 +61,7 @@ export default function Partners() {
     <div id="main-content" style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
 
       {/* Nav */}
-      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
+      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(190,153,90,0.15)' }}>
         <Link href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </Link>
@@ -132,7 +132,7 @@ export default function Partners() {
             { type: 'Corporate & CSR', desc: 'Companies with CSR commitments to African health and family wellbeing. Sponsorship opportunities, employee benefit packages, and brand association with a purpose driven platform.' },
             { type: 'Government & Policy', desc: 'Health ministries and public health agencies in Nigeria and the diaspora. Policy advisory partnerships, national awareness campaign integration, and data for health planning.' },
           ].map((item, i) => (
-            <div key={i} style={{ borderBottom: `1px solid rgba(22,53,34,0.1)`, padding: '32px 0' }}>
+            <div key={i} style={{ borderBottom: `1px solid rgba(184,44,46,0.1)`, padding: '32px 0' }}>
               <h3 style={{ color: FOREST, fontSize: '20px', fontWeight: 700, marginBottom: '12px' }}>{item.type}</h3>
               <p style={{ color: TEXT_SOFT, fontSize: '16px', lineHeight: 1.7, fontFamily: BODY }}>{item.desc}</p>
             </div>
@@ -149,13 +149,13 @@ export default function Partners() {
             Tell us about your organisation and how you'd like to work together. We respond to every serious enquiry within 48 hours.
           </p>
           {submitted ? (
-            <div style={{ background: WHITE, borderRadius: '16px', padding: '48px', border: `1px solid rgba(191,155,74,0.3)` }}>
+            <div style={{ background: WHITE, borderRadius: '16px', padding: '48px', border: `1px solid rgba(190,153,90,0.3)` }}>
               <div style={{ fontSize: '48px', marginBottom: '16px' }}>✓</div>
               <h3 style={{ color: FOREST, fontSize: '22px', fontWeight: 700, marginBottom: '12px' }}>Thank you for reaching out</h3>
               <p style={{ color: TEXT_SOFT, fontSize: '16px', fontFamily: BODY }}>We'll be in touch within 48 hours.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: `1px solid rgba(191,155,74,0.3)` }}>
+            <form onSubmit={handleSubmit} style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: `1px solid rgba(190,153,90,0.3)` }}>
               <div style={{ marginBottom: '20px', textAlign: 'left' }}>
                 <label style={{ color: FOREST, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Organisation Name</label>
                 <input
@@ -211,7 +211,7 @@ export default function Partners() {
       </section>
 
       {/* Footer */}
-      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(191,155,74,0.15)' }}>
+      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(190,153,90,0.15)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
         <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>

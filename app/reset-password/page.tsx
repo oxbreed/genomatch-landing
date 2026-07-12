@@ -166,10 +166,10 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <div style={{ background: '#F3EDE3', minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
-      <header style={{ background: '#163522', padding: '20px 40px', borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
+    <div style={{ background: '#FFFFFF', minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+      <header style={{ background: '#B82C2E', padding: '20px 40px', borderBottom: '1px solid rgba(190,153,90,0.15)' }}>
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <span style={{ color: '#BF9B4A', fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
+          <span style={{ color: '#BE995A', fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </Link>
       </header>
       <main
@@ -179,28 +179,28 @@ export default function ResetPasswordPage() {
           margin: '0 auto',
           padding: '56px 24px',
           lineHeight: 1.7,
-          color: '#243830',
+          color: '#3A1E1E',
         }}
       >
-        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: '40px 32px', border: '1px solid rgba(191,155,74,0.25)' }}>
-      <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8, color: '#163522' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: '40px 32px', border: '1px solid rgba(190,153,90,0.25)' }}>
+      <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8, color: '#B82C2E' }}>
         Reset Password
       </h1>
-      <p style={{ color: '#5A7268', fontFamily: BODY, marginBottom: 32 }}>
+      <p style={{ color: '#6B5856', fontFamily: BODY, marginBottom: 32 }}>
         Enter a new password for your GenoMatch account.
       </p>
 
-      <p style={{ color: '#5A7268', fontFamily: BODY, fontSize: 14, marginBottom: 24 }}>
+      <p style={{ color: '#6B5856', fontFamily: BODY, fontSize: 14, marginBottom: 24 }}>
         Password must be at least 8 characters
       </p>
 
       {initializing ? (
-        <p style={{ color: '#5A7268', fontFamily: BODY }}>Verifying your reset link…</p>
+        <p style={{ color: '#6B5856', fontFamily: BODY }}>Verifying your reset link…</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <label
             htmlFor="new-password"
-            style={{ display: 'block', fontWeight: 600, color: '#163522', marginBottom: 8, fontFamily: BODY }}
+            style={{ display: 'block', fontWeight: 600, color: '#B82C2E', marginBottom: 8, fontFamily: BODY }}
           >
             New Password
           </label>
@@ -219,7 +219,7 @@ export default function ResetPasswordPage() {
               padding: '12px 14px',
               marginBottom: 20,
               borderRadius: 8,
-              border: '1px solid rgba(22, 53, 34, 0.2)',
+              border: '1px solid rgba(184, 44, 46, 0.2)',
               fontSize: 16,
               fontFamily: BODY,
             }}
@@ -227,7 +227,7 @@ export default function ResetPasswordPage() {
 
           <label
             htmlFor="confirm-password"
-            style={{ display: 'block', fontWeight: 600, color: '#163522', marginBottom: 8, fontFamily: BODY }}
+            style={{ display: 'block', fontWeight: 600, color: '#B82C2E', marginBottom: 8, fontFamily: BODY }}
           >
             Confirm Password
           </label>
@@ -246,7 +246,7 @@ export default function ResetPasswordPage() {
               padding: '12px 14px',
               marginBottom: 24,
               borderRadius: 8,
-              border: '1px solid rgba(22, 53, 34, 0.2)',
+              border: '1px solid rgba(184, 44, 46, 0.2)',
               fontSize: 16,
               fontFamily: BODY,
             }}
@@ -260,7 +260,7 @@ export default function ResetPasswordPage() {
               padding: '14px 16px',
               borderRadius: 8,
               border: 'none',
-              backgroundColor: '#163522',
+              backgroundColor: '#B82C2E',
               color: '#fff',
               fontSize: 16,
               fontWeight: 600,
@@ -275,7 +275,7 @@ export default function ResetPasswordPage() {
       )}
 
       {message ? (
-        <p style={{ marginTop: 24, color: '#163522', fontWeight: 600 }}>{message}</p>
+        <p style={{ marginTop: 24, color: '#B82C2E', fontWeight: 600 }}>{message}</p>
       ) : null}
 
       {error ? (
@@ -283,7 +283,7 @@ export default function ResetPasswordPage() {
       ) : null}
 
         </div>
-        <p style={{ marginTop: 32, color: '#5A7268', fontSize: 14, textAlign: 'center', fontFamily: BODY }}>
+        <p style={{ marginTop: 32, color: '#6B5856', fontSize: 14, textAlign: 'center', fontFamily: BODY }}>
           © {new Date().getFullYear()} GenoMatch Ltd. All rights reserved.
         </p>
       </main>

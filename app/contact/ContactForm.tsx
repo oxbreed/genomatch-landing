@@ -55,7 +55,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div style={{ background: WHITE, borderRadius: '16px', padding: '48px', border: '1px solid rgba(191,155,74,0.3)' }}>
+      <div style={{ background: WHITE, borderRadius: '16px', padding: '48px', border: '1px solid rgba(190,153,90,0.3)' }}>
         <div style={{ fontSize: '48px', marginBottom: '16px' }}>✓</div>
         <h2 style={{ color: FOREST, fontSize: '22px', fontWeight: 700, marginBottom: '12px' }}>Thank you for getting in touch</h2>
         <p style={{ color: TEXT_SOFT, fontSize: '16px', fontFamily: BODY }}>We will reply within 48 hours.</p>
@@ -64,7 +64,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: '1px solid rgba(191,155,74,0.3)' }}>
+    <form onSubmit={handleSubmit} style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: '1px solid rgba(190,153,90,0.3)' }}>
       <div style={{ marginBottom: '20px', textAlign: 'left' }}>
         <label htmlFor="contact-name" style={{ color: FOREST, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Name</label>
         <input

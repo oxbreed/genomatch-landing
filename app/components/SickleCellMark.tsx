@@ -1,8 +1,8 @@
 import type { CSSProperties } from 'react'
 
 const GOLD_LIGHT = '#F0E6D0'
-const GOLD_MID = '#BF9B4A'
-const GOLD_DEEP = '#8A6824'
+const GOLD_MID = '#BE995A'
+const GOLD_DEEP = '#A17538'
 const SCD_RED = '#A52A3A'
 const SCD_DEEP = '#7A1A2E'
 const SCD_LIGHT = '#C94B5A'

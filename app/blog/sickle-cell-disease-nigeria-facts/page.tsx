@@ -17,7 +17,7 @@ export default function Article3() {
 
   return (
     <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
-      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
+      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(190,153,90,0.15)' }}>
         <Link href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </Link>
@@ -28,14 +28,14 @@ export default function Article3() {
         <a href="/blog" className="gm-link" style={{ color: GOLD, fontSize: '14px', fontFamily: BODY, textDecoration: 'none', display: 'block', marginBottom: '40px' }}>← Back to Blog</a>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
           <SickleCellRibbon size={32} />
-          <span style={{ background: LINEN, color: FOREST, fontSize: '11px', letterSpacing: '1px', padding: '4px 12px', borderRadius: '99px', fontFamily: BODY, fontWeight: 700, border: `1px solid rgba(22,53,34,0.15)` }}>Public Health</span>
+          <span style={{ background: LINEN, color: FOREST, fontSize: '11px', letterSpacing: '1px', padding: '4px 12px', borderRadius: '99px', fontFamily: BODY, fontWeight: 700, border: `1px solid rgba(184,44,46,0.15)` }}>Public Health</span>
         </div>
         <h1 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', fontWeight: 700, margin: '24px 0 16px', lineHeight: 1.2 }}>
           Sickle Cell Disease in Nigeria: The Numbers That Should Shock You
         </h1>
         <p style={{ color: TEXT_SOFT, fontSize: '14px', fontFamily: BODY, marginBottom: '48px' }}>June 2026 · 4 min read · GenoMatch</p>
 
-        <div style={{ color: '#2A4A35', fontSize: '18px', lineHeight: 1.9, fontFamily: BODY }}>
+        <div style={{ color: '#B82C2E', fontSize: '18px', lineHeight: 1.9, fontFamily: BODY }}>
           <p style={{ marginBottom: '24px' }}>Nigeria is one of the most vibrant, resilient, and culturally rich nations on earth. It is also home to the world&apos;s highest burden of sickle cell disease. These two facts coexist, and the second one does not get nearly enough attention.</p>
           <p style={{ marginBottom: '24px' }}>Here are the numbers, each verified against WHO, the Nigerian health ministry, and peer reviewed research. All of them matter.</p>
 
@@ -82,7 +82,7 @@ export default function Article3() {
         </div>
       </article>
 
-      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(191,155,74,0.15)' }}>
+      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(190,153,90,0.15)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
         <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>

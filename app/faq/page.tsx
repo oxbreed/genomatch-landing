@@ -111,7 +111,7 @@ export default function FAQ() {
       />
 
       {/* Nav */}
-      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(191,155,74,0.15)' }}>
+      <header style={{ background: FOREST, padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 50, borderBottom: '1px solid rgba(190,153,90,0.15)' }}>
         <Link href="/" style={{ textDecoration: 'none' }}>
           <span style={{ color: GOLD, fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </Link>
@@ -143,7 +143,7 @@ export default function FAQ() {
       <section style={{ background: LINEN, padding: '100px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {faqs.map((item, i) => (
-            <div key={i} style={{ borderBottom: '1px solid rgba(22,53,34,0.1)', padding: '32px 0' }}>
+            <div key={i} style={{ borderBottom: '1px solid rgba(184,44,46,0.1)', padding: '32px 0' }}>
               <h2 style={{ color: FOREST, fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)', fontWeight: 700, marginBottom: '12px', lineHeight: 1.4 }}>{item.q}</h2>
               <p style={{ color: TEXT_SOFT, fontSize: '16px', lineHeight: 1.8, fontFamily: BODY }}>{item.a}</p>
             </div>
@@ -161,7 +161,7 @@ export default function FAQ() {
       </section>
 
       {/* Footer */}
-      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(191,155,74,0.15)' }}>
+      <footer style={{ background: FOREST, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(190,153,90,0.15)' }}>
         <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
         <p style={{ color: 'rgba(143,175,149,0.7)', fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>

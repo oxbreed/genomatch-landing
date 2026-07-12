@@ -102,7 +102,7 @@ export default async function ScdNewsFeed({
             background: WHITE,
             borderRadius: '16px',
             padding: '32px',
-            border: '1px solid rgba(191,155,74,0.2)',
+            border: '1px solid rgba(190,153,90,0.2)',
             textAlign: 'center',
           }}
         >

@@ -11,57 +11,59 @@ import { SCD_STATS, SOURCE_SETS, getSources } from "@/lib/scd-facts";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/* Midnight Jade & Champagne — warm ivory canvas, deep forest depth, antique gold accent */
-const FOREST = "#0F2419";
-const FOREST_MID = "#1A3528";
-const FOREST_SOFT = "#2A4A3A";
-const SAGE = "#7A9488";
-const SAGE_LIGHT = "#A8BDB2";
+/* Crimson & Champagne — exact app-mark red #B82C2E + gold #BE995A */
+const FOREST = "#8F1115";
+const FOREST_MID = "#B82C2E";
+const FOREST_SOFT = "#C03030";
+const SAGE = "#E8C4C2";
+const SAGE_LIGHT = "#F0D4D2";
 const WHITE = "#FFFFFF";
 
-const IVORY = "#FBFAF6";
-const PEARL = "#F7F5F0";
-const LINEN = "#F3EDE3";
-const CREAM = "#EDE6DA";
+const IVORY = "#FFFFFF";
+const PEARL = "#FFFFFF";
+const LINEN = "#FFFFFF";
+const CREAM = "#FFFFFF";
 
-const MINT_SOFT = "#E2E4D6";
-const MINT_DEEP = "#CDD3C0";
-const MINT_WHISPER = "#F5F2EC";
-const BORDER = "#C8D4CC";
-const BORDER_SOFT = "#D8E2DC";
+const MINT_SOFT = "#FFFFFF";
+const MINT_DEEP = "#FFFFFF";
+const MINT_WHISPER = "#FFFFFF";
+const BORDER = "#E8E0DC";
+const BORDER_SOFT = "#EFE8E4";
 
-const SURFACE = IVORY;
+const SURFACE = WHITE;
 const SURFACE_LIFT = WHITE;
-const SURFACE_MINT = "#F5F0E8";
+const SURFACE_MINT = "#FFFFFF";
 
-const TEXT = "#243830";
-const TEXT_SOFT = "#5A7268";
+const TEXT = "#3A1E1E";
+const TEXT_SOFT = "#6B5856";
 
 const GOLD_LIGHT = "#F0E6D0";
-const GOLD_MID = "#BF9B4A";
-const GOLD_DEEP = "#8A6824";
-const GOLD_CHAMPAGNE = "#D4BC82";
+const GOLD_MID = "#BE995A";
+const GOLD_DEEP = "#A17538";
+const GOLD_CHAMPAGNE = "#E8CD88";
+const CRIMSON = "#B82C2E";
+const CRIMSON_LIGHT = "#E35F52";
 
 const goldFoil = `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD_CHAMPAGNE} 28%, ${GOLD_MID} 52%, ${GOLD_DEEP} 72%, ${GOLD_LIGHT} 100%)`;
 const goldHairline = `linear-gradient(90deg, transparent, ${GOLD_MID}18 22%, ${GOLD_CHAMPAGNE}55 50%, ${GOLD_MID}18 78%, transparent)`;
-const heroAmbient = `linear-gradient(168deg, ${IVORY} 0%, ${PEARL} 38%, ${LINEN} 72%, ${CREAM} 100%)`;
-const statsAmbient = `linear-gradient(180deg, ${LINEN} 0%, ${MINT_SOFT} 52%, ${MINT_DEEP} 100%)`;
-const forestDepth = "#163522";
-const forestFooter = "#163522";
+const heroAmbient = `#FFFFFF`;
+const statsAmbient = `#FFFFFF`;
+const forestDepth = "#8F1115";
+const forestFooter = "#8F1115";
 
-const FOOTER_LINK = "#C5D5CB";
-const FOOTER_MUTED = "#8FA396";
+const FOOTER_LINK = "#F0D4D2";
+const FOOTER_MUTED = "#E8C4C2";
 
 const shadowSoft =
-  "0 1px 2px rgba(15,36,25,0.04), 0 6px 20px rgba(15,36,25,0.05), 0 18px 40px rgba(15,36,25,0.04)";
+  "0 1px 2px rgba(143,17,21,0.04), 0 6px 20px rgba(143,17,21,0.05), 0 18px 40px rgba(143,17,21,0.04)";
 const shadowDeep =
-  "0 2px 6px rgba(15,36,25,0.05), 0 16px 40px rgba(15,36,25,0.08), 0 40px 80px rgba(15,36,25,0.06)";
+  "0 2px 6px rgba(143,17,21,0.05), 0 16px 40px rgba(143,17,21,0.08), 0 40px 80px rgba(143,17,21,0.06)";
 const shadowElevated =
-  "0 2px 10px rgba(15,36,25,0.06), 0 24px 52px rgba(15,36,25,0.08), 0 0 0 1px rgba(255,255,255,0.88) inset";
+  "0 2px 10px rgba(143,17,21,0.06), 0 24px 52px rgba(143,17,21,0.08), 0 0 0 1px rgba(255,255,255,0.88) inset";
 const shadowLuxe =
-  "0 4px 20px rgba(15,36,25,0.07), 0 32px 72px rgba(15,36,25,0.1), 0 0 0 1px rgba(255,255,255,0.92) inset";
+  "0 4px 20px rgba(143,17,21,0.07), 0 32px 72px rgba(143,17,21,0.1), 0 0 0 1px rgba(255,255,255,0.92) inset";
 const shadowQuote =
-  "0 28px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(15,36,25,0.08), inset 0 1px 0 rgba(255,255,255,0.95)";
+  "0 28px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(143,17,21,0.08), inset 0 1px 0 rgba(255,255,255,0.95)";
 
 const displayFont =
   'Georgia, "Times New Roman", "Palatino Linotype", "Book Antiqua", serif';
@@ -115,7 +117,10 @@ function PageStyles() {
         .rise, .rise-1, .rise-2, .rise-3 { animation: none; opacity: 1; transform: none; }
         .reveal { opacity: 1; transform: none; transition: none; }
         .drift { animation: none; }
+        .glass-orb { animation: none; }
+        .btn-premium::before { animation: none; opacity: 0.35; }
         .btn-premium:hover { transform: none; }
+        .crimson-gloss { animation: none; }
         .card-lift:hover { transform: none; }
         .faq-answer { animation: none; }
         .faq-icon { transition: none; }
@@ -128,16 +133,58 @@ function PageStyles() {
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+      .crimson-gloss {
+        background: linear-gradient(
+          125deg,
+          #ff8a7a 0%,
+          #e35f52 14%,
+          #b82c2e 36%,
+          #8f1115 52%,
+          #c03030 68%,
+          #ff6b5c 84%,
+          #b82c2e 100%
+        );
+        background-size: 220% 220%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter:
+          drop-shadow(0 1px 0 rgba(255,255,255,0.45))
+          drop-shadow(0 2px 10px rgba(184,44,46,0.35));
+        animation: crimsonSheen 7s ease-in-out infinite;
+      }
+      @keyframes crimsonSheen {
+        0%, 100% { background-position: 0% 40%; }
+        50% { background-position: 100% 60%; }
+      }
+      @keyframes glassShimmer {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+      }
+      @keyframes orbFloat {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(2%, -3%) scale(1.04); }
+      }
       .nav-glass {
-        background: rgba(251,250,246,0.82);
-        box-shadow: 0 1px 0 rgba(191,155,74,0.1), 0 12px 40px rgba(15,36,25,0.04);
+        background: linear-gradient(
+          180deg,
+          rgba(255,255,255,0.72) 0%,
+          rgba(255,255,255,0.55) 100%
+        );
+        -webkit-backdrop-filter: blur(28px) saturate(180%);
+        backdrop-filter: blur(28px) saturate(180%);
+        border-bottom: 1px solid rgba(255,255,255,0.55);
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.7) inset,
+          0 -1px 0 rgba(184,44,46,0.04) inset,
+          0 8px 32px rgba(143,17,21,0.06);
       }
       .panel-luxe {
-        border-radius: 1.25rem;
-        border-color: rgba(191,155,74,0.14) !important;
+        border-radius: 1.35rem;
+        border-color: rgba(255,255,255,0.55) !important;
       }
       @media (min-width: 640px) {
-        .panel-luxe { border-radius: 1.5rem; }
+        .panel-luxe { border-radius: 1.65rem; }
       }
       .quote-luxe {
         box-shadow: ${shadowQuote.replace(/"/g, "")};
@@ -155,25 +202,82 @@ function PageStyles() {
         opacity: 0.85;
       }
       .btn-premium {
-        background: ${goldFoil};
-        box-shadow: 0 2px 8px rgba(150,117,46,0.22), inset 0 1px 0 rgba(255,255,255,0.42);
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          145deg,
+          rgba(255,255,255,0.38) 0%,
+          rgba(232,205,136,0.55) 18%,
+          ${GOLD_MID} 48%,
+          ${GOLD_DEEP} 82%,
+          rgba(255,255,255,0.22) 100%
+        );
+        background-size: 160% 160%;
+        border: 1px solid rgba(255,255,255,0.45);
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.55) inset,
+          0 -1px 0 rgba(143,17,21,0.12) inset,
+          0 4px 16px rgba(161,117,56,0.28),
+          0 12px 36px rgba(184,44,46,0.08);
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, background-position 0.6s ease;
+      }
+      .btn-premium::before {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          115deg,
+          transparent 30%,
+          rgba(255,255,255,0.45) 48%,
+          transparent 62%
+        );
+        background-size: 220% 100%;
+        opacity: 0.55;
+        animation: glassShimmer 5.5s ease-in-out infinite;
       }
       .btn-premium:hover {
         transform: translateY(-1px);
-        box-shadow: 0 6px 20px rgba(150,117,46,0.28), inset 0 1px 0 rgba(255,255,255,0.48);
+        background-position: 100% 40%;
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.65) inset,
+          0 -1px 0 rgba(143,17,21,0.1) inset,
+          0 8px 24px rgba(161,117,56,0.32),
+          0 16px 40px rgba(184,44,46,0.1);
       }
       .btn-premium:disabled {
         opacity: 0.72;
         cursor: not-allowed;
         transform: none;
       }
+      .btn-premium > * { position: relative; z-index: 1; }
       .card-lift {
-        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease, border-color 0.5s ease, background 0.5s ease;
       }
       .card-lift:hover {
         transform: translateY(-3px);
         box-shadow: ${shadowDeep.replace(/"/g, "")};
+      }
+      .glass-card {
+        background: linear-gradient(
+          165deg,
+          rgba(255,255,255,0.72) 0%,
+          rgba(255,255,255,0.38) 55%,
+          rgba(255,255,255,0.45) 100%
+        );
+        -webkit-backdrop-filter: blur(22px) saturate(160%);
+        backdrop-filter: blur(22px) saturate(160%);
+        border: 1px solid rgba(255,255,255,0.6);
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.75) inset,
+          0 -1px 0 rgba(184,44,46,0.04) inset,
+          0 12px 40px rgba(143,17,21,0.06);
+      }
+      .glass-card:hover {
+        border-color: rgba(190,153,90,0.35);
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.85) inset,
+          0 18px 48px rgba(143,17,21,0.09);
       }
       .stat-number {
         background: ${goldFoil};
@@ -182,17 +286,21 @@ function PageStyles() {
         -webkit-text-fill-color: transparent;
       }
       .eyebrow-pill {
-        border: 1px solid ${GOLD_MID}38;
-        color: ${FOREST_SOFT};
-        background: rgba(255,255,255,0.62);
-        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.55);
+        color: ${FOREST_MID};
+        background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.22));
+        -webkit-backdrop-filter: blur(16px) saturate(160%);
+        backdrop-filter: blur(16px) saturate(160%);
+        box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 4px 16px rgba(143,17,21,0.04);
         letter-spacing: 0.26em;
       }
       .trust-pill {
-        border: 1px solid ${BORDER};
-        color: ${SAGE};
-        background: rgba(255,255,255,0.35);
-        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255,255,255,0.5);
+        color: ${FOREST_SOFT};
+        background: rgba(255,255,255,0.28);
+        -webkit-backdrop-filter: blur(12px) saturate(150%);
+        backdrop-filter: blur(12px) saturate(150%);
+        box-shadow: 0 1px 0 rgba(255,255,255,0.55) inset;
       }
       .link-refined { transition: opacity 0.3s ease, color 0.3s ease; }
       .link-refined:hover { opacity: 0.72; }
@@ -213,12 +321,16 @@ function PageStyles() {
       }
       .nav-link:hover::after { transform: scaleX(1); }
       .email-input {
-        border: 1px solid ${BORDER};
-        background-color: ${WHITE};
+        border: 1px solid rgba(255,255,255,0.55);
+        background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.5));
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
         color: ${FOREST};
         font-size: 0.875rem;
         font-weight: 500;
-        box-shadow: 0 1px 4px rgba(15,36,25,0.04), inset 0 1px 2px rgba(15,36,25,0.03);
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.8) inset,
+          0 2px 8px rgba(143,17,21,0.04);
       }
       .email-input::placeholder {
         color: ${TEXT_SOFT};
@@ -226,31 +338,71 @@ function PageStyles() {
         opacity: 1;
       }
       .email-input:focus {
-        border-color: ${GOLD_MID};
-        box-shadow: 0 0 0 3px rgba(191,155,74,0.14), 0 2px 8px rgba(15,36,25,0.06);
+        border-color: rgba(190,153,90,0.55);
+        box-shadow:
+          0 0 0 3px rgba(190,153,90,0.16),
+          0 1px 0 rgba(255,255,255,0.85) inset,
+          0 4px 14px rgba(143,17,21,0.06);
       }
       .panel-premium {
         position: relative;
         overflow: hidden;
-        background: linear-gradient(168deg, ${SURFACE_LIFT} 0%, ${SURFACE_MINT} 100%);
-        box-shadow: ${shadowElevated.replace(/"/g, "")};
+        background: linear-gradient(
+          168deg,
+          rgba(255,255,255,0.78) 0%,
+          rgba(255,255,255,0.42) 48%,
+          rgba(255,255,255,0.5) 100%
+        );
+        -webkit-backdrop-filter: blur(28px) saturate(170%);
+        backdrop-filter: blur(28px) saturate(170%);
+        border: 1px solid rgba(255,255,255,0.62);
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.85) inset,
+          0 -1px 0 rgba(184,44,46,0.05) inset,
+          0 20px 56px rgba(143,17,21,0.08),
+          0 2px 8px rgba(190,153,90,0.08);
       }
       .panel-premium::before {
         content: "";
         position: absolute;
-        left: 0;
-        right: 0;
+        left: 8%;
+        right: 8%;
         top: 0;
         height: 1px;
-        background: ${goldHairline};
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.95), transparent);
       }
       .panel-premium::after {
         content: "";
         pointer-events: none;
         position: absolute;
         inset: 0;
-        background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,255,255,0.85) 0%, transparent 65%);
-        opacity: 0.55;
+        background:
+          radial-gradient(ellipse 90% 55% at 50% -10%, rgba(255,255,255,0.7) 0%, transparent 55%),
+          radial-gradient(ellipse 40% 30% at 90% 10%, rgba(190,153,90,0.12) 0%, transparent 60%);
+        opacity: 0.9;
+      }
+      .glass-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(48px);
+        pointer-events: none;
+        animation: orbFloat 14s ease-in-out infinite;
+      }
+      .phone-glass {
+        border-radius: 1.85rem;
+        border: 1px solid rgba(255,255,255,0.55);
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.65) inset,
+          0 24px 64px rgba(143,17,21,0.14),
+          0 0 0 1px rgba(190,153,90,0.22);
+        background: linear-gradient(160deg, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        padding: 6px;
+      }
+      .phone-glass img {
+        border-radius: 1.5rem;
+        display: block;
       }
       .quote-canvas {
         position: relative;
@@ -303,7 +455,7 @@ function PageStyles() {
         border-radius: 2px;
       }
       .faq-item {
-        border-bottom: 1px solid rgba(191,155,74,0.22);
+        border-bottom: 1px solid rgba(190,153,90,0.22);
       }
       .faq-summary {
         cursor: pointer;
@@ -328,10 +480,13 @@ function PageStyles() {
       }
       .faq-answer { animation: faqReveal 0.3s cubic-bezier(0.22, 1, 0.36, 1) both; }
       .menu-toggle {
-        border: 1px solid ${BORDER_SOFT};
-        background: rgba(255,255,255,0.5);
+        border: 1px solid rgba(255,255,255,0.55);
+        background: linear-gradient(145deg, rgba(255,255,255,0.65), rgba(255,255,255,0.28));
+        -webkit-backdrop-filter: blur(14px) saturate(160%);
+        backdrop-filter: blur(14px) saturate(160%);
+        box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 4px 14px rgba(143,17,21,0.05);
         cursor: pointer;
-        transition: background 0.3s ease;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
       }
       .menu-toggle:active { background: rgba(255,255,255,0.85); }
       .menu-toggle:focus-visible {
@@ -344,7 +499,7 @@ function PageStyles() {
       }
       .mobile-menu {
         animation: menuReveal 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
-        box-shadow: 0 24px 48px rgba(15,36,25,0.08);
+        box-shadow: 0 24px 48px rgba(143,17,21,0.08);
       }
     `}</style>
   );
@@ -455,13 +610,53 @@ function AmbientBackdrop() {
       <div className="pointer-events-none absolute inset-0" style={{ background: heroAmbient }} aria-hidden />
       <MeshBackdrop idPrefix="hero" className="pointer-events-none absolute inset-0 h-full w-full opacity-40" />
       <div
-        className="pointer-events-none absolute inset-0"
-        style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(191,155,74,0.09) 0%, transparent 58%)` }}
+        className="glass-orb"
+        style={{
+          width: "42vw",
+          maxWidth: 520,
+          height: "42vw",
+          maxHeight: 520,
+          top: "-8%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          background: "radial-gradient(circle, rgba(190,153,90,0.28) 0%, transparent 68%)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="glass-orb"
+        style={{
+          width: "36vw",
+          maxWidth: 420,
+          height: "36vw",
+          maxHeight: 420,
+          bottom: "4%",
+          left: "-6%",
+          background: "radial-gradient(circle, rgba(184,44,46,0.16) 0%, transparent 70%)",
+          animationDelay: "-4s",
+        }}
+        aria-hidden
+      />
+      <div
+        className="glass-orb"
+        style={{
+          width: "28vw",
+          maxWidth: 340,
+          height: "28vw",
+          maxHeight: 340,
+          top: "28%",
+          right: "-4%",
+          background: "radial-gradient(circle, rgba(227,95,82,0.14) 0%, rgba(232,205,136,0.12) 45%, transparent 72%)",
+          animationDelay: "-7s",
+        }}
         aria-hidden
       />
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: `radial-gradient(ellipse 55% 40% at 50% 100%, rgba(122,148,136,0.08) 0%, transparent 55%)` }}
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,255,255,0.45) 0%, transparent 58%)",
+        }}
         aria-hidden
       />
     </>
@@ -578,7 +773,7 @@ function GenoCrest({
   idPrefix?: string;
 }) {
   const goldId = `${idPrefix}-g`;
-  const sageId = `${idPrefix}-s`;
+  const crimsonId = `${idPrefix}-c`;
 
   return (
     <svg className={className} width={size} height={size} viewBox="0 0 120 120" fill="none" aria-hidden>
@@ -588,16 +783,16 @@ function GenoCrest({
           <stop offset="50%" stopColor={GOLD_MID} />
           <stop offset="100%" stopColor={GOLD_DEEP} />
         </linearGradient>
-        <linearGradient id={sageId} x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor={SAGE_LIGHT} />
-          <stop offset="100%" stopColor={SAGE} />
+        <linearGradient id={crimsonId} x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={CRIMSON_LIGHT} />
+          <stop offset="100%" stopColor={CRIMSON} />
         </linearGradient>
       </defs>
       <circle cx="60" cy="60" r="55" stroke={GOLD_MID} strokeWidth="0.375" strokeDasharray="2 8" opacity="0.22" />
       <circle cx="44" cy="60" r="26" stroke={`url(#${goldId})`} strokeWidth="1.25" />
-      <circle cx="76" cy="60" r="26" stroke={`url(#${sageId})`} strokeWidth="1.25" />
+      <circle cx="76" cy="60" r="26" stroke={`url(#${crimsonId})`} strokeWidth="1.25" />
       <path d="M44 36c10-7 22-7 32 0M44 84c10 7 22 7 32 0" stroke={`url(#${goldId})`} strokeWidth="1" strokeLinecap="round" opacity="0.65" />
-      <path d="M60 28v64M48 44c8 6 16 6 24 0M48 76c8-6 16-6 24 0" stroke={SAGE} strokeWidth="0.5" strokeLinecap="round" opacity="0.42" />
+      <path d="M60 28v64M48 44c8 6 16 6 24 0M48 76c8-6 16-6 24 0" stroke={CRIMSON} strokeWidth="0.5" strokeLinecap="round" opacity="0.42" />
       <circle cx="60" cy="60" r="4" fill={`url(#${goldId})`} />
     </svg>
   );
@@ -607,7 +802,7 @@ function HelixField({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 320 140" fill="none" aria-hidden>
       <path d="M0 70c40-35 80 35 120 0s80 35 120 0 80 35 80 0" stroke={GOLD_MID} strokeWidth="1" strokeLinecap="round" opacity="0.16" />
-      <path d="M0 82c40-28 80 28 120 0s80 28 120 0 80 28 80 0" stroke={SAGE} strokeWidth="0.75" strokeLinecap="round" opacity="0.2" />
+      <path d="M0 82c40-28 80 28 120 0s80 28 120 0 80 28 80 0" stroke={CRIMSON} strokeWidth="0.75" strokeLinecap="round" opacity="0.2" />
       <path d="M0 58c40-28 80 28 120 0s80 28 120 0 80 28 80 0" stroke={GOLD_MID} strokeWidth="0.5" strokeLinecap="round" opacity="0.12" />
     </svg>
   );
@@ -728,8 +923,7 @@ export default function Home() {
       <Grain />
 
       <header
-        className="nav-glass sticky top-0 z-50 border-b backdrop-blur-xl backdrop-saturate-150"
-        style={{ borderColor: `${GOLD_MID}18` }}
+        className="nav-glass sticky top-0 z-50"
       >
         <CeremonyRule className="absolute left-0 right-0 top-0 opacity-60" />
         <CeremonyRule className="absolute bottom-0 left-0 right-0 opacity-50" />
@@ -737,7 +931,7 @@ export default function Home() {
           <Link href="/" className="link-refined flex items-center gap-3">
             <GenoCrest size={36} idPrefix="nav" className="shrink-0 opacity-90" />
             <span className="text-xl font-bold tracking-tight sm:text-2xl lg:text-[1.75rem]" style={{ ...displayStyle, fontWeight: 700 }}>
-              <span className="gold-accent">GenoMatch</span>
+              <span className="crimson-gloss">GenoMatch</span>
             </span>
           </Link>
           <div className="hidden items-center gap-7 lg:flex">
@@ -777,8 +971,7 @@ export default function Home() {
         {menuOpen ? (
           <div
             id="mobile-menu"
-            className="mobile-menu nav-glass absolute inset-x-0 top-full border-b backdrop-blur-xl backdrop-saturate-150 lg:hidden"
-            style={{ borderColor: `${GOLD_MID}18` }}
+            className="mobile-menu nav-glass absolute inset-x-0 top-full lg:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col px-6 py-2">
               {navLinks.map(({ href, label }, index) => (
@@ -789,7 +982,7 @@ export default function Home() {
                   className="py-3.5 text-sm"
                   style={{
                     color: TEXT_SOFT,
-                    borderBottom: index < navLinks.length - 1 ? "1px solid rgba(191,155,74,0.14)" : "none",
+                    borderBottom: index < navLinks.length - 1 ? "1px solid rgba(190,153,90,0.14)" : "none",
                   }}
                 >
                   {label}
@@ -829,7 +1022,7 @@ export default function Home() {
               <div className="relative">
                 <div
                   className="absolute inset-0 -m-6 rounded-full"
-                  style={{ background: `radial-gradient(circle, rgba(191,155,74,0.16) 0%, transparent 68%)` }}
+                  style={{ background: `radial-gradient(circle, rgba(190,153,90,0.16) 0%, transparent 68%)` }}
                   aria-hidden
                 />
                 <GenoCrest size={80} idPrefix="hero" className="relative opacity-95" />
@@ -912,7 +1105,7 @@ export default function Home() {
                 className="mb-5 inline-flex items-center gap-2.5 rounded-full border px-4 py-2"
                 style={{
                   borderColor: "rgba(165,42,58,0.22)",
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(251,250,246,0.88) 100%)",
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.88) 100%)",
                   boxShadow: "0 1px 8px rgba(165,42,58,0.06)",
                 }}
               >
@@ -934,14 +1127,11 @@ export default function Home() {
               {stats.map(({ stat, label }, index) => (
                 <article
                   key={stat}
-                  className={`card-lift group relative overflow-hidden rounded-2xl border border-l-4 p-8 sm:rounded-3xl ${
+                  className={`card-lift glass-card group relative overflow-hidden rounded-2xl border-l-4 p-8 sm:rounded-3xl ${
                     index === 1 ? "stat-featured sm:-translate-y-1" : ""
                   }`}
                   style={{
-                    borderColor: BORDER_SOFT,
                     borderLeftColor: GOLD_MID,
-                    background: `linear-gradient(162deg, ${SURFACE_LIFT} 0%, ${SURFACE_MINT} 100%)`,
-                    boxShadow: index === 1 ? shadowLuxe : shadowElevated,
                   }}
                 >
                   <CornerAccents />
@@ -969,7 +1159,7 @@ export default function Home() {
                     href={source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-refined underline decoration-[rgba(191,155,74,0.45)] underline-offset-2"
+                    className="link-refined underline decoration-[rgba(190,153,90,0.45)] underline-offset-2"
                     style={{ color: GOLD_MID }}
                   >
                     {source.publisher}
@@ -985,7 +1175,7 @@ export default function Home() {
         <section className="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-28" style={{ backgroundColor: LINEN }}>
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: `radial-gradient(ellipse 50% 60% at 72% 50%, rgba(191,155,74,0.07) 0%, transparent 65%)` }}
+            style={{ background: `radial-gradient(ellipse 50% 60% at 72% 50%, rgba(190,153,90,0.07) 0%, transparent 65%)` }}
             aria-hidden
           />
           <div className="relative mx-auto max-w-2xl">
@@ -1006,18 +1196,19 @@ export default function Home() {
               <div className="relative mx-auto mt-8 w-full max-w-[260px] sm:max-w-[280px]">
                 <div
                   className="pointer-events-none absolute -inset-10"
-                  style={{ background: `radial-gradient(circle, rgba(191,155,74,0.12) 0%, transparent 68%)` }}
+                  style={{ background: `radial-gradient(circle, rgba(190,153,90,0.12) 0%, transparent 68%)` }}
                   aria-hidden
                 />
-                <Image
-                  src="/genomatch-app-onboarding-matches.png"
-                  alt="GenoMatch app screen showing genotype aware match profiles"
-                  width={472}
-                  height={1024}
-                  sizes="280px"
-                  className="relative w-full rounded-[1.75rem] border"
-                  style={{ borderColor: "rgba(191,155,74,0.35)", boxShadow: shadowDeep }}
-                />
+                <div className="phone-glass relative">
+                  <Image
+                    src="/genomatch-app-onboarding-matches.png"
+                    alt="GenoMatch app screen showing genotype aware match profiles"
+                    width={472}
+                    height={1024}
+                    sizes="280px"
+                    className="relative w-full"
+                  />
+                </div>
               </div>
             </Reveal>
           </div>
@@ -1051,24 +1242,14 @@ export default function Home() {
                 {steps.map(({ step, title, body }) => (
                   <li
                     key={step}
-                    className="card-lift group relative flex flex-col items-center rounded-2xl border p-8 text-center sm:rounded-3xl"
-                    style={{
-                      borderColor: BORDER_SOFT,
-                      background: `linear-gradient(165deg, ${SURFACE_LIFT} 0%, ${MINT_WHISPER} 100%)`,
-                      boxShadow: shadowSoft,
-                    }}
+                    className="card-lift glass-card group relative flex flex-col items-center rounded-2xl p-8 text-center sm:rounded-3xl"
                   >
-                    <div
-                      className="absolute inset-x-0 top-0 h-px opacity-40"
-                      style={{ background: goldHairline }}
-                      aria-hidden
-                    />
                     <div
                       className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-sm font-bold"
                       style={{
                         background: goldFoil,
                         color: FOREST,
-                        boxShadow: `0 0 0 4px ${IVORY}, 0 3px 14px rgba(150,117,46,0.2)`,
+                        boxShadow: `0 0 0 4px rgba(255,255,255,0.55), 0 3px 14px rgba(161,117,56,0.25), inset 0 1px 0 rgba(255,255,255,0.45)`,
                       }}
                     >
                       {step}
@@ -1158,7 +1339,7 @@ export default function Home() {
         <section className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-28" style={{ backgroundColor: LINEN }}>
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: `radial-gradient(ellipse 55% 45% at 50% 50%, rgba(191,155,74,0.04) 0%, transparent 65%)` }}
+            style={{ background: `radial-gradient(ellipse 55% 45% at 50% 50%, rgba(190,153,90,0.04) 0%, transparent 65%)` }}
             aria-hidden
           />
           <HelixField className="pointer-events-none absolute bottom-4 left-1/2 w-56 -translate-x-1/2 opacity-25" />
@@ -1167,7 +1348,7 @@ export default function Home() {
               <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px] lg:mx-0">
                 <div
                   className="pointer-events-none absolute -inset-10"
-                  style={{ background: `radial-gradient(circle, rgba(191,155,74,0.14) 0%, transparent 68%)` }}
+                  style={{ background: `radial-gradient(circle, rgba(190,153,90,0.14) 0%, transparent 68%)` }}
                   aria-hidden
                 />
                 <Image
@@ -1211,7 +1392,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <GenoCrest size={32} idPrefix="footer" className="opacity-85" />
             <p className="text-lg font-bold tracking-tight" style={{ ...displayStyle, fontWeight: 700 }}>
-              <span className="gold-accent">GenoMatch</span>
+              <span className="crimson-gloss">GenoMatch</span>
             </p>
           </div>
           <p className="gold-accent text-sm font-medium tracking-[0.16em]">

@@ -19,7 +19,7 @@ export default function SourcesBlock({
       style={{
         marginTop: '48px',
         paddingTop: '32px',
-        borderTop: '1px solid rgba(22,53,34,0.12)',
+        borderTop: '1px solid rgba(184,44,46,0.12)',
       }}
     >
       <h2

@@ -85,7 +85,7 @@ export function MonogramRings({ style }: { style?: CSSProperties }) {
     >
       <circle cx="200" cy="200" r="190" stroke={GOLD} strokeWidth="0.5" opacity="0.08" />
       <circle cx="200" cy="200" r="155" stroke={GOLD} strokeWidth="0.5" strokeDasharray="3 12" opacity="0.12" />
-      <circle cx="200" cy="200" r="120" stroke="#8FAF95" strokeWidth="0.5" opacity="0.07" />
+      <circle cx="200" cy="200" r="120" stroke="#E8C4C2" strokeWidth="0.5" opacity="0.07" />
       <path
         d="M200 80v240M140 140c40 30 80 30 120 0M140 260c40-30 80-30 120 0"
         stroke={`url(#${uid}-ring-gold)`}
@@ -96,8 +96,8 @@ export function MonogramRings({ style }: { style?: CSSProperties }) {
       <defs>
         <linearGradient id={`${uid}-ring-gold`} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#F0E6D0" />
-          <stop offset="50%" stopColor="#BF9B4A" />
-          <stop offset="100%" stopColor="#8A6824" />
+          <stop offset="50%" stopColor="#BE995A" />
+          <stop offset="100%" stopColor="#A17538" />
         </linearGradient>
       </defs>
     </svg>
@@ -146,7 +146,7 @@ export function HelixAccent({ className, style }: { className?: string; style?: 
       />
       <path
         d="M60 50c30 25 60 25 90 0M170 50c30 25 60 25 90 0"
-        stroke="#8FAF95"
+        stroke="#E8C4C2"
         strokeWidth="0.5"
         strokeLinecap="round"
         opacity="0.14"
@@ -155,7 +155,7 @@ export function HelixAccent({ className, style }: { className?: string; style?: 
   )
 }
 
-export function SectionGlow({ style, color = 'rgba(191,155,74,0.06)' }: { style?: CSSProperties; color?: string }) {
+export function SectionGlow({ style, color = 'rgba(190,153,90,0.06)' }: { style?: CSSProperties; color?: string }) {
   return (
     <div
       aria-hidden

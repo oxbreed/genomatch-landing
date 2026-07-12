@@ -24,7 +24,7 @@ export default function ScdNewsPage() {
           position: 'sticky',
           top: 0,
           zIndex: 50,
-          borderBottom: '1px solid rgba(191,155,74,0.15)',
+          borderBottom: '1px solid rgba(190,153,90,0.15)',
         }}
       >
         <Link href="/" style={{ textDecoration: 'none' }}>
@@ -105,7 +105,7 @@ export default function ScdNewsPage() {
           background: FOREST,
           padding: '40px 24px',
           textAlign: 'center',
-          borderTop: '1px solid rgba(191,155,74,0.15)',
+          borderTop: '1px solid rgba(190,153,90,0.15)',
         }}
       >
         <p
