@@ -211,7 +211,7 @@ export const metadata: Metadata = {
       "Find love without leaving your family's future to chance. GenoMatch matches you with genetically compatible partners across Nigeria and the African diaspora.",
     images: [
       {
-        url: "/genomatch-og.png",
+        url: "/genomatch-og.png?v=20260712",
         width: 1200,
         height: 630,
         alt: "GenoMatch: Connecting Hearts. Aligning Genes.",
@@ -223,7 +223,7 @@ export const metadata: Metadata = {
     title: "GenoMatch | The World's First Genotype Aware Dating App",
     description:
       "Find love without leaving your family's future to chance. Built for Nigeria and the African diaspora.",
-    images: ["/genomatch-og.png"],
+    images: ["/genomatch-og.png?v=20260712"],
     creator: "@genomatch",
   },
   alternates: {
@@ -233,11 +233,12 @@ export const metadata: Metadata = {
   applicationName: "GenoMatch",
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
-      { url: "/genomatch-icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=20260712", sizes: "any" },
+      { url: "/icon.png?v=20260712", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.png?v=20260712", type: "image/png", sizes: "512x512" },
     ],
-    shortcut: "/favicon.png",
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon.ico?v=20260712",
+    apple: [{ url: "/apple-icon.png?v=20260712", sizes: "180x180", type: "image/png" }],
   },
   referrer: "origin-when-cross-origin",
   verification: {
