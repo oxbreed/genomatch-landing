@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
     <div style={{ background: '#FFFFFF', minHeight: '100vh' }}>
       <header style={{ background: '#B82C2E', padding: '20px 40px', borderBottom: '1px solid rgba(190,153,90,0.15)' }}>
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <span style={{ color: '#BE995A', fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
+          <span className="crimson-gloss" style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 700 }}>GenoMatch</span>
         </Link>
       </header>
       <main id="main-content" style={{ maxWidth: 800, margin: '0 auto', padding: '56px 24px', fontFamily: BODY, lineHeight: 1.7, color: '#3A1E1E' }}>
