@@ -85,5 +85,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: "https://www.genomatch.app/support",
+      lastModified: LAST_MODIFIED.legal,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: "https://www.genomatch.app/delete-account",
+      lastModified: LAST_MODIFIED.legal,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ];
 }

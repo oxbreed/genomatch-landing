@@ -2,11 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://genomatch.app/</loc>
-    <image:image><image:loc>https://genomatch.app/genomatch-icon.png</image:loc><image:title>GenoMatch — Connecting Hearts. Aligning Genes.</image:title></image:image>
-    <image:image><image:loc>https://genomatch.app/genomatch-og.png</image:loc><image:title>GenoMatch — genotype-aware dating app</image:title></image:image>
-    <image:image><image:loc>https://genomatch.app/genomatch-logo-icon.png</image:loc><image:title>GenoMatch Infinity logo</image:title></image:image>
-    <image:image><image:loc>https://genomatch.app/genomatch-app-onboarding-v2.png</image:loc><image:title>GenoMatch onboarding — science-led matching</image:title></image:image>
-    <image:image><image:loc>https://genomatch.app/genomatch-coming-soon-v2.jpg</image:loc><image:title>GenoMatch — where hearts align and futures bloom</image:title></image:image>
+    <loc>https://www.genomatch.app/</loc>
+    <image:image><image:loc>https://www.genomatch.app/favicon.png</image:loc><image:title>GenoMatch favicon</image:title></image:image>
+    <image:image><image:loc>https://www.genomatch.app/genomatch-icon.png</image:loc><image:title>GenoMatch — Connecting Hearts. Aligning Genes.</image:title></image:image>
+    <image:image><image:loc>https://www.genomatch.app/genomatch-og.png</image:loc><image:title>GenoMatch — genotype-aware dating app</image:title></image:image>
+    <image:image><image:loc>https://www.genomatch.app/genomatch-mark-3d.png</image:loc><image:title>GenoMatch Infinity logo</image:title></image:image>
+    <image:image><image:loc>https://www.genomatch.app/genomatch-app-onboarding-v2.png</image:loc><image:title>GenoMatch onboarding — science-led matching</image:title></image:image>
+    <image:image><image:loc>https://www.genomatch.app/genomatch-coming-soon-v2.jpg</image:loc><image:title>GenoMatch — where hearts align and futures bloom</image:title></image:image>
   </url>
 </urlset>

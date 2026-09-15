@@ -204,14 +204,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NG",
     alternateLocale: ["en_GB", "en_US"],
-    url: "https://genomatch.app",
+    url: "https://www.genomatch.app",
     siteName: "GenoMatch",
     title: "GenoMatch | The World's First Genotype Aware Dating App",
     description:
       "Find love without leaving your family's future to chance. GenoMatch matches you with genetically compatible partners across Nigeria and the African diaspora.",
     images: [
       {
-        url: "/genomatch-og.png?v=20260712",
+        url: "https://www.genomatch.app/genomatch-og.png",
         width: 1200,
         height: 630,
         alt: "GenoMatch: Connecting Hearts. Aligning Genes.",
@@ -223,7 +223,7 @@ export const metadata: Metadata = {
     title: "GenoMatch | The World's First Genotype Aware Dating App",
     description:
       "Find love without leaving your family's future to chance. Built for Nigeria and the African diaspora.",
-    images: ["/genomatch-og.png?v=20260712"],
+    images: ["https://www.genomatch.app/genomatch-og.png"],
     creator: "@genomatch",
   },
   alternates: {
@@ -231,14 +231,27 @@ export const metadata: Metadata = {
   },
   category: "dating",
   applicationName: "GenoMatch",
+  // One stable favicon set for Google SERP (do not churn URLs).
   icons: {
     icon: [
-      { url: "/favicon.ico?v=20260712", sizes: "any" },
-      { url: "/icon.png?v=20260712", type: "image/png", sizes: "512x512" },
-      { url: "/favicon.png?v=20260712", type: "image/png", sizes: "512x512" },
+      {
+        url: "https://www.genomatch.app/favicon.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+      {
+        url: "https://www.genomatch.app/favicon.ico",
+        sizes: "any",
+      },
     ],
-    shortcut: "/favicon.ico?v=20260712",
-    apple: [{ url: "/apple-icon.png?v=20260712", sizes: "180x180", type: "image/png" }],
+    shortcut: "https://www.genomatch.app/favicon.ico",
+    apple: [
+      {
+        url: "https://www.genomatch.app/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
   referrer: "origin-when-cross-origin",
   verification: {
