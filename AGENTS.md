@@ -5,9 +5,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 <!-- END:nextjs-agent-rules -->
 
 <!-- BEGIN:genomatch-brand -->
-# Brand colour is UNRESOLVED
+# Brand colour is System A (Mirror)
 
-Two complete brand systems exist across these repos and neither is ratified.
-Read `BRAND.md` at the repo root before touching any colour, theme token,
-gradient, icon or brand asset. Do not pick a system on your own.
+Landing uses gunmetal, ribbon red, gold, chrome and cream. Read `BRAND.md`
+before touching any colour, theme token, gradient, icon or brand asset.
+Do not apply forest or the crimson approximation.
 <!-- END:genomatch-brand -->

@@ -37,17 +37,17 @@ const topics = [
 
 export default function SupportPage() {
   return (
-    <div style={{ background: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ background: '#FAF8F5', minHeight: '100vh' }}>
       <header
         style={{
           background: '#FFFFFF',
           padding: '20px 40px',
-          borderBottom: '1px solid rgba(26,61,40,0.1)',
+          borderBottom: '1px solid rgba(11,12,14,0.1)',
         }}
       >
         <Link href="/" style={{ textDecoration: 'none' }}>
           <span
-            className="forest-gloss"
+            className="gm-wordmark-text"
             style={{ fontFamily: HEADING, fontSize: 22, fontWeight: 700 }}
           >
             GenoMatch
@@ -63,7 +63,7 @@ export default function SupportPage() {
           padding: '56px 24px',
           fontFamily: BODY,
           lineHeight: 1.7,
-          color: '#3A1E1E',
+          color: '#0B0C0E',
         }}
       >
         <h1
@@ -71,20 +71,20 @@ export default function SupportPage() {
             fontSize: 32,
             fontWeight: 700,
             marginBottom: 8,
-            color: '#B82C2E',
+            color: '#C8102E',
             fontFamily: HEADING,
           }}
         >
           Support
         </h1>
-        <p style={{ color: '#6B5856', marginBottom: 12 }}>
+        <p style={{ color: '#6E737C', marginBottom: 12 }}>
           Email{' '}
-          <a href="mailto:hello@genomatch.app" style={{ color: '#B82C2E' }}>
+          <a href="mailto:hello@genomatch.app" style={{ color: '#C8102E' }}>
             hello@genomatch.app
           </a>
           . A person reads every message and replies within two working days.
         </p>
-        <p style={{ color: '#6B5856', marginBottom: 40, fontSize: 14 }}>
+        <p style={{ color: '#6E737C', marginBottom: 40, fontSize: 14 }}>
           GenoMatch Ltd (RC 9236521), Lagos, Nigeria.
         </p>
 
@@ -92,7 +92,7 @@ export default function SupportPage() {
           <section key={topic.title} style={{ marginBottom: 28 }}>
             <h2
               style={{
-                color: '#B82C2E',
+                color: '#C8102E',
                 marginBottom: 8,
                 fontSize: 20,
                 fontWeight: 700,
@@ -105,7 +105,7 @@ export default function SupportPage() {
             {topic.href ? (
               <Link
                 href={topic.href}
-                style={{ color: '#B82C2E', fontSize: 14, display: 'inline-block', marginTop: 6 }}
+                style={{ color: '#C8102E', fontSize: 14, display: 'inline-block', marginTop: 6 }}
               >
                 {topic.hrefLabel}
               </Link>
@@ -118,13 +118,13 @@ export default function SupportPage() {
             marginTop: 40,
             padding: 20,
             borderRadius: 12,
-            border: '1px solid rgba(212,168,67,0.3)',
-            background: '#FFFBF8',
+            border: '1px solid rgba(212,175,55,0.3)',
+            background: '#FAF8F5',
           }}
         >
           <h2
             style={{
-              color: '#B82C2E',
+              color: '#C8102E',
               marginTop: 0,
               marginBottom: 8,
               fontSize: 18,
@@ -141,16 +141,16 @@ export default function SupportPage() {
           </p>
         </section>
 
-        <p style={{ marginTop: 40, fontSize: 14, color: '#6B5856' }}>
-          <Link href="/privacy" style={{ color: '#B82C2E' }}>
+        <p style={{ marginTop: 40, fontSize: 14, color: '#6E737C' }}>
+          <Link href="/privacy" style={{ color: '#C8102E' }}>
             Privacy Policy
           </Link>
           {' · '}
-          <Link href="/terms" style={{ color: '#B82C2E' }}>
+          <Link href="/terms" style={{ color: '#C8102E' }}>
             Terms of Service
           </Link>
           {' · '}
-          <Link href="/delete-account" style={{ color: '#B82C2E' }}>
+          <Link href="/delete-account" style={{ color: '#C8102E' }}>
             Delete your account
           </Link>
         </p>

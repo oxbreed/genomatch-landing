@@ -4,7 +4,7 @@ import {
   getScdNewsFeed,
   SCD_NEWS_REVALIDATE_SECONDS,
 } from '@/lib/scd-news-feed'
-import { BODY, FOREST, GOLD, LINEN, SAGE, TEXT_SOFT, WHITE } from '../theme'
+import { BODY, LOGO_RED, LOGO_GOLD, CREAM, METALLIC_STEEL, TEXT_SOFT, WHITE } from '../theme'
 
 type ScdNewsFeedProps = {
   limit?: number
@@ -48,7 +48,7 @@ export default async function ScdNewsFeed({
       <div style={{ marginBottom: '32px', textAlign: compact ? 'left' : 'center' }}>
         <p
           style={{
-            color: GOLD,
+            color: LOGO_GOLD,
             fontSize: '11px',
             letterSpacing: '3px',
             fontFamily: BODY,
@@ -60,7 +60,7 @@ export default async function ScdNewsFeed({
         <h2
           id="scd-news-heading"
           style={{
-            color: FOREST,
+            color: LOGO_RED,
             fontSize: compact ? 'clamp(1.4rem, 3vw, 1.8rem)' : 'clamp(1.6rem, 3.5vw, 2.2rem)',
             fontWeight: 700,
             marginBottom: '12px',
@@ -85,7 +85,7 @@ export default async function ScdNewsFeed({
         {!failed && (
           <p
             style={{
-              color: SAGE,
+              color: METALLIC_STEEL,
               fontSize: '13px',
               fontFamily: BODY,
               marginTop: '10px',
@@ -102,7 +102,7 @@ export default async function ScdNewsFeed({
             background: WHITE,
             borderRadius: '16px',
             padding: '32px',
-            border: '1px solid rgba(190,153,90,0.2)',
+            border: '1px solid rgba(212,175,55,0.2)',
             textAlign: 'center',
           }}
         >
@@ -113,7 +113,7 @@ export default async function ScdNewsFeed({
               target="_blank"
               rel="noopener noreferrer"
               className="gm-link"
-              style={{ color: GOLD }}
+              style={{ color: LOGO_GOLD }}
             >
               WHO sickle cell updates
             </a>
@@ -142,7 +142,7 @@ export default async function ScdNewsFeed({
                   background: WHITE,
                   borderRadius: '16px',
                   padding: compact ? '24px' : '28px 32px',
-                  borderLeft: `4px solid ${GOLD}`,
+                  borderLeft: `4px solid ${LOGO_GOLD}`,
                   textDecoration: 'none',
                   transition: 'transform 0.2s ease',
                 }}
@@ -158,8 +158,8 @@ export default async function ScdNewsFeed({
                 >
                   <span
                     style={{
-                      background: LINEN,
-                      color: FOREST,
+                      background: CREAM,
+                      color: LOGO_RED,
                       fontSize: '11px',
                       letterSpacing: '0.5px',
                       padding: '4px 12px',
@@ -177,7 +177,7 @@ export default async function ScdNewsFeed({
                 </div>
                 <h3
                   style={{
-                    color: FOREST,
+                    color: LOGO_RED,
                     fontSize: compact ? '1.05rem' : '1.15rem',
                     fontWeight: 700,
                     lineHeight: 1.45,
@@ -188,7 +188,7 @@ export default async function ScdNewsFeed({
                 </h3>
                 <span
                   style={{
-                    color: GOLD,
+                    color: LOGO_GOLD,
                     fontSize: '14px',
                     fontFamily: BODY,
                     fontWeight: 700,
@@ -224,7 +224,7 @@ export default async function ScdNewsFeed({
             href="/blog/news"
             className="gm-link"
             style={{
-              color: GOLD,
+              color: LOGO_GOLD,
               fontFamily: BODY,
               fontWeight: 700,
               fontSize: '15px',

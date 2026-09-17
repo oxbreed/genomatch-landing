@@ -1,8 +1,6 @@
 import type { CSSProperties } from 'react'
+import { LOGO_GOLD, LOGO_GOLD_BRIGHT, LOGO_GOLD_DEEP } from '../theme'
 
-const GOLD_LIGHT = '#F0E6D0'
-const GOLD_MID = '#BE995A'
-const GOLD_DEEP = '#A17538'
 const SCD_RED = '#A52A3A'
 const SCD_DEEP = '#7A1A2E'
 const SCD_LIGHT = '#C94B5A'
@@ -24,7 +22,7 @@ export default function SickleCellMark({
   const goldId = `${idPrefix}-gold`
 
   const sickleFill = variant === 'mono' ? SCD_RED : `url(#${redId})`
-  const ringStroke = variant === 'light' ? GOLD_LIGHT : GOLD_MID
+  const ringStroke = variant === 'light' ? LOGO_GOLD_BRIGHT : LOGO_GOLD
   const ghostStroke = variant === 'light' ? 'rgba(240,230,208,0.35)' : 'rgba(165,42,58,0.18)'
 
   return (
@@ -47,9 +45,9 @@ export default function SickleCellMark({
             <stop offset="100%" stopColor={SCD_DEEP} />
           </linearGradient>
           <linearGradient id={goldId} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={GOLD_LIGHT} />
-            <stop offset="50%" stopColor={GOLD_MID} />
-            <stop offset="100%" stopColor={GOLD_DEEP} />
+            <stop offset="0%" stopColor={LOGO_GOLD_BRIGHT} />
+            <stop offset="50%" stopColor={LOGO_GOLD} />
+            <stop offset="100%" stopColor={LOGO_GOLD_DEEP} />
           </linearGradient>
         </defs>
       ) : null}
@@ -65,13 +63,13 @@ export default function SickleCellMark({
 
       <path
         d="M38 20c5 4 6 11 3 17-2 4-6 8-11 10"
-        stroke={variant === 'light' ? GOLD_LIGHT : GOLD_MID}
+        stroke={variant === 'light' ? LOGO_GOLD_BRIGHT : LOGO_GOLD}
         strokeWidth="0.75"
         strokeLinecap="round"
         opacity="0.45"
       />
 
-      <circle cx="32" cy="32" r="2" fill={variant === 'light' ? GOLD_LIGHT : GOLD_MID} opacity="0.5" />
+      <circle cx="32" cy="32" r="2" fill={variant === 'light' ? LOGO_GOLD_BRIGHT : LOGO_GOLD} opacity="0.5" />
     </svg>
   )
 }

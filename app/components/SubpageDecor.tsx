@@ -4,7 +4,7 @@ import { useId, type CSSProperties, type ReactNode } from 'react'
 import Link from 'next/link'
 import BrandMark from './BrandMark'
 import GenoCrest from './GenoCrest'
-import { GOLD, GOLD_HAIRLINE, BODY, DISPLAY } from '../theme'
+import { LOGO_GOLD, LOGO_GOLD_HAIRLINE, BODY, DISPLAY } from '../theme'
 
 export function NavBrand({ idPrefix: _idPrefix = 'nav' }: { idPrefix?: string }) {
   void _idPrefix
@@ -53,11 +53,11 @@ export function HeroMesh({ className, style }: { className?: string; style?: CSS
     >
       <defs>
         <pattern id={patternId} x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="0.5" fill={GOLD} opacity="0.14" />
+          <circle cx="1" cy="1" r="0.5" fill={LOGO_GOLD} opacity="0.14" />
         </pattern>
         <radialGradient id={`${patternId}-fade`} cx="50%" cy="0%" r="75%">
-          <stop offset="0%" stopColor={GOLD} stopOpacity="0.1" />
-          <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
+          <stop offset="0%" stopColor={LOGO_GOLD} stopOpacity="0.1" />
+          <stop offset="100%" stopColor={LOGO_GOLD} stopOpacity="0" />
         </radialGradient>
       </defs>
       <rect width="100%" height="100%" fill={`url(#${patternId})`} opacity="0.45" />
@@ -85,8 +85,8 @@ export function MonogramRings({ style }: { style?: CSSProperties }) {
       fill="none"
       aria-hidden
     >
-      <circle cx="200" cy="200" r="190" stroke={GOLD} strokeWidth="0.5" opacity="0.08" />
-      <circle cx="200" cy="200" r="155" stroke={GOLD} strokeWidth="0.5" strokeDasharray="3 12" opacity="0.12" />
+      <circle cx="200" cy="200" r="190" stroke={LOGO_GOLD} strokeWidth="0.5" opacity="0.08" />
+      <circle cx="200" cy="200" r="155" stroke={LOGO_GOLD} strokeWidth="0.5" strokeDasharray="3 12" opacity="0.12" />
       <circle cx="200" cy="200" r="120" stroke="#E8C4C2" strokeWidth="0.5" opacity="0.07" />
       <path
         d="M200 80v240M140 140c40 30 80 30 120 0M140 260c40-30 80-30 120 0"
@@ -98,8 +98,8 @@ export function MonogramRings({ style }: { style?: CSSProperties }) {
       <defs>
         <linearGradient id={`${uid}-ring-gold`} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#F0E6D0" />
-          <stop offset="50%" stopColor="#BE995A" />
-          <stop offset="100%" stopColor="#A17538" />
+          <stop offset="50%" stopColor="#D4AF37" />
+          <stop offset="100%" stopColor="#B8922E" />
         </linearGradient>
       </defs>
     </svg>
@@ -129,7 +129,7 @@ export function Fleuron({ className, style }: { className?: string; style?: CSSP
     >
       <path
         d="M10 0L11.2 3.2H16L12.4 5.2L13.6 10L10 7.6L6.4 10L7.6 5.2L4 3.2H8.8L10 0Z"
-        fill={GOLD}
+        fill={LOGO_GOLD}
         fillOpacity="0.4"
       />
     </svg>
@@ -141,7 +141,7 @@ export function HelixAccent({ className, style }: { className?: string; style?: 
     <svg className={className} style={{ pointerEvents: 'none', ...style }} viewBox="0 0 320 140" fill="none" aria-hidden>
       <path
         d="M40 70c40-35 80-35 120 0s80 35 120 0M40 90c40-35 80-35 120 0s80 35 120 0"
-        stroke={GOLD}
+        stroke={LOGO_GOLD}
         strokeWidth="0.5"
         strokeLinecap="round"
         opacity="0.18"
@@ -157,7 +157,7 @@ export function HelixAccent({ className, style }: { className?: string; style?: 
   )
 }
 
-export function SectionGlow({ style, color = 'rgba(190,153,90,0.06)' }: { style?: CSSProperties; color?: string }) {
+export function SectionGlow({ style, color = 'rgba(212,175,55,0.06)' }: { style?: CSSProperties; color?: string }) {
   return (
     <div
       aria-hidden
@@ -196,15 +196,15 @@ export function SectionBlend({ from, edge = 'top' }: { from: string; edge?: 'top
 export function DiamondRule({ className, style }: { className?: string; style?: CSSProperties }) {
   return (
     <div className={`gm-diamond-rule ${className ?? ''}`} style={style} aria-hidden>
-      <span className="gm-diamond-rule-line" style={{ background: GOLD_HAIRLINE }} />
+      <span className="gm-diamond-rule-line" style={{ background: LOGO_GOLD_HAIRLINE }} />
       <Fleuron />
-      <span className="gm-diamond-rule-line" style={{ background: GOLD_HAIRLINE }} />
+      <span className="gm-diamond-rule-line" style={{ background: LOGO_GOLD_HAIRLINE }} />
     </div>
   )
 }
 
 export function CardCorners() {
-  const stroke = GOLD
+  const stroke = LOGO_GOLD
   return (
     <>
       <svg className="gm-corner gm-corner-tl" viewBox="0 0 20 20" fill="none" aria-hidden>

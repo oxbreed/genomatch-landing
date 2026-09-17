@@ -4,7 +4,7 @@ import type { CSSProperties } from 'react'
 const ASPECT = 552 / 829
 
 /**
- * Sickle cell awareness ribbon — velvet crimson mark.
+ * Sickle cell awareness ribbon — reserved ribbon red, not brand red.
  * `size` controls height; width follows the natural ribbon aspect.
  */
 export default function SickleCellRibbon({
@@ -34,7 +34,7 @@ export default function SickleCellRibbon({
         width,
         height,
         objectFit: 'contain',
-        filter: 'drop-shadow(0 2px 6px rgba(143,17,21,0.18))',
+        filter: 'drop-shadow(0 2px 6px rgba(122,26,46,0.18))',
         ...style,
       }}
     />

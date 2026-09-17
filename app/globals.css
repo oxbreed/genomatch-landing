@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #3a1e1e;
+  --background: #faf8f5;
+  --foreground: #0b0c0e;
 }
 
 @theme inline {
@@ -22,18 +22,18 @@ html {
   left: -9999px;
   top: auto;
   padding: 0.75rem 1.25rem;
-  background: #B82C2E;
-  color: #f0e6d0;
+  background: #C8102E;
+  color: #faf8f5;
   font-weight: 600;
   text-decoration: none;
   border-radius: 0 0 0.5rem 0;
-  box-shadow: 0 4px 16px rgba(143, 17, 21, 0.18);
+  box-shadow: 0 4px 16px rgba(163, 12, 36, 0.18);
 }
 .skip-link:focus {
   left: 0;
   top: 0;
   z-index: 9999;
-  outline: 2px solid #be995a;
+  outline: 2px solid #d4af37;
   outline-offset: 2px;
 }
 
@@ -61,14 +61,14 @@ body {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.9) 0%,
-    rgba(255, 251, 248, 0.82) 100%
+    rgba(250, 248, 245, 0.82) 100%
   );
   -webkit-backdrop-filter: blur(22px) saturate(160%);
   backdrop-filter: blur(22px) saturate(160%);
-  border-top: 1px solid rgba(190, 153, 90, 0.16);
+  border-top: 1px solid rgba(212, 175, 55, 0.16);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 -6px 28px rgba(143, 17, 21, 0.06);
+    0 -6px 28px rgba(163, 12, 36, 0.06);
   pointer-events: auto;
 }
 
@@ -78,8 +78,8 @@ body {
   gap: 0.5rem;
   flex-shrink: 0;
   padding: 0 0.875rem;
-  border-right: 1px solid rgba(184, 44, 46, 0.1);
-  background: rgba(184, 44, 46, 0.04);
+  border-right: 1px solid rgba(200, 16, 46, 0.1);
+  background: rgba(200, 16, 46, 0.04);
 }
 
 .scd-news-ticker-mark {
@@ -94,7 +94,7 @@ body {
 }
 
 .scd-news-ticker-label-text {
-  color: #A17538;
+  color: #B8922E;
   font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -103,7 +103,7 @@ body {
 }
 
 .scd-news-ticker-more {
-  color: #B82C2E;
+  color: #C8102E;
   font-size: 0.625rem;
   font-weight: 600;
   text-decoration: none;
@@ -113,7 +113,7 @@ body {
 }
 
 .scd-news-ticker-more:hover {
-  color: #8F1115;
+  color: #A30C24;
 }
 
 .scd-news-ticker-viewport {
@@ -153,7 +153,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.625rem 1.25rem;
-  color: #5C534E;
+  color: #6E737C;
   font-size: 0.8125rem;
   line-height: 1.35;
   text-decoration: none;
@@ -162,11 +162,11 @@ body {
 }
 
 .scd-news-ticker-link:hover {
-  color: #B82C2E;
+  color: #C8102E;
 }
 
 .scd-news-ticker-source {
-  color: #be995a;
+  color: #d4af37;
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -174,7 +174,7 @@ body {
 }
 
 .scd-news-ticker-sep {
-  color: rgba(190, 153, 90, 0.35);
+  color: rgba(212, 175, 55, 0.35);
   font-size: 0.375rem;
   margin-right: 0.25rem;
   user-select: none;
@@ -218,7 +218,7 @@ body {
   animation: gmBrandDrift 14s ease-in-out infinite;
 }
 .gm-brand-glow {
-  filter: drop-shadow(0 6px 18px rgba(143, 17, 21, 0.14)) drop-shadow(0 1px 0 rgba(255, 255, 255, 0.4));
+  filter: drop-shadow(0 6px 18px rgba(163, 12, 36, 0.14)) drop-shadow(0 1px 0 rgba(255, 255, 255, 0.4));
 }
 @keyframes gmBrandDrift {
   0%,
@@ -235,17 +235,16 @@ body {
   }
 }
 
-/* Glossy crimson wordmark — restrained */
-.gm-wordmark-text,
-.crimson-gloss {
-  color: #b82c2e;
+/* Glossy logo-red wordmark — restrained */
+.gm-wordmark-text {
+  color: #c8102e;
   background: linear-gradient(
     145deg,
-    #c84542 0%,
-    #b82c2e 30%,
-    #8f1115 55%,
-    #b82c2e 78%,
-    #c84542 100%
+    #e8163a 0%,
+    #c8102e 30%,
+    #a30c24 55%,
+    #c8102e 78%,
+    #e8163a 100%
   );
   background-size: 180% 180%;
   -webkit-background-clip: text;
@@ -255,10 +254,9 @@ body {
   animation: gmWordmarkSheen 10s ease-in-out infinite;
 }
 @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
-  .gm-wordmark-text,
-  .crimson-gloss {
-    color: #b82c2e;
-    -webkit-text-fill-color: #b82c2e;
+  .gm-wordmark-text {
+    color: #c8102e;
+    -webkit-text-fill-color: #c8102e;
     background: none;
     filter: none;
     animation: none;
@@ -280,14 +278,11 @@ body {
 .gm-glass-header {
   background: linear-gradient(
     155deg,
-    #ffd2cb 0%,
-    #ff9a8f 12%,
-    #f05a52 28%,
-    #c8302e 46%,
-    #8f1115 58%,
-    #d64540 72%,
-    #ff8a7a 86%,
-    #ffe0da 100%
+    #e8163a 0%,
+    #c8102e 28%,
+    #a30c24 52%,
+    #c8102e 78%,
+    #e8163a 100%
   ) !important;
   background-size: 180% 180% !important;
   -webkit-backdrop-filter: blur(24px) saturate(200%);
@@ -296,8 +291,8 @@ body {
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.7) inset,
     0 2px 0 rgba(255, 255, 255, 0.22) inset,
-    0 -1px 0 rgba(80, 10, 12, 0.35) inset,
-    0 12px 40px rgba(143, 17, 21, 0.22);
+    0 -1px 0 rgba(11, 12, 14, 0.35) inset,
+    0 12px 40px rgba(163, 12, 36, 0.22);
   position: relative;
   overflow: hidden;
   animation: gmMirrorRedShift 10s ease-in-out infinite;
@@ -343,17 +338,15 @@ body {
   0%, 100% { background-position: 0% 40%; }
   50% { background-position: 100% 60%; }
 }
-.gm-glass-header .crimson-gloss,
 .gm-glass-header .gm-wordmark-text {
-  color: #fff6f4;
+  color: #faf8f5;
   background: linear-gradient(
     125deg,
     #ffffff 0%,
-    #ffe8e4 18%,
-    #ffd4cc 40%,
-    #ffffff 58%,
-    #ffc8be 78%,
-    #ffffff 100%
+    #d4d8e0 22%,
+    #faf8f5 48%,
+    #ffffff 72%,
+    #b8bcc4 100%
   );
   background-size: 220% 220%;
   -webkit-background-clip: text;
@@ -361,12 +354,12 @@ body {
   -webkit-text-fill-color: transparent;
   filter:
     drop-shadow(0 1px 0 rgba(255, 255, 255, 0.35))
-    drop-shadow(0 1px 2px rgba(80, 10, 12, 0.3));
+    drop-shadow(0 1px 2px rgba(11, 12, 14, 0.3));
   animation: gmWordmarkSheen 8s ease-in-out infinite;
 }
 .gm-glass-header .gm-link {
-  color: rgba(255, 248, 246, 0.95) !important;
-  text-shadow: 0 1px 1px rgba(80, 10, 12, 0.25);
+  color: rgba(250, 248, 245, 0.95) !important;
+  text-shadow: 0 1px 1px rgba(11, 12, 14, 0.25);
 }
 .gm-glass-header .gm-link:hover {
   color: #fff !important;
@@ -389,7 +382,7 @@ body {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08));
-  color: #fff6f4;
+  color: #faf8f5;
   cursor: pointer;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset;
 }
@@ -422,15 +415,15 @@ body {
   background-image: linear-gradient(
     155deg,
     rgba(255, 255, 255, 0.35) 0%,
-    rgba(232, 205, 136, 0.45) 22%,
-    #be995a 52%,
-    #8b6914 88%
+    rgba(232, 197, 90, 0.45) 22%,
+    #d4af37 52%,
+    #b8922e 88%
   );
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.65) inset,
-    0 -1px 0 rgba(143, 17, 21, 0.1) inset,
-    0 4px 16px rgba(150, 117, 46, 0.24),
-    0 12px 32px rgba(184, 44, 46, 0.07);
+    0 -1px 0 rgba(163, 12, 36, 0.1) inset,
+    0 4px 16px rgba(184, 146, 46, 0.24),
+    0 12px 32px rgba(200, 16, 46, 0.07);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, opacity 0.3s ease;
 }
 .gm-btn::after {
@@ -452,8 +445,8 @@ body {
   transform: translateY(-1px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.75) inset,
-    0 8px 24px rgba(150, 117, 46, 0.28),
-    0 16px 40px rgba(184, 44, 46, 0.09);
+    0 8px 24px rgba(184, 146, 46, 0.28),
+    0 16px 40px rgba(200, 16, 46, 0.09);
 }
 .gm-btn:active {
   transform: translateY(0) scale(0.99);
@@ -475,25 +468,25 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.72);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 -1px 0 rgba(184, 44, 46, 0.03) inset,
-    0 14px 40px rgba(143, 17, 21, 0.06),
-    0 0 0 1px rgba(190, 153, 90, 0.08);
+    0 -1px 0 rgba(200, 16, 46, 0.03) inset,
+    0 14px 40px rgba(163, 12, 36, 0.06),
+    0 0 0 1px rgba(212, 175, 55, 0.08);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
 }
 .gm-card:hover {
   transform: translateY(-3px);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.95) inset,
-    0 18px 48px rgba(184, 44, 46, 0.09),
-    0 0 0 1px rgba(190, 153, 90, 0.14);
+    0 18px 48px rgba(200, 16, 46, 0.09),
+    0 0 0 1px rgba(212, 175, 55, 0.14);
 }
 .gm-input:focus {
-  border-color: #be995a !important;
-  box-shadow: 0 0 0 3px rgba(190, 153, 90, 0.14);
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.14);
 }
 .gm-btn:focus-visible,
 .gm-link:focus-visible {
-  outline: 2px solid #be995a;
+  outline: 2px solid #d4af37;
   outline-offset: 3px;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -501,7 +494,6 @@ body {
   .gm-card,
   .gm-link,
   .gm-wordmark-text,
-  .crimson-gloss,
   .gm-glass-header::before {
     transition: none;
     animation: none;
