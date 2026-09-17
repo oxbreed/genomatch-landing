@@ -6,7 +6,7 @@ import GenoCrest from '../components/GenoCrest'
 import SiteHeader from '../components/SiteHeader'
 import SourcesBlock from '../components/SourcesBlock'
 import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
-import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
+import { LOGO_RED, LOGO_RED_DEEP, CREAM, LOGO_GOLD, METALLIC_STEEL, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -58,7 +58,7 @@ export default function Partners() {
   }
 
   return (
-    <div id="main-content" style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+    <div id="main-content" style={{ background: CREAM, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
 
       <SiteHeader />
 
@@ -66,20 +66,20 @@ export default function Partners() {
       <section style={{ background: HERO_SURFACE, padding: '100px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <GenoCrest size={220} idPrefix="partners-hero-l" className="hidden sm:block" style={{ position: 'absolute', left: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
         <GenoCrest size={220} idPrefix="partners-hero-r" className="hidden sm:block" style={{ position: 'absolute', right: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
-        <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>FOR PARTNERS</p>
-        <h1 style={{ color: FOREST, fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, maxWidth: '800px', margin: '0 auto 24px', lineHeight: 1.2 }}>
+        <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>FOR PARTNERS</p>
+        <h1 style={{ color: LOGO_RED, fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, maxWidth: '800px', margin: '0 auto 24px', lineHeight: 1.2 }}>
           Partner with us to end preventable sickle cell suffering in Africa
         </h1>
-        <p style={{ color: SAGE, fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, fontFamily: BODY }}>
+        <p style={{ color: METALLIC_STEEL, fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, fontFamily: BODY }}>
           GenoMatch is looking for health organisations, NGOs, research institutions, and corporate partners who share our commitment to genetic awareness and family health across West Africa, the diaspora, and communities everywhere.
         </p>
       </section>
 
       {/* Why Partner */}
-      <section style={{ background: LINEN, padding: '100px 24px' }}>
+      <section style={{ background: CREAM, padding: '100px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px', textAlign: 'center' }}>WHY PARTNER WITH GENOMATCH</p>
-          <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '60px', lineHeight: 1.3, textAlign: 'center' }}>
+          <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px', textAlign: 'center' }}>WHY PARTNER WITH GENOMATCH</p>
+          <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '60px', lineHeight: 1.3, textAlign: 'center' }}>
             The opportunity to change a generation
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
@@ -91,8 +91,8 @@ export default function Partners() {
               { title: 'Community Trust', body: 'Our platform is built on trust. A partnership with GenoMatch signals to millions of Nigerians that your organisation is invested in their health and their future.' },
               { title: 'Media & Visibility', body: 'GenoMatch is a compelling story of science, love, and African health innovation. Partner organisations benefit from shared media coverage and brand association.' },
             ].map((item, i) => (
-              <div key={i} className="gm-card" style={{ background: WHITE, borderRadius: '16px', padding: '32px 24px', borderTop: `3px solid ${GOLD}` }}>
-                <h3 style={{ color: FOREST, fontSize: '18px', fontWeight: 700, marginBottom: '12px' }}>{item.title}</h3>
+              <div key={i} className="gm-card" style={{ background: WHITE, borderRadius: '16px', padding: '32px 24px', borderTop: `3px solid ${LOGO_GOLD}` }}>
+                <h3 style={{ color: LOGO_RED, fontSize: '18px', fontWeight: 700, marginBottom: '12px' }}>{item.title}</h3>
                 <p style={{ color: TEXT_SOFT, fontSize: '15px', lineHeight: 1.7, fontFamily: BODY }}>{item.body}</p>
               </div>
             ))}
@@ -107,8 +107,8 @@ export default function Partners() {
       {/* Partnership Types */}
       <section style={{ background: WHITE, padding: '100px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px', textAlign: 'center' }}>PARTNERSHIP TYPES</p>
-          <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '60px', lineHeight: 1.3, textAlign: 'center' }}>
+          <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px', textAlign: 'center' }}>PARTNERSHIP TYPES</p>
+          <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '60px', lineHeight: 1.3, textAlign: 'center' }}>
             How we can work together
           </h2>
           {[
@@ -118,8 +118,8 @@ export default function Partners() {
             { type: 'Corporate & CSR', desc: 'Companies with CSR commitments to African health and family wellbeing. Sponsorship opportunities, employee benefit packages, and brand association with a purpose driven platform.' },
             { type: 'Government & Policy', desc: 'Health ministries and public health agencies in Nigeria and the diaspora. Policy advisory partnerships, national awareness campaign integration, and data for health planning.' },
           ].map((item, i) => (
-            <div key={i} style={{ borderBottom: `1px solid rgba(184,44,46,0.1)`, padding: '32px 0' }}>
-              <h3 style={{ color: FOREST, fontSize: '20px', fontWeight: 700, marginBottom: '12px' }}>{item.type}</h3>
+            <div key={i} style={{ borderBottom: `1px solid rgba(200,16,46,0.1)`, padding: '32px 0' }}>
+              <h3 style={{ color: LOGO_RED, fontSize: '20px', fontWeight: 700, marginBottom: '12px' }}>{item.type}</h3>
               <p style={{ color: TEXT_SOFT, fontSize: '16px', lineHeight: 1.7, fontFamily: BODY }}>{item.desc}</p>
             </div>
           ))}
@@ -127,52 +127,52 @@ export default function Partners() {
       </section>
 
       {/* Contact Form */}
-      <section style={{ background: LINEN, padding: '100px 24px' }}>
+      <section style={{ background: CREAM, padding: '100px 24px' }}>
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>GET IN TOUCH</p>
-          <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '16px' }}>Start a conversation</h2>
+          <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>GET IN TOUCH</p>
+          <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '16px' }}>Start a conversation</h2>
           <p style={{ color: TEXT_SOFT, fontSize: '17px', marginBottom: '48px', fontFamily: BODY, lineHeight: 1.7 }}>
             Tell us about your organisation and how you'd like to work together. We respond to every serious enquiry within 48 hours.
           </p>
           {submitted ? (
-            <div style={{ background: WHITE, borderRadius: '16px', padding: '48px', border: `1px solid rgba(190,153,90,0.3)` }}>
+            <div style={{ background: WHITE, borderRadius: '16px', padding: '48px', border: `1px solid rgba(212,175,55,0.3)` }}>
               <div style={{ fontSize: '48px', marginBottom: '16px' }}>✓</div>
-              <h3 style={{ color: FOREST, fontSize: '22px', fontWeight: 700, marginBottom: '12px' }}>Thank you for reaching out</h3>
+              <h3 style={{ color: LOGO_RED, fontSize: '22px', fontWeight: 700, marginBottom: '12px' }}>Thank you for reaching out</h3>
               <p style={{ color: TEXT_SOFT, fontSize: '16px', fontFamily: BODY }}>We'll be in touch within 48 hours.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: `1px solid rgba(190,153,90,0.3)` }}>
+            <form onSubmit={handleSubmit} style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: `1px solid rgba(212,175,55,0.3)` }}>
               <div style={{ marginBottom: '20px', textAlign: 'left' }}>
-                <label style={{ color: FOREST, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Organisation Name</label>
+                <label style={{ color: LOGO_RED, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Organisation Name</label>
                 <input
                   type="text"
                   value={org}
                   onChange={e => setOrg(e.target.value)}
                   placeholder="Your organisation"
                   className="gm-input"
-                  style={{ width: '100%', padding: '14px', border: '1px solid #E8E0D5', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', boxSizing: 'border-box' }}
+                  style={{ width: '100%', padding: '14px', border: '1px solid #D4D8E0', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', boxSizing: 'border-box' }}
                 />
               </div>
               <div style={{ marginBottom: '20px', textAlign: 'left' }}>
-                <label style={{ color: FOREST, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Email Address</label>
+                <label style={{ color: LOGO_RED, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Email Address</label>
                 <input
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="you@organisation.org"
                   className="gm-input"
-                  style={{ width: '100%', padding: '14px', border: '1px solid #E8E0D5', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', boxSizing: 'border-box' }}
+                  style={{ width: '100%', padding: '14px', border: '1px solid #D4D8E0', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', boxSizing: 'border-box' }}
                 />
               </div>
               <div style={{ marginBottom: '28px', textAlign: 'left' }}>
-                <label style={{ color: FOREST, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>How would you like to partner?</label>
+                <label style={{ color: LOGO_RED, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>How would you like to partner?</label>
                 <textarea
                   value={message}
                   onChange={e => setMessage(e.target.value)}
                   placeholder="Tell us about your organisation and how you'd like to work together..."
                   rows={5}
                   className="gm-input"
-                  style={{ width: '100%', padding: '14px', border: '1px solid #E8E0D5', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', resize: 'vertical', boxSizing: 'border-box' }}
+                  style={{ width: '100%', padding: '14px', border: '1px solid #D4D8E0', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', resize: 'vertical', boxSizing: 'border-box' }}
                 />
               </div>
               {error ? (
@@ -184,21 +184,21 @@ export default function Partners() {
                 type="submit"
                 disabled={loading}
                 className="gm-btn"
-                style={{ width: '100%', background: GOLD, color: FOREST_BG, padding: '16px', borderRadius: '8px', fontWeight: 700, fontSize: '16px', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, fontFamily: BODY }}
+                style={{ width: '100%', background: LOGO_GOLD, color: LOGO_RED_DEEP, padding: '16px', borderRadius: '8px', fontWeight: 700, fontSize: '16px', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, fontFamily: BODY }}
               >
                 {loading ? 'Sending...' : 'Send Enquiry'}
               </button>
             </form>
           )}
           <p style={{ color: TEXT_SOFT, fontSize: '14px', marginTop: '24px', fontFamily: BODY }}>
-            Or email us directly at <a href="mailto:hello@genomatch.app" className="gm-link" style={{ color: GOLD }}>hello@genomatch.app</a>
+            Or email us directly at <a href="mailto:hello@genomatch.app" className="gm-link" style={{ color: LOGO_GOLD }}>hello@genomatch.app</a>
           </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer style={{ background: WHITE, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(184,44,46,0.1)' }}>
-        <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
+      <footer style={{ background: WHITE, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(200,16,46,0.1)' }}>
+        <p style={{ color: LOGO_GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
         <p style={{ color: TEXT_SOFT, fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>
 

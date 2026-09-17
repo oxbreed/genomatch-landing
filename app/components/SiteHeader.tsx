@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import BrandMark from './BrandMark'
-import { FOREST_BG, GOLD, BODY } from '../theme'
+import { LOGO_RED_DEEP, LOGO_GOLD, BODY } from '../theme'
 
 const NAV_LINKS = [
   { href: '/#how-it-works', label: 'How it works', match: null },
@@ -58,7 +58,7 @@ export default function SiteHeader() {
         >
           <BrandMark size={30} className="shrink-0" />
           <span
-            className="crimson-gloss"
+            className="gm-wordmark-text"
             style={{ fontFamily: 'Georgia, serif', fontSize: 22, fontWeight: 700 }}
           >
             GenoMatch
@@ -96,8 +96,8 @@ export default function SiteHeader() {
             href="/#waitlist"
             className="gm-btn"
             style={{
-              background: GOLD,
-              color: FOREST_BG,
+              background: LOGO_GOLD,
+              color: LOGO_RED_DEEP,
               padding: '10px 22px',
               borderRadius: 99,
               fontWeight: 700,
@@ -115,8 +115,8 @@ export default function SiteHeader() {
             href="/#waitlist"
             className="gm-btn gm-site-nav-mobile-cta"
             style={{
-              background: GOLD,
-              color: FOREST_BG,
+              background: LOGO_GOLD,
+              color: LOGO_RED_DEEP,
               padding: '8px 14px',
               borderRadius: 99,
               fontWeight: 700,

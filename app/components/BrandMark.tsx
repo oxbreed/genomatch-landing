@@ -11,7 +11,7 @@ type BrandMarkProps = {
   alt?: string
 }
 
-/** Official GenoMatch 3D heart mark — red over gold infinity. */
+/** Official GenoMatch 3D heart mark. */
 export default function BrandMark({
   size = 64,
   className = '',
@@ -35,8 +35,8 @@ export default function BrandMark({
         width: size,
         height: 'auto',
         filter: watermark
-          ? 'drop-shadow(0 8px 24px rgba(143,17,21,0.08))'
-          : 'drop-shadow(0 4px 14px rgba(143,17,21,0.12)) drop-shadow(0 1px 0 rgba(255,255,255,0.35))',
+          ? 'drop-shadow(0 8px 24px rgba(163,12,36,0.08))'
+          : 'drop-shadow(0 4px 14px rgba(163,12,36,0.12)) drop-shadow(0 1px 0 rgba(255,255,255,0.35))',
         ...style,
       }}
     />

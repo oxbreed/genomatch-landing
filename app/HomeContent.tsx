@@ -9,62 +9,48 @@ import SickleCellMark from "./components/SickleCellMark";
 import SickleCellRibbon from "./components/SickleCellRibbon";
 import { FAQ_ITEMS, getFaqJsonLd } from "@/lib/faq";
 import { SCD_STATS, SOURCE_SETS, getSources } from "@/lib/scd-facts";
+import {
+  BRAND_BLACK,
+  CREAM,
+  LOGO_GOLD,
+  LOGO_GOLD_BRIGHT,
+  LOGO_GOLD_DEEP,
+  LOGO_RED,
+  LOGO_RED_BRIGHT,
+  METALLIC_CHROME,
+  METALLIC_STEEL,
+  WHITE,
+} from "./theme";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/* Crimson & Champagne — exact app-mark red #B82C2E + gold #BE995A */
-const FOREST = "#B82C2E";
-const FOREST_MID = "#B82C2E";
-const FOREST_SOFT = "#C03030";
-const SAGE = "#8A7A72";
-const SAGE_LIGHT = "#A89890";
-const WHITE = "#FFFFFF";
-
-const IVORY = "#FFFFFF";
-const PEARL = "#FFFFFF";
-const LINEN = "#FFFFFF";
-const CREAM = "#FFFFFF";
-
-const MINT_SOFT = "#FFFFFF";
-const MINT_DEEP = "#FFFFFF";
-const MINT_WHISPER = "#FFFFFF";
-const BORDER = "#E8E0DC";
-const BORDER_SOFT = "#EFE8E4";
-
+const BORDER = METALLIC_CHROME;
+const BORDER_SOFT = METALLIC_CHROME;
 const SURFACE = WHITE;
 const SURFACE_LIFT = WHITE;
-const SURFACE_MINT = "#FFFFFF";
+const TEXT = BRAND_BLACK;
+const TEXT_SOFT = METALLIC_STEEL;
 
-const TEXT = "#3A1E1E";
-const TEXT_SOFT = "#6B5856";
+const goldFoil = `linear-gradient(135deg, ${LOGO_GOLD_BRIGHT} 0%, ${LOGO_GOLD} 28%, ${LOGO_GOLD} 52%, ${LOGO_GOLD_DEEP} 78%, ${LOGO_GOLD} 100%)`;
+const goldHairline = `linear-gradient(90deg, transparent, ${LOGO_GOLD}28 22%, ${LOGO_GOLD}66 50%, ${LOGO_GOLD}28 78%, transparent)`;
+const heroAmbient = `radial-gradient(ellipse 90% 70% at 50% -10%, rgba(212,175,55,0.16) 0%, transparent 52%), radial-gradient(ellipse 55% 45% at 100% 80%, rgba(200,16,46,0.07) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 0% 60%, rgba(232,22,58,0.06) 0%, transparent 50%), #FAF8F5`;
+const statsAmbient = `linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 48%, #FFFFFF 100%)`;
+const creamWash = CREAM;
+const creamFooter = CREAM;
 
-const GOLD_LIGHT = "#D4BC82";
-const GOLD_MID = "#BE995A";
-const GOLD_DEEP = "#8B6914";
-const GOLD_CHAMPAGNE = "#C9A45A";
-const CRIMSON = "#B82C2E";
-const CRIMSON_LIGHT = "#E35F52";
-
-const goldFoil = `linear-gradient(135deg, ${GOLD_LIGHT} 0%, ${GOLD_CHAMPAGNE} 28%, ${GOLD_MID} 52%, ${GOLD_DEEP} 78%, ${GOLD_MID} 100%)`;
-const goldHairline = `linear-gradient(90deg, transparent, ${GOLD_MID}28 22%, ${GOLD_CHAMPAGNE}66 50%, ${GOLD_MID}28 78%, transparent)`;
-const heroAmbient = `radial-gradient(ellipse 90% 70% at 50% -10%, rgba(190,153,90,0.16) 0%, transparent 52%), radial-gradient(ellipse 55% 45% at 100% 80%, rgba(184,44,46,0.07) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 0% 60%, rgba(227,95,82,0.06) 0%, transparent 50%), #FFFBF8`;
-const statsAmbient = `linear-gradient(180deg, #FFFFFF 0%, #FFF8F6 48%, #FFFFFF 100%)`;
-const forestDepth = "#FFF8F6";
-const forestFooter = "#FFFBF8";
-
-const FOOTER_LINK = "#B82C2E";
-const FOOTER_MUTED = "#8A7A72";
+const FOOTER_LINK = LOGO_RED;
+const FOOTER_MUTED = METALLIC_STEEL;
 
 const shadowSoft =
-  "0 1px 2px rgba(143,17,21,0.03), 0 8px 24px rgba(143,17,21,0.05), 0 20px 48px rgba(190,153,90,0.04)";
+  "0 1px 2px rgba(163,12,36,0.03), 0 8px 24px rgba(163,12,36,0.05), 0 20px 48px rgba(212,175,55,0.04)";
 const shadowDeep =
-  "0 2px 8px rgba(143,17,21,0.04), 0 18px 44px rgba(143,17,21,0.07), 0 40px 80px rgba(190,153,90,0.05)";
+  "0 2px 8px rgba(163,12,36,0.04), 0 18px 44px rgba(163,12,36,0.07), 0 40px 80px rgba(212,175,55,0.05)";
 const shadowElevated =
-  "0 2px 12px rgba(143,17,21,0.05), 0 24px 56px rgba(143,17,21,0.07), 0 0 0 1px rgba(255,255,255,0.9) inset, 0 1px 0 rgba(255,255,255,0.95) inset";
+  "0 2px 12px rgba(163,12,36,0.05), 0 24px 56px rgba(163,12,36,0.07), 0 0 0 1px rgba(255,255,255,0.9) inset, 0 1px 0 rgba(255,255,255,0.95) inset";
 const shadowLuxe =
-  "0 4px 20px rgba(143,17,21,0.06), 0 28px 64px rgba(143,17,21,0.08), 0 0 0 1px rgba(255,255,255,0.94) inset, 0 1px 0 rgba(255,255,255,0.98) inset";
+  "0 4px 20px rgba(163,12,36,0.06), 0 28px 64px rgba(163,12,36,0.08), 0 0 0 1px rgba(255,255,255,0.94) inset, 0 1px 0 rgba(255,255,255,0.98) inset";
 const shadowQuote =
-  "0 24px 64px rgba(143,17,21,0.08), 0 8px 24px rgba(190,153,90,0.08), inset 0 1px 0 rgba(255,255,255,0.98), inset 0 -1px 0 rgba(184,44,46,0.04)";
+  "0 24px 64px rgba(163,12,36,0.08), 0 8px 24px rgba(212,175,55,0.08), inset 0 1px 0 rgba(255,255,255,0.98), inset 0 -1px 0 rgba(200,16,46,0.04)";
 
 const displayFont =
   'Georgia, "Times New Roman", "Palatino Linotype", "Book Antiqua", serif';
@@ -130,7 +116,7 @@ function PageStyles() {
         .btn-premium:hover { transform: none; }
         .nav-glass::before { animation: none; opacity: 0.45; }
         .nav-glass { animation: none; }
-        .crimson-gloss { animation: none; }
+        .gm-wordmark-text { animation: none; }
         .headline-gloss { animation: none; }
         .gold-accent { animation: none; }
         .card-lift:hover { transform: none; }
@@ -139,14 +125,14 @@ function PageStyles() {
         .mobile-menu { animation: none; }
       }
       .gold-accent {
-        color: ${GOLD_DEEP};
+        color: ${LOGO_GOLD_DEEP};
         background: linear-gradient(
           135deg,
-          ${GOLD_LIGHT} 0%,
-          ${GOLD_CHAMPAGNE} 28%,
-          ${GOLD_MID} 52%,
-          ${GOLD_DEEP} 78%,
-          ${GOLD_MID} 100%
+          ${LOGO_GOLD_BRIGHT} 0%,
+          ${LOGO_GOLD} 28%,
+          ${LOGO_GOLD} 52%,
+          ${LOGO_GOLD_DEEP} 78%,
+          ${LOGO_GOLD} 100%
         );
         background-size: 180% 180%;
         -webkit-background-clip: text;
@@ -157,21 +143,21 @@ function PageStyles() {
       }
       @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
         .gold-accent {
-          color: ${GOLD_DEEP};
-          -webkit-text-fill-color: ${GOLD_DEEP};
+          color: ${LOGO_GOLD_DEEP};
+          -webkit-text-fill-color: ${LOGO_GOLD_DEEP};
           background: none;
           filter: none;
         }
       }
       .headline-gloss {
-        color: ${FOREST};
+        color: ${LOGO_RED};
         background: linear-gradient(
           145deg,
-          #c84542 0%,
-          #b82c2e 28%,
-          #8f1115 55%,
-          #b82c2e 78%,
-          #c84542 100%
+          #e8163a 0%,
+          #c8102e 28%,
+          #a30c24 55%,
+          #c8102e 78%,
+          #e8163a 100%
         );
         background-size: 180% 180%;
         -webkit-background-clip: text;
@@ -182,38 +168,38 @@ function PageStyles() {
       }
       @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
         .headline-gloss {
-          color: ${FOREST};
-          -webkit-text-fill-color: ${FOREST};
+          color: ${LOGO_RED};
+          -webkit-text-fill-color: ${LOGO_RED};
           background: none;
           filter: none;
         }
       }
-      .crimson-gloss {
-        color: ${FOREST};
+      .gm-wordmark-text {
+        color: ${LOGO_RED};
         background: linear-gradient(
           125deg,
-          #e35f52 0%,
-          #b82c2e 32%,
-          #8f1115 52%,
-          #b82c2e 72%,
-          #c03030 100%
+          #e8163a 0%,
+          #c8102e 32%,
+          #a30c24 52%,
+          #c8102e 72%,
+          #c8102e 100%
         );
         background-size: 200% 200%;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
         filter: drop-shadow(0 1px 0 rgba(255,255,255,0.3));
-        animation: crimsonSheen 9s ease-in-out infinite;
+        animation: logoRedSheen 9s ease-in-out infinite;
       }
       @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
-        .crimson-gloss {
-          color: ${FOREST};
-          -webkit-text-fill-color: ${FOREST};
+        .gm-wordmark-text {
+          color: ${LOGO_RED};
+          -webkit-text-fill-color: ${LOGO_RED};
           background: none;
           filter: none;
         }
       }
-      @keyframes crimsonSheen {
+      @keyframes logoRedSheen {
         0%, 100% { background-position: 0% 45%; }
         50% { background-position: 100% 55%; }
       }
@@ -237,14 +223,11 @@ function PageStyles() {
         position: relative;
         background: linear-gradient(
           155deg,
-          #ffd2cb 0%,
-          #ff9a8f 12%,
-          #f05a52 28%,
-          #c8302e 46%,
-          #8f1115 58%,
-          #d64540 72%,
-          #ff8a7a 86%,
-          #ffe0da 100%
+          #e8163a 0%,
+          #c8102e 28%,
+          #a30c24 52%,
+          #c8102e 78%,
+          #e8163a 100%
         );
         background-size: 180% 180%;
         -webkit-backdrop-filter: blur(24px) saturate(200%);
@@ -253,8 +236,8 @@ function PageStyles() {
         box-shadow:
           0 1px 0 rgba(255,255,255,0.7) inset,
           0 2px 0 rgba(255,255,255,0.22) inset,
-          0 -1px 0 rgba(80,10,12,0.35) inset,
-          0 12px 40px rgba(143,17,21,0.22);
+          0 -1px 0 rgba(11,12,14,0.35) inset,
+          0 12px 40px rgba(163,12,36,0.22);
         overflow: hidden;
         animation: mirrorRedShift 10s ease-in-out infinite;
       }
@@ -297,22 +280,21 @@ function PageStyles() {
         50% { background-position: 100% 60%; }
       }
       .nav-glass .nav-link {
-        color: rgba(255,248,246,0.95) !important;
-        text-shadow: 0 1px 1px rgba(80,10,12,0.25);
+        color: rgba(250,248,245,0.95) !important;
+        text-shadow: 0 1px 1px rgba(11,12,14,0.25);
       }
       .nav-glass .nav-link:hover {
         color: #fff !important;
       }
-      .nav-glass .crimson-gloss {
-        color: #fff6f4;
+      .nav-glass .gm-wordmark-text {
+        color: #faf8f5;
         background: linear-gradient(
           125deg,
           #ffffff 0%,
-          #ffe8e4 18%,
-          #ffd4cc 40%,
-          #ffffff 58%,
-          #ffc8be 78%,
-          #ffffff 100%
+          #d4d8e0 22%,
+          #faf8f5 48%,
+          #ffffff 72%,
+          #b8bcc4 100%
         );
         background-size: 220% 220%;
         -webkit-background-clip: text;
@@ -320,7 +302,7 @@ function PageStyles() {
         -webkit-text-fill-color: transparent;
         filter:
           drop-shadow(0 1px 0 rgba(255,255,255,0.35))
-          drop-shadow(0 1px 2px rgba(80,10,12,0.3));
+          drop-shadow(0 1px 2px rgba(11,12,14,0.3));
         animation: headlineSheen 8s ease-in-out infinite;
       }
       .nav-glass .menu-toggle {
@@ -328,10 +310,10 @@ function PageStyles() {
         background: linear-gradient(145deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08));
         box-shadow:
           0 1px 0 rgba(255,255,255,0.45) inset,
-          0 2px 8px rgba(80,10,12,0.15);
+          0 2px 8px rgba(11,12,14,0.15);
       }
       .nav-glass .menu-toggle svg path {
-        stroke: #fff6f4;
+        stroke: #faf8f5;
       }
       .panel-luxe {
         border-radius: 1.35rem;
@@ -371,18 +353,18 @@ function PageStyles() {
           155deg,
           rgba(255,255,255,0.55) 0%,
           rgba(240,230,208,0.65) 16%,
-          ${GOLD_CHAMPAGNE} 34%,
-          ${GOLD_MID} 55%,
-          ${GOLD_DEEP} 82%,
+          ${LOGO_GOLD} 34%,
+          ${LOGO_GOLD} 55%,
+          ${LOGO_GOLD_DEEP} 82%,
           rgba(255,255,255,0.28) 100%
         );
         background-size: 160% 160%;
         border: 1px solid rgba(255,255,255,0.55);
         box-shadow:
           0 1px 0 rgba(255,255,255,0.7) inset,
-          0 -1px 0 rgba(143,17,21,0.1) inset,
+          0 -1px 0 rgba(163,12,36,0.1) inset,
           0 4px 18px rgba(161,117,56,0.26),
-          0 14px 36px rgba(184,44,46,0.07);
+          0 14px 36px rgba(200,16,46,0.07);
         transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, background-position 0.7s ease;
       }
       .btn-premium::before {
@@ -405,9 +387,9 @@ function PageStyles() {
         background-position: 100% 40%;
         box-shadow:
           0 1px 0 rgba(255,255,255,0.8) inset,
-          0 -1px 0 rgba(143,17,21,0.08) inset,
+          0 -1px 0 rgba(163,12,36,0.08) inset,
           0 8px 26px rgba(161,117,56,0.3),
-          0 18px 44px rgba(184,44,46,0.09);
+          0 18px 44px rgba(200,16,46,0.09);
       }
       .btn-premium:disabled {
         opacity: 0.72;
@@ -434,19 +416,19 @@ function PageStyles() {
         border: 1px solid rgba(255,255,255,0.72);
         box-shadow:
           0 1px 0 rgba(255,255,255,0.9) inset,
-          0 -1px 0 rgba(184,44,46,0.04) inset,
-          0 14px 44px rgba(143,17,21,0.06),
-          0 0 0 1px rgba(190,153,90,0.08);
+          0 -1px 0 rgba(200,16,46,0.04) inset,
+          0 14px 44px rgba(163,12,36,0.06),
+          0 0 0 1px rgba(212,175,55,0.08);
       }
       .glass-card:hover {
-        border-color: rgba(190,153,90,0.32);
+        border-color: rgba(212,175,55,0.32);
         box-shadow:
           0 1px 0 rgba(255,255,255,0.95) inset,
-          0 20px 52px rgba(143,17,21,0.08),
-          0 0 0 1px rgba(190,153,90,0.14);
+          0 20px 52px rgba(163,12,36,0.08),
+          0 0 0 1px rgba(212,175,55,0.14);
       }
       .stat-number {
-        color: ${GOLD_DEEP};
+        color: ${LOGO_GOLD_DEEP};
         background: ${goldFoil};
         -webkit-background-clip: text;
         background-clip: text;
@@ -454,32 +436,32 @@ function PageStyles() {
       }
       @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
         .stat-number {
-          color: ${GOLD_DEEP};
-          -webkit-text-fill-color: ${GOLD_DEEP};
+          color: ${LOGO_GOLD_DEEP};
+          -webkit-text-fill-color: ${LOGO_GOLD_DEEP};
           background: none;
         }
       }
       .eyebrow-pill {
-        border: 1px solid rgba(190,153,90,0.26);
-        color: ${FOREST_MID};
+        border: 1px solid rgba(212,175,55,0.26);
+        color: ${LOGO_RED};
         background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,248,246,0.7));
         -webkit-backdrop-filter: blur(18px) saturate(170%);
         backdrop-filter: blur(18px) saturate(170%);
         box-shadow:
           0 1px 0 rgba(255,255,255,0.95) inset,
-          0 4px 18px rgba(143,17,21,0.05),
-          0 0 0 1px rgba(190,153,90,0.06);
+          0 4px 18px rgba(163,12,36,0.05),
+          0 0 0 1px rgba(212,175,55,0.06);
         letter-spacing: 0.26em;
       }
       .trust-pill {
-        border: 1px solid rgba(190,153,90,0.18);
+        border: 1px solid rgba(212,175,55,0.18);
         color: ${TEXT_SOFT};
         background: linear-gradient(160deg, rgba(255,255,255,0.88), rgba(255,255,255,0.55));
         -webkit-backdrop-filter: blur(14px) saturate(160%);
         backdrop-filter: blur(14px) saturate(160%);
         box-shadow:
           0 1px 0 rgba(255,255,255,0.9) inset,
-          0 3px 12px rgba(143,17,21,0.04);
+          0 3px 12px rgba(163,12,36,0.04);
       }
       .link-refined { transition: opacity 0.3s ease, color 0.3s ease; }
       .link-refined:hover { opacity: 0.72; }
@@ -500,17 +482,17 @@ function PageStyles() {
       }
       .nav-link:hover::after { transform: scaleX(1); }
       .email-input {
-        border: 1px solid rgba(190,153,90,0.26);
+        border: 1px solid rgba(212,175,55,0.26);
         background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,248,246,0.82));
         -webkit-backdrop-filter: blur(14px) saturate(150%);
         backdrop-filter: blur(14px) saturate(150%);
-        color: ${FOREST};
+        color: ${LOGO_RED};
         font-size: 0.875rem;
         font-weight: 500;
         box-shadow:
           0 1px 0 rgba(255,255,255,0.95) inset,
-          0 2px 10px rgba(143,17,21,0.04),
-          0 0 0 1px rgba(190,153,90,0.04);
+          0 2px 10px rgba(163,12,36,0.04),
+          0 0 0 1px rgba(212,175,55,0.04);
       }
       .email-input::placeholder {
         color: ${TEXT_SOFT};
@@ -518,11 +500,11 @@ function PageStyles() {
         opacity: 1;
       }
       .email-input:focus {
-        border-color: rgba(190,153,90,0.55);
+        border-color: rgba(212,175,55,0.55);
         box-shadow:
-          0 0 0 3px rgba(190,153,90,0.16),
+          0 0 0 3px rgba(212,175,55,0.16),
           0 1px 0 rgba(255,255,255,0.85) inset,
-          0 4px 14px rgba(143,17,21,0.06);
+          0 4px 14px rgba(163,12,36,0.06);
       }
       .panel-premium {
         position: relative;
@@ -538,10 +520,10 @@ function PageStyles() {
         border: 1px solid rgba(255,255,255,0.78);
         box-shadow:
           0 1px 0 rgba(255,255,255,0.95) inset,
-          0 -1px 0 rgba(184,44,46,0.04) inset,
-          0 22px 60px rgba(143,17,21,0.07),
-          0 2px 10px rgba(190,153,90,0.08),
-          0 0 0 1px rgba(190,153,90,0.08);
+          0 -1px 0 rgba(200,16,46,0.04) inset,
+          0 22px 60px rgba(163,12,36,0.07),
+          0 2px 10px rgba(212,175,55,0.08),
+          0 0 0 1px rgba(212,175,55,0.08);
       }
       .panel-premium::before {
         content: "";
@@ -550,7 +532,7 @@ function PageStyles() {
         right: 6%;
         top: 0;
         height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.98), rgba(232,205,136,0.55), rgba(255,255,255,0.98), transparent);
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.98), rgba(232,197,90,0.55), rgba(255,255,255,0.98), transparent);
         z-index: 2;
       }
       .panel-premium::after {
@@ -560,7 +542,7 @@ function PageStyles() {
         inset: 0;
         background:
           radial-gradient(ellipse 95% 50% at 50% -8%, rgba(255,255,255,0.85) 0%, transparent 55%),
-          radial-gradient(ellipse 45% 35% at 92% 8%, rgba(190,153,90,0.14) 0%, transparent 60%),
+          radial-gradient(ellipse 45% 35% at 92% 8%, rgba(212,175,55,0.14) 0%, transparent 60%),
           linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.22) 50%, transparent 65%);
         background-size: auto, auto, 220% 100%;
         opacity: 0.95;
@@ -578,8 +560,8 @@ function PageStyles() {
         border: 1px solid rgba(255,255,255,0.7);
         box-shadow:
           0 1px 0 rgba(255,255,255,0.8) inset,
-          0 28px 68px rgba(143,17,21,0.12),
-          0 0 0 1px rgba(190,153,90,0.2);
+          0 28px 68px rgba(163,12,36,0.12),
+          0 0 0 1px rgba(212,175,55,0.2);
         background: linear-gradient(160deg, rgba(255,255,255,0.5), rgba(255,255,255,0.12));
         -webkit-backdrop-filter: blur(12px) saturate(150%);
         backdrop-filter: blur(12px) saturate(150%);
@@ -601,7 +583,7 @@ function PageStyles() {
           top: 20%;
           bottom: 20%;
           width: 1px;
-          background: linear-gradient(180deg, transparent, ${GOLD_MID}28 30%, ${GOLD_LIGHT}44 50%, ${GOLD_MID}28 70%, transparent);
+          background: linear-gradient(180deg, transparent, ${LOGO_GOLD}28 30%, ${LOGO_GOLD_BRIGHT}44 50%, ${LOGO_GOLD}28 70%, transparent);
         }
         .quote-canvas::before { left: 1.75rem; }
         .quote-canvas::after { right: 1.75rem; }
@@ -614,7 +596,7 @@ function PageStyles() {
         font-size: clamp(1.0625rem, 1.85vw, 1.3125rem);
         letter-spacing: 0.01em;
         line-height: 1.55;
-        color: ${FOREST_MID};
+        color: ${LOGO_RED};
       }
       .quote-punchline {
         font-family: ${displayFont};
@@ -623,7 +605,7 @@ function PageStyles() {
         font-size: clamp(1.125rem, 2vw, 1.4375rem);
         letter-spacing: -0.018em;
         line-height: 1.45;
-        color: ${FOREST};
+        color: ${LOGO_RED};
       }
       .quote-promise {
         letter-spacing: 0.24em;
@@ -635,23 +617,23 @@ function PageStyles() {
       .footer-link { color: ${FOOTER_LINK}; transition: opacity 0.3s ease; }
       .footer-link:hover { opacity: 0.82; }
       .footer-link:focus-visible {
-        outline: 2px solid ${GOLD_MID};
+        outline: 2px solid ${LOGO_GOLD};
         outline-offset: 3px;
         border-radius: 2px;
       }
       .faq-item {
-        border-bottom: 1px solid rgba(190,153,90,0.22);
+        border-bottom: 1px solid rgba(212,175,55,0.22);
       }
       .faq-summary {
         cursor: pointer;
         list-style: none;
-        color: ${FOREST};
+        color: ${LOGO_RED};
         transition: color 0.3s ease;
       }
       .faq-summary::-webkit-details-marker { display: none; }
-      .faq-summary:hover { color: ${FOREST_SOFT}; }
+      .faq-summary:hover { color: ${LOGO_RED_BRIGHT}; }
       .faq-summary:focus-visible {
-        outline: 2px solid ${GOLD_MID};
+        outline: 2px solid ${LOGO_GOLD};
         outline-offset: 4px;
         border-radius: 4px;
       }
@@ -669,13 +651,13 @@ function PageStyles() {
         background: linear-gradient(145deg, rgba(255,255,255,0.65), rgba(255,255,255,0.28));
         -webkit-backdrop-filter: blur(14px) saturate(160%);
         backdrop-filter: blur(14px) saturate(160%);
-        box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 4px 14px rgba(143,17,21,0.05);
+        box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 4px 14px rgba(163,12,36,0.05);
         cursor: pointer;
         transition: background 0.3s ease, box-shadow 0.3s ease;
       }
       .menu-toggle:active { background: rgba(255,255,255,0.85); }
       .menu-toggle:focus-visible {
-        outline: 2px solid ${GOLD_MID};
+        outline: 2px solid ${LOGO_GOLD};
         outline-offset: 2px;
       }
       @keyframes menuReveal {
@@ -684,7 +666,7 @@ function PageStyles() {
       }
       .mobile-menu {
         animation: menuReveal 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
-        box-shadow: 0 24px 48px rgba(143,17,21,0.08);
+        box-shadow: 0 24px 48px rgba(163,12,36,0.08);
       }
     `}</style>
   );
@@ -713,7 +695,7 @@ function DiamondRule({ className }: { className?: string }) {
     <div className={`flex items-center gap-4 ${className ?? ""}`} aria-hidden>
       <div className="h-px flex-1" style={{ background: goldHairline }} />
       <svg width="7" height="7" viewBox="0 0 8 8" fill="none">
-        <path d="M4 0L8 4L4 8L0 4L4 0Z" fill={GOLD_MID} fillOpacity="0.45" />
+        <path d="M4 0L8 4L4 8L0 4L4 0Z" fill={LOGO_GOLD} fillOpacity="0.45" />
       </svg>
       <div className="h-px flex-1" style={{ background: goldHairline }} />
     </div>
@@ -732,16 +714,16 @@ function CornerAccents() {
   return (
     <>
       <svg className="pointer-events-none absolute left-3 top-3 h-5 w-5 opacity-35" viewBox="0 0 20 20" fill="none" aria-hidden>
-        <path d="M1 7V1h6" stroke={GOLD_MID} strokeWidth="1" strokeLinecap="round" />
+        <path d="M1 7V1h6" stroke={LOGO_GOLD} strokeWidth="1" strokeLinecap="round" />
       </svg>
       <svg className="pointer-events-none absolute right-3 top-3 h-5 w-5 opacity-35" viewBox="0 0 20 20" fill="none" aria-hidden>
-        <path d="M19 7V1h-6" stroke={GOLD_MID} strokeWidth="1" strokeLinecap="round" />
+        <path d="M19 7V1h-6" stroke={LOGO_GOLD} strokeWidth="1" strokeLinecap="round" />
       </svg>
       <svg className="pointer-events-none absolute bottom-3 left-3 h-5 w-5 opacity-35" viewBox="0 0 20 20" fill="none" aria-hidden>
-        <path d="M1 13v6h6" stroke={GOLD_MID} strokeWidth="1" strokeLinecap="round" />
+        <path d="M1 13v6h6" stroke={LOGO_GOLD} strokeWidth="1" strokeLinecap="round" />
       </svg>
       <svg className="pointer-events-none absolute bottom-3 right-3 h-5 w-5 opacity-35" viewBox="0 0 20 20" fill="none" aria-hidden>
-        <path d="M19 13v6h-6" stroke={GOLD_MID} strokeWidth="1" strokeLinecap="round" />
+        <path d="M19 13v6h-6" stroke={LOGO_GOLD} strokeWidth="1" strokeLinecap="round" />
       </svg>
     </>
   );
@@ -779,12 +761,12 @@ function MeshBackdrop({ className, idPrefix }: { className?: string; idPrefix?: 
     <svg className={className} viewBox="0 0 400 400" fill="none" aria-hidden>
       <defs>
         <pattern id={patternId} x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="0.75" fill={GOLD_MID} opacity="0.14" />
+          <circle cx="1" cy="1" r="0.75" fill={LOGO_GOLD} opacity="0.14" />
         </pattern>
       </defs>
       <rect width="400" height="400" fill={`url(#${patternId})`} />
-      <circle cx="200" cy="200" r="160" stroke={GOLD_MID} strokeWidth="0.5" opacity="0.1" />
-      <circle cx="200" cy="200" r="120" stroke={SAGE} strokeWidth="0.5" opacity="0.08" />
+      <circle cx="200" cy="200" r="160" stroke={LOGO_GOLD} strokeWidth="0.5" opacity="0.1" />
+      <circle cx="200" cy="200" r="120" stroke={METALLIC_STEEL} strokeWidth="0.5" opacity="0.08" />
     </svg>
   );
 }
@@ -804,7 +786,7 @@ function AmbientBackdrop() {
           top: "-8%",
           left: "50%",
           transform: "translateX(-50%)",
-          background: "radial-gradient(circle, rgba(190,153,90,0.28) 0%, transparent 68%)",
+          background: "radial-gradient(circle, rgba(212,175,55,0.28) 0%, transparent 68%)",
         }}
         aria-hidden
       />
@@ -817,7 +799,7 @@ function AmbientBackdrop() {
           maxHeight: 420,
           bottom: "4%",
           left: "-6%",
-          background: "radial-gradient(circle, rgba(184,44,46,0.16) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(200,16,46,0.16) 0%, transparent 70%)",
           animationDelay: "-4s",
         }}
         aria-hidden
@@ -831,7 +813,7 @@ function AmbientBackdrop() {
           maxHeight: 340,
           top: "28%",
           right: "-4%",
-          background: "radial-gradient(circle, rgba(227,95,82,0.14) 0%, rgba(232,205,136,0.12) 45%, transparent 72%)",
+          background: "radial-gradient(circle, rgba(232,22,58,0.14) 0%, rgba(232,197,90,0.12) 45%, transparent 72%)",
           animationDelay: "-7s",
         }}
         aria-hidden
@@ -889,17 +871,17 @@ function WaitlistForm({ inputId }: { inputId: string }) {
       <div
         role="status"
         className="rounded-xl border px-6 py-6 text-center"
-        style={{ borderColor: BORDER_SOFT, backgroundColor: MINT_WHISPER }}
+        style={{ borderColor: BORDER_SOFT, backgroundColor: WHITE }}
       >
         <div
           className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full"
-          style={{ background: goldFoil, boxShadow: "0 3px 12px rgba(150,117,46,0.22)" }}
+          style={{ background: goldFoil, boxShadow: "0 3px 12px rgba(184,146,46,0.22)" }}
         >
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden>
-            <path d="M5 10l3.5 3.5L15 7" stroke={FOREST} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 10l3.5 3.5L15 7" stroke={LOGO_RED} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <p className="text-lg font-semibold" style={{ ...headingStyle, color: FOREST }}>
+        <p className="text-lg font-semibold" style={{ ...headingStyle, color: LOGO_RED }}>
           {message}
         </p>
         <p className="mt-2 text-sm font-light leading-relaxed" style={{ color: TEXT_SOFT }}>
@@ -934,7 +916,7 @@ function WaitlistForm({ inputId }: { inputId: string }) {
           disabled={loading}
           aria-busy={loading}
           className="btn-premium min-h-12 w-full shrink-0 rounded-xl px-6 text-sm font-semibold active:scale-[0.99] sm:w-auto"
-          style={{ ...bodyStyle, color: FOREST }}
+          style={{ ...bodyStyle, color: LOGO_RED }}
         >
           {loading ? "Joining…" : "Join the Waitlist"}
         </button>
@@ -951,9 +933,9 @@ function WaitlistForm({ inputId }: { inputId: string }) {
 function HelixField({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 320 140" fill="none" aria-hidden>
-      <path d="M0 70c40-35 80 35 120 0s80 35 120 0 80 35 80 0" stroke={GOLD_MID} strokeWidth="1" strokeLinecap="round" opacity="0.16" />
-      <path d="M0 82c40-28 80 28 120 0s80 28 120 0 80 28 80 0" stroke={CRIMSON} strokeWidth="0.75" strokeLinecap="round" opacity="0.2" />
-      <path d="M0 58c40-28 80 28 120 0s80 28 120 0 80 28 80 0" stroke={GOLD_MID} strokeWidth="0.5" strokeLinecap="round" opacity="0.12" />
+      <path d="M0 70c40-35 80 35 120 0s80 35 120 0 80 35 80 0" stroke={LOGO_GOLD} strokeWidth="1" strokeLinecap="round" opacity="0.16" />
+      <path d="M0 82c40-28 80 28 120 0s80 28 120 0 80 28 80 0" stroke={LOGO_RED} strokeWidth="0.75" strokeLinecap="round" opacity="0.2" />
+      <path d="M0 58c40-28 80 28 120 0s80 28 120 0 80 28 80 0" stroke={LOGO_GOLD} strokeWidth="0.5" strokeLinecap="round" opacity="0.12" />
     </svg>
   );
 }
@@ -1019,7 +1001,7 @@ function QuoteDivider() {
     <div className="my-5 flex items-center justify-center gap-3" aria-hidden>
       <div className="h-px w-8" style={{ background: goldHairline }} />
       <svg width="5" height="5" viewBox="0 0 8 8" fill="none">
-        <path d="M4 0L8 4L4 8L0 4L4 0Z" fill={GOLD_MID} fillOpacity="0.4" />
+        <path d="M4 0L8 4L4 8L0 4L4 0Z" fill={LOGO_GOLD} fillOpacity="0.4" />
       </svg>
       <div className="h-px w-8" style={{ background: goldHairline }} />
     </div>
@@ -1032,7 +1014,7 @@ function QuoteBlock() {
       className="quote-canvas quote-luxe relative mx-auto max-w-xl rounded-2xl border px-7 py-9 text-center sm:rounded-3xl sm:px-10 sm:py-11"
       style={{
         borderColor: BORDER_SOFT,
-        background: `linear-gradient(168deg, ${SURFACE_LIFT} 0%, ${SURFACE_MINT} 100%)`,
+        background: `linear-gradient(168deg, ${SURFACE_LIFT} 0%, ${WHITE} 100%)`,
         boxShadow: shadowQuote,
       }}
     >
@@ -1095,7 +1077,7 @@ export default function Home() {
           <Link href="/" className="link-refined flex items-center gap-3">
             <BrandMark size={34} className="shrink-0" />
             <span className="text-xl font-bold tracking-tight sm:text-2xl lg:text-[1.75rem]" style={{ ...displayStyle, fontWeight: 700 }}>
-              <span className="crimson-gloss">GenoMatch</span>
+              <span className="gm-wordmark-text">GenoMatch</span>
             </span>
           </Link>
           <div className="hidden items-center gap-7 lg:flex">
@@ -1104,12 +1086,12 @@ export default function Home() {
                 {label}
               </a>
             ))}
-            <a href="#waitlist" className="btn-premium rounded-full px-5 py-2.5 text-sm font-semibold" style={{ color: FOREST }}>
+            <a href="#waitlist" className="btn-premium rounded-full px-5 py-2.5 text-sm font-semibold" style={{ color: LOGO_RED }}>
               Join Waitlist
             </a>
           </div>
           <div className="flex shrink-0 items-center gap-2 lg:hidden">
-            <a href="#waitlist" className="btn-premium whitespace-nowrap rounded-full px-3.5 py-2 text-xs font-semibold" style={{ color: FOREST }}>
+            <a href="#waitlist" className="btn-premium whitespace-nowrap rounded-full px-3.5 py-2 text-xs font-semibold" style={{ color: LOGO_RED }}>
               Join Waitlist
             </a>
             <button
@@ -1122,11 +1104,11 @@ export default function Home() {
             >
               {menuOpen ? (
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                  <path d="M3 3l10 10M13 3L3 13" stroke={FOREST} strokeWidth="1.5" strokeLinecap="round" />
+                  <path d="M3 3l10 10M13 3L3 13" stroke={LOGO_RED} strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
               ) : (
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                  <path d="M2 5h12M2 11h12" stroke={FOREST} strokeWidth="1.5" strokeLinecap="round" />
+                  <path d="M2 5h12M2 11h12" stroke={LOGO_RED} strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
               )}
             </button>
@@ -1160,7 +1142,7 @@ export default function Home() {
       <main id="main-content">
         <section
           className="relative flex min-h-[88vh] w-full flex-col justify-center overflow-hidden px-6 pb-16 pt-12 lg:px-8 lg:pb-24 lg:pt-20"
-          style={{ backgroundColor: IVORY }}
+          style={{ backgroundColor: CREAM }}
         >
           <AmbientBackdrop />
           <BrandMark
@@ -1177,7 +1159,7 @@ export default function Home() {
           <HelixField className="pointer-events-none absolute left-1/2 top-10 w-72 -translate-x-1/2 opacity-35 lg:w-96" />
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 h-32"
-            style={{ background: `linear-gradient(180deg, transparent, ${IVORY}88)` }}
+            style={{ background: `linear-gradient(180deg, transparent, ${CREAM}88)` }}
             aria-hidden
           />
 
@@ -1187,7 +1169,7 @@ export default function Home() {
                 <div
                   className="absolute inset-0 -m-8 rounded-full"
                   style={{
-                    background: `radial-gradient(circle, rgba(190,153,90,0.22) 0%, rgba(184,44,46,0.08) 42%, transparent 70%)`,
+                    background: `radial-gradient(circle, rgba(212,175,55,0.22) 0%, rgba(200,16,46,0.08) 42%, transparent 70%)`,
                   }}
                   aria-hidden
                 />
@@ -1250,7 +1232,7 @@ export default function Home() {
         <section className="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32" style={{ background: statsAmbient }}>
           <div
             className="pointer-events-none absolute inset-x-0 top-0 h-20"
-            style={{ background: `linear-gradient(180deg, ${IVORY}, transparent)` }}
+            style={{ background: `linear-gradient(180deg, ${CREAM}, transparent)` }}
             aria-hidden
           />
           <HelixField className="pointer-events-none absolute -right-8 top-12 w-48 opacity-25" />
@@ -1281,7 +1263,7 @@ export default function Home() {
               <SectionLabel>The facts</SectionLabel>
               <h2
                 className="max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
-                style={{ ...headingStyle, color: FOREST }}
+                style={{ ...headingStyle, color: LOGO_RED }}
               >
                 The conversation that changes everything.
               </h2>
@@ -1297,7 +1279,7 @@ export default function Home() {
                     index === 1 ? "stat-featured sm:-translate-y-1" : ""
                   }`}
                   style={{
-                    borderLeftColor: GOLD_MID,
+                    borderLeftColor: LOGO_GOLD,
                   }}
                 >
                   <CornerAccents />
@@ -1310,7 +1292,7 @@ export default function Home() {
                     {stat}
                   </p>
                   <CeremonyRule className="relative my-4 max-w-12 opacity-70" />
-                  <p className="relative text-base font-medium leading-relaxed lg:text-lg" style={{ color: FOREST_MID }}>
+                  <p className="relative text-base font-medium leading-relaxed lg:text-lg" style={{ color: LOGO_RED }}>
                     {label}
                   </p>
                 </article>
@@ -1325,8 +1307,8 @@ export default function Home() {
                     href={source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-refined underline decoration-[rgba(190,153,90,0.45)] underline-offset-2"
-                    style={{ color: GOLD_MID }}
+                    className="link-refined underline decoration-[rgba(212,175,55,0.45)] underline-offset-2"
+                    style={{ color: LOGO_GOLD }}
                   >
                     {source.publisher}
                     {source.year ? ` (${source.year})` : ""}
@@ -1338,17 +1320,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-28" style={{ backgroundColor: LINEN }}>
+        <section className="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-28" style={{ backgroundColor: CREAM }}>
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: `radial-gradient(ellipse 50% 60% at 72% 50%, rgba(190,153,90,0.07) 0%, transparent 65%)` }}
+            style={{ background: `radial-gradient(ellipse 50% 60% at 72% 50%, rgba(212,175,55,0.07) 0%, transparent 65%)` }}
             aria-hidden
           />
           <div className="relative mx-auto max-w-2xl">
             <Reveal className="text-center">
               <DiamondRule className="mx-auto mb-8 max-w-xs" />
               <SectionLabel>The product</SectionLabel>
-              <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: FOREST }}>
+              <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: LOGO_RED }}>
                 Compatibility, at first glance.
               </h2>
               <p className="mx-auto mt-5 max-w-md leading-relaxed" style={{ color: TEXT_SOFT }}>
@@ -1356,13 +1338,13 @@ export default function Home() {
                 score. The most important conversation starts before the first message,
                 quietly and without awkwardness.
               </p>
-              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed" style={{ color: SAGE }}>
+              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed" style={{ color: METALLIC_STEEL }}>
                 Launching soon on iOS and Android.
               </p>
               <div className="relative mx-auto mt-8 w-full max-w-[260px] sm:max-w-[280px]">
                 <div
                   className="pointer-events-none absolute -inset-10"
-                  style={{ background: `radial-gradient(circle, rgba(190,153,90,0.12) 0%, transparent 68%)` }}
+                  style={{ background: `radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 68%)` }}
                   aria-hidden
                 />
                 <div className="phone-glass relative">
@@ -1384,7 +1366,7 @@ export default function Home() {
         <section
           id="how-it-works"
           className="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-32"
-          style={{ backgroundColor: PEARL }}
+          style={{ backgroundColor: CREAM }}
         >
           <MeshBackdrop idPrefix="how" className="pointer-events-none absolute right-0 top-0 h-72 w-72 opacity-20" />
           <BrandMark
@@ -1396,7 +1378,7 @@ export default function Home() {
             <Reveal className="text-center">
               <DiamondRule className="mx-auto mb-8 max-w-xs" />
               <SectionLabel>The process</SectionLabel>
-              <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: FOREST }}>
+              <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: LOGO_RED }}>
                 How it works
               </h2>
               <p className="mx-auto mt-4 max-w-xl leading-relaxed" style={{ color: TEXT_SOFT }}>
@@ -1407,7 +1389,7 @@ export default function Home() {
             <Reveal delay={120} className="relative mt-14 lg:mt-20">
               <div
                 className="pointer-events-none absolute left-[16.67%] right-[16.67%] top-7 hidden h-px sm:block"
-                style={{ background: `linear-gradient(90deg, transparent, ${GOLD_MID}55, ${GOLD_MID}, ${GOLD_MID}55, transparent)` }}
+                style={{ background: `linear-gradient(90deg, transparent, ${LOGO_GOLD}55, ${LOGO_GOLD}, ${LOGO_GOLD}55, transparent)` }}
                 aria-hidden
               />
               <ol className="grid gap-10 sm:grid-cols-3 lg:gap-12">
@@ -1420,13 +1402,13 @@ export default function Home() {
                       className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-sm font-bold"
                       style={{
                         background: goldFoil,
-                        color: FOREST,
+                        color: LOGO_RED,
                         boxShadow: `0 0 0 4px rgba(255,255,255,0.55), 0 3px 14px rgba(161,117,56,0.25), inset 0 1px 0 rgba(255,255,255,0.45)`,
                       }}
                     >
                       {step}
                     </div>
-                    <h3 className="mt-5 text-xl font-bold" style={{ ...headingStyle, color: FOREST }}>
+                    <h3 className="mt-5 text-xl font-bold" style={{ ...headingStyle, color: LOGO_RED }}>
                       {title}
                     </h3>
                     <CeremonyRule className="my-4 w-10 opacity-50" />
@@ -1443,7 +1425,7 @@ export default function Home() {
         {/* FAQ Section - AEO */}
         <section
           className="relative overflow-hidden px-6 py-24 lg:px-8 lg:py-28"
-          style={{ background: `linear-gradient(180deg, ${LINEN} 0%, ${CREAM} 100%)` }}
+          style={{ background: `linear-gradient(180deg, ${CREAM} 0%, ${CREAM} 100%)` }}
         >
           <BrandMark
             size={140}
@@ -1460,7 +1442,7 @@ export default function Home() {
             <div className="mb-12 text-center lg:mb-14">
               <DiamondRule className="mx-auto mb-8 max-w-xs" />
               <SectionLabel>Frequently asked questions</SectionLabel>
-              <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: FOREST }}>
+              <h2 className="text-3xl font-bold sm:text-4xl" style={{ ...headingStyle, color: LOGO_RED }}>
                 Everything you need to know
               </h2>
             </div>
@@ -1472,7 +1454,7 @@ export default function Home() {
                 >
                   {item.question}
                   <svg className="faq-icon shrink-0" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden>
-                    <path d="M7 1v12M1 7h12" stroke={GOLD_MID} strokeWidth="1.25" strokeLinecap="round" />
+                    <path d="M7 1v12M1 7h12" stroke={LOGO_GOLD} strokeWidth="1.25" strokeLinecap="round" />
                   </svg>
                 </summary>
                 <p className="faq-answer max-w-[58ch] pb-6 pr-8 text-[0.9375rem] leading-relaxed" style={{ color: TEXT_SOFT }}>
@@ -1485,7 +1467,7 @@ export default function Home() {
 
         <section
           className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-24"
-          style={{ background: forestDepth }}
+          style={{ background: creamWash }}
         >
           <MeshBackdrop idPrefix="quote" className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.14]" />
           <div
@@ -1495,7 +1477,7 @@ export default function Home() {
           />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: `radial-gradient(ellipse 70% 50% at 50% 100%, rgba(184,44,46,0.04) 0%, transparent 60%)` }}
+            style={{ background: `radial-gradient(ellipse 70% 50% at 50% 100%, rgba(200,16,46,0.04) 0%, transparent 60%)` }}
             aria-hidden
           />
           <BrandMark
@@ -1514,10 +1496,10 @@ export default function Home() {
           </Reveal>
         </section>
 
-        <section className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-28" style={{ backgroundColor: LINEN }}>
+        <section className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-28" style={{ backgroundColor: CREAM }}>
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: `radial-gradient(ellipse 55% 45% at 50% 50%, rgba(190,153,90,0.04) 0%, transparent 65%)` }}
+            style={{ background: `radial-gradient(ellipse 55% 45% at 50% 50%, rgba(212,175,55,0.04) 0%, transparent 65%)` }}
             aria-hidden
           />
           <HelixField className="pointer-events-none absolute bottom-4 left-1/2 w-56 -translate-x-1/2 opacity-25" />
@@ -1526,7 +1508,7 @@ export default function Home() {
               <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px] lg:mx-0">
                 <div
                   className="pointer-events-none absolute -inset-10"
-                  style={{ background: `radial-gradient(circle, rgba(190,153,90,0.14) 0%, transparent 68%)` }}
+                  style={{ background: `radial-gradient(circle, rgba(212,175,55,0.14) 0%, transparent 68%)` }}
                   aria-hidden
                 />
                 <Image
@@ -1542,7 +1524,7 @@ export default function Home() {
               <div className="text-center lg:text-left">
                 <BrandMark size={52} className="mx-auto mb-5 gm-brand-glow lg:mx-0" />
                 <SectionLabel>Join us</SectionLabel>
-                <h2 className="text-2xl font-bold sm:text-3xl" style={{ ...headingStyle, color: FOREST }}>
+                <h2 className="text-2xl font-bold sm:text-3xl" style={{ ...headingStyle, color: LOGO_RED }}>
                   Ready when you are.
                 </h2>
                 <p className="mt-2 leading-relaxed" style={{ color: TEXT_SOFT }}>
@@ -1558,7 +1540,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="relative overflow-hidden border-t px-6 py-12 lg:px-8 lg:py-16" style={{ background: forestFooter, borderColor: `${GOLD_MID}22` }}>
+      <footer className="relative overflow-hidden border-t px-6 py-12 lg:px-8 lg:py-16" style={{ background: creamFooter, borderColor: `${LOGO_GOLD}22` }}>
         <MeshBackdrop idPrefix="footer" className="pointer-events-none absolute inset-0 h-full w-full opacity-15" />
         <div
           className="pointer-events-none absolute inset-0"
@@ -1570,7 +1552,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <BrandMark size={36} className="gm-brand-glow" />
             <p className="text-lg font-bold tracking-tight" style={{ ...displayStyle, fontWeight: 700 }}>
-              <span className="crimson-gloss">GenoMatch</span>
+              <span className="gm-wordmark-text">GenoMatch</span>
             </p>
           </div>
           <p className="gold-accent text-sm font-medium tracking-[0.16em]">

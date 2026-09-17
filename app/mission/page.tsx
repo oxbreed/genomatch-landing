@@ -8,11 +8,11 @@ import SickleCellMark from '../components/SickleCellMark'
 import SickleCellRibbon from '../components/SickleCellRibbon'
 import SourcesBlock from '../components/SourcesBlock'
 import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
-import { FOREST, FOREST_BG, LINEN, GOLD, SAGE, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
+import { LOGO_RED, LOGO_RED_DEEP, CREAM, LOGO_GOLD, METALLIC_STEEL, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
 export default function Mission() {
   return (
-    <div id="main-content" style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+    <div id="main-content" style={{ background: CREAM, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
 
       <SiteHeader />
 
@@ -26,19 +26,19 @@ export default function Mission() {
           variant="light"
           style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', opacity: 0.07, pointerEvents: 'none' }}
         />
-        <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>OUR MISSION</p>
-        <h1 style={{ color: FOREST, fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, maxWidth: '800px', margin: '0 auto 24px', lineHeight: 1.2 }}>
+        <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>OUR MISSION</p>
+        <h1 style={{ color: LOGO_RED, fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700, maxWidth: '800px', margin: '0 auto 24px', lineHeight: 1.2 }}>
           Love should be intentional. So should genetic health.
         </h1>
-        <p style={{ color: SAGE, fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, fontFamily: BODY }}>
+        <p style={{ color: METALLIC_STEEL, fontSize: '18px', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, fontFamily: BODY }}>
           GenoMatch was built because too many families in West Africa are blindsided by sickle cell disease — a heartbreak that can be significantly reduced when couples have the right information at the right time.
         </p>
       </section>
 
       {/* Why We Exist */}
-      <section style={{ background: LINEN, padding: '100px 24px', maxWidth: '800px', margin: '0 auto' }}>
-        <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>WHY WE EXIST</p>
-        <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '32px', lineHeight: 1.3 }}>
+      <section style={{ background: CREAM, padding: '100px 24px', maxWidth: '800px', margin: '0 auto' }}>
+        <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>WHY WE EXIST</p>
+        <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '32px', lineHeight: 1.3 }}>
           A challenge we can change, together
         </h2>
         <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
@@ -53,9 +53,9 @@ export default function Mission() {
       </section>
 
       {/* The Problem */}
-      <section style={{ background: LINEN, padding: '100px 24px', maxWidth: '800px', margin: '0 auto' }}>
-        <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>THE PROBLEM</p>
-        <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '32px', lineHeight: 1.3 }}>
+      <section style={{ background: CREAM, padding: '100px 24px', maxWidth: '800px', margin: '0 auto' }}>
+        <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>THE PROBLEM</p>
+        <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '32px', lineHeight: 1.3 }}>
           A crisis we can reduce together
         </h2>
         <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
@@ -78,9 +78,9 @@ export default function Mission() {
             { stat: SCD_STATS.asCoupleSsRisk, label: 'Chance of an SS child when both parents carry the AS trait' },
             { stat: `~${SCD_STATS.traitCarriersNigeria}`, label: 'Nigerians estimated to carry the sickle cell trait (~25% of the population)' },
           ].map((item, i) => (
-            <div key={i} className="gm-card" style={{ background: WHITE, borderRadius: '16px', padding: '32px 24px', borderLeft: `4px solid ${GOLD}` }}>
-              <div style={{ color: GOLD, fontSize: '2.5rem', fontWeight: 700, marginBottom: '12px' }}>{item.stat}</div>
-              <div style={{ color: FOREST, fontSize: '14px', lineHeight: 1.6, fontFamily: BODY }}>{item.label}</div>
+            <div key={i} className="gm-card" style={{ background: WHITE, borderRadius: '16px', padding: '32px 24px', borderLeft: `4px solid ${LOGO_GOLD}` }}>
+              <div style={{ color: LOGO_GOLD, fontSize: '2.5rem', fontWeight: 700, marginBottom: '12px' }}>{item.stat}</div>
+              <div style={{ color: LOGO_RED, fontSize: '14px', lineHeight: 1.6, fontFamily: BODY }}>{item.label}</div>
             </div>
           ))}
         </div>
@@ -93,8 +93,8 @@ export default function Mission() {
       {/* Our Solution */}
       <section style={{ background: WHITE, padding: '100px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>OUR SOLUTION</p>
-          <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '32px', lineHeight: 1.3 }}>
+          <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px' }}>OUR SOLUTION</p>
+          <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '32px', lineHeight: 1.3 }}>
             Genetic awareness, built into the foundation of every match
           </h2>
           <p style={{ color: TEXT_SOFT, fontSize: '18px', lineHeight: 1.8, marginBottom: '24px', fontFamily: BODY }}>
@@ -110,10 +110,10 @@ export default function Mission() {
       </section>
 
       {/* Our Values */}
-      <section style={{ background: LINEN, padding: '100px 24px' }}>
+      <section style={{ background: CREAM, padding: '100px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px', textAlign: 'center' }}>OUR VALUES</p>
-          <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '60px', lineHeight: 1.3, textAlign: 'center' }}>
+          <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '16px', textAlign: 'center' }}>OUR VALUES</p>
+          <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 700, marginBottom: '60px', lineHeight: 1.3, textAlign: 'center' }}>
             What we stand for
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
@@ -125,8 +125,8 @@ export default function Mission() {
               { title: 'Intentionality', body: 'GenoMatch is not a casual dating app. It is a platform for people who are serious about building a future. Every feature we build serves that purpose.' },
               { title: 'Community Impact', body: 'Reducing the incidence of sickle cell disease, starting in Nigeria and reaching communities across West Africa and the diaspora, is not just a feature. It is our mission. Every match made on GenoMatch is a step toward a healthier generation.' },
             ].map((item, i) => (
-              <div key={i} className="gm-card" style={{ background: WHITE, borderRadius: '16px', padding: '32px 24px', borderTop: `3px solid ${GOLD}` }}>
-                <h3 style={{ color: FOREST, fontSize: '18px', fontWeight: 700, marginBottom: '12px' }}>{item.title}</h3>
+              <div key={i} className="gm-card" style={{ background: WHITE, borderRadius: '16px', padding: '32px 24px', borderTop: `3px solid ${LOGO_GOLD}` }}>
+                <h3 style={{ color: LOGO_RED, fontSize: '18px', fontWeight: 700, marginBottom: '12px' }}>{item.title}</h3>
                 <p style={{ color: TEXT_SOFT, fontSize: '15px', lineHeight: 1.7, fontFamily: BODY }}>{item.body}</p>
               </div>
             ))}
@@ -137,7 +137,7 @@ export default function Mission() {
       {/* Founder */}
       <section style={{ background: HERO_SURFACE, padding: '100px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ color: GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '32px' }}>THE FOUNDER</p>
+          <p style={{ color: LOGO_GOLD, fontSize: '11px', letterSpacing: '3px', fontFamily: BODY, marginBottom: '32px' }}>THE FOUNDER</p>
           <Image
             src="/olusegun-adedoyin-founder.jpg"
             alt="Olusegun Adedoyin, Founder of GenoMatch"
@@ -151,41 +151,41 @@ export default function Mission() {
               objectFit: 'cover',
               objectPosition: 'center top',
               borderRadius: '20px',
-              border: `1px solid ${GOLD}`,
-              boxShadow: '0 12px 32px rgba(184,44,46,0.12)',
+              border: `1px solid ${LOGO_GOLD}`,
+              boxShadow: '0 12px 32px rgba(200,16,46,0.12)',
               display: 'block',
               margin: '0 auto 24px',
             }}
           />
-          <h2 style={{ color: FOREST, fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, margin: '0 0 8px' }}>Olusegun Adedoyin</h2>
-          <p style={{ color: SAGE, fontSize: '15px', fontFamily: BODY, margin: '0 0 40px' }}>Founder, GenoMatch Ltd</p>
+          <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.4rem, 3vw, 1.8rem)', fontWeight: 700, margin: '0 0 8px' }}>Olusegun Adedoyin</h2>
+          <p style={{ color: METALLIC_STEEL, fontSize: '15px', fontFamily: BODY, margin: '0 0 40px' }}>Founder, GenoMatch Ltd</p>
           <div style={{ textAlign: 'left' }}>
-            <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: BODY }}>
+            <p style={{ color: METALLIC_STEEL, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: BODY }}>
               GenoMatch is personal. Olusegun has spent years close to community health work across Lagos, watching how often the right information arrives too late to change anything — a diagnosis after a decision&apos;s already been made, a conversation that should have happened months earlier. That pattern is what GenoMatch exists to interrupt: bringing the genotype conversation to the very start of a relationship, where it can quietly inform the choices couples make, while there&apos;s still time for it to matter.
             </p>
-            <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: BODY }}>
+            <p style={{ color: METALLIC_STEEL, fontSize: '17px', lineHeight: 1.8, marginBottom: '16px', fontFamily: BODY }}>
               Olusegun builds technology to solve deeply human problems across sub-Saharan Africa and beyond. He also runs a Brand &amp; Business Strategy Studio, helping founders and businesses through sharp positioning, strategic clarity, and communication that converts. His background spans education, communication, and international relations, and his interest in community health goes back to his school years, when he led the Health and Life Planning Club, an Action Health Incorporated initiative running across local government areas in Lagos.
             </p>
-            <p style={{ color: SAGE, fontSize: '17px', lineHeight: 1.8, fontFamily: BODY }}>
+            <p style={{ color: METALLIC_STEEL, fontSize: '17px', lineHeight: 1.8, fontFamily: BODY }}>
               GenoMatch brings these threads together — care, technology, and a belief that better information leads to healthier families.
             </p>
           </div>
           <div style={{ marginTop: '40px' }}>
-            <a href="mailto:hello@genomatch.app" className="gm-link" style={{ color: GOLD, fontSize: '16px', fontFamily: BODY, textDecoration: 'none', borderBottom: `1px solid ${GOLD}`, paddingBottom: '4px' }}>hello@genomatch.app</a>
+            <a href="mailto:hello@genomatch.app" className="gm-link" style={{ color: LOGO_GOLD, fontSize: '16px', fontFamily: BODY, textDecoration: 'none', borderBottom: `1px solid ${LOGO_GOLD}`, paddingBottom: '4px' }}>hello@genomatch.app</a>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section style={{ background: LINEN, padding: '100px 24px', textAlign: 'center' }}>
-        <h2 style={{ color: FOREST, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '16px' }}>Join the movement</h2>
+      <section style={{ background: CREAM, padding: '100px 24px', textAlign: 'center' }}>
+        <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '16px' }}>Join the movement</h2>
         <p style={{ color: TEXT_SOFT, fontSize: '17px', marginBottom: '40px', fontFamily: BODY }}>Be among the first to experience GenoMatch when we launch.</p>
-        <Link href="/#waitlist" className="gm-btn" style={{ background: GOLD, color: FOREST_BG, padding: '16px 40px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</Link>
+        <Link href="/#waitlist" className="gm-btn" style={{ background: LOGO_GOLD, color: LOGO_RED_DEEP, padding: '16px 40px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Join the Waitlist</Link>
       </section>
 
       {/* Footer */}
-      <footer style={{ background: WHITE, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(184,44,46,0.1)' }}>
-        <p style={{ color: GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
+      <footer style={{ background: WHITE, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(200,16,46,0.1)' }}>
+        <p style={{ color: LOGO_GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
         <p style={{ color: TEXT_SOFT, fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>
       </footer>
 

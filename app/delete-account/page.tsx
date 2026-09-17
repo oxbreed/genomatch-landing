@@ -26,17 +26,17 @@ const removed = [
 
 export default function DeleteAccountPage() {
   return (
-    <div style={{ background: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ background: '#FAF8F5', minHeight: '100vh' }}>
       <header
         style={{
           background: '#FFFFFF',
           padding: '20px 40px',
-          borderBottom: '1px solid rgba(26,61,40,0.1)',
+          borderBottom: '1px solid rgba(11,12,14,0.1)',
         }}
       >
         <Link href="/" style={{ textDecoration: 'none' }}>
           <span
-            className="forest-gloss"
+            className="gm-wordmark-text"
             style={{ fontFamily: HEADING, fontSize: 22, fontWeight: 700 }}
           >
             GenoMatch
@@ -52,7 +52,7 @@ export default function DeleteAccountPage() {
           padding: '56px 24px',
           fontFamily: BODY,
           lineHeight: 1.7,
-          color: '#3A1E1E',
+          color: '#0B0C0E',
         }}
       >
         <h1
@@ -60,20 +60,20 @@ export default function DeleteAccountPage() {
             fontSize: 32,
             fontWeight: 700,
             marginBottom: 8,
-            color: '#B82C2E',
+            color: '#C8102E',
             fontFamily: HEADING,
           }}
         >
           Delete your account
         </h1>
-        <p style={{ color: '#6B5856', marginBottom: 40 }}>
+        <p style={{ color: '#6E737C', marginBottom: 40 }}>
           You can delete your GenoMatch account yourself, from inside the app, at any
           time. You do not need to contact us and you do not need a reason.
         </p>
 
         <h2
           style={{
-            color: '#B82C2E',
+            color: '#C8102E',
             marginTop: 32,
             marginBottom: 12,
             fontSize: 22,
@@ -93,7 +93,7 @@ export default function DeleteAccountPage() {
 
         <h2
           style={{
-            color: '#B82C2E',
+            color: '#C8102E',
             marginTop: 32,
             marginBottom: 12,
             fontSize: 22,
@@ -117,7 +117,7 @@ export default function DeleteAccountPage() {
 
         <h2
           style={{
-            color: '#B82C2E',
+            color: '#C8102E',
             marginTop: 32,
             marginBottom: 12,
             fontSize: 22,
@@ -136,7 +136,7 @@ export default function DeleteAccountPage() {
 
         <h2
           style={{
-            color: '#B82C2E',
+            color: '#C8102E',
             marginTop: 32,
             marginBottom: 12,
             fontSize: 22,
@@ -148,20 +148,20 @@ export default function DeleteAccountPage() {
         </h2>
         <p>
           Email{' '}
-          <a href="mailto:hello@genomatch.app" style={{ color: '#B82C2E' }}>
+          <a href="mailto:hello@genomatch.app" style={{ color: '#C8102E' }}>
             hello@genomatch.app
           </a>{' '}
           from the address on your account and ask us to delete it. We will confirm
           within five working days.
         </p>
 
-        <p style={{ marginTop: 40, fontSize: 14, color: '#6B5856' }}>
+        <p style={{ marginTop: 40, fontSize: 14, color: '#6E737C' }}>
           See also our{' '}
-          <Link href="/privacy" style={{ color: '#B82C2E' }}>
+          <Link href="/privacy" style={{ color: '#C8102E' }}>
             Privacy Policy
           </Link>{' '}
           and{' '}
-          <Link href="/terms" style={{ color: '#B82C2E' }}>
+          <Link href="/terms" style={{ color: '#C8102E' }}>
             Terms of Service
           </Link>
           .

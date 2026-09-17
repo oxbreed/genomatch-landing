@@ -1,5 +1,5 @@
 import { getSources, type HealthSourceId } from '@/lib/scd-facts'
-import { BODY, FOREST, GOLD, TEXT_SOFT } from '../theme'
+import { BODY, LOGO_RED, LOGO_GOLD, TEXT_SOFT } from '../theme'
 
 type SourcesBlockProps = {
   sourceIds: readonly HealthSourceId[]
@@ -19,12 +19,12 @@ export default function SourcesBlock({
       style={{
         marginTop: '48px',
         paddingTop: '32px',
-        borderTop: '1px solid rgba(184,44,46,0.12)',
+        borderTop: '1px solid rgba(200,16,46,0.12)',
       }}
     >
       <h2
         style={{
-          color: FOREST,
+          color: LOGO_RED,
           fontSize: '1.1rem',
           fontWeight: 700,
           marginBottom: '16px',
@@ -63,7 +63,7 @@ export default function SourcesBlock({
               target="_blank"
               rel="noopener noreferrer"
               className="gm-link"
-              style={{ color: GOLD, textDecoration: 'none' }}
+              style={{ color: LOGO_GOLD, textDecoration: 'none' }}
             >
               {source.label}
             </a>

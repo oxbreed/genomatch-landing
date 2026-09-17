@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import ScdNewsFeed from '../../components/ScdNewsFeed'
 import SiteHeader from '../../components/SiteHeader'
-import { FOREST, LINEN, GOLD, BODY, HERO_SURFACE, SAGE, WHITE, TEXT_SOFT } from '../../theme'
+import { LOGO_RED, CREAM, LOGO_GOLD, BODY, HERO_SURFACE, METALLIC_STEEL, WHITE, TEXT_SOFT } from '../../theme'
 
 /** Refresh full news page every 6 hours. */
 export const revalidate = 21600
@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function ScdNewsPage() {
   return (
-    <div style={{ background: LINEN, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+    <div style={{ background: CREAM, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
       <SiteHeader />
 
       <section
@@ -28,7 +28,7 @@ export default function ScdNewsPage() {
           href="/blog"
           className="gm-link"
           style={{
-            color: GOLD,
+            color: LOGO_GOLD,
             fontSize: '14px',
             fontFamily: BODY,
             textDecoration: 'none',
@@ -40,7 +40,7 @@ export default function ScdNewsPage() {
         </Link>
         <h1
           style={{
-            color: FOREST,
+            color: LOGO_RED,
             fontSize: 'clamp(2rem, 5vw, 3rem)',
             fontWeight: 700,
             maxWidth: '720px',
@@ -52,7 +52,7 @@ export default function ScdNewsPage() {
         </h1>
         <p
           style={{
-            color: SAGE,
+            color: METALLIC_STEEL,
             fontSize: '17px',
             maxWidth: '560px',
             margin: '0 auto',
@@ -72,12 +72,12 @@ export default function ScdNewsPage() {
           background: WHITE,
           padding: '40px 24px',
           textAlign: 'center',
-          borderTop: '1px solid rgba(190,153,90,0.15)',
+          borderTop: '1px solid rgba(212,175,55,0.15)',
         }}
       >
         <p
           style={{
-            color: GOLD,
+            color: LOGO_GOLD,
             fontSize: '14px',
             fontFamily: 'Georgia, serif',
             fontStyle: 'italic',

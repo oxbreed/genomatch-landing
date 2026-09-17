@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from 'react'
 import { submitContactEnquiry } from '../actions'
-import { FOREST, FOREST_BG, GOLD, WHITE, TEXT_SOFT, BODY } from '../theme'
+import { LOGO_RED, LOGO_RED_DEEP, LOGO_GOLD, WHITE, TEXT_SOFT, BODY } from '../theme'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -55,18 +55,18 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div style={{ background: WHITE, borderRadius: '16px', padding: '48px', border: '1px solid rgba(190,153,90,0.3)' }}>
+      <div style={{ background: WHITE, borderRadius: '16px', padding: '48px', border: '1px solid rgba(212,175,55,0.3)' }}>
         <div style={{ fontSize: '48px', marginBottom: '16px' }}>✓</div>
-        <h2 style={{ color: FOREST, fontSize: '22px', fontWeight: 700, marginBottom: '12px' }}>Thank you for getting in touch</h2>
+        <h2 style={{ color: LOGO_RED, fontSize: '22px', fontWeight: 700, marginBottom: '12px' }}>Thank you for getting in touch</h2>
         <p style={{ color: TEXT_SOFT, fontSize: '16px', fontFamily: BODY }}>We will reply within 48 hours.</p>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: '1px solid rgba(190,153,90,0.3)' }}>
+    <form onSubmit={handleSubmit} style={{ background: WHITE, borderRadius: '16px', padding: '40px', border: '1px solid rgba(212,175,55,0.3)' }}>
       <div style={{ marginBottom: '20px', textAlign: 'left' }}>
-        <label htmlFor="contact-name" style={{ color: FOREST, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Name</label>
+        <label htmlFor="contact-name" style={{ color: LOGO_RED, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Name</label>
         <input
           id="contact-name"
           type="text"
@@ -76,11 +76,11 @@ export default function ContactForm() {
           onChange={e => setName(e.target.value)}
           placeholder="Your name"
           className="gm-input"
-          style={{ width: '100%', padding: '14px', border: '1px solid #E8E0D5', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', boxSizing: 'border-box' }}
+          style={{ width: '100%', padding: '14px', border: '1px solid #D4D8E0', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', boxSizing: 'border-box' }}
         />
       </div>
       <div style={{ marginBottom: '20px', textAlign: 'left' }}>
-        <label htmlFor="contact-email" style={{ color: FOREST, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Email Address</label>
+        <label htmlFor="contact-email" style={{ color: LOGO_RED, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Email Address</label>
         <input
           id="contact-email"
           type="email"
@@ -90,11 +90,11 @@ export default function ContactForm() {
           onChange={e => setEmail(e.target.value)}
           placeholder="you@example.com"
           className="gm-input"
-          style={{ width: '100%', padding: '14px', border: '1px solid #E8E0D5', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', boxSizing: 'border-box' }}
+          style={{ width: '100%', padding: '14px', border: '1px solid #D4D8E0', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', boxSizing: 'border-box' }}
         />
       </div>
       <div style={{ marginBottom: '28px', textAlign: 'left' }}>
-        <label htmlFor="contact-message" style={{ color: FOREST, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Message</label>
+        <label htmlFor="contact-message" style={{ color: LOGO_RED, fontSize: '14px', fontWeight: 700, fontFamily: BODY, display: 'block', marginBottom: '8px' }}>Message</label>
         <textarea
           id="contact-message"
           name="message"
@@ -103,7 +103,7 @@ export default function ContactForm() {
           placeholder="How can we help?"
           rows={5}
           className="gm-input"
-          style={{ width: '100%', padding: '14px', border: '1px solid #E8E0D5', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', resize: 'vertical', boxSizing: 'border-box' }}
+          style={{ width: '100%', padding: '14px', border: '1px solid #D4D8E0', borderRadius: '8px', fontSize: '16px', fontFamily: BODY, outline: 'none', resize: 'vertical', boxSizing: 'border-box' }}
         />
       </div>
       {error ? (
@@ -115,7 +115,7 @@ export default function ContactForm() {
         type="submit"
         disabled={loading}
         className="gm-btn"
-        style={{ width: '100%', background: GOLD, color: FOREST_BG, padding: '16px', borderRadius: '8px', fontWeight: 700, fontSize: '16px', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, fontFamily: BODY }}
+        style={{ width: '100%', background: LOGO_GOLD, color: LOGO_RED_DEEP, padding: '16px', borderRadius: '8px', fontWeight: 700, fontSize: '16px', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, fontFamily: BODY }}
       >
         {loading ? 'Sending...' : 'Send Message'}
       </button>
