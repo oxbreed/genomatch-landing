@@ -1,6 +1,14 @@
 import Link from 'next/link';
+import { buildMetadata } from '@/lib/seo/metadata';
 
 const BODY = 'var(--font-geist-sans), system-ui, sans-serif';
+
+export const metadata = buildMetadata({
+  title: 'Terms of Service',
+  description:
+    'Terms governing use of the GenoMatch genotype-aware dating app and website, operated by GenoMatch Ltd (RC No. 9236521).',
+  path: '/terms',
+});
 
 export default function TermsOfService() {
   return (

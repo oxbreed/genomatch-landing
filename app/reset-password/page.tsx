@@ -15,21 +15,18 @@ export default function ResetPasswordPage() {
   const [sessionReady, setSessionReady] = useState(false);
   const [initializing, setInitializing] = useState(true);
 
-  const supabase = useMemo(
-    () =>
-      createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '',
-        {
-          auth: {
-            detectSessionInUrl: true,
-            persistSession: true,
-            autoRefreshToken: true,
-          },
-        }
-      ),
-    []
-  );
+  const supabase = useMemo(() => {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!url || !anonKey) return null;
+    return createClient(url, anonKey, {
+      auth: {
+        detectSessionInUrl: true,
+        persistSession: true,
+        autoRefreshToken: true,
+      },
+    });
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -49,6 +46,13 @@ export default function ResetPasswordPage() {
       setError(message);
       setInitializing(false);
     };
+
+    if (!supabase) {
+      markSessionFailed('Password reset is temporarily unavailable. Please try again later.');
+      return () => {
+        cancelled = true;
+      };
+    }
 
     const establishSession = async () => {
       setError('');
@@ -138,6 +142,11 @@ export default function ResetPasswordPage() {
     event.preventDefault();
     setMessage('');
     setError('');
+
+    if (!supabase) {
+      setError('Password reset is temporarily unavailable. Please try again later.');
+      return;
+    }
 
     if (password.length < 8) {
       setError('Password must be at least 8 characters.');

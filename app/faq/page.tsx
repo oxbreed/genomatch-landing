@@ -1,119 +1,32 @@
 import Link from 'next/link'
 import GenoCrest from '../components/GenoCrest'
+import JsonLd from '../components/JsonLd'
 import SiteHeader from '../components/SiteHeader'
+import { FAQ_ITEMS } from '@/lib/faq'
+import { breadcrumbJsonLd, faqPageJsonLd } from '@/lib/seo/json-ld'
+import { buildMetadata } from '@/lib/seo/metadata'
 import { LOGO_RED, LOGO_RED_DEEP, CREAM, LOGO_GOLD, METALLIC_STEEL, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
-export const metadata = {
-  title: 'Frequently Asked Questions | GenoMatch',
+export const metadata = buildMetadata({
+  title: 'Frequently Asked Questions',
   description:
-    'Answers to the most common questions about GenoMatch, the world\u2019s first genotype aware dating app: how genotype matching works, availability in Nigeria, data privacy, supported genotypes, and what makes GenoMatch different.',
-  openGraph: {
-    title: 'Frequently Asked Questions | GenoMatch',
-    description:
-      'Everything you need to know about genotype aware dating with GenoMatch \u2014 how matching works, supported genotypes, data privacy, and availability across Nigeria and the African diaspora.',
-    url: 'https://www.genomatch.app/faq',
-  },
-  twitter: {
-    title: 'Frequently Asked Questions | GenoMatch',
-    description:
-      'Everything you need to know about genotype aware dating with GenoMatch \u2014 how matching works, supported genotypes, data privacy, and availability.',
-  },
-  alternates: {
-    canonical: 'https://www.genomatch.app/faq',
-  },
-}
-
-/** Visible FAQ content \u2014 mirrors the FAQ section on the homepage. */
-const faqs = [
-  {
-    q: 'What is GenoMatch?',
-    a: "GenoMatch is the world's first genotype aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interests.",
-  },
-  {
-    q: 'How does genotype matching work?',
-    a: 'You declare your genotype during registration. GenoMatch calculates a compatibility score based on the genetic risk for each pairing. Two AS carriers have a 1 in 4 chance of an SS child. GenoMatch ensures you know this before feelings run deep.',
-  },
-  {
-    q: 'Is GenoMatch available in Nigeria?',
-    a: 'Yes. GenoMatch is built primarily for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada.',
-  },
-  {
-    q: 'Is my genotype data safe?',
-    a: "Absolutely. Your genotype is treated as sensitive health data, encrypted, never sold, and used only for compatibility matching. GenoMatch is compliant with Nigeria's NDPA 2023 data protection law.",
-  },
-  {
-    q: 'What makes GenoMatch different from other dating apps?',
-    a: 'GenoMatch is the only dating app in the world that incorporates genetic compatibility into matching. Mainstream dating apps optimise for attraction. GenoMatch optimises for outcomes, helping you build a love story that protects your future family.',
-  },
-]
-
-/** Structured data \u2014 identical to the FAQPage JSON-LD on the homepage. */
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is GenoMatch?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "GenoMatch is the world's first genotype aware dating app built for West Africa and the African diaspora. It matches singles based on genotype compatibility (AA, AS, SS, AC) alongside personality and interest compatibility, helping couples make informed decisions about their future family health.",
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How does genotype matching work on GenoMatch?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Users declare their genotype (AA, AS, SS, or AC) during registration. GenoMatch calculates a compatibility score based on the genetic risk of sickle cell disease in potential children. For example, two AS carriers have a 1 in 4 chance of having an SS child, so GenoMatch factors this into match rankings to help couples have this important conversation early.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Is GenoMatch available in Nigeria?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. GenoMatch is primarily built for Nigeria and is expanding across West Africa and the African diaspora in the UK, US, and Canada. The app is launching soon on iOS and Android. Join the waitlist for early access.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What genotypes does GenoMatch support?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'GenoMatch supports all major genotypes including AA (Double Healthy), AS (Carrier), SS (Sickle Cell), and AC (AC Carrier). The app calculates compatibility scores between all genotype combinations and shows the sickle cell risk level for each pairing.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Is my genotype data safe on GenoMatch?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: "Yes. GenoMatch treats genotype information as sensitive health data. It is encrypted, never sold to third parties, and used solely for compatibility matching within the app. GenoMatch is compliant with Nigeria's NDPA 2023 data protection law.",
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What makes GenoMatch different from other dating apps?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'GenoMatch is the only dating app in the world that incorporates genotype compatibility into its matching algorithm. While mainstream dating apps match on attraction and interests alone, GenoMatch adds a genetic compatibility layer that is especially important in West Africa where sickle cell disease affects millions of families.',
-      },
-    },
-  ],
-}
+    'Answers about GenoMatch genotype matching, availability in Nigeria, supported genotypes (AA, AS, SS, AC), data privacy, and what makes genotype-aware dating different.',
+  path: '/faq',
+})
 
 export default function FAQ() {
   return (
     <div id="main-content" style={{ background: CREAM, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      <JsonLd data={faqPageJsonLd()} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'FAQ', path: '/faq' },
+        ])}
       />
 
       <SiteHeader />
 
-      {/* Hero */}
       <section style={{ background: HERO_SURFACE, padding: '100px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <GenoCrest size={220} idPrefix="faq-hero-l" className="hidden sm:block" style={{ position: 'absolute', left: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
         <GenoCrest size={220} idPrefix="faq-hero-r" className="hidden sm:block" style={{ position: 'absolute', right: '-70px', top: '50%', transform: 'translateY(-50%)', opacity: 0.1, pointerEvents: 'none' }} />
@@ -126,19 +39,17 @@ export default function FAQ() {
         </p>
       </section>
 
-      {/* FAQ content */}
       <section style={{ background: CREAM, padding: '100px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          {faqs.map((item, i) => (
+          {FAQ_ITEMS.map((item, i) => (
             <div key={i} style={{ borderBottom: '1px solid rgba(200,16,46,0.1)', padding: '32px 0' }}>
-              <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)', fontWeight: 700, marginBottom: '12px', lineHeight: 1.4 }}>{item.q}</h2>
-              <p style={{ color: TEXT_SOFT, fontSize: '16px', lineHeight: 1.8, fontFamily: BODY }}>{item.a}</p>
+              <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)', fontWeight: 700, marginBottom: '12px', lineHeight: 1.4 }}>{item.question}</h2>
+              <p style={{ color: TEXT_SOFT, fontSize: '16px', lineHeight: 1.8, fontFamily: BODY }}>{item.answer}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
       <section style={{ background: HERO_SURFACE, padding: '100px 24px', textAlign: 'center' }}>
         <h2 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '16px' }}>Still have a question?</h2>
         <p style={{ color: METALLIC_STEEL, fontSize: '17px', marginBottom: '40px', fontFamily: BODY }}>
@@ -147,7 +58,6 @@ export default function FAQ() {
         <Link href="/contact" className="gm-btn" style={{ background: LOGO_GOLD, color: LOGO_RED_DEEP, padding: '16px 40px', borderRadius: '99px', fontWeight: 700, textDecoration: 'none', fontSize: '16px', fontFamily: BODY }}>Contact Us</Link>
       </section>
 
-      {/* Footer */}
       <footer style={{ background: WHITE, padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(200,16,46,0.1)' }}>
         <p style={{ color: LOGO_GOLD, fontSize: '14px', fontFamily: 'Georgia, serif', fontStyle: 'italic', marginBottom: '8px' }}>Connecting Hearts. Aligning Genes.</p>
         <p style={{ color: TEXT_SOFT, fontSize: '12px', fontFamily: BODY }}>© {new Date().getFullYear()} GenoMatch Ltd · RC No. 9236521 · Nigeria</p>

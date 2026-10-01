@@ -1435,7 +1435,7 @@ export default function Home() {
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(getFaqJsonLd()),
+              __html: JSON.stringify(getFaqJsonLd()).replace(/</g, '\\u003c'),
             }}
           />
           <Reveal className="relative mx-auto max-w-2xl">
@@ -1564,7 +1564,7 @@ export default function Home() {
               hello@genomatch.app
             </a>
             <span className="hidden opacity-50 sm:inline" aria-hidden>·</span>
-            <a href="https://genomatch.app" className="footer-link">
+            <a href="https://www.genomatch.app" className="footer-link">
               genomatch.app
             </a>
             <span className="hidden opacity-50 sm:inline" aria-hidden>·</span>

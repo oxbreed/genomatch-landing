@@ -1,27 +1,55 @@
 import Link from 'next/link'
+import JsonLd from '../../components/JsonLd'
 import SiteHeader from '../../components/SiteHeader'
 import SourcesBlock from '../../components/SourcesBlock'
 import { SCD_STATS, SOURCE_SETS } from '@/lib/scd-facts'
-
-export const metadata = {
-  title: 'Can AS Marry AS? The Truth About Sickle Cell Risk',
-  description: 'It is one of the most searched questions in Nigeria. The answer is more nuanced than a simple yes or no, and understanding it could protect your future family.',
-}
-
+import { getBlogPost } from '@/lib/seo/blog-posts'
+import { blogPostingJsonLd, breadcrumbJsonLd } from '@/lib/seo/json-ld'
+import { buildMetadata } from '@/lib/seo/metadata'
 import { LOGO_RED, LOGO_RED_DEEP, CREAM, LOGO_GOLD, METALLIC_STEEL, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../../theme'
+
+const post = getBlogPost('can-as-marry-as')!
+
+export const metadata = buildMetadata({
+  title: post.title,
+  description: post.description,
+  path: `/blog/${post.slug}`,
+  type: 'article',
+  publishedTime: post.datePublished,
+  modifiedTime: post.dateModified,
+  keywords: post.keywords,
+})
 
 export default function Article2() {
   return (
-    <div style={{ background: CREAM, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+    <div id="main-content" style={{ background: CREAM, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+      <JsonLd data={blogPostingJsonLd(post)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Blog', path: '/blog' },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
+      />
       <SiteHeader />
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '80px 24px' }}>
-        <a href="/blog" className="gm-link" style={{ color: LOGO_GOLD, fontSize: '14px', fontFamily: BODY, textDecoration: 'none', display: 'block', marginBottom: '40px' }}>← Back to Blog</a>
-        <span style={{ background: CREAM, color: LOGO_RED, fontSize: '11px', letterSpacing: '1px', padding: '4px 12px', borderRadius: '99px', fontFamily: BODY, fontWeight: 700, border: `1px solid rgba(200,16,46,0.15)` }}>Sickle Cell Awareness</span>
+        <nav aria-label="Breadcrumb" style={{ marginBottom: '40px' }}>
+          <ol style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', listStyle: 'none', padding: 0, margin: 0, fontFamily: BODY, fontSize: '14px' }}>
+            <li><Link href="/" className="gm-link" style={{ color: LOGO_GOLD, textDecoration: 'none' }}>Home</Link></li>
+            <li aria-hidden style={{ color: TEXT_SOFT }}>/</li>
+            <li><Link href="/blog" className="gm-link" style={{ color: LOGO_GOLD, textDecoration: 'none' }}>Blog</Link></li>
+            <li aria-hidden style={{ color: TEXT_SOFT }}>/</li>
+            <li style={{ color: TEXT_SOFT }} aria-current="page">Can AS marry AS?</li>
+          </ol>
+        </nav>
+        <span style={{ background: CREAM, color: LOGO_RED, fontSize: '11px', letterSpacing: '1px', padding: '4px 12px', borderRadius: '99px', fontFamily: BODY, fontWeight: 700, border: `1px solid rgba(200,16,46,0.15)` }}>{post.category}</span>
         <h1 style={{ color: LOGO_RED, fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', fontWeight: 700, margin: '24px 0 16px', lineHeight: 1.2 }}>
-          Can AS Marry AS? The Truth About Sickle Cell Risk
+          {post.title}
         </h1>
-        <p style={{ color: TEXT_SOFT, fontSize: '14px', fontFamily: BODY, marginBottom: '48px' }}>June 2026 · 6 min read · GenoMatch</p>
+        <p style={{ color: TEXT_SOFT, fontSize: '14px', fontFamily: BODY, marginBottom: '48px' }}>
+          <time dateTime={post.datePublished}>{post.displayDate}</time> · {post.readTime} · GenoMatch
+        </p>
 
         <div style={{ color: '#C8102E', fontSize: '18px', lineHeight: 1.9, fontFamily: BODY }}>
           <p style={{ marginBottom: '24px' }}>It is one of the most searched questions in Nigeria. Every day, thousands of people type it into Google, WhatsApp their friends about it, or ask their doctors quietly after a blood test result comes back AS.</p>
