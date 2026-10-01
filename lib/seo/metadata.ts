@@ -188,6 +188,7 @@ export function rootMetadata(): Metadata {
       ],
     },
     verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
       other: {
         'msvalidate.01': '7A0E9B04FDCB32C33C1268B7A9C5E875',
       },
