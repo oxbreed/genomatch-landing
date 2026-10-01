@@ -188,7 +188,18 @@ export function rootMetadata(): Metadata {
       ],
     },
     verification: {
-      google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+      // Domain (DNS) verification is owned in Namecheap TXT on genomatch.app.
+      // These meta tags enable the HTML-tag method for the URL-prefix property
+      // https://www.genomatch.app/ — use this if DNS Domain verification fails.
+      google: [
+        // Current live DNS TXT on genomatch.app (as of 2026-10-01)
+        'OHWaoCTLxF4BrVW4iNW6JHVj8L1X7kQiSOZyUnrZSlg',
+        // Earlier DNS TXT Google reported during a failed Domain verify attempt
+        'tfUaoN4tPyL_JUs4pP_zP18fx2K6kTj4Prqh6zWKpm4',
+        ...(process.env.GOOGLE_SITE_VERIFICATION
+          ? [process.env.GOOGLE_SITE_VERIFICATION]
+          : []),
+      ],
       other: {
         'msvalidate.01': '7A0E9B04FDCB32C33C1268B7A9C5E875',
       },
