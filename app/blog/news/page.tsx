@@ -1,20 +1,31 @@
 import Link from 'next/link'
+import JsonLd from '../../components/JsonLd'
 import ScdNewsFeed from '../../components/ScdNewsFeed'
 import SiteHeader from '../../components/SiteHeader'
+import { breadcrumbJsonLd } from '@/lib/seo/json-ld'
+import { buildMetadata } from '@/lib/seo/metadata'
 import { LOGO_RED, CREAM, LOGO_GOLD, BODY, HERO_SURFACE, METALLIC_STEEL, WHITE, TEXT_SOFT } from '../../theme'
 
 /** Refresh full news page every 6 hours. */
 export const revalidate = 21600
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: 'Sickle Cell News & Research Feed',
   description:
     'Live sickle cell disease headlines from Nigeria, Africa, and global health publishers, updated automatically on GenoMatch.',
-}
+  path: '/blog/news',
+})
 
 export default function ScdNewsPage() {
   return (
-    <div style={{ background: CREAM, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+    <div id="main-content" style={{ background: CREAM, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Blog', path: '/blog' },
+          { name: 'Sickle Cell News', path: '/blog/news' },
+        ])}
+      />
       <SiteHeader />
 
       <section

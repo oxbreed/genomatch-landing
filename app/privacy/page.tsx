@@ -1,6 +1,14 @@
 import Link from 'next/link';
+import { buildMetadata } from '@/lib/seo/metadata';
 
 const BODY = 'var(--font-geist-sans), system-ui, sans-serif';
+
+export const metadata = buildMetadata({
+  title: 'Privacy Policy',
+  description:
+    'How GenoMatch Ltd collects, uses, stores, and protects your personal data — including sensitive genotype health information — under Nigeria\u2019s NDPA 2023.',
+  path: '/privacy',
+});
 
 export default function PrivacyPolicy() {
   return (

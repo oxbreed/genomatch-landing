@@ -1,0 +1,31 @@
+# GenoMatch
+
+> The world's first genotype-aware dating app for West Africa and the African diaspora.
+
+GenoMatch helps singles match on sickle cell genotype compatibility (AA, AS, SS, AC)
+alongside personality and interests, so couples can make informed decisions about
+relationships and family planning.
+
+## Site
+
+- Home: https://www.genomatch.app/
+- Mission: https://www.genomatch.app/mission
+- Partners: https://www.genomatch.app/partners
+- Blog: https://www.genomatch.app/blog
+- FAQ: https://www.genomatch.app/faq
+- Contact: https://www.genomatch.app/contact
+- Privacy: https://www.genomatch.app/privacy
+- Terms: https://www.genomatch.app/terms
+- Support: https://www.genomatch.app/support
+
+## Key topics
+
+- Genotype compatibility before marriage in Nigeria
+- Can AS marry AS? Sickle cell carrier risk
+- Sickle cell disease burden in Nigeria and West Africa
+- Intentional, health-aware dating for the African diaspora
+
+## Contact
+
+- Email: hello@genomatch.app
+- Company: GenoMatch Ltd (RC No. 9236521), Nigeria

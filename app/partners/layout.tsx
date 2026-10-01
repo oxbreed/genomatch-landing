@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "For Partners",
   description:
-    "Partner with GenoMatch to end preventable sickle cell suffering in Africa. We work with health organisations, NGOs, research institutions, governments, and corporate partners across West Africa and the diaspora.",
-  alternates: {
-    canonical: "https://genomatch.app/partners",
-  },
-  openGraph: {
-    title: "For Partners | GenoMatch",
-    description:
-      "Health organisations, NGOs, researchers, and corporate partners: join GenoMatch in reducing sickle cell disease incidence through genotype aware matching.",
-    url: "https://genomatch.app/partners",
-  },
-};
+    "Partner with GenoMatch to reduce preventable sickle cell suffering in Africa. Health organisations, NGOs, researchers, governments, and corporate partners welcome.",
+  path: "/partners",
+});
 
 export default function PartnersLayout({
   children,

@@ -1,31 +1,27 @@
 import GenoCrest from '../components/GenoCrest'
+import JsonLd from '../components/JsonLd'
 import SiteHeader from '../components/SiteHeader'
 import ContactForm from './ContactForm'
+import { breadcrumbJsonLd } from '@/lib/seo/json-ld'
+import { buildMetadata } from '@/lib/seo/metadata'
 import { LOGO_RED, CREAM, LOGO_GOLD, METALLIC_STEEL, WHITE, TEXT_SOFT, BODY, HERO_SURFACE } from '../theme'
 
-export const metadata = {
-  title: 'Get in Touch | GenoMatch',
+export const metadata = buildMetadata({
+  title: 'Get in Touch',
   description:
-    'Contact the GenoMatch team. Questions about genotype aware dating, partnerships, press, or support? Email hello@genomatch.app or send us a message and we will reply within 48 hours.',
-  openGraph: {
-    title: 'Get in Touch | GenoMatch',
-    description:
-      'Contact the GenoMatch team. Email hello@genomatch.app or send us a message and we will reply within 48 hours.',
-    url: 'https://www.genomatch.app/contact',
-  },
-  twitter: {
-    title: 'Get in Touch | GenoMatch',
-    description:
-      'Contact the GenoMatch team. Email hello@genomatch.app or send us a message and we will reply within 48 hours.',
-  },
-  alternates: {
-    canonical: 'https://www.genomatch.app/contact',
-  },
-}
+    'Contact the GenoMatch team about genotype-aware dating, partnerships, press, or support. Email hello@genomatch.app — we reply within 48 hours.',
+  path: '/contact',
+})
 
 export default function Contact() {
   return (
     <div id="main-content" style={{ background: CREAM, minHeight: '100vh', fontFamily: 'Georgia, serif' }}>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Contact', path: '/contact' },
+        ])}
+      />
 
       <SiteHeader />
 

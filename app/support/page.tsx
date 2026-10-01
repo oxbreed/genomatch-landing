@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { buildMetadata } from '@/lib/seo/metadata';
 
 const BODY = 'var(--font-geist-sans), system-ui, sans-serif';
 const HEADING = 'Georgia, serif';
 
-export const metadata: Metadata = {
-  title: 'GenoMatch support',
+export const metadata: Metadata = buildMetadata({
+  title: 'Support',
   description:
     'Get help with your GenoMatch account, report a member, ask about genotype matching, or reach the team.',
-};
+  path: '/support',
+});
 
 const topics = [
   {

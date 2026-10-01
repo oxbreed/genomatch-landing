@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { buildMetadata } from '@/lib/seo/metadata';
 
 const BODY = 'var(--font-geist-sans), system-ui, sans-serif';
 const HEADING = 'Georgia, serif';
 
-export const metadata: Metadata = {
-  title: 'Delete your GenoMatch account',
+export const metadata: Metadata = buildMetadata({
+  title: 'Delete your account',
   description:
-    'How to permanently delete your GenoMatch account and what happens to your data, including your genotype, photos and messages.',
-};
+    'How to permanently delete your GenoMatch account and what happens to your data, including genotype, photos, and messages.',
+  path: '/delete-account',
+});
 
 const steps = [
   'Open GenoMatch and go to the Profile tab.',
