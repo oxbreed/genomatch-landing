@@ -20,22 +20,25 @@ export default function TermsOfService() {
       </header>
       <main id="main-content" style={{ maxWidth: 800, margin: '0 auto', padding: '56px 24px', fontFamily: BODY, lineHeight: 1.7, color: '#0B0C0E' }}>
       <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8, color: '#C8102E', fontFamily: 'Georgia, serif' }}>Terms of Service</h1>
-      <p style={{ color: '#6E737C', marginBottom: 40 }}>Last updated: June 2026</p>
+      <p style={{ color: '#6E737C', marginBottom: 40 }}>Last updated: November 2026</p>
 
       <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>1. Introduction</h2>
       <p>
         Welcome to GenoMatch. These Terms of Service ("Terms") govern your access to and use of the GenoMatch mobile
         application and website (collectively, the "Service") operated by GenoMatch Ltd (RC No. 9236521) ("GenoMatch",
-        "we", "our", or "us"). GenoMatch is a genotype aware dating platform designed to help adults make informed
-        decisions about compatibility, relationships, and family planning. Please read these Terms carefully before
-        using the Service.
+        "we", "our", or "us"). GenoMatch is a genotype-aware dating app for adults 18 and over. Members share a
+        self-reported genotype so they can find compatible matches. GenoMatch does not provide medical advice; talk
+        to a qualified health professional if you have questions about your genotype. Please read these Terms carefully
+        before using the Service.
       </p>
 
       <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>2. Acceptance of Terms</h2>
       <p>
-        By creating an account, accessing, or using GenoMatch, you agree to be bound by these Terms and our Privacy
-        Policy. If you do not agree, you must not use the Service. We may update these Terms from time to time; your
-        continued use after changes are posted constitutes acceptance of the revised Terms.
+        By creating an account, accessing, or using GenoMatch, you agree to be bound by these Terms, our Privacy
+        Policy, and our Community Guidelines, including a zero-tolerance policy for objectionable content. If you do
+        not agree, you must not use the Service. In the app, new members must confirm this agreement before they can
+        finish registration. We may update these Terms from time to time; your continued use after changes are posted
+        constitutes acceptance of the revised Terms.
       </p>
 
       <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>3. Eligibility</h2>
@@ -56,15 +59,24 @@ export default function TermsOfService() {
 
       <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>5. Genotype Information</h2>
       <p>
-        GenoMatch allows you to declare your genotype (AA, AS, SS, AC) for compatibility matching. Genotype
+        GenoMatch allows you to declare your genotype (AA, AS, SS, AC, or SC) for compatibility matching. Genotype
         information you provide is declared by you and is not verified by GenoMatch as a medical or laboratory
-        result unless we expressly state otherwise in the app. GenoMatch does not provide medical advice, genetic
-        counselling, or clinical diagnosis. Compatibility scores and match suggestions are informational tools only
-        and should not replace professional healthcare or genetic advice. You are responsible for the accuracy of
-        genotype information you submit.
+        result unless we expressly state otherwise in the app. GenoMatch does not provide medical advice, diagnosis,
+        or laboratory testing. Talk to a qualified health professional if you have questions about your genotype. You
+        are responsible for the accuracy of the genotype information you submit.
       </p>
 
-      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>6. User Conduct</h2>
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>6. Zero tolerance</h2>
+      <p>
+        There is no tolerance for objectionable content or abusive behaviour on GenoMatch. Do not post nudity,
+        harassment, hate speech, scams, sexual solicitations, threats, or anything involving minors. Use report and
+        block on profiles and in chat if you see a violation. Every report is reviewed, blocking takes effect
+        immediately, and we may remove content or permanently ban accounts that break these rules. Serious cases may
+        be reported to the authorities. Messages and profile text are screened automatically, and new photos are
+        queued for review.
+      </p>
+
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>7. User Conduct</h2>
       <p>You agree not to:</p>
       <p>
         harass, threaten, abuse, or harm other users; create fake profiles or impersonate any person; provide
@@ -74,7 +86,7 @@ export default function TermsOfService() {
         content, block users, and cooperate with law enforcement where appropriate.
       </p>
 
-      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>7. Matching and Communication</h2>
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>8. Matching and Communication</h2>
       <p>
         GenoMatch may suggest potential matches based on profile information, preferences, and genotype compatibility.
         We do not guarantee that you will find a match or that any match will result in a relationship. Messaging
@@ -82,14 +94,14 @@ export default function TermsOfService() {
         You are solely responsible for your interactions with other users, both on and off the platform.
       </p>
 
-      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>8. Privacy</h2>
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>9. Privacy</h2>
       <p>
         Your use of GenoMatch is also governed by our Privacy Policy, which explains how we collect, use, store, and
         share your personal data. By using the Service, you consent to our data practices as described in the
         Privacy Policy. You may review our Privacy Policy at genomatch.app/privacy.
       </p>
 
-      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>9. Intellectual Property</h2>
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>10. Intellectual Property</h2>
       <p>
         The GenoMatch name, logo, app design, software, and all related content and materials are owned by GenoMatch
         Ltd or its licensors and are protected by intellectual property laws. You may not copy, modify, distribute,
@@ -98,7 +110,7 @@ export default function TermsOfService() {
         display, and store that content solely to operate and improve the Service.
       </p>
 
-      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>10. Disclaimers</h2>
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>11. Disclaimers</h2>
       <p>
         The Service is provided on an "as is" and "as available" basis. To the fullest extent permitted by law,
         GenoMatch disclaims all warranties, express or implied, including fitness for a particular purpose and
@@ -107,7 +119,7 @@ export default function TermsOfService() {
         information is at your own risk.
       </p>
 
-      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>11. Limitation of Liability</h2>
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>12. Limitation of Liability</h2>
       <p>
         To the maximum extent permitted by applicable law, GenoMatch Ltd and its officers, directors, employees, and
         agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any
@@ -117,16 +129,16 @@ export default function TermsOfService() {
         such limitation is permitted by law.
       </p>
 
-      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>12. Termination</h2>
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>13. Termination</h2>
       <p>
-        You may stop using GenoMatch at any time and may request account deletion through the app or by emailing
-        hello@genomatch.app. We may suspend or terminate your access immediately if you breach these Terms, if we
+        You may stop using GenoMatch at any time and may delete your account from Profile → Delete Account in the
+        app, or by emailing hello@genomatch.app. Deletion is immediate. We may suspend or terminate your access immediately if you breach these Terms, if we
         are required to do so by law, or if we discontinue the Service. Upon termination, your right to use the
         Service ends, but provisions that by their nature should survive (including disclaimers, limitation of
         liability, and intellectual property) will remain in effect.
       </p>
 
-      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>13. Changes to Terms</h2>
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>14. Changes to Terms</h2>
       <p>
         We may revise these Terms from time to time. When we make material changes, we will notify you through the
         app, by email, or by posting an updated version on genomatch.app/terms. The "Last updated" date at the top of
@@ -134,7 +146,7 @@ export default function TermsOfService() {
         constitutes acceptance.
       </p>
 
-      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>14. Contact</h2>
+      <h2 style={{ color: '#C8102E', marginTop: 32, marginBottom: 12, fontSize: 22, fontWeight: 700, fontFamily: 'Georgia, serif' }}>15. Contact</h2>
       <p>
         If you have questions about these Terms, please contact us:
       </p>
