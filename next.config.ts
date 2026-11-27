@@ -9,7 +9,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/:path*",
+        // AASA on the apex host must return 200 JSON with no redirect.
+        source: "/:path((?!\\.well-known(?:/|$)).*)",
         has: [
           {
             type: "host",
@@ -34,6 +35,13 @@ const nextConfig: NextConfig = {
     ];
 
     return [
+      {
+        source: "/.well-known/apple-app-site-association",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
       {
         source: "/_next/static/:path*",
         headers: [...securityHeaders, ...staticCacheHeaders],
